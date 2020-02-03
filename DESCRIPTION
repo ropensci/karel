@@ -1,0 +1,18 @@
+Package: karel
+Title: Karel The Robot Learns R
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Marcos",
+           family = "Prunello",
+           role = c("aut", "cre"),
+           email = "marcosprunello@gmail.com")
+Description: This package implements an interactive way to teach programming 
+	basics and R to students without previous knowledge on the area. By providing
+	instructions to Karel The Robot to perform certain tasks, students can
+	make their first steps in the world of programming in a fun environment.
+	This idea of Karel The Robot was first introduced by Richard E. Pattis at
+	Stanford University and later adapted by many authors.
+Depends: R (>= 3.6.2)
+License: License: GPL-2 | file LICENSE
+Encoding: UTF-8
+LazyData: true
