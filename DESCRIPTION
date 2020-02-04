@@ -13,6 +13,11 @@ Description: This package implements an interactive way to teach programming
 	This idea of Karel The Robot was first introduced by Richard E. Pattis at
 	Stanford University and later adapted by many authors.
 Depends: R (>= 3.6.2)
-License: License: GPL-2 | file LICENSE
+Imports:
+  purrr,
+  dplyr,
+  tidyr,
+  ggplot2
+License: GPL-2 | file LICENSE
 Encoding: UTF-8
 LazyData: true

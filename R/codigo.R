@@ -1,3 +1,6 @@
+# Solution for the "no visible binding for global variable" with variables in ggplot
+utils::globalVariables(c("x", "y", "lgth", "n", "xmin", "xmax", "ymin", "ymax"))
+
 temp_fun <- function() {
 	print(world_001$hor_walls)
 }
@@ -44,7 +47,7 @@ generar_mundo <- function(world) {
 
 	# Plot the world
 	p <- plot_world(world)
-	plot(p)
+	graphics::plot(p)
 
 	return(pkg_env$open_moves)
 
