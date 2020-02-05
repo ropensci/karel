@@ -29,6 +29,13 @@ generar_mundo <- function(world) {
   # Clear the environment
   rm(list = ls(pkg_env), envir = pkg_env)
 
+  # Append world size
+  pkg_env$nx <- world$nx
+  pkg_env$ny <- world$ny
+
+  # Create Karel dataset
+  pkg_env$karel <- tibble(x = 1, y = 1, direction = 1, moment = 1)
+
 	# Current Karel's position and direction (1: east, 2: north, 3: west, 4: south)
 	pkg_env$x_now <- world$karel_x
 	pkg_env$y_now <- world$karel_y
@@ -110,7 +117,7 @@ create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL) {
 #'
 #' @param world
 #' @importFrom ggplot2 ggplot geom_segment geom_point aes scale_x_continuous scale_y_continuous theme element_blank element_text geom_tile geom_text geom_rect
-#' @importFrom dplyr tibble
+#' @importFrom dplyr tibble add_row slice mutate
 plot_world <- function(world) {
 
 	karel_for_drawing <- draw_karel_df(world$karel_x, world$karel_y, world$karel_dir, 1)
