@@ -1,5 +1,6 @@
 # Solution for the "no visible binding for global variable" with variables in ggplot
-utils::globalVariables(c("x", "y", "lgth", "n", "xmin", "xmax", "ymin", "ymax"))
+utils::globalVariables(c("x", "y", "lgth", "n", "xmin", "xmax", "ymin", "ymax",
+                         "moment", "."))
 
 temp_fun <- function() {
 	print(world_001$hor_walls)
@@ -117,7 +118,8 @@ create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL) {
 #'
 #' @param world
 #' @importFrom ggplot2 ggplot geom_segment geom_point aes scale_x_continuous scale_y_continuous theme element_blank element_text geom_tile geom_text geom_rect
-#' @importFrom dplyr tibble add_row slice mutate
+#' @importFrom dplyr tibble add_row slice mutate bind_rows
+#' @importFrom magrittr %>%
 plot_world <- function(world) {
 
 	karel_for_drawing <- draw_karel_df(world$karel_x, world$karel_y, world$karel_dir, 1)
