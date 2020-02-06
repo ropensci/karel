@@ -15,6 +15,14 @@ temp_fun2 <- function(mundo) {
 # Create environment
 pkg_env <- new.env(parent = emptyenv())
 
+#' Title
+#'
+#' @param world
+#'
+#' @return
+#' @export
+#'
+#' @examples
 generar_mundo <- function(world) {
 	if (is.character(world)) {
 		# Load this world from internal data
@@ -85,6 +93,7 @@ generate_open_moves <- function(nx, ny, hor_walls, ver_walls) {
 put_hor_walls <- function(x, y, lgth) {
 	tidyr::expand_grid(pos_x = (x + 1):(x + lgth), tibble(pos_y = y:(y + 1), side = c(2, 4)))
 }
+
 put_ver_walls <- function(x, y, lgth) {
 	tidyr::expand_grid(pos_y = (y + 1):(y + lgth), tibble(pos_x = x:(x + 1), side = c(1, 3)))
 }

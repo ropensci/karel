@@ -1,3 +1,9 @@
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 avanzar <- function() {
   pkg_env$moment <- pkg_env$moment + 1
   switch(pkg_env$dir_now,
@@ -23,6 +29,12 @@ avanzar <- function() {
   pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
 }
 
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 colocar_beeper <- function() {
 
   # Update moment
@@ -53,7 +65,6 @@ colocar_beeper <- function() {
     bind_rows(pkg_env$karel, .)
 }
 
-# hasta aca bien
 
 get_beepers_df_row <- function() {
   cell <- pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx
@@ -61,7 +72,12 @@ get_beepers_df_row <- function() {
   return(cell_present)
 }
 
-
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 quitar_beeper <- function() {
 
   # We can only remove if there are no beepers there, otherwise it's an error
@@ -91,6 +107,28 @@ quitar_beeper <- function() {
     stop("No hay beepers para quitar")
   }
 }
+
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
+girar_izquierda <- function() {
+  # Update moment and direction
+  pkg_env$moment <- pkg_env$moment + 1
+  pkg_env$dir_now <- switch(pkg_env$dir_now, 2, 3, 4, 1)
+
+  # Update karel data set (only changes dir from last row)
+  pkg_env$karel <- add_row(pkg_env$karel, x = pkg_env$x_now, y = pkg_env$y_now,
+                           direction = pkg_env$dir_now, moment = pkg_env$moment)
+
+  # Update beepers dataset, they remain the same but need to reflect this new moment
+  pkg_env$beepers_now$moment <- pkg_env$beepers_now$moment + 1
+  pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
+}
+
+
 
 probar1 <- function() return(pkg_env)
 probar2 <- function() return(pkg_env$beepers_all)
