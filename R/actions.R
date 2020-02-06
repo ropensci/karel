@@ -25,16 +25,73 @@ avanzar <- function() {
 
 colocar_beeper <- function() {
 
+  # Update moment
   pkg_env$moment <- pkg_env$moment + 1
-  cell <- pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx
+  pkg_env$beepers_now$moment <- pkg_env$moment
 
-  if (cell %in% pkg_env$beepers_now$cell) {
-    pkg_env$beepers_now$cell <- pkg_env$beepers_now$cell + 1 # ESTA MAL MODIFICAR SOLO CELL
+  # Get cell index and see if there are any beepers already there
+  cell <- pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx
+  cell_present <- which(pkg_env$beepers_now$cell == cell)
+
+  if (length(cell_present) > 0) {
+    # If there are beepers, add one more
+    pkg_env$beepers_now$n[cell_present] <- pkg_env$beepers_now$n[cell_present] + 1
   } else {
-    pkg_env$beepers_now <-
-      pkg_env$beepers_now %>%
-      add_row(x = pkg_env$x_now, y = pkg_env$y_now, cell = cell, n = 1) %>%
-      mutate(moment = pkg_env$moment)
+    # If there arent any, add new row with one beeper to beepers dataset
+    pkg_env$beepers_now <- add_row(pkg_env$beepers_now,
+                                   x = pkg_env$x_now, y = pkg_env$y_now,
+                                   cell = cell, n = 1, moment = pkg_env$moment)
+  }
+
+  # Append this new state of beepers to beepers_all
+  pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
+
+  # Even though putting beepers doesn't change karel position or direction I
+  # need to add a row to karel dataset for the animation with this new moment
+  pkg_env$karel <-
+    pkg_env$karel %>%
+    slice(n()) %>%
+    mutate(moment = moment + 1) %>%
+    bind_rows(pkg_env$karel, .)
+}
+
+# hasta aca bien
+
+get_beepers_df_row <- function() {
+  cell <- pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx
+  cell_present <- which(pkg_env$beepers_now$cell == cell)
+  return()
+}
+
+
+quitar_beeper <- function() {
+
+  # We can only remove if there are no beepers there, otherwise it's an error
+  if (beepers_presentes()) {
+    # Update moment
+    pkg_env$moment <- pkg_env$moment + 1
+    pkg_env$beepers_now$moment <- pkg_env$moment
+
+    # Get cell index and see if there are any beepers already there
+    cell <- pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx
+    cell_present <- which(pkg_env$beepers_now$cell == cell)
+
+    # Remove beeper
+    pkg_env$beepers_now$n[cell_present] <- pkg_env$beepers_now$n[cell_present] + 1
+  }
+
+
+
+
+
+  if (length(cell_present) > 0) {
+    # If there are beepers, add one more
+    pkg_env$beepers_now$n[cell_present] <- pkg_env$beepers_now$n[cell_present] + 1
+  } else {
+    # If there arent any, add new row with one beeper to beepers dataset
+    pkg_env$beepers_now <- add_row(pkg_env$beepers_now,
+                                   x = pkg_env$x_now, y = pkg_env$y_now,
+                                   cell = cell, n = 1, moment = pkg_env$moment)
   }
 
   # Append this new state of beepers to beepers_all
