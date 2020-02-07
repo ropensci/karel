@@ -60,12 +60,11 @@ generar_mundo <- function(world) {
 	# beepers_now only has current state of beepers, beepers_all acummulates all states for animation
 	pkg_env$beepers_now <- create_beepers(world$nx, world$beepers_x, world$beepers_y, world$beepers_n)
 	pkg_env$beepers_all <- pkg_env$beepers_now
+	pkg_env$beepers_bag <- world$beepers_bag
 
 	# Plot the world
 	p <- plot_world(world)
 	graphics::plot(p)
-
-	return(pkg_env$open_moves)
 
 }
 

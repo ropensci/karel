@@ -16,7 +16,8 @@ world_001 <- list(
     karel_dir = 1,
     beepers_x = c(3, 4),
     beepers_y = c(1, 1),
-    beepers_n = 4:5
+    beepers_n = 4:5,
+    beepers_bag = Inf
 )
 
 usethis::use_data(world_001, internal = TRUE, overwrite = TRUE)

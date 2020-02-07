@@ -41,7 +41,7 @@ colocar_beeper <- function() {
   pkg_env$moment <- pkg_env$moment + 1
   pkg_env$beepers_now$moment <- pkg_env$moment
 
-  if (beepers_presentes()) {
+  if (hay_beepers()) {
     # If there are beepers, add one more
     idx <- get_beepers_df_row()
     pkg_env$beepers_now$n[idx] <- pkg_env$beepers_now$n[idx] + 1
@@ -81,7 +81,7 @@ get_beepers_df_row <- function() {
 quitar_beeper <- function() {
 
   # We can only remove if there are no beepers there, otherwise it's an error
-  if (beepers_presentes()) {
+  if (hay_beepers()) {
 
     # Update moment
     pkg_env$moment <- pkg_env$moment + 1

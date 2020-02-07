@@ -12,7 +12,7 @@ Description: This package implements an interactive way to teach programming
 	make their first steps in the world of programming in a fun environment.
 	This idea of Karel The Robot was first introduced by Richard E. Pattis at
 	Stanford University and later adapted by many authors.
-Depends: R (>= 3.6.2)
+Depends: R (>= 3.6.0)
 Imports:
     purrr,
     dplyr,
