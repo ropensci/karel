@@ -129,6 +129,18 @@ girar_izquierda <- function() {
 }
 
 
-
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 probar1 <- function() return(pkg_env)
+
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 probar2 <- function() return(pkg_env$beepers_all)
