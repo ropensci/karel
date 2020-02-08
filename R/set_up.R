@@ -65,7 +65,7 @@ generar_mundo <- function(world) {
 	pkg_env$beepers_bag <- world$beepers_bag
 
 	# Plot the world
-	p <- plot_world()
+	p <- plot_static_world(1)
 	graphics::plot(p)
 
 }
@@ -124,46 +124,6 @@ create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL) {
 	return(beepers)
 }
 
-#' Plot the world
-#'
-#' @importFrom ggplot2 ggplot geom_segment geom_point aes scale_x_continuous scale_y_continuous theme element_blank element_text geom_tile geom_text geom_rect
-#' @importFrom dplyr tibble add_row slice mutate bind_rows
-#' @importFrom magrittr %>%
-plot_world <- function() {
-
-	karel_for_drawing <- draw_karel_df(pkg_env$x_now, pkg_env$y_now, pkg_env$dir_now, 1)
-
-	nx <- pkg_env$nx
-	ny <- pkg_env$ny
-
-	p <-
-		ggplot(NULL) +
-		geom_segment(data = pkg_env$ver_walls, aes(x = x, y = y, xend = x, yend = y + lgth), size = 2) +
-		geom_segment(data = pkg_env$hor_walls, aes(x = x, y = y, xend = x + lgth, yend = y), size = 2) +
-		geom_point(data = tidyr::expand_grid(x = (1:nx) - 0.5, y = (1:ny) - 0.5),
-							 aes(x = x, y = y), size = 2) +
-		scale_x_continuous("", expand = c(0, 0), limits = c(0, nx),
-											 breaks = 0.5:(nx - 0.5), labels = 1:nx) +
-		scale_y_continuous("", expand = c(0, 0), limits = c(0, ny),
-											 breaks = 0.5:(ny - 0.5), labels = 1:ny) +
-		theme(
-			panel.grid.major = element_blank(),
-			panel.grid.minor = element_blank(),
-			axis.ticks = element_blank(),
-			axis.text = element_text(face = "bold")
-		) +
-		geom_tile(data = pkg_env$beepers_now,
-							aes(x = x - 0.5, y = y - 0.5, width = 0.4, height = 0.4),
-							fill = "purple", color = "black", size = 0.5) +
-		geom_text(data = pkg_env$beepers_now, aes(x = x - 0.5, y = y - 0.5, label = n), color = "white") +
-		geom_rect(data = karel_for_drawing,
-							aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
-							alpha = karel_for_drawing$alpha,
-							fill = karel_for_drawing$fill, color = "black")
-	return(p)
-}
-
-
 draw_karel_df <- function(x, y, direction, moment) {
 	switch(direction,
 				 # In the tibbles, this is the order of the coordinates:
@@ -209,5 +169,52 @@ draw_karel_df <- function(x, y, direction, moment) {
 				 	alpha = c(0.25, rep(1, 5))
 				 )
 	)
+}
+
+#' Plot the world
+#'
+#' @importFrom ggplot2 ggplot geom_segment geom_point aes scale_x_continuous scale_y_continuous theme element_blank element_text geom_tile geom_text geom_rect
+#' @importFrom dplyr tibble add_row slice mutate bind_rows
+#' @importFrom magrittr %>%
+plot_static_world <- function(time) {
+
+  if (time < 1) stop("First time available is 1.\nEl primer tiempo disponible es 1")
+  if (time > pkg_env$moment) stop("Latest time available is ", pkg_env$moment,
+                                  "\nEl ultimo tiempo disponible es ", pkg_env$moment)
+
+  # Filter to keep only this moment
+  karel_for_drawing <- dplyr::filter(pkg_env$karel, moment == time)
+  karel_for_drawing <- draw_karel_df(karel_for_drawing$x, karel_for_drawing$y, karel_for_drawing$direction, time)
+  beepers_moment <- dplyr::filter(pkg_env$beepers_all, moment == time)
+
+  # Make this data handy
+  nx <- pkg_env$nx
+  ny <- pkg_env$ny
+
+  p <-
+    ggplot(NULL) +
+    geom_segment(data = pkg_env$ver_walls, aes(x = x, y = y, xend = x, yend = y + lgth), size = 2) +
+    geom_segment(data = pkg_env$hor_walls, aes(x = x, y = y, xend = x + lgth, yend = y), size = 2) +
+    geom_point(data = tidyr::expand_grid(x = (1:nx) - 0.5, y = (1:ny) - 0.5),
+               aes(x = x, y = y), size = 2) +
+    scale_x_continuous("", expand = c(0, 0), limits = c(0, nx),
+                       breaks = 0.5:(nx - 0.5), labels = 1:nx) +
+    scale_y_continuous("", expand = c(0, 0), limits = c(0, ny),
+                       breaks = 0.5:(ny - 0.5), labels = 1:ny) +
+    theme(
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      axis.ticks = element_blank(),
+      axis.text = element_text(face = "bold")
+    ) +
+    geom_tile(data = beepers_moment,
+              aes(x = x - 0.5, y = y - 0.5, width = 0.4, height = 0.4),
+              fill = "purple", color = "black", size = 0.5) +
+    geom_text(data = beepers_moment, aes(x = x - 0.5, y = y - 0.5, label = n), color = "white") +
+    geom_rect(data = karel_for_drawing,
+              aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
+              alpha = karel_for_drawing$alpha,
+              fill = karel_for_drawing$fill, color = "black")
+  return(p)
 }
 
