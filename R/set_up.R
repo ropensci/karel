@@ -38,9 +38,11 @@ generar_mundo <- function(world) {
   # Clear the environment
   rm(list = ls(pkg_env), envir = pkg_env)
 
-  # Append world size
+  # Append useful world info
   pkg_env$nx <- world$nx
   pkg_env$ny <- world$ny
+  pkg_env$hor_walls <- world$hor_walls
+  pkg_env$ver_walls <- world$ver_walls
 
   # Create Karel dataset
   pkg_env$karel <- tibble(x = 1, y = 1, direction = 1, moment = 1)
@@ -63,7 +65,7 @@ generar_mundo <- function(world) {
 	pkg_env$beepers_bag <- world$beepers_bag
 
 	# Plot the world
-	p <- plot_world(world)
+	p <- plot_world()
 	graphics::plot(p)
 
 }
@@ -124,24 +126,26 @@ create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL) {
 
 #' Plot the world
 #'
-#' @param world
 #' @importFrom ggplot2 ggplot geom_segment geom_point aes scale_x_continuous scale_y_continuous theme element_blank element_text geom_tile geom_text geom_rect
 #' @importFrom dplyr tibble add_row slice mutate bind_rows
 #' @importFrom magrittr %>%
-plot_world <- function(world) {
+plot_world <- function() {
 
-	karel_for_drawing <- draw_karel_df(world$karel_x, world$karel_y, world$karel_dir, 1)
+	karel_for_drawing <- draw_karel_df(pkg_env$x_now, pkg_env$y_now, pkg_env$dir_now, 1)
+
+	nx <- pkg_env$nx
+	ny <- pkg_env$ny
 
 	p <-
 		ggplot(NULL) +
-		geom_segment(data = world$ver_walls, aes(x = x, y = y, xend = x, yend = y + lgth), size = 2) +
-		geom_segment(data = world$hor_walls, aes(x = x, y = y, xend = x + lgth, yend = y), size = 2) +
-		geom_point(data = tidyr::expand_grid(x = (1:world$nx) - 0.5, y = (1:world$ny) - 0.5),
+		geom_segment(data = pkg_env$ver_walls, aes(x = x, y = y, xend = x, yend = y + lgth), size = 2) +
+		geom_segment(data = pkg_env$hor_walls, aes(x = x, y = y, xend = x + lgth, yend = y), size = 2) +
+		geom_point(data = tidyr::expand_grid(x = (1:nx) - 0.5, y = (1:ny) - 0.5),
 							 aes(x = x, y = y), size = 2) +
-		scale_x_continuous("", expand = c(0, 0), limits = c(0, world$nx),
-											 breaks = 0.5:(world$nx - 0.5), labels = 1:world$nx) +
-		scale_y_continuous("", expand = c(0, 0), limits = c(0, world$ny),
-											 breaks = 0.5:(world$ny - 0.5), labels = 1:world$ny) +
+		scale_x_continuous("", expand = c(0, 0), limits = c(0, nx),
+											 breaks = 0.5:(nx - 0.5), labels = 1:nx) +
+		scale_y_continuous("", expand = c(0, 0), limits = c(0, ny),
+											 breaks = 0.5:(ny - 0.5), labels = 1:ny) +
 		theme(
 			panel.grid.major = element_blank(),
 			panel.grid.minor = element_blank(),

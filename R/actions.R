@@ -56,6 +56,7 @@ colocar_beeper <- function() {
   if (pkg_env$beepers_bag == 0) {
     stop("Can't put a beeper sincer there aren't any left in Karel's bag. Generate again the world and start all over.\nNo puede colocar un beeper ya que no le queda ninguno en la bolsa. Generar otra vez el mundo y volver a comenzar.")
   } else {
+    pkg_env$beepers_bag <- pkg_env$beepers_bag + 1
     # Update moment
     pkg_env$moment <- pkg_env$moment + 1
     pkg_env$beepers_now$moment <- pkg_env$moment
