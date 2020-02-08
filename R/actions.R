@@ -7,18 +7,34 @@
 avanzar <- function() {
   pkg_env$moment <- pkg_env$moment + 1
   switch(pkg_env$dir_now,
+
          # Current direction: east
-         if (pkg_env$open_moves[pkg_env$x_now, pkg_env$y_now, 1])
-           pkg_env$x_now <- pkg_env$x_now + 1,
+         if (pkg_env$open_moves[pkg_env$x_now, pkg_env$y_now, 1]) {
+           pkg_env$x_now <- pkg_env$x_now + 1
+         } else {
+           stop("Can't move east, there's a wall. Generate again the world and start all over.\nNo puede avanzar hacia el este, hay una pared. Generar otra vez el mundo y volver a comenzar.")
+         },
+
          # Current direction: north
-         if (pkg_env$open_moves[pkg_env$x_now, pkg_env$y_now, 2])
-           pkg_env$y_now <- pkg_env$y_now + 1,
+         if (pkg_env$open_moves[pkg_env$x_now, pkg_env$y_now, 2]) {
+           pkg_env$y_now <- pkg_env$y_now + 1
+         } else {
+           stop("Can't move north, there's a wall. Generate again the world and start all over.\nNo puede avanzar hacia el norte, hay una pared. Generar otra vez el mundo y volver a comenzar.")
+         },
+
          # Current direction: west
-         if (pkg_env$open_moves[pkg_env$x_now, pkg_env$y_now, 3])
-           pkg_env$x_now <- pkg_env$x_now - 1,
+         if (pkg_env$open_moves[pkg_env$x_now, pkg_env$y_now, 3]) {
+           pkg_env$x_now <- pkg_env$x_now - 1
+         } else {
+           stop("Can't move west, there's a wall. Generate again the world and start all over.\nNo puede avanzar hacia el oeste, hay una pared. Generar otra vez el mundo y volver a comenzar.")
+         },
+
          # Current direction: south
-         if (pkg_env$open_moves[pkg_env$x_now, pkg_env$y_now, 4])
+         if (pkg_env$open_moves[pkg_env$x_now, pkg_env$y_now, 4]) {
            pkg_env$y_now <- pkg_env$y_now - 1
+         } else {
+           stop("Can't move south, there's a wall. Generate again the world and start all over.\nNo puede avanzar hacia el sur, hay una pared. Generar otra vez el mundo y volver a comenzar.")
+         }
   )
   pkg_env$karel <- add_row(pkg_env$karel, x = pkg_env$x_now, y = pkg_env$y_now,
                            direction = pkg_env$dir_now, moment = pkg_env$moment)
@@ -37,32 +53,36 @@ avanzar <- function() {
 #' @examples
 colocar_beeper <- function() {
 
-  # Update moment
-  pkg_env$moment <- pkg_env$moment + 1
-  pkg_env$beepers_now$moment <- pkg_env$moment
-
-  if (hay_beepers()) {
-    # If there are beepers, add one more
-    idx <- get_beepers_df_row()
-    pkg_env$beepers_now$n[idx] <- pkg_env$beepers_now$n[idx] + 1
+  if (pkg_env$beepers_bag == 0) {
+    stop("Can't put a beeper sincer there aren't any left in Karel's bag. Generate again the world and start all over.\nNo puede colocar un beeper ya que no le queda ninguno en la bolsa. Generar otra vez el mundo y volver a comenzar.")
   } else {
-    # If there arent any, add new row with one beeper to beepers dataset
-    pkg_env$beepers_now <- add_row(pkg_env$beepers_now,
-                                   x = pkg_env$x_now, y = pkg_env$y_now,
-                                   cell = pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx,
-                                   n = 1, moment = pkg_env$moment)
+    # Update moment
+    pkg_env$moment <- pkg_env$moment + 1
+    pkg_env$beepers_now$moment <- pkg_env$moment
+
+    if (hay_beepers()) {
+      # If there are beepers, add one more
+      idx <- get_beepers_df_row()
+      pkg_env$beepers_now$n[idx] <- pkg_env$beepers_now$n[idx] + 1
+    } else {
+      # If there arent any, add new row with one beeper to beepers dataset
+      pkg_env$beepers_now <- add_row(pkg_env$beepers_now,
+                                     x = pkg_env$x_now, y = pkg_env$y_now,
+                                     cell = pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx,
+                                     n = 1, moment = pkg_env$moment)
+    }
+
+    # Append this new state of beepers to beepers_all
+    pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
+
+    # Even though putting beepers doesn't change karel position or direction I
+    # need to add a row to karel dataset for the animation with this new moment
+    pkg_env$karel <-
+      pkg_env$karel %>%
+      slice(n()) %>%
+      mutate(moment = moment + 1) %>%
+      bind_rows(pkg_env$karel, .)
   }
-
-  # Append this new state of beepers to beepers_all
-  pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
-
-  # Even though putting beepers doesn't change karel position or direction I
-  # need to add a row to karel dataset for the animation with this new moment
-  pkg_env$karel <-
-    pkg_env$karel %>%
-    slice(n()) %>%
-    mutate(moment = moment + 1) %>%
-    bind_rows(pkg_env$karel, .)
 }
 
 
@@ -104,7 +124,7 @@ quitar_beeper <- function() {
       mutate(moment = moment + 1) %>%
       bind_rows(pkg_env$karel, .)
   } else {
-    stop("No hay beepers para quitar")
+    stop("There are no beepers here to remove. Generate again the world and start all over.\nNo hay beepers para quitar. Generar otra vez el mundo y volver a comenzar.")
   }
 }
 
