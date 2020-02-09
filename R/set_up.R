@@ -39,7 +39,7 @@ generar_mundo <- function(world) {
 	  elements <- names(world)
 		if (!"nx" %in% elements) {
 		  stop("Element nx missing in the world's definition.\nFalta el elemento nx en el mundo.")
-		} else if (!is.numeric(world$nx) | length(nx) > 1) {
+		} else if (!is.numeric(world$nx) | length(world$nx) > 1) {
 		  stop("nx must be a numeric vector of length 1 with the number of...")
 		}
 	}
