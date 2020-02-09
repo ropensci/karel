@@ -26,11 +26,22 @@ pkg_env <- new.env(parent = emptyenv())
 generar_mundo <- function(world) {
 	if (is.character(world)) {
 		# Load this world from internal data
-		world <- get(world)
-		# Todo: check for errors (world has to be one of the available worlds)
+	  world <- tryCatch(get(world),
+	                    error = function(cond) {
+	                      message(paste("World", world, "doesn't exist."))
+	                      message(paste("El mundo", world, "no existe."))
+	                      # message(cond, "\n") # prints original error message
+	                    },
+	                    finally = return(invisible(NULL)))
 	} else {
 		# User has provided their own world as a list.
-		# Todo: check this list is ok
+	  # Todo: complete this check
+	  elements <- names(world)
+		if (!"nx" %in% elements) {
+		  stop("Element nx missing in the world's definition.\nFalta el elemento nx en el mundo.")
+		} else if (!is.numeric(world$nx) | length(nx) > 1) {
+		  stop("nx must be a numeric vector of length 1 with the number of...")
+		}
 	}
 
 	# Create environment
