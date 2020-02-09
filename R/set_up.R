@@ -131,7 +131,7 @@ draw_karel_df <- function(x, y, direction, moment) {
 				 # Direction 1, going east
 				 tibble(
 				 	xmin = x - c(.9, .2, .2, .75, .75, .45),
-				 	xmax = x - c(.2, .1, .1, .85, .85, .35),
+				 	xmax = x - c(.2, .1, .1, .65, .65, .35),
 				 	ymin = y - c(.85, .75, .45, .65, .45, .65),
 				 	ymax = y - c(.15, .55, .25, .55, .35, .35),
 				 	moment = moment,
@@ -140,20 +140,20 @@ draw_karel_df <- function(x, y, direction, moment) {
 				 ),
 				 # Direction 2, going north
 				 tibble(
-				 	xmax = x - c(.85, .75, .45, .65, .45, .65),
-				 	xmin = x - c(.15, .55, .25, .55, .35, .35),
-				 	ymax = y - c(.8, .9, .9, .35, .35, .65),
-				 	ymin = y - c(.1, .8, .8, .25, .25, .55),
+				  xmin = x - c(.85, .45, .75, .45, .65, .65),
+				  xmax = x - c(.15, .25, .55, .35, .55, .35),
+				 	ymin = y - c(.9, .2, .2, .75, .75, .45),
+				 	ymax = y - c(.2, .1, .1, .65, .65, .35),
 				 	moment = moment,
 				 	fill = c("orange", "black", "black", "brown", "brown", "red"),
 				 	alpha = c(0.25, rep(1, 5))
 				 ),
 				 # Direction 3, going west
 				 tibble(
-				 	xmax = x - c(.9, .2, .2, .75, .75, .45),
-				 	xmin = x - c(.2, .1, .1, .85, .85, .35),
-				 	ymax = y - c(.85, .75, .45, .65, .45, .65),
-				 	ymin = y - c(.15, .55, .25, .55, .35, .35),
+				   xmin = x - c(.8, .9, .9, .35, .35, .65),
+				   xmax = x - c(.1, .8, .8, .25, .25, .55),
+				   ymin = y - c(.85, .45, .75, .45, .65, .65),
+				   ymax = y - c(.15, .25, .55, .35, .55, .35),
 				 	moment = moment,
 				 	fill = c("orange", "black", "black", "brown", "brown", "red"),
 				 	alpha = c(0.25, rep(1, 5))
