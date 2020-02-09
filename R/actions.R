@@ -113,6 +113,10 @@ quitar_beeper <- function() {
 
     # Remove beeper
     pkg_env$beepers_now$n[idx] <- pkg_env$beepers_now$n[idx] - 1
+    # Remove row from beepers dataset it there are no beepers left, so the box disappears
+    if (pkg_env$beepers_now$n[idx] == 0) {
+      pkg_env$beepers_now <- dplyr::slice(pkg_env$beepers_now, -idx)
+    }
 
     # Append this new state of beepers to beepers_all
     pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
