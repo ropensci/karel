@@ -174,7 +174,7 @@ draw_karel_df <- function(x, y, direction, moment) {
 #' Plot the world
 #'
 #' @importFrom ggplot2 ggplot geom_segment geom_point aes scale_x_continuous scale_y_continuous theme element_blank element_text geom_tile geom_text geom_rect
-#' @importFrom dplyr tibble add_row slice mutate bind_rows
+#' @importFrom dplyr tibble add_row slice mutate bind_rows n
 #' @importFrom magrittr %>%
 plot_static_world <- function(time) {
 
@@ -217,4 +217,51 @@ plot_static_world <- function(time) {
               fill = karel_for_drawing$fill, color = "black")
   return(p)
 }
+
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
+ejecutar_acciones <- function() {
+
+  if (pkg_env$moment == 1) stop("Perform at least one action.\n Realizar al menos una actividad.")
+
+  # Make this data handy
+  nx <- pkg_env$nx
+  ny <- pkg_env$ny
+
+  karel_for_drawing <- purrr::pmap_dfr(pkg_env$karel, draw_karel_df)
+
+  p <-
+    ggplot(NULL) +
+    geom_segment(data = pkg_env$ver_walls, aes(x = x, y = y, xend = x, yend = y + lgth), size = 2) +
+    geom_segment(data = pkg_env$hor_walls, aes(x = x, y = y, xend = x + lgth, yend = y), size = 2) +
+    geom_point(data = tidyr::expand_grid(x = (1:nx) - 0.5, y = (1:ny) - 0.5),
+               aes(x = x, y = y), size = 2) +
+    scale_x_continuous("", expand = c(0, 0), limits = c(0, nx),
+                       breaks = 0.5:(nx - 0.5), labels = 1:nx) +
+    scale_y_continuous("", expand = c(0, 0), limits = c(0, ny),
+                       breaks = 0.5:(ny - 0.5), labels = 1:ny) +
+    theme(
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      axis.ticks = element_blank(),
+      axis.text = element_text(face = "bold")
+    ) +
+    geom_tile(data = pkg_env$beepers_all,
+              aes(x = x - 0.5, y = y - 0.5, width = 0.4, height = 0.4),
+              fill = "purple", color = "black", size = 0.5) +
+    geom_text(data = pkg_env$beepers_all, aes(x = x - 0.5, y = y - 0.5, label = n), color = "white") +
+    geom_rect(data = karel_for_drawing,
+              aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
+              alpha = karel_for_drawing$alpha,
+              fill = karel_for_drawing$fill, color = "black") +
+    gganimate::transition_manual(moment)
+
+  gganimate::animate(p, nframes = nrow(pkg_env$karel), fps = 2, renderer = gganimate::gifski_renderer(loop = FALSE))
+  # return(p)
+}
+
 
