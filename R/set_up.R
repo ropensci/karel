@@ -71,7 +71,9 @@ generar_mundo <- function(world) {
 
 	# Create beepers datasets
 	# beepers_now only has current state of beepers, beepers_all acummulates all states for animation
-	pkg_env$beepers_now <- create_beepers(world$nx, world$beepers_x, world$beepers_y, world$beepers_n)
+	# beepers_total is the total number of beepers in the world (works even when beepers_n is NULL, sum is 0)
+	pkg_env$beepers_any <- sum(world$beepers_n)
+	pkg_env$beepers_now <- create_beepers(world$nx, world$beepers_x, world$beepers_y, world$beepers_n, moment = 1)
 	pkg_env$beepers_all <- pkg_env$beepers_now
 	pkg_env$beepers_bag <- world$beepers_bag
 
@@ -115,21 +117,16 @@ put_ver_walls <- function(x, y, lgth) {
 
 # pos_x, pos_y: vectors of indexes of cells with non-zero amount of beepers
 # n: number of beepers in each cell indicated by x and y
-create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL) {
+create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL, moment = 1) {
 	if (is.null(pos_x)) {
-		beepers <- tibble(
-			x = numeric(0),
-			y = numeric(0),
-			cell = numeric(0),
-			n = numeric(0),
-			moment = numeric(0))
+		beepers <- tibble(x = NA, y = NA, cell = NA, n = NA, moment = moment)
 	} else {
 		beepers <- tibble(
 			x = pos_x,
 			y = pos_y,
 			cell = pos_x + nx * pos_y - nx,
 			n = n,
-			moment = 1
+			moment = moment
 		)
 	}
 	return(beepers)
@@ -197,6 +194,11 @@ plot_static_world <- function(time) {
   karel_for_drawing <- dplyr::filter(pkg_env$karel, moment == time)
   karel_for_drawing <- draw_karel_df(karel_for_drawing$x, karel_for_drawing$y, karel_for_drawing$direction, time)
   beepers_moment <- dplyr::filter(pkg_env$beepers_all, moment == time)
+  if (nrow(beepers_moment) == 0) {
+    # This means that in this moment there were no beepers in the world
+    # In order the plot to work, I will create a dataset with NA values
+    beepers_moment[1, ] <- list(NA, NA, NA, NA, time)
+  }
 
   # Make this data handy
   nx <- pkg_env$nx

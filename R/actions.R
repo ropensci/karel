@@ -56,22 +56,35 @@ colocar_beeper <- function() {
   if (pkg_env$beepers_bag == 0) {
     stop("Can't put a beeper sincer there aren't any left in Karel's bag. Generate again the world and start all over.\nNo puede colocar un beeper ya que no le queda ninguno en la bolsa. Generar otra vez el mundo y volver a comenzar.")
   } else {
-    pkg_env$beepers_bag <- pkg_env$beepers_bag + 1
+
+    # Update bag
+    pkg_env$beepers_bag <- pkg_env$beepers_bag - 1
     # Update moment
     pkg_env$moment <- pkg_env$moment + 1
-    pkg_env$beepers_now$moment <- pkg_env$moment
 
-    if (hay_beepers()) {
-      # If there are beepers, add one more
-      idx <- get_beepers_df_row()
-      pkg_env$beepers_now$n[idx] <- pkg_env$beepers_now$n[idx] + 1
+    if (pkg_env$beepers_any == 0) {
+      # There are no beepers in the world now, create again the beepers_now dataset
+      pkg_env$beepers_now <- tibble(x = pkg_env$x_now,
+                                    y = pkg_env$y_now,
+                                    cell = pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx,
+                                    n = 1,
+                                    moment = pkg_env$moment)
     } else {
-      # If there arent any, add new row with one beeper to beepers dataset
-      pkg_env$beepers_now <- add_row(pkg_env$beepers_now,
-                                     x = pkg_env$x_now, y = pkg_env$y_now,
-                                     cell = pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx,
-                                     n = 1, moment = pkg_env$moment)
+      pkg_env$beepers_now$moment <- pkg_env$moment
+      # There are beepers, but I have to see if there are already here or not
+      if (hay_beepers()) {
+        # If there are beepers, add one more
+        idx <- get_beepers_df_row()
+        pkg_env$beepers_now$n[idx] <- pkg_env$beepers_now$n[idx] + 1
+      } else {
+        # If there arent any, add new row with one beeper to beepers dataset
+        pkg_env$beepers_now <- add_row(pkg_env$beepers_now,
+                                       x = pkg_env$x_now, y = pkg_env$y_now,
+                                       cell = pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx,
+                                       n = 1, moment = pkg_env$moment)
+      }
     }
+    pkg_env$beepers_any <- pkg_env$beepers_any + 1
 
     # Append this new state of beepers to beepers_all
     pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
@@ -104,6 +117,9 @@ quitar_beeper <- function() {
   # We can only remove if there are no beepers there, otherwise it's an error
   if (hay_beepers()) {
 
+    # Update beepers count
+    pkg_env$beepers_any <- pkg_env$beepers_any - 1
+
     # Update moment
     pkg_env$moment <- pkg_env$moment + 1
     pkg_env$beepers_now$moment <- pkg_env$moment
@@ -113,9 +129,15 @@ quitar_beeper <- function() {
 
     # Remove beeper
     pkg_env$beepers_now$n[idx] <- pkg_env$beepers_now$n[idx] - 1
+
     # Remove row from beepers dataset it there are no beepers left, so the box disappears
     if (pkg_env$beepers_now$n[idx] == 0) {
       pkg_env$beepers_now <- dplyr::slice(pkg_env$beepers_now, -idx)
+      if (nrow(pkg_env$beepers_now) == 0) {
+        # This means that in this moment there were no beepers in the world
+        # In order the plot to work, I will create a dataset with NA values
+        pkg_env$beepers_now[1, ] <- list(NA, NA, NA, NA, pkg_env$moment)
+      }
     }
 
     # Append this new state of beepers to beepers_all
