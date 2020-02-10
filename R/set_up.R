@@ -78,8 +78,9 @@ generar_mundo <- function(world) {
 	pkg_env$beepers_bag <- world$beepers_bag
 
 	# Plot the world
-	p <- plot_static_world(1)
-	graphics::plot(p)
+	plot_static_world(1)
+	# p <- plot_static_world(1)
+	# graphics::plot(p)
 
 }
 
@@ -228,7 +229,8 @@ plot_static_world <- function(time) {
               aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
               alpha = karel_for_drawing$alpha,
               fill = karel_for_drawing$fill, color = "black")
-  return(p)
+  # return(p)
+  suppressWarnings(print(p))
 }
 
 #' Title
@@ -273,7 +275,11 @@ ejecutar_acciones <- function() {
               fill = karel_for_drawing$fill, color = "black") +
     gganimate::transition_manual(moment)
 
-  gganimate::animate(p, nframes = nrow(pkg_env$karel), fps = 2, renderer = gganimate::gifski_renderer(loop = FALSE))
+  suppressWarnings(
+    gganimate::animate(p, nframes = nrow(pkg_env$karel), fps = 2,
+                       renderer = gganimate::gifski_renderer(loop = FALSE))
+  )
+
   # return(p)
 }
 
