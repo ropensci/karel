@@ -177,18 +177,10 @@ world_104 <- list(
 )
 
 world_105 <- list(
-  nx = 100,
-  ny = 100,
-  hor_walls = dplyr::tibble(
-    x = seq(0, 10, 2),
-    y = 1,
-    lgth = 1
-  ),
-  ver_walls = dplyr::tibble(
-    x = 1:10,
-    y = 0,
-    lgth = 1
-  ),
+  nx = 10,
+  ny = 10,
+  hor_walls = NULL,
+  ver_walls = NULL,
   karel_x = 1,
   karel_y = 1,
   karel_dir = 1,
