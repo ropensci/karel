@@ -78,9 +78,8 @@ generar_mundo <- function(world) {
 	pkg_env$beepers_bag <- world$beepers_bag
 
 	# Plot the world
+	plot_base_world()
 	plot_static_world(1)
-	# p <- plot_static_world(1)
-	# graphics::plot(p)
 
 }
 
@@ -94,11 +93,22 @@ generate_open_moves <- function(nx, ny, hor_walls, ver_walls) {
 	open_moves[, 1, 4] <- F
 	open_moves[, ny, 2] <- F
 
-	closed_pos <- rbind(purrr::pmap_dfr(hor_walls, put_hor_walls), purrr::pmap_dfr(ver_walls, put_ver_walls))
+	# Build horizontal walls
+	if (!is.null(hor_walls)) {
+	  closed_pos <- purrr::pmap_dfr(hor_walls, put_hor_walls)
+	  # Can't make it without for loop, but this is done only once, so I guess I'm fine
+	  for (i in 1:nrow(closed_pos)) {
+	    open_moves[closed_pos$pos_x[i], closed_pos$pos_y[i], closed_pos$side[i]] <- FALSE
+	  }
+	}
 
-	# Can't make it without for loop, but this is done only once, so I guess I'm fine
-	for (i in 1:nrow(closed_pos)) {
-		open_moves[closed_pos$pos_x[i], closed_pos$pos_y[i], closed_pos$side[i]] <- FALSE
+	# Build vertical walls
+	if (!is.null(ver_walls)) {
+	  closed_pos <- purrr::pmap_dfr(ver_walls, put_ver_walls)
+	  # Can't make it without for loop, but this is done only once, so I guess I'm fine
+	  for (i in 1:nrow(closed_pos)) {
+	    open_moves[closed_pos$pos_x[i], closed_pos$pos_y[i], closed_pos$side[i]] <- FALSE
+	  }
 	}
 
 	return(open_moves)
@@ -180,7 +190,44 @@ draw_karel_df <- function(x, y, direction, moment) {
 	)
 }
 
-#' Plot the world
+plot_base_world <- function() {
+
+  # Make this data handy
+  nx <- pkg_env$nx
+  ny <- pkg_env$ny
+
+  pkg_env$base_plot <-
+    ggplot(NULL) +
+    geom_point(data = tidyr::expand_grid(x = (1:nx) - 0.5, y = (1:ny) - 0.5),
+               aes(x = x, y = y), size = 2) +
+    scale_x_continuous("", expand = c(0, 0), limits = c(0, nx),
+                       breaks = 0.5:(nx - 0.5), labels = 1:nx) +
+    scale_y_continuous("", expand = c(0, 0), limits = c(0, ny),
+                       breaks = 0.5:(ny - 0.5), labels = 1:ny) +
+    coord_fixed() +
+    theme(
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      axis.ticks = element_blank(),
+      axis.text = element_text(face = "bold")
+    )
+
+  # Add walls if there are any
+  if (!is.null(pkg_env$ver_walls)) {
+    pkg_env$base_plot <-
+      pkg_env$base_plot +
+      geom_segment(data = pkg_env$ver_walls,
+                   aes(x = x, y = y, xend = x, yend = y + lgth), size = 2)
+  }
+  if (!is.null(pkg_env$hor_walls)) {
+    pkg_env$base_plot <-
+      pkg_env$base_plot +
+      geom_segment(data = pkg_env$hor_walls,
+                   aes(x = x, y = y, xend = x + lgth, yend = y), size = 2)
+  }
+}
+
+#' Plot the world at a given time
 #'
 #' @importFrom ggplot2 ggplot geom_segment geom_point aes scale_x_continuous scale_y_continuous theme element_blank element_text geom_tile geom_text geom_rect coord_fixed
 #' @importFrom dplyr tibble add_row slice mutate bind_rows n
@@ -201,27 +248,8 @@ plot_static_world <- function(time) {
     beepers_moment[1, ] <- list(NA, NA, NA, NA, time)
   }
 
-  # Make this data handy
-  nx <- pkg_env$nx
-  ny <- pkg_env$ny
-
   p <-
-    ggplot(NULL) +
-    geom_segment(data = pkg_env$ver_walls, aes(x = x, y = y, xend = x, yend = y + lgth), size = 2) +
-    geom_segment(data = pkg_env$hor_walls, aes(x = x, y = y, xend = x + lgth, yend = y), size = 2) +
-    geom_point(data = tidyr::expand_grid(x = (1:nx) - 0.5, y = (1:ny) - 0.5),
-               aes(x = x, y = y), size = 2) +
-    scale_x_continuous("", expand = c(0, 0), limits = c(0, nx),
-                       breaks = 0.5:(nx - 0.5), labels = 1:nx) +
-    scale_y_continuous("", expand = c(0, 0), limits = c(0, ny),
-                       breaks = 0.5:(ny - 0.5), labels = 1:ny) +
-    coord_fixed() +
-    theme(
-      panel.grid.major = element_blank(),
-      panel.grid.minor = element_blank(),
-      axis.ticks = element_blank(),
-      axis.text = element_text(face = "bold")
-    ) +
+    pkg_env$base_plot +
     geom_tile(data = beepers_moment,
               aes(x = x - 0.5, y = y - 0.5, width = 0.4, height = 0.4),
               fill = "purple", color = "black", size = 0.5) +
@@ -230,7 +258,7 @@ plot_static_world <- function(time) {
               aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
               alpha = karel_for_drawing$alpha,
               fill = karel_for_drawing$fill, color = "black")
-  # return(p)
+
   suppressWarnings(print(p))
 }
 
@@ -244,29 +272,10 @@ ejecutar_acciones <- function() {
 
   if (pkg_env$moment == 1) stop("Perform at least one action.\n Realizar al menos una actividad.")
 
-  # Make this data handy
-  nx <- pkg_env$nx
-  ny <- pkg_env$ny
-
   karel_for_drawing <- purrr::pmap_dfr(pkg_env$karel, draw_karel_df)
 
   p <-
-    ggplot(NULL) +
-    geom_segment(data = pkg_env$ver_walls, aes(x = x, y = y, xend = x, yend = y + lgth), size = 2) +
-    geom_segment(data = pkg_env$hor_walls, aes(x = x, y = y, xend = x + lgth, yend = y), size = 2) +
-    geom_point(data = tidyr::expand_grid(x = (1:nx) - 0.5, y = (1:ny) - 0.5),
-               aes(x = x, y = y), size = 2) +
-    scale_x_continuous("", expand = c(0, 0), limits = c(0, nx),
-                       breaks = 0.5:(nx - 0.5), labels = 1:nx) +
-    scale_y_continuous("", expand = c(0, 0), limits = c(0, ny),
-                       breaks = 0.5:(ny - 0.5), labels = 1:ny) +
-    coord_fixed() +
-    theme(
-      panel.grid.major = element_blank(),
-      panel.grid.minor = element_blank(),
-      axis.ticks = element_blank(),
-      axis.text = element_text(face = "bold")
-    ) +
+    pkg_env$base_plot +
     geom_tile(data = pkg_env$beepers_all,
               aes(x = x - 0.5, y = y - 0.5, width = 0.4, height = 0.4),
               fill = "purple", color = "black", size = 0.5) +
