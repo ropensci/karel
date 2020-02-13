@@ -56,7 +56,7 @@ generar_mundo <- function(world) {
   pkg_env$ver_walls <- world$ver_walls
 
   # Create Karel dataset
-  pkg_env$karel <- tibble(x = 1, y = 1, direction = 1, moment = 1)
+  pkg_env$karel <- tibble(x = world$karel_x, y = world$karel_y, direction = world$karel_dir, moment = 1)
 
 	# Current Karel's position and direction (1: east, 2: north, 3: west, 4: south)
 	pkg_env$x_now <- world$karel_x
@@ -182,7 +182,7 @@ draw_karel_df <- function(x, y, direction, moment) {
 
 #' Plot the world
 #'
-#' @importFrom ggplot2 ggplot geom_segment geom_point aes scale_x_continuous scale_y_continuous theme element_blank element_text geom_tile geom_text geom_rect
+#' @importFrom ggplot2 ggplot geom_segment geom_point aes scale_x_continuous scale_y_continuous theme element_blank element_text geom_tile geom_text geom_rect coord_fixed
 #' @importFrom dplyr tibble add_row slice mutate bind_rows n
 #' @importFrom magrittr %>%
 plot_static_world <- function(time) {
@@ -215,6 +215,7 @@ plot_static_world <- function(time) {
                        breaks = 0.5:(nx - 0.5), labels = 1:nx) +
     scale_y_continuous("", expand = c(0, 0), limits = c(0, ny),
                        breaks = 0.5:(ny - 0.5), labels = 1:ny) +
+    coord_fixed() +
     theme(
       panel.grid.major = element_blank(),
       panel.grid.minor = element_blank(),
@@ -259,6 +260,7 @@ ejecutar_acciones <- function() {
                        breaks = 0.5:(nx - 0.5), labels = 1:nx) +
     scale_y_continuous("", expand = c(0, 0), limits = c(0, ny),
                        breaks = 0.5:(ny - 0.5), labels = 1:ny) +
+    coord_fixed() +
     theme(
       panel.grid.major = element_blank(),
       panel.grid.minor = element_blank(),
@@ -275,8 +277,13 @@ ejecutar_acciones <- function() {
               fill = karel_for_drawing$fill, color = "black") +
     gganimate::transition_manual(moment)
 
+  # Choose frames per second according to the number of frames to animate
+  nframes <- nrow(pkg_env$karel)
+  fps <- ifelse(nframes < 40, 2, 3)
+
   suppressWarnings(
-    gganimate::animate(p, nframes = nrow(pkg_env$karel), fps = 2,
+    gganimate::animate(p, nframes = nframes, fps = fps,
+                       height = 800, width = 800,
                        renderer = gganimate::gifski_renderer(loop = FALSE))
   )
 

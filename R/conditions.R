@@ -51,6 +51,18 @@ hay_beepers <- function() {
 #' @export
 #'
 #' @examples
+# beepersPresent()
+no_hay_beepers <- function() {
+  cell <- pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx
+  return(!cell %in% pkg_env$beepers_now$cell)
+}
+
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 # beepersInBag()
 karel_tiene_beepers <- function() {
   return(pkg_env$beepers_bag > 0)
