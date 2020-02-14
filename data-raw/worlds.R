@@ -190,4 +190,77 @@ world_105 <- list(
   beepers_bag = Inf
 )
 
+world_106 <- list(
+  nx = 7,
+  ny = 4,
+  hor_walls = dplyr::tibble(
+    x = c(0, 3),
+    y = 1,
+    lgth = c(1, 2)
+  ),
+  ver_walls = dplyr::tibble(
+    x = c(1, 2, 3, 5, 6),
+    y = 0,
+    lgth = 1
+  ),
+  karel_x = 1,
+  karel_y = 2,
+  karel_dir = 1,
+  beepers_x = 3,
+  beepers_y = 1,
+  beepers_n = 1,
+  beepers_bag = Inf
+)
+
+world_107 <- list(
+  nx = 9,
+  ny = 7,
+  hor_walls = NULL,
+  ver_walls = NULL,
+  karel_x = 1,
+  karel_y = 1,
+  karel_dir = 1,
+  beepers_x = rep(2:8, times = c(3, 5, 2, 3, 6, 0, 2)),
+  beepers_y = c(1:3, 1:5, 1:2, 1:3, 1:6, 1:2),
+  beepers_n = rep(1, 21),
+  beepers_bag = 0
+)
+
+world_108 <- list(
+  nx = 6,
+  ny = 6,
+  hor_walls = dplyr::tibble(
+    x = c(1, 3, 1, 4, 2, 1, 5, 0, 2, 4),
+    y = c(1, 1, 2, 2, 3, 4, 4, 5, 5, 5),
+    lgth = c(1, 1, 2, 1, 2, 1, 1, 1, 1, 1)
+  ),
+  ver_walls = dplyr::tibble(
+    x = c(1, 4, 2, 5, 1, 4, 3, 5, 2, 5),
+    y = c(0, 0, 1, 1, 2, 2, 3, 3, 4, 5),
+    lgth = c(1, 1, 1, 1, 2, 3, 1, 1, 1, 1)
+  ),
+  karel_x = 1,
+  karel_y = 1,
+  karel_dir = 1,
+  beepers_x = 6,
+  beepers_y = 6,
+  beepers_n = 1,
+  beepers_bag = Inf
+)
+
+world_109 <- list(
+  nx = 5,
+  ny = 3,
+  hor_walls = NULL,
+  ver_walls = NULL,
+  karel_x = 1,
+  karel_y = 1,
+  karel_dir = 1,
+  beepers_x = 2,
+  beepers_y = 1,
+  beepers_n = 4,
+  beepers_bag = Inf
+)
+
+
 # usethis::use_data(world_001, internal = TRUE, overwrite = TRUE)
