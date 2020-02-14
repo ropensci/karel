@@ -119,6 +119,7 @@ quitar_beeper <- function() {
 
     # Update beepers count
     pkg_env$beepers_any <- pkg_env$beepers_any - 1
+    pkg_env$beepers_bag <- pkg_env$beepers_bag + 1
 
     # Update moment
     pkg_env$moment <- pkg_env$moment + 1
