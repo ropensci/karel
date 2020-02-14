@@ -288,7 +288,11 @@ ejecutar_acciones <- function() {
 
   # Choose frames per second according to the number of frames to animate
   nframes <- nrow(pkg_env$karel)
-  fps <- ifelse(nframes < 40, 2, 3)
+
+  fps <- dplyr::case_when(
+    nframes < 40 ~ 2,
+    nframes >= 40 & nframes < 100 ~ 3,
+    nframes >= 100 ~ 4)
 
   suppressWarnings(
     gganimate::animate(p, nframes = nframes, fps = fps,
