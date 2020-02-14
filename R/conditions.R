@@ -15,10 +15,26 @@ frente_abierto <- function() {
 #' @export
 #'
 #' @examples
+# frontIsBlocked()
+frente_cerrado <- function() {
+  return(!pkg_env$open_moves[pkg_env$x_now, pkg_env$y_now, pkg_env$dir_now])
+}
+
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 # leftIsClear()
 izquierda_abierto <- function() {
   pkg_env$open_moves[pkg_env$x_now, pkg_env$y_now,
                      switch(pkg_env$dir_now, 2, 3, 4, 1)]
+}
+
+izquierda_cerrado <- function() {
+  !pkg_env$open_moves[pkg_env$x_now, pkg_env$y_now,
+                      switch(pkg_env$dir_now, 2, 3, 4, 1)]
 }
 
 #' Title
@@ -31,6 +47,11 @@ izquierda_abierto <- function() {
 derecha_abierto <- function() {
   pkg_env$open_moves[pkg_env$x_now, pkg_env$y_now,
                      switch(pkg_env$dir_now, 4, 1, 2, 3)]
+}
+
+derecha_cerrado <- function() {
+  !pkg_env$open_moves[pkg_env$x_now, pkg_env$y_now,
+                      switch(pkg_env$dir_now, 4, 1, 2, 3)]
 }
 
 #' Title
