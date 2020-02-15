@@ -2,10 +2,10 @@
 % Please edit documentation in R/set_up.R
 \name{plot_static_world}
 \alias{plot_static_world}
-\title{Plot the world}
+\title{Plot the world at a given time}
 \usage{
 plot_static_world(time)
 }
 \description{
-Plot the world
+Plot the world at a given time
 }
