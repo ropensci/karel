@@ -25,14 +25,11 @@ pkg_env <- new.env(parent = emptyenv())
 #' @examples
 generar_mundo <- function(world) {
 	if (is.character(world)) {
-		# Load this world from internal data
-	  world <- tryCatch(get(world),
-	                    error = function(cond) {
-	                      message(paste("World", world, "doesn't exist."))
-	                      message(paste("El mundo", world, "no existe."))
-	                      # message(cond, "\n") # prints original error message
-	                    },
-	                    finally = return(invisible(NULL)))
+  	# Load this world from internal data
+  	world <- try(get(world))
+  	if (inherits(world, "try-error")) {
+  	  stop("Required world doesn't exist.\nEl mundo pedido no existe.")
+  	}
 	} else {
 		# User has provided their own world as a list.
 	  # Todo: complete this check

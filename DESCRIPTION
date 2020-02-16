@@ -27,3 +27,5 @@ Language:
   en,
   es
 RoxygenNote: 7.0.2
+Suggests: 
+    testthat
