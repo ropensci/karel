@@ -2,13 +2,24 @@
 % Please edit documentation in R/super_karel.R
 \name{cargar_super_karel}
 \alias{cargar_super_karel}
-\title{Title}
+\title{Habilitar los superpoderes de Karel}
 \usage{
 cargar_super_karel()
 }
 \value{
-
+No devuelve ningún valor, pero adjuntan al Global Environment las funciones girar_derecha() y darse_vuelta()
 }
 \description{
-Con esta queda visible en el globa env la funcion llamada funcioninterna y anda
+Luego de correr \code{cargar_super_karel()}, Karel también puede girar a la derecha y darse vuelta, a través de las acciones \code{girar_derecha()} y \code{darse_vuelta()}. Si no se cargan los superpoderes, estas dos funciones no están disponibles.
+}
+\examples{
+generar_mundo(world_101)
+cargar_super_karel()
+darse_vuelta()
+girar_derecha()
+ejecutar_acciones()
+
+}
+\seealso{
+\code{\link{acciones}} \code{\link{generar_mundo}} \code{\link{ejecutar_acciones}}
 }

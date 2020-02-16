@@ -1,9 +1,36 @@
-#' Title
+#' Habilitar los superpoderes de Karel
 #'
+#' Luego de correr \code{cargar_super_karel()}, Karel también puede girar a la derecha y darse vuelta, a través de las acciones \code{girar_derecha()} y \code{darse_vuelta()}. Si no se cargan los superpoderes, estas dos funciones no están disponibles.
 #'
-#' @return
+#' @return No devuelve ningún valor, pero adjuntan al Global Environment las funciones girar_derecha() y darse_vuelta()
 #'
 #' @examples
+#' generar_mundo(world_101)
+#' cargar_super_karel()
+#' darse_vuelta()
+#' girar_derecha()
+#' ejecutar_acciones()
+#'
+#' @seealso \code{\link{acciones}} \code{\link{generar_mundo}} \code{\link{ejecutar_acciones}}
+#' @export
+cargar_super_karel <- function() {
+  # These do what I want but they get me the note about making assignments to
+  # the global environment
+  # assign("girar_derecha", girar_derecha, envir = .GlobalEnv)
+  # assign("darse_vuelta", darse_vuelta, envir = .GlobalEnv)
+
+  # This hack solves the note
+  global_env_set_hack("girar_derecha", girar_derecha, 1L)
+  global_env_set_hack("darse_vuelta", darse_vuelta, 1L)
+}
+
+#' This function lets me add objects to another environment
+global_env_set_hack <- function(key, val, pos) {
+  assign(key, val, envir = as.environment(pos))
+}
+
+#' @rdname acciones
+#' @export
 girar_derecha <- function() {
   # Update moment and direction
   pkg_env$moment <- pkg_env$moment + 1
@@ -18,12 +45,8 @@ girar_derecha <- function() {
   pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
 }
 
-#' Title
-#'
-#'
-#' @return
-#'
-#' @examples
+#' @rdname acciones
+#' @export
 darse_vuelta <- function() {
   # Update moment and direction
   pkg_env$moment <- pkg_env$moment + 1
@@ -36,28 +59,4 @@ darse_vuelta <- function() {
   # Update beepers dataset, they remain the same but need to reflect this new moment
   pkg_env$beepers_now$moment <- pkg_env$beepers_now$moment + 1
   pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
-}
-
-
-#' Title
-#'
-#' Con esta queda visible en el globa env la funcion llamada funcioninterna y anda
-#'
-#' @return
-#'
-#' @export
-#' @examples
-cargar_super_karel <- function() {
-  # These do what I want but they get me the note about making assignments to
-  # the global environment
-  # assign("girar_derecha", girar_derecha, envir = .GlobalEnv)
-  # assign("darse_vuelta", darse_vuelta, envir = .GlobalEnv)
-
-  # This hack solves the note
-  global_env_set_hack("girar_derecha", girar_derecha, 1L)
-  global_env_set_hack("darse_vuelta", darse_vuelta, 1L)
-}
-
-global_env_set_hack <- function(key, val, pos) {
-  assign(key, val, envir = as.environment(pos))
 }

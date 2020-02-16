@@ -1,6 +1,6 @@
 #' Acciones que Karel puede realizar
 #'
-#' \code{avanzar()}, \code{girar_izquierda()}, \code{juntar_coso()} y \code{poner_coso()} son las cuatro actividades básicas que Karel sabe realizar. Si se habilitan los super poderes de Karel con \code{cargar_super_karel()}, entonces también puede \code{girar_derecha} y \code{darse_vuelta}.
+#' \code{avanzar()}, \code{girar_izquierda()}, \code{juntar_coso()} y \code{poner_coso()} son las cuatro actividades básicas que Karel sabe realizar. Si se habilitan los superpoderes de Karel con \code{cargar_super_karel()}, entonces también puede \code{girar_derecha()} y \code{darse_vuelta()}.
 #'
 #' @return Estas funciones no devuelven nada, pero realizan cambios en el mundo de Karel que se ven cuando se ejecutan todas las acciones con \code{ejecutar_acciones()}.
 #'
@@ -12,10 +12,14 @@
 #' poner_coso()
 #' ejecutar_acciones()
 #'
-#' @seealso \code{\link{generar_mundo}} \code{\link{ejecutar_acciones}}
+#' @seealso \code{\link{cargar_super_karel}} \code{\link{generar_mundo}} \code{\link{ejecutar_acciones}}
 #'
-#' @export
+#' @name acciones
+NULL
+#> NULL
 
+#' @rdname acciones
+#' @export
 avanzar <- function() {
   pkg_env$moment <- pkg_env$moment + 1
   switch(pkg_env$dir_now,
@@ -57,12 +61,24 @@ avanzar <- function() {
   pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
 }
 
-#' Title
-#'
-#' @return
+#' @rdname acciones
 #' @export
-#'
-#' @examples
+girar_izquierda <- function() {
+  # Update moment and direction
+  pkg_env$moment <- pkg_env$moment + 1
+  pkg_env$dir_now <- switch(pkg_env$dir_now, 2, 3, 4, 1)
+
+  # Update karel data set (only changes dir from last row)
+  pkg_env$karel <- add_row(pkg_env$karel, x = pkg_env$x_now, y = pkg_env$y_now,
+                           direction = pkg_env$dir_now, moment = pkg_env$moment)
+
+  # Update beepers dataset, they remain the same but need to reflect this new moment
+  pkg_env$beepers_now$moment <- pkg_env$beepers_now$moment + 1
+  pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
+}
+
+#' @rdname acciones
+#' @export
 poner_coso <- function() {
 
   if (pkg_env$beepers_bag == 0) {
@@ -111,19 +127,8 @@ poner_coso <- function() {
   }
 }
 
-
-get_beepers_df_row <- function() {
-  cell <- pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx
-  cell_present <- which(pkg_env$beepers_now$cell == cell)
-  return(cell_present)
-}
-
-#' Title
-#'
-#' @return
+#' @rdname acciones
 #' @export
-#'
-#' @examples
 juntar_coso <- function() {
 
   # We can only remove if there are no beepers there, otherwise it's an error
@@ -167,40 +172,3 @@ juntar_coso <- function() {
     stop("There are no beepers here to remove. Generate again the world and start all over.\nNo hay beepers para quitar. Generar otra vez el mundo y volver a comenzar.")
   }
 }
-
-#' Title
-#'
-#' @return
-#' @export
-#'
-#' @examples
-girar_izquierda <- function() {
-  # Update moment and direction
-  pkg_env$moment <- pkg_env$moment + 1
-  pkg_env$dir_now <- switch(pkg_env$dir_now, 2, 3, 4, 1)
-
-  # Update karel data set (only changes dir from last row)
-  pkg_env$karel <- add_row(pkg_env$karel, x = pkg_env$x_now, y = pkg_env$y_now,
-                           direction = pkg_env$dir_now, moment = pkg_env$moment)
-
-  # Update beepers dataset, they remain the same but need to reflect this new moment
-  pkg_env$beepers_now$moment <- pkg_env$beepers_now$moment + 1
-  pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
-}
-
-
-#' Title
-#'
-#' @return
-#' @export
-#'
-#' @examples
-probar1 <- function() return(pkg_env)
-
-#' Title
-#'
-#' @return
-#' @export
-#'
-#' @examples
-probar2 <- function() return(pkg_env$beepers_all)
