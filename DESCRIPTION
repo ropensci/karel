@@ -23,4 +23,7 @@ Imports:
 License: GPL-2 | file LICENSE
 Encoding: UTF-8
 LazyData: true
+Language:
+  en,
+  es
 RoxygenNote: 7.0.2

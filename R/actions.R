@@ -1,9 +1,21 @@
-#' Title
+#' Acciones que Karel puede realizar
 #'
-#' @return
-#' @export
+#' \code{avanzar()}, \code{girar_izquierda()}, \code{quitar_beepers()} y \code{poner_coso()} son las cuatro actividades básicas que Karel sabe realizar. Si se habilitan los super poderes de Karel con \code{cargar_super_karel()}, entonces también puede \code{girar_derecha} y \code{darse_vuelta}.
+#'
+#' @return Estas funciones no devuelven nada, pero realizan cambios en el mundo de Karel que se ven cuando se ejecutan todas las acciones con \code{ejecutar_acciones()}.
 #'
 #' @examples
+#' generar_mundo(world_101)
+#' avanzar()
+#' quitar_beepers()
+#' girar_izquierda()
+#' poner_coso()
+#' ejecutar_acciones()
+#'
+#' @seealso \code{\link{generar_mundo}} \code{\link{ejecutar_acciones}}
+#'
+#' @export
+
 avanzar <- function() {
   pkg_env$moment <- pkg_env$moment + 1
   switch(pkg_env$dir_now,
@@ -51,7 +63,7 @@ avanzar <- function() {
 #' @export
 #'
 #' @examples
-colocar_beeper <- function() {
+poner_coso <- function() {
 
   if (pkg_env$beepers_bag == 0) {
     stop("Can't put a beeper sincer there aren't any left in Karel's bag. Generate again the world and start all over.\nNo puede colocar un beeper ya que no le queda ninguno en la bolsa. Generar otra vez el mundo y volver a comenzar.")
