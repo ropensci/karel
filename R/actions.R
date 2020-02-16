@@ -1,13 +1,13 @@
 #' Acciones que Karel puede realizar
 #'
-#' \code{avanzar()}, \code{girar_izquierda()}, \code{quitar_beepers()} y \code{poner_coso()} son las cuatro actividades básicas que Karel sabe realizar. Si se habilitan los super poderes de Karel con \code{cargar_super_karel()}, entonces también puede \code{girar_derecha} y \code{darse_vuelta}.
+#' \code{avanzar()}, \code{girar_izquierda()}, \code{juntar_coso()} y \code{poner_coso()} son las cuatro actividades básicas que Karel sabe realizar. Si se habilitan los super poderes de Karel con \code{cargar_super_karel()}, entonces también puede \code{girar_derecha} y \code{darse_vuelta}.
 #'
 #' @return Estas funciones no devuelven nada, pero realizan cambios en el mundo de Karel que se ven cuando se ejecutan todas las acciones con \code{ejecutar_acciones()}.
 #'
 #' @examples
 #' generar_mundo(world_101)
 #' avanzar()
-#' quitar_beepers()
+#' juntar_coso()
 #' girar_izquierda()
 #' poner_coso()
 #' ejecutar_acciones()
@@ -124,7 +124,7 @@ get_beepers_df_row <- function() {
 #' @export
 #'
 #' @examples
-quitar_beeper <- function() {
+juntar_coso <- function() {
 
   # We can only remove if there are no beepers there, otherwise it's an error
   if (hay_beepers()) {
