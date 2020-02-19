@@ -2,16 +2,6 @@
 utils::globalVariables(c("x", "y", "lgth", "n", "xmin", "xmax", "ymin", "ymax",
                          "moment", "."))
 
-temp_fun <- function() {
-	print(world_001$hor_walls)
-}
-
-temp_fun2 <- function(mundo) {
-	mundo <- get(mundo)
-	print(mundo$hor_walls)
-	return(mundo)
-}
-
 # Create environment
 pkg_env <- new.env(parent = emptyenv())
 
@@ -23,6 +13,9 @@ pkg_env <- new.env(parent = emptyenv())
 #' @export
 #'
 #' @examples
+#' @importFrom ggplot2 ggplot geom_segment geom_point aes scale_x_continuous scale_y_continuous theme element_blank element_text geom_tile geom_text geom_rect coord_fixed
+#' @importFrom dplyr tibble add_row slice mutate bind_rows n
+#' @importFrom magrittr %>%
 generar_mundo <- function(world) {
 	if (is.character(world)) {
   	# Load this world from internal data
@@ -224,40 +217,7 @@ plot_base_world <- function() {
   }
 }
 
-#' Plot the world at a given time
-#'
-#' @importFrom ggplot2 ggplot geom_segment geom_point aes scale_x_continuous scale_y_continuous theme element_blank element_text geom_tile geom_text geom_rect coord_fixed
-#' @importFrom dplyr tibble add_row slice mutate bind_rows n
-#' @importFrom magrittr %>%
-plot_static_world <- function(time) {
 
-  if (time < 1) stop("First time available is 1.\nEl primer tiempo disponible es 1")
-  if (time > pkg_env$moment) stop("Latest time available is ", pkg_env$moment,
-                                  "\nEl ultimo tiempo disponible es ", pkg_env$moment)
-
-  # Filter to keep only this moment
-  karel_for_drawing <- dplyr::filter(pkg_env$karel, moment == time)
-  karel_for_drawing <- draw_karel_df(karel_for_drawing$x, karel_for_drawing$y, karel_for_drawing$direction, time)
-  beepers_moment <- dplyr::filter(pkg_env$beepers_all, moment == time)
-  if (nrow(beepers_moment) == 0) {
-    # This means that in this moment there were no beepers in the world
-    # In order the plot to work, I will create a dataset with NA values
-    beepers_moment[1, ] <- list(NA, NA, NA, NA, time)
-  }
-
-  p <-
-    pkg_env$base_plot +
-    geom_tile(data = beepers_moment,
-              aes(x = x - 0.5, y = y - 0.5, width = 0.4, height = 0.4),
-              fill = "purple", color = "black", size = 0.5) +
-    geom_text(data = beepers_moment, aes(x = x - 0.5, y = y - 0.5, label = n), color = "white") +
-    geom_rect(data = karel_for_drawing,
-              aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
-              alpha = karel_for_drawing$alpha,
-              fill = karel_for_drawing$fill, color = "black")
-
-  suppressWarnings(print(p))
-}
 
 #' Title
 #'
