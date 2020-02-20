@@ -73,6 +73,25 @@ generar_mundo <- function(world) {
 
 }
 
+#' Generate array which shows moves that Karel can and can't make
+#'
+#' This function creates \code{open_moves}, a nx x ny x 4 array of TRUE/FALSE
+#' values indicating if Karel can move to each direction from a given position.
+#' For example, if Karel is in the bottom left corner, which is cell [1, 1], it
+#' can't go south or left, so we have both open_moves[1, 1, 3] and open_moves[1,
+#' 1, 4] set to FALSE. Depending on the existing walls it could move south or
+#' north, so open_moves[1, 1, 1] and open_moves[1, 1, 2] could be TRUE or FALSE.
+#'
+#' Taking into account the size of the world and the walls, this function
+#' properly defines the array open_moves.
+#'
+#' @param nx, ny size of the world
+#' @param hor_walls, ver_walls dataset of horizontal and vertical walls as described  in \code{\link{world_components}} (see notes on file helpers.R).
+#'
+#' @return A 6nx x ny x 4 array of TRUE/FALSE values
+#'
+#' @keywords internal
+#'
 generate_open_moves <- function(nx, ny, hor_walls, ver_walls) {
 	open_moves <- array(T, dim = c(nx, ny, 4))
 
@@ -104,20 +123,69 @@ generate_open_moves <- function(nx, ny, hor_walls, ver_walls) {
 	return(open_moves)
 }
 
-
+#' Put horizontal walls (streets)
+#'
+#' Helper function for \code{generate_open_moves()}. It takes the available data
+#' for a piece of horizontal wall (x and y coordinates of its beginning point
+#' and its length) and produces a dataset with the positions and directions of
+#' prohibited moves for Karel because of this wall.
+#'
+#' @param x, y x and y coordinates of the beginning point of the wall
+#' @param lgth length of the wall
+#'
+#' @return A lgth x 3 dataset with coordinates where Karel can't move and the
+#'   direction (side) towards it can't move because of this piece of horizontal
+#'   wall.
+#'
+#' @keywords internal
+#'
 put_hor_walls <- function(x, y, lgth) {
 	tidyr::expand_grid(pos_x = (x + 1):(x + lgth), tibble(pos_y = y:(y + 1), side = c(2, 4)))
 }
 
+#' Put vertical walls (streets)
+#'
+#' Helper function for \code{generate_open_moves()}. It takes the available data
+#' for a piece of vertical wall (x and y coordinates of its beginning point and
+#' its length) and produces a dataset with the positions and directions of
+#' prohibited moves for Karel because of this wall.
+#'
+#' @param x, y x and y coordinates of the beginning point of the wall
+#' @param lgth length of the wall
+#'
+#' @return A lgth x 3 dataset with coordinates where Karel can't move and the
+#'   direction (side) towards it can't move because of this piece of vertical
+#'   wall.
+#'
+#' @keywords internal
+#'
 put_ver_walls <- function(x, y, lgth) {
 	tidyr::expand_grid(pos_y = (y + 1):(y + lgth), tibble(pos_x = x:(x + 1), side = c(1, 3)))
 }
 
-# test
-# ver <- generar_mundo("world_001")
-
-# pos_x, pos_y: vectors of indexes of cells with non-zero amount of beepers
-# n: number of beepers in each cell indicated by x and y
+#' Create dataset about beepers
+#'
+#' Given the elements provided in the world, this function generates a dataset
+#' with info about the beepers present in the world. This function is called
+#' from \code{generar_mundo()}.
+#'
+#' @param nx horizontal size of the world
+#' @param pos_x, pos_y vectors of coordinates of cells with non-zero amount of
+#'   beepers
+#' @param n number of beepers in each cell indicated by coordinates in
+#'   \code{pos_x} and \code{pos_y}
+#' @param moment time
+#'
+#' @return A tibble with as many rows as cells with beepers in the world and 5
+#'   columns: \code{x} and \code{y} for the coordinates of the cell, \code{cell}
+#'   is the number of the cell counting as cell number 1 the cell in the bottom
+#'   left corner and going upwards by row (meaning cell number 2 would be the
+#'   cell in coordinates x=2 and y=1), \code{n} the number of beepers in this
+#'   cell and \code{moment} the moment in which this state of the world
+#'   corresponds to.
+#'
+#' @keywords internal
+#'
 create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL, moment = 1) {
 	if (is.null(pos_x)) {
 		beepers <- tibble(x = NA, y = NA, cell = NA, n = NA, moment = moment)
@@ -133,98 +201,24 @@ create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL, mome
 	return(beepers)
 }
 
-draw_karel_df <- function(x, y, direction, moment) {
-	switch(direction,
-				 # In the tibbles, this is the order of the coordinates:
-				 # object = c("body", "left_foot", "right_foot", "left_eye", "right_eye", "mouth")
-				 # Direction 1, going east
-				 tibble(
-				 	xmin = x - c(.9, .2, .2, .75, .75, .45),
-				 	xmax = x - c(.2, .1, .1, .65, .65, .35),
-				 	ymin = y - c(.85, .75, .45, .65, .45, .65),
-				 	ymax = y - c(.15, .55, .25, .55, .35, .35),
-				 	moment = moment,
-				 	fill = c("orange", "black", "black", "brown", "brown", "red"),
-				 	alpha = c(0.25, rep(1, 5))
-				 ),
-				 # Direction 2, going north
-				 tibble(
-				  xmin = x - c(.85, .45, .75, .45, .65, .65),
-				  xmax = x - c(.15, .25, .55, .35, .55, .35),
-				 	ymin = y - c(.9, .2, .2, .75, .75, .45),
-				 	ymax = y - c(.2, .1, .1, .65, .65, .35),
-				 	moment = moment,
-				 	fill = c("orange", "black", "black", "brown", "brown", "red"),
-				 	alpha = c(0.25, rep(1, 5))
-				 ),
-				 # Direction 3, going west
-				 tibble(
-				   xmin = x - c(.8, .9, .9, .35, .35, .65),
-				   xmax = x - c(.1, .8, .8, .25, .25, .55),
-				   ymin = y - c(.85, .45, .75, .45, .65, .65),
-				   ymax = y - c(.15, .25, .55, .35, .55, .35),
-				 	moment = moment,
-				 	fill = c("orange", "black", "black", "brown", "brown", "red"),
-				 	alpha = c(0.25, rep(1, 5))
-				 ),
-				 # Direction 4, going south
-				 tibble(
-				 	xmin = x - c(.85, .75, .45, .65, .45, .65),
-				 	xmax = x - c(.15, .55, .25, .55, .35, .35),
-				 	ymin = y - c(.8, .9, .9, .35, .35, .65),
-				 	ymax = y - c(.1, .8, .8, .25, .25, .55),
-				 	moment = moment,
-				 	fill = c("orange", "black", "black", "brown", "brown", "red"),
-				 	alpha = c(0.25, rep(1, 5))
-				 )
-	)
-}
 
-plot_base_world <- function() {
-
-  # Make this data handy
-  nx <- pkg_env$nx
-  ny <- pkg_env$ny
-
-  pkg_env$base_plot <-
-    ggplot(NULL) +
-    geom_point(data = tidyr::expand_grid(x = (1:nx) - 0.5, y = (1:ny) - 0.5),
-               aes(x = x, y = y), size = 2) +
-    scale_x_continuous("", expand = c(0, 0), limits = c(0, nx),
-                       breaks = 0.5:(nx - 0.5), labels = 1:nx) +
-    scale_y_continuous("", expand = c(0, 0), limits = c(0, ny),
-                       breaks = 0.5:(ny - 0.5), labels = 1:ny) +
-    coord_fixed() +
-    theme(
-      panel.grid.major = element_blank(),
-      panel.grid.minor = element_blank(),
-      axis.ticks = element_blank(),
-      axis.text = element_text(face = "bold")
-    )
-
-  # Add walls if there are any
-  if (!is.null(pkg_env$ver_walls)) {
-    pkg_env$base_plot <-
-      pkg_env$base_plot +
-      geom_segment(data = pkg_env$ver_walls,
-                   aes(x = x, y = y, xend = x, yend = y + lgth), size = 2)
-  }
-  if (!is.null(pkg_env$hor_walls)) {
-    pkg_env$base_plot <-
-      pkg_env$base_plot +
-      geom_segment(data = pkg_env$hor_walls,
-                   aes(x = x, y = y, xend = x + lgth, yend = y), size = 2)
-  }
-}
-
-
-
-#' Title
+#' Ejecutar acciones
 #'
-#' @return
-#' @export
+#' Esta función produce la animación que muestra todas las acciones realizadas por Karel desde que su mundo fue generado con \code{generar_mundo}.
+#'
+#' @return Produce la animación con \code{gganimate}
 #'
 #' @examples
+#' generar_mundo(world_101)
+#' avanzar()
+#' juntar_coso()
+#' girar_izquierda()
+#' poner_coso()
+#' ejecutar_acciones()
+#'
+#' @seealso \code{\link{generar_mundo}}
+#'
+#' @export
 ejecutar_acciones <- function() {
 
   if (pkg_env$moment == 1) stop("Perform at least one action.\n Realizar al menos una actividad.")
@@ -256,8 +250,6 @@ ejecutar_acciones <- function() {
                        height = 800, width = 800,
                        renderer = gganimate::gifski_renderer(loop = FALSE))
   )
-
-  # return(p)
 }
 
 
