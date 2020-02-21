@@ -7,7 +7,7 @@
 #' @details Las funciones \code{frente_abierto()}, \code{frente_cerrado()}, \code{izquierda_abierto()}, \code{izquierda_cerrado()}, \code{derecha_abierto()} y \code{derecha_cerrado()} analizan si hay paredes al frente, a la izquierda o a la derecha de Karel. Las funciones \code{hay_cosos()} y \code{no_hay_cosos()} analizan si hay \code{cosos} en la posición actual de Karel. Las funciones \code{karel_tiene_cosos()} y \code{karel_no_tiene_cosos()} analizan si Karel tiene \code{cosos} en su muchila (no visibles en la representación gráfica). Las funciones \code{mira_al_este()}, \code{mira_al_oeste()}, \code{mira_al_norte()} y \code{mira_al_sur()} analizan la dirección hacia la cual Karel está mirando.
 #'
 #' @examples
-#' generar_mundo(world_101)
+#' generar_mundo("world_101")
 #' frente_abierto()
 #' frente_cerrado()
 #' izquierda_abierto()
@@ -90,6 +90,8 @@ karel_tiene_cosos <- function() {
   return(pkg_env$beepers_bag > 0)
 }
 
+#' @rdname condiciones
+#' @export
 karel_no_tiene_cosos <- function() {
   return(!pkg_env$beepers_bag > 0)
 }

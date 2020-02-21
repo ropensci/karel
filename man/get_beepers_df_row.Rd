@@ -10,6 +10,9 @@ get_beepers_df_row()
 row number or numeric of length 0
 }
 \description{
-Given current position of Karel, it calculates the cell id (\code{cell}) and returns the row number of the respective cell in the beepers_now dataset. It's used to add or remove beepers in this row when Karel picks or puts beepers.
+Given current position of Karel, it calculates the cell id (\code{cell}) and
+returns the row number of the respective cell in the beepers_now dataset.
+It's used to add or remove beepers in this row when Karel picks or puts
+beepers.
 }
 \keyword{internal}

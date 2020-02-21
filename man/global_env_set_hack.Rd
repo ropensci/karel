@@ -6,6 +6,14 @@
 \usage{
 global_env_set_hack(key, val, pos)
 }
+\arguments{
+\item{key}{name for the new object}
+
+\item{val}{the object}
+
+\item{pos}{the index for the environment}
+}
 \description{
 This function lets me add objects to another environment
 }
+\keyword{internal}

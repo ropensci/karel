@@ -14,24 +14,28 @@ This function returns the environment called pkg_env created by the package.
 It's useful for debugging and checking. It's an internal function.
 }
 \details{
-\code{pkg_env} is an environment created inside the package to store and share between functions all the objects related to Karel's world and its state. Since the functions that will be used by the students should be simple and without arguments (for example, \code{move()}), these functions modify internally \code{pkg_env}.
+\code{pkg_env} is an environment created inside the package to store
+  and share between functions all the objects related to Karel's world and
+  its state. Since the functions that will be used by the students should be
+  simple and without arguments (for example, \code{move()}), these functions
+  modify internally \code{pkg_env}.
 
-The components of this enviroment are:
-\enumerate{
-  \item \code{nx}:
-  \item \code{ny}:
-  \item \code{hor_walls}:
-  \item \code{ver_walls}:
-  \item \code{open_moves}:
-  \item \code{karel}:
-  \item \code{dir_now}:
-  \item \code{x_now}:
-  \item \code{y_now}:
-  \item \code{moment}:
-  \item \code{beepers_any}:
-  \item \code{beepers_bag}:
-  \item \code{beepers_now}:
-  \item \code{beepers_all}:
-  \item \code{base_plot}:
-}
+  The components of this environment are:
+  \enumerate{
+    \item \code{nx}: TODO
+    \item \code{ny}:
+    \item \code{hor_walls}:
+    \item \code{ver_walls}:
+    \item \code{open_moves}:
+    \item \code{karel}:
+    \item \code{dir_now}:
+    \item \code{x_now}:
+    \item \code{y_now}:
+    \item \code{moment}:
+    \item \code{beepers_any}:
+    \item \code{beepers_bag}:
+    \item \code{beepers_now}:
+    \item \code{beepers_all}:
+    \item \code{base_plot}:
+  }
 }

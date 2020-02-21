@@ -3,19 +3,6 @@
 # plot_static_world() and get_pkg_env(). I prefer not to export them so they are
 # not available for the general user, but I can use them with ::
 
-
-#' Components of a world
-#'
-#' TODO: describe each component of a list so that it can be world.
-#'
-#' @seealso \code{\link{generar_mundo}}
-#'
-#' @keywords internal
-#' @name world_components
-NULL
-#> NULL
-
-
 #' Get Karel's environment
 #'
 #' This function returns the environment called pkg_env created by the package.
@@ -31,7 +18,7 @@ NULL
 #'
 #'   The components of this environment are:
 #'   \enumerate{
-#'     \item \code{nx}:
+#'     \item \code{nx}: TODO
 #'     \item \code{ny}:
 #'     \item \code{hor_walls}:
 #'     \item \code{ver_walls}:

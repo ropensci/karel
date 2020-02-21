@@ -5,19 +5,63 @@ utils::globalVariables(c("x", "y", "lgth", "n", "xmin", "xmax", "ymin", "ymax",
 # Create environment
 pkg_env <- new.env(parent = emptyenv())
 
-#' Title
+#' Generar el mundo de Karel
 #'
-#' @param world
+#' Esta función toma la definición de un mundo para Karel (tamaño, paredes,
+#' "cosos" e incluso la ubicación y dirección de Karel) y lo muestra en un
+#' gráfico. Además, prepara todo para que Karel pueda realizar sus acciones, de
+#' modo que debe ser evaluada antes de que Karel empiece a cumplir sus
+#' objetivos. En especial, si en algún momento hemos cometido un error, debemos
+#' comenzar de nuevo corriendo esta función.
 #'
-#' @return
+#' Luego de correr \code{generar_mundo()}, se ejecutan las acciones de Karel y
+#' se pueden visualizar con la función \code{ejecutar_acciones()}.
+#'
+#' @param mundo Un caracter de largo 1 indicando el nombre de uno de los mundos
+#'   que ya vienen en el paquete o un objeto de tipo lista con todos los
+#'   componentes que debe tener un mundo (ver más abajo en Detalles).
+#'
+#' @return Dibuja el estado inicial del mundo de Karel y deja todo preparado
+#'   para comenzar a registrar sus acciones.
+#'
 #' @export
 #'
 #' @examples
-#' @importFrom ggplot2 ggplot geom_segment geom_point aes scale_x_continuous scale_y_continuous theme element_blank element_text geom_tile geom_text geom_rect coord_fixed
+#' generar_mundo("world_101")
+#'
+#' @seealso \code{\link{acciones}} \code{\link{ejecutar_acciones}}
+#'
+#' @details El argumento \code{mundo} puede consistir de un mundo creado (es
+#'   decir, inventado) por cualquiera. En este caso, \code{mundo} debe ser una
+#'   lista con los siguientes componentes:
+#'
+#'   \enumerate{
+#'     \item \code{nx}: TODO
+#'     \item \code{ny}:
+#'     \item \code{hor_walls}:
+#'     \item \code{ver_walls}:
+#'     \item \code{karel_x}:
+#'     \item \code{karel_y}:
+#'     \item \code{karel_dir}:
+#'     \item \code{beepers_x}:
+#'     \item \code{beepers_y}:
+#'     \item \code{beepers_n}:
+#'     \item \code{beepers_bag}:
+#'   }
+#'
+#' @importFrom ggplot2 ggplot geom_segment geom_point aes scale_x_continuous
+#'   scale_y_continuous theme element_blank element_text geom_tile geom_text
+#'   geom_rect coord_fixed
 #' @importFrom dplyr tibble add_row slice mutate bind_rows n
 #' @importFrom magrittr %>%
-generar_mundo <- function(world) {
-	if (is.character(world)) {
+#'
+generar_mundo <- function(mundo) {
+
+  # I first programmed this argument with the word "world" but now I want the
+  # argument to be in spanish here
+  world <- mundo
+
+  if (is.character(world)) {
   	# Load this world from internal data
   	world <- try(get(world))
   	if (inherits(world, "try-error")) {
@@ -86,7 +130,8 @@ generar_mundo <- function(world) {
 #' properly defines the array open_moves.
 #'
 #' @param nx, ny size of the world
-#' @param hor_walls, ver_walls dataset of horizontal and vertical walls as described  in \code{\link{world_components}} (see notes on file helpers.R).
+#' @param hor_walls, ver_walls dataset of horizontal and vertical walls as
+#'   described in the details for the function \code{\link{generar_mundo}}.
 #'
 #' @return A 6nx x ny x 4 array of TRUE/FALSE values
 #'
@@ -209,7 +254,7 @@ create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL, mome
 #' @return Produce la animación con \code{gganimate}
 #'
 #' @examples
-#' generar_mundo(world_101)
+#' generar_mundo("world_101")
 #' avanzar()
 #' juntar_coso()
 #' girar_izquierda()

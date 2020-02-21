@@ -5,7 +5,7 @@
 #' @return Estas funciones no devuelven nada, pero realizan cambios en el mundo de Karel que se ven cuando se ejecutan todas las acciones con \code{ejecutar_acciones()}.
 #'
 #' @examples
-#' generar_mundo(world_101)
+#' generar_mundo("world_101")
 #' avanzar()
 #' juntar_coso()
 #' girar_izquierda()
@@ -100,7 +100,7 @@ poner_coso <- function() {
     } else {
       pkg_env$beepers_now$moment <- pkg_env$moment
       # There are beepers, but I have to see if there are already here or not
-      if (hay_beepers()) {
+      if (hay_cosos()) {
         # If there are beepers, add one more
         idx <- get_beepers_df_row()
         pkg_env$beepers_now$n[idx] <- pkg_env$beepers_now$n[idx] + 1
@@ -132,7 +132,7 @@ poner_coso <- function() {
 juntar_coso <- function() {
 
   # We can only remove if there are no beepers there, otherwise it's an error
-  if (hay_beepers()) {
+  if (hay_cosos()) {
 
     # Update beepers count
     pkg_env$beepers_any <- pkg_env$beepers_any - 1

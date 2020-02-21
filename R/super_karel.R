@@ -5,7 +5,7 @@
 #' @return No devuelve ningún valor, pero adjuntan al Global Environment las funciones girar_derecha() y darse_vuelta()
 #'
 #' @examples
-#' generar_mundo(world_101)
+#' generar_mundo("world_101")
 #' cargar_super_karel()
 #' darse_vuelta()
 #' girar_derecha()
@@ -25,6 +25,11 @@ cargar_super_karel <- function() {
 }
 
 #' This function lets me add objects to another environment
+#'
+#' @param key name for the new object
+#' @param val the object
+#' @param pos the index for the environment
+#' @keywords internal
 global_env_set_hack <- function(key, val, pos) {
   assign(key, val, envir = as.environment(pos))
 }

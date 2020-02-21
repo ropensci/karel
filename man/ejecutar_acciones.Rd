@@ -2,13 +2,25 @@
 % Please edit documentation in R/set_up.R
 \name{ejecutar_acciones}
 \alias{ejecutar_acciones}
-\title{Title}
+\title{Ejecutar acciones}
 \usage{
 ejecutar_acciones()
 }
 \value{
-
+Produce la animación con \code{gganimate}
 }
 \description{
-Title
+Esta función produce la animación que muestra todas las acciones realizadas por Karel desde que su mundo fue generado con \code{generar_mundo}.
+}
+\examples{
+generar_mundo("world_101")
+avanzar()
+juntar_coso()
+girar_izquierda()
+poner_coso()
+ejecutar_acciones()
+
+}
+\seealso{
+\code{\link{generar_mundo}}
 }
