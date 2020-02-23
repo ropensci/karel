@@ -52,8 +52,8 @@ get_pkg_env <- function() {
 #'
 plot_static_world <- function(time) {
 
-  if (time < 1) stop("First time available is 1.\nEl primer tiempo disponible es 1")
-  if (time > pkg_env$moment) stop("Latest time available is ", pkg_env$moment,
+  if (time < 1) stop("\nFirst time available is 1.\nEl primer tiempo disponible es 1")
+  if (time > pkg_env$moment) stop("\nLatest time available is ", pkg_env$moment,
                                   "\nEl ultimo tiempo disponible es ", pkg_env$moment)
 
   # Filter to keep only this moment
@@ -204,4 +204,75 @@ get_beepers_df_row <- function() {
   cell <- pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx
   cell_present <- which(pkg_env$beepers_now$cell == cell)
   return(cell_present)
+}
+
+check_user_world <- function(world) {
+  # I'm not using assertthat package's full funcitonality because I want to
+  # write bilingual error messages
+
+  # Are all the elements present?
+  elements <- c("nx", "ny", "hor_walls", "ver_walls", "karel_x", "karel_y",
+                "karel_dir", "beepers_x", "beepers_y", "beepers_n", "beepers_bag")
+  for (elem in elements) {
+    if (!elem %in% names(world)) stop(paste0("\n", elem, " is missing in the provided world.\nFalta ", elem, " en el mundo provisto."))
+  }
+
+  # Evaluate nx
+  msg <- "\nnx, the number of avenues, must be numeric of length 1.
+         nx, el número de avenidas, debe ser númerico de largo 1."
+  # I do these two separated because the second one could be a vector of T o F
+  # if the length is greater than 1 and that gives a warning, so I first check
+  # the length
+  if (length(world$nx) != 1 | !is.numeric(world$nx)) stop(msg)
+  if (world$nx %% 1 != 0) stop(msg)
+
+  # Evaluate ny
+  msg <- "\nny, the number of streets, must be numeric of length 1.
+         ny, el número de calles, debe ser númerico de largo 1."
+  if (length(world$ny) != 1 | !is.numeric(world$ny)) stop(msg)
+  if (world$ny %% 1 != 0) stop(msg)
+
+  # Evaluate karel_x
+  msg <- "\nkarel_x, the x-coordinate for Karel's initial position, must be numeric of length 1, and between 1 and nx.\nkarel_x, la coordenada en el eje x para la posición inicial de Karel, debe ser númerico de largo 1 y estar entre 1 y nx."
+  if (length(world$karel_x) != 1 | !is.numeric(world$karel_x)) stop(msg)
+  if (world$karel_x %% 1 != 0) stop(msg)
+  if (world$karel_x < 1 | world$karel_x > world$nx) stop(msg)
+
+  # Evaluate karel_y
+  msg <- "\nkarel_y, the y-coordinate for Karel's initial position, must be numeric of length 1, and between 1 and ny.\nkarel_y, la coordenada en el eje y para la posición inicial de Karel, debe ser númerico de largo 1 y estar entre 1 y ny."
+  if (length(world$karel_y) != 1 | !is.numeric(world$karel_y)) stop(msg)
+  if (world$karel_y %% 1 != 0) stop(msg)
+  if (world$karel_y < 1 | world$karel_y > world$ny) stop(msg)
+
+  # Evaluate karel_dir
+  msg <- "\nkarel_dir, Karel's initial direction, must be numeric of length 1, either 1, 2, 3 or 4.\nkarel_dir, la direccion inicial de Karel, debe ser numerico de largo 1, puede ser 1, 2, 3 o 4."
+  if (length(world$karel_dir) != 1 | !is.numeric(world$karel_dir)) stop(msg)
+  if (world$karel_dir %% 1 != 0) stop(msg)
+  if (!world$karel_dir %in% 1:4) stop(msg)
+
+  # Evaluate beepers_bag
+  msg <- "\nbeepers_bag, the number of beepers in Karel's bag, must be numeric of length 1, greater or equal than zero, including Inf.\nbeepers_bag, el número de cosos en la mochila de Karel, debe ser númerico de largo 1 y mayor o igual a 0, incluyendo Inf."
+  if (length(world$beepers_bag) != 1 | !is.numeric(world$beepers_bag)) stop(msg)
+  if (!is.infinite(world$beepers_bag) & world$beepers_bag %% 1 != 0) stop(msg)
+  if (world$beepers_bag < 0) stop(msg)
+
+  # Evaluate "beepers_x", "beepers_y", "beepers_n"
+  msg <- "\nbeepers_x, beepers_y and beepers_n must be all NULL or numeric vectors of the same length.\nbeepers_x and beepers_y must be between 1 and nx or ny, respectively.\nbeepers_n must be greater or equal than 1.\nbeepers_x, beepers_y y beepers_n deben ser todos NULL o vectores numéricos del mismo largo.\nbeepers_x y beepers_y deben estar entre 1 y nx o ny, respectivamentey.\nbeepers_n debe ser mayor o igual a 1."
+  if (any(is.null(world$beepers_x), is.null(world$beepers_y), is.null(world$beepers_n))) {
+    # All NULL?
+    if (!all(is.null(world$beepers_x), is.null(world$beepers_y), is.null(world$beepers_n))) stop(msg)
+  } else {
+    # All numeric?
+    if (!all(is.numeric(world$beepers_x), is.numeric(world$beepers_y), is.numeric(world$beepers_n))) stop(msg)
+    # All same length?
+    if (!(length(world$beepers_x) == length(world$beepers_y) & length(world$beepers_x) == length(world$beepers_n))) stop(msg)
+    # All integer?
+    if (!all(world$beepers_x %% 1 == 0, world$beepers_y %% 1 == 0, world$beepers_n %% 1 == 0)) stop(msg)
+    # All >= 1?
+    if (any(world$beepers_x < 1, world$beepers_y < 1, world$beepers_n < 1)) stop(msg)
+    # Coordinates ok?
+    if (world$beepers_x > world$nx | world$beepers_y > world$ny) stop(msg)
+  }
+
+
 }

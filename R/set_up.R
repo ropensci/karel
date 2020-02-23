@@ -65,17 +65,11 @@ generar_mundo <- function(mundo) {
   	# Load this world from internal data
   	world <- try(get(world))
   	if (inherits(world, "try-error")) {
-  	  stop("Required world doesn't exist.\nEl mundo pedido no existe.")
+  	  stop("\nRequired world doesn't exist.\nEl mundo pedido no existe.")
   	}
 	} else {
 		# User has provided their own world as a list.
-	  # Todo: complete this check
-	  elements <- names(world)
-		if (!"nx" %in% elements) {
-		  stop("Element nx missing in the world's definition.\nFalta el elemento nx en el mundo.")
-		} else if (!is.numeric(world$nx) | length(world$nx) > 1) {
-		  stop("nx must be a numeric vector of length 1 with the number of...")
-		}
+    check_user_world(world)
 	}
 
 	# Create environment
@@ -266,7 +260,7 @@ create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL, mome
 #' @export
 ejecutar_acciones <- function() {
 
-  if (pkg_env$moment == 1) stop("Perform at least one action.\n Realizar al menos una actividad.")
+  if (pkg_env$moment == 1) stop("\nPerform at least one action.\n Realizar al menos una actividad.")
 
   karel_for_drawing <- purrr::pmap_dfr(pkg_env$karel, draw_karel_df)
 
