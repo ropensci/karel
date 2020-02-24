@@ -206,8 +206,23 @@ get_beepers_df_row <- function() {
   return(cell_present)
 }
 
+#' Check user's own world
+#'
+#' This function analyzes if a world provided by the user satisfies all
+#' requirements.
+#'
+#' @param world The world provided by the user. It's a list. See details in
+#'   \code{\link{generar_mundo}}.
+#'
+#' @return If a misespecification is found, this function produces a stop and
+#'   provides a descriptive error message.
+#'
+#' @keywords internal
+#'
+#' @details This function is called by \code{\link{generar_mundo}}.
+#'
 check_user_world <- function(world) {
-  # I'm not using assertthat package's full funcitonality because I want to
+  # I'm not using assertthat package because I want to
   # write bilingual error messages
 
   # Are all the elements present?
@@ -217,47 +232,47 @@ check_user_world <- function(world) {
     if (!elem %in% names(world)) stop(paste0("\n", elem, " is missing in the provided world.\nFalta ", elem, " en el mundo provisto."))
   }
 
-  # Evaluate nx
+  # Check nx
   msg <- "\nnx, the number of avenues, must be numeric of length 1.
-         nx, el número de avenidas, debe ser númerico de largo 1."
+         nx, el numero de avenidas, debe ser numerico de largo 1."
   # I do these two separated because the second one could be a vector of T o F
   # if the length is greater than 1 and that gives a warning, so I first check
   # the length
   if (length(world$nx) != 1 | !is.numeric(world$nx)) stop(msg)
   if (world$nx %% 1 != 0) stop(msg)
 
-  # Evaluate ny
+  # Check ny
   msg <- "\nny, the number of streets, must be numeric of length 1.
-         ny, el número de calles, debe ser númerico de largo 1."
+         ny, el numero de calles, debe ser numerico de largo 1."
   if (length(world$ny) != 1 | !is.numeric(world$ny)) stop(msg)
   if (world$ny %% 1 != 0) stop(msg)
 
-  # Evaluate karel_x
-  msg <- "\nkarel_x, the x-coordinate for Karel's initial position, must be numeric of length 1, and between 1 and nx.\nkarel_x, la coordenada en el eje x para la posición inicial de Karel, debe ser númerico de largo 1 y estar entre 1 y nx."
+  # Check karel_x
+  msg <- "\nkarel_x, the x-coordinate for Karel's initial position, must be numeric of length 1, and between 1 and nx.\nkarel_x, la coordenada en el eje x para la posicion inicial de Karel, debe ser numerico de largo 1 y estar entre 1 y nx."
   if (length(world$karel_x) != 1 | !is.numeric(world$karel_x)) stop(msg)
   if (world$karel_x %% 1 != 0) stop(msg)
   if (world$karel_x < 1 | world$karel_x > world$nx) stop(msg)
 
-  # Evaluate karel_y
-  msg <- "\nkarel_y, the y-coordinate for Karel's initial position, must be numeric of length 1, and between 1 and ny.\nkarel_y, la coordenada en el eje y para la posición inicial de Karel, debe ser númerico de largo 1 y estar entre 1 y ny."
+  # Check karel_y
+  msg <- "\nkarel_y, the y-coordinate for Karel's initial position, must be numeric of length 1, and between 1 and ny.\nkarel_y, la coordenada en el eje y para la posicion inicial de Karel, debe ser numerico de largo 1 y estar entre 1 y ny."
   if (length(world$karel_y) != 1 | !is.numeric(world$karel_y)) stop(msg)
   if (world$karel_y %% 1 != 0) stop(msg)
   if (world$karel_y < 1 | world$karel_y > world$ny) stop(msg)
 
-  # Evaluate karel_dir
+  # Check karel_dir
   msg <- "\nkarel_dir, Karel's initial direction, must be numeric of length 1, either 1, 2, 3 or 4.\nkarel_dir, la direccion inicial de Karel, debe ser numerico de largo 1, puede ser 1, 2, 3 o 4."
   if (length(world$karel_dir) != 1 | !is.numeric(world$karel_dir)) stop(msg)
   if (world$karel_dir %% 1 != 0) stop(msg)
   if (!world$karel_dir %in% 1:4) stop(msg)
 
-  # Evaluate beepers_bag
-  msg <- "\nbeepers_bag, the number of beepers in Karel's bag, must be numeric of length 1, greater or equal than zero, including Inf.\nbeepers_bag, el número de cosos en la mochila de Karel, debe ser númerico de largo 1 y mayor o igual a 0, incluyendo Inf."
+  # Check beepers_bag
+  msg <- "\nbeepers_bag, the number of beepers in Karel's bag, must be numeric of length 1, greater or equal than zero, including Inf.\nbeepers_bag, el numero de cosos en la mochila de Karel, debe ser numerico de largo 1 y mayor o igual a 0, incluyendo Inf."
   if (length(world$beepers_bag) != 1 | !is.numeric(world$beepers_bag)) stop(msg)
   if (!is.infinite(world$beepers_bag) & world$beepers_bag %% 1 != 0) stop(msg)
   if (world$beepers_bag < 0) stop(msg)
 
-  # Evaluate "beepers_x", "beepers_y", "beepers_n"
-  msg <- "\nbeepers_x, beepers_y and beepers_n must be all NULL or numeric vectors of the same length.\nbeepers_x and beepers_y must be between 1 and nx or ny, respectively.\nbeepers_n must be greater or equal than 1.\nbeepers_x, beepers_y y beepers_n deben ser todos NULL o vectores numéricos del mismo largo.\nbeepers_x y beepers_y deben estar entre 1 y nx o ny, respectivamentey.\nbeepers_n debe ser mayor o igual a 1."
+  # Check "beepers_x", "beepers_y", "beepers_n"
+  msg <- "\nbeepers_x, beepers_y and beepers_n must be all NULL or numeric vectors of the same length.\nbeepers_x and beepers_y must be between 1 and nx or ny, respectively.\nbeepers_n must be greater or equal than 1.\nbeepers_x, beepers_y y beepers_n deben ser todos NULL o vectores numericos del mismo largo.\nbeepers_x y beepers_y deben estar entre 1 y nx o ny, respectivamentey.\nbeepers_n debe ser mayor o igual a 1."
   if (any(is.null(world$beepers_x), is.null(world$beepers_y), is.null(world$beepers_n))) {
     # All NULL?
     if (!all(is.null(world$beepers_x), is.null(world$beepers_y), is.null(world$beepers_n))) stop(msg)
@@ -274,5 +289,98 @@ check_user_world <- function(world) {
     if (world$beepers_x > world$nx | world$beepers_y > world$ny) stop(msg)
   }
 
+  # Check ver_walls and hor_walls
+  check_walls(world$ver_walls, "ver_walls", world$nx, world$ny)
+  check_walls(world$hor_walls, "hor_walls", world$nx, world$ny)
 
+
+  # if (!is.null(world$ver_walls) | !is.data.frame(world$ver_walls)) {
+  #   stop("\nver_walls must be either NULL of a data.frame.\nver_walls debe ser NULL o un data.frame")
+  # }
+  # if (is.data.frame(world$ver_walls)) {
+  #
+  #   # Has rows?
+  #   if (nrow(world$ver_walls) < 1) stop("\nver_walls has 0 rows.\nver_walls tiene 0 filas.")
+  #
+  #   # Are all the columns present?
+  #   elements <- c("x", "y", "lgth")
+  #   for (elem in elements) {
+  #     if (!elem %in% names(world))
+  #       stop(paste0("\nColumn ", elem, " is missing in ver_walls data.frame.\nFalta la columna ", elem, " en el data.frame ver_walls."))
+  #   }
+  #
+  #   # Any NA?
+  #   if (any(is.na(world$ver_walls)))
+  #     stop("\nver_walls can't have NA values.\nNo puede haber NAs en ver_walls")
+  #
+  #   # All columns are numeric?
+  #   if (!all(apply(world$ver_walls, 2, is.numeric)))
+  #     stop("\nAll columns in ver_walls must be numeric.\nTodas las columnas de ver_walls deben ser numericas.")
+  #
+  #   # All integers?
+  #   if (!all(apply(world$ver_walls, 2, function(x) x %% 1 == 0)))
+  #     stop("\nAll numbers in ver_walls must be integer, at least in the math sense, not necessarily of class integer.\nTodos los numeros en ver_walls deben ser enteros, al menos en el sentido matematico, no necesariamente de clase integer.")
+  #
+  #   # Range of values
+  #   if (min(world$ver_walls$x) < 1 | max(world$ver_walls$x) >= world$nx)
+  #     stop("\nAll x values in ver_walls must lie between 1 and nx-1.\nTodos los valores x en ver_walls deben estar entre 1 y nx-1.")
+  #   if (min(world$ver_walls$y) < 0 | max(world$ver_walls$y) >= world$ny)
+  #     stop("\nAll y values in ver_walls must lie between 0 and ny-1.\nTodos los valores y en ver_walls deben estar entre 0 y ny-1.")
+  # }
+
+
+}
+
+#' Check the walls user's provided world
+#'
+#' This is a helper function to check ver_walls and hor_walls. It's called by check_user_world twice.
+#'
+#' @param dataset Either hor_walls or ver_walls
+#' @param name Character string: "hor_walls" or "ver_walls"
+#' @param nx, ny Size of the world
+#'
+#' @return If a misespecification is found, this function produces a stop and
+#'   provides a descriptive error message.
+#'
+#' @keywords internal
+#'
+check_walls <- function(dataset, name, nx, ny) {
+  if (!is.null(dataset) & !is.data.frame(dataset)) {
+    stop(paste0("\n", name, " must be either NULL of a data.frame.\n", name, " debe ser NULL o un data.frame"))
+  }
+  if (is.data.frame(dataset)) {
+
+    # Has rows?
+    if (nrow(dataset) < 1) stop(paste0("\n", name, " has 0 rows.\n", name, " tiene 0 filas."))
+
+    # Are all the columns present?
+    for (elem in c("x", "y", "lgth")) {
+      if (!elem %in% names(dataset))
+        stop(paste0("\nColumn ", elem, " is missing in ", name, " data.frame.\nFalta la columna ", elem, " en el data.frame ", name, "."))
+    }
+
+    # Any NA?
+    if (any(is.na(dataset)))
+      stop(paste0("\n", name, " can't have NA values.\nNo puede haber NAs en ", name, "."))
+
+    # All columns are numeric?
+    if (!all(apply(dataset, 2, is.numeric)))
+      stop(paste0("\nAll columns in ", name, " must be numeric.\nTodas las columnas de ", name, " deben ser numericas."))
+
+    # All integers?
+    if (!all(apply(dataset, 2, function(x) x %% 1 == 0)))
+      stop(paste0("\nAll numbers in ", name, " must be integer, at least in the math sense, not necessarily of class integer.\nTodos los numeros en ", name, " deben ser enteros, al menos en el sentido matematico, no necesariamente de clase integer."))
+
+    # Range of values
+    if (any(dataset$x < 0) | any(dataset$x >= nx))
+      stop(paste0("\nAll x values in ", name, " must lie between 0 and nx-1.\nTodos los valores x en ", name, " deben estar entre 0 y nx-1."))
+    if (any(dataset$y < 0) | any(dataset$y >= ny))
+      stop(paste0("\nAll y values in ", name, " must lie between 0 and ny-1.\nTodos los valores y en ", name, " deben estar entre 0 y ny-1."))
+    if (any(dataset$lgth < 0))
+      stop(paste0("\nAll lgth values in ", name, " must be 1 or greater.\nTodos los valores lgth en ", name, " deben ser mayores o iguales a 1."))
+    if (name == "hor_walls" & any(dataset$lgth > (nx - dataset$x)))
+      stop("\nSome lengths in hor_walls are longer than allowed by nx.\nAlgunos largos en hor_walls exceden lo permitido por nx.")
+    if (name == "ver_walls" & any(dataset$lgth > (ny - dataset$y)))
+      stop("\nSome lengths in ver_walls are longer than allowed by ny.\nAlgunos largos en ver_walls exceden lo permitido por ny.")
+  }
 }

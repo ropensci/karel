@@ -82,7 +82,7 @@ girar_izquierda <- function() {
 poner_coso <- function() {
 
   if (pkg_env$beepers_bag == 0) {
-    stop("Can't put a beeper sincer there aren't any left in Karel's bag. Generate again the world and start all over.\nNo puede colocar un beeper ya que no le queda ninguno en la bolsa. Generar otra vez el mundo y volver a comenzar.")
+    stop("Can't put a beeper sincer there aren't any left in Karel's bag. Generate again the world and start all over.\nNo puede colocar un coso ya que no le queda ninguno en la mochila. Generar otra vez el mundo y volver a comenzar.")
   } else {
 
     # Update bag
@@ -169,6 +169,6 @@ juntar_coso <- function() {
       mutate(moment = moment + 1) %>%
       bind_rows(pkg_env$karel, .)
   } else {
-    stop("There are no beepers here to remove. Generate again the world and start all over.\nNo hay beepers para quitar. Generar otra vez el mundo y volver a comenzar.")
+    stop("There are no beepers here to remove. Generate again the world and start all over.\nNo hay cosos para quitar. Generar otra vez el mundo y volver a comenzar.")
   }
 }
