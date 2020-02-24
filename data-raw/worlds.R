@@ -18,7 +18,7 @@ world_001 <- list(
   beepers_bag = Inf
 )
 
-# No beepers in the beggining
+# No beepers in the beginning
 world_002 <- list(
   nx = 6,
   ny = 4,
@@ -41,7 +41,7 @@ world_002 <- list(
   beepers_bag = Inf
 )
 
-# Beepers in one place in the beggining
+# Beepers in one place in the beginning
 world_003 <- list(
   nx = 6,
   ny = 4,
@@ -263,4 +263,13 @@ world_109 <- list(
 )
 
 
-# usethis::use_data(world_101, internal = TRUE, overwrite = TRUE)
+# usethis::use_data(world_101,
+#                   world_102,
+#                   world_103,
+#                   world_104,
+#                   world_105,
+#                   world_106,
+#                   world_107,
+#                   world_108,
+#                   world_109,
+#                   internal = TRUE, overwrite = TRUE)
