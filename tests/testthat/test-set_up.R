@@ -208,3 +208,17 @@ test_that("Checking provided hor_walls and ver_walls", {
 
 
 })
+
+test_that("Other things about generar_mundo()", {
+  expect_error(generar_mundo("world_1"), "\nRequired world doesn't exist.\nEl mundo pedido no existe.")
+
+  world_test <- list(nx = 6, ny = 4,
+                     hor_walls = data.frame(x = 3, y = 1, lgth = 3),
+                     ver_walls = data.frame(x = 3, y = 0, lgth = 1),
+                     karel_x = 1, karel_y = 1, karel_dir = 1,
+                     beepers_x = NULL, beepers_y = NULL, beepers_n = NULL, beepers_bag = Inf)
+  generar_mundo(world_test)
+  pkg_env <- get_pkg_env()
+  expect_equal(pkg_env$beepers_now, dplyr::tibble(x = NA, y = NA, cell = NA, n = NA, moment = 1))
+  expect_error(ejecutar_acciones(), "\nPerform at least one action.\nRealizar al menos una accion.")
+})

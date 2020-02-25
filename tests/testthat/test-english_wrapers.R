@@ -32,6 +32,7 @@ test_that("Karel's actions and superpowers perform as expected in English", {
   move()
   put_beeper()
   expect_equal(karel_env$beepers_any, 1)
+  load_super_karel()
   turn_right()
   expect_equal(karel_env$dir_now, 1)
   turn_around()

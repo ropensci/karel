@@ -260,7 +260,7 @@ create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL, mome
 #' @export
 ejecutar_acciones <- function() {
 
-  if (pkg_env$moment == 1) stop("\nPerform at least one action.\n Realizar al menos una actividad.")
+  if (pkg_env$moment == 1) stop("\nPerform at least one action.\nRealizar al menos una accion.")
 
   karel_for_drawing <- purrr::pmap_dfr(pkg_env$karel, draw_karel_df)
 
