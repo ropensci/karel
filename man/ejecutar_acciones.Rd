@@ -4,13 +4,18 @@
 \alias{ejecutar_acciones}
 \title{Ejecutar acciones}
 \usage{
-ejecutar_acciones()
+ejecutar_acciones(repetir = TRUE)
+}
+\arguments{
+\item{repetir}{Valor lógico TRUE o FALSE que indica si la animación debe
+repetirse una y otra vez luego de finalizada (por defecto: TRUE).}
 }
 \value{
 Produce una animación con \code{gganimate}.
 }
 \description{
-Esta función produce la animación que muestra todas las acciones realizadas por Karel desde que su mundo fue generado con \code{generar_mundo}.
+Esta función produce la animación que muestra todas las acciones realizadas
+por Karel desde que su mundo fue generado con \code{generar_mundo}.
 }
 \examples{
 generar_mundo("world_101")

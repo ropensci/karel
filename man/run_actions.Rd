@@ -4,7 +4,11 @@
 \alias{run_actions}
 \title{Run actions}
 \usage{
-run_actions()
+run_actions(loop = TRUE)
+}
+\arguments{
+\item{loop}{A logical value TRUE or FALSE indicating if the animation should
+repeat itself after finished or not (defaults to TRUE).}
 }
 \value{
 Produces an animation with \code{gganimate}.

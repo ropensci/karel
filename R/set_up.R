@@ -63,7 +63,7 @@ generar_mundo <- function(mundo) {
 
   if (is.character(world)) {
   	# Load this world from internal data
-  	world <- try(get(world))
+  	world <- try(get(world), silent = T)
   	if (inherits(world, "try-error")) {
   	  stop("\nRequired world doesn't exist.\nEl mundo pedido no existe.")
   	}
@@ -243,7 +243,11 @@ create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL, mome
 
 #' Ejecutar acciones
 #'
-#' Esta función produce la animación que muestra todas las acciones realizadas por Karel desde que su mundo fue generado con \code{generar_mundo}.
+#' Esta función produce la animación que muestra todas las acciones realizadas
+#' por Karel desde que su mundo fue generado con \code{generar_mundo}.
+#'
+#' @param repetir Valor lógico TRUE o FALSE que indica si la animación debe
+#'   repetirse una y otra vez luego de finalizada (por defecto: TRUE).
 #'
 #' @return Produce una animación con \code{gganimate}.
 #'
@@ -258,7 +262,7 @@ create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL, mome
 #' @seealso \code{\link{generar_mundo}}
 #'
 #' @export
-ejecutar_acciones <- function() {
+ejecutar_acciones <- function(repetir = TRUE) {
 
   if (pkg_env$moment == 1) stop("\nPerform at least one action.\nRealizar al menos una accion.")
 
@@ -287,7 +291,7 @@ ejecutar_acciones <- function() {
   suppressWarnings(
     gganimate::animate(p, nframes = nframes, fps = fps,
                        height = 800, width = 800,
-                       renderer = gganimate::gifski_renderer(loop = FALSE))
+                       renderer = gganimate::gifski_renderer(loop = repetir))
   )
 }
 
