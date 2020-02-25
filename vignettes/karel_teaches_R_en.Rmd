@@ -1,8 +1,8 @@
 ---
-title: "Karel aprende R"
+title: "Karel the robot teaches R"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{karel_learns_R}
+  %\VignetteIndexEntry{karel_teaches_R_en}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -22,7 +22,7 @@ library(karel)
 
 **NOTA: En construcción - Esto es solo una copia del README**
 
-# Karel la robot aprende R
+# Karel the robot teaches R
 
 <!-- badges: start -->
 <!-- badges: end -->
