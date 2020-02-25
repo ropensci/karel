@@ -10,13 +10,13 @@ navbar:
     - text: "Español"
       menu:
         - text: "Viñetas"
-          href: articles/karel_aprende_R.html
+          href: articles/karel_teaches_R_es.html
         - text: "Funciones"
           href: reference/index-es.html
     - text: "English"
       menu:
         - text: "Vignettes"
-          href: articles/karel_learns_R.html
+          href: articles/karel_teaches_R_en.html
         - text: "Functions"
           href: reference/index-en.html
     - text: "News"
