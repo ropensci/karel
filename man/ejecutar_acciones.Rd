@@ -7,7 +7,7 @@
 ejecutar_acciones()
 }
 \value{
-Produce la animación con \code{gganimate}
+Produce una animación con \code{gganimate}.
 }
 \description{
 Esta función produce la animación que muestra todas las acciones realizadas por Karel desde que su mundo fue generado con \code{generar_mundo}.

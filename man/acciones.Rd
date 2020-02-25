@@ -23,10 +23,16 @@ girar_derecha()
 darse_vuelta()
 }
 \value{
-Estas funciones no devuelven nada, pero realizan cambios en el mundo de Karel que se ven cuando se ejecutan todas las acciones con \code{ejecutar_acciones()}.
+Estas funciones no devuelven nada, pero realizan cambios en el mundo
+  de Karel que se ven cuando se ejecutan todas las acciones con
+  \code{ejecutar_acciones()}.
 }
 \description{
-\code{avanzar()}, \code{girar_izquierda()}, \code{juntar_coso()} y \code{poner_coso()} son las cuatro actividades básicas que Karel sabe realizar. Si se habilitan los superpoderes de Karel con \code{cargar_super_karel()}, entonces también puede \code{girar_derecha()} y \code{darse_vuelta()}.
+\code{avanzar()}, \code{girar_izquierda()}, \code{juntar_coso()} y
+\code{poner_coso()} son las cuatro actividades básicas que Karel sabe
+realizar. Si se habilitan los superpoderes de Karel con
+\code{cargar_super_karel()}, entonces también puede \code{girar_derecha()} y
+\code{darse_vuelta()}.
 }
 \examples{
 generar_mundo("world_101")
@@ -38,5 +44,6 @@ ejecutar_acciones()
 
 }
 \seealso{
-\code{\link{cargar_super_karel}} \code{\link{generar_mundo}} \code{\link{ejecutar_acciones}}
+\code{\link{cargar_super_karel}} \code{\link{generar_mundo}}
+  \code{\link{ejecutar_acciones}}
 }

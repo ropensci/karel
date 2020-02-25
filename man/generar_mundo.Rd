@@ -16,12 +16,12 @@ Dibuja el estado inicial del mundo de Karel y deja todo preparado
   para comenzar a registrar sus acciones.
 }
 \description{
-Esta función toma la definición de un mundo para Karel (tamaño, paredes,
-"cosos" e incluso la ubicación y dirección de Karel) y lo muestra en un
-gráfico. Además, prepara todo para que Karel pueda realizar sus acciones, de
-modo que debe ser evaluada antes de que Karel empiece a cumplir sus
-objetivos. En especial, si en algún momento hemos cometido un error, debemos
-comenzar de nuevo corriendo esta función.
+Esta función toma un "mundo" (es decir, una lista con información acerca de
+su tamaño, paredes, "cosos" presentes y la ubicación y dirección de Karel),
+lo grafica y prepara todo para que Karel pueda realizar sus acciones. Siempre
+debe ser evaluada antes de que Karel empiece a cumplir sus
+objetivos, en especial, si en algún momento hemos cometido un error, debemos
+comenzar de nuevo corriendo primero esta función.
 }
 \details{
 Luego de correr \code{generar_mundo()}, se ejecutan las acciones de Karel y

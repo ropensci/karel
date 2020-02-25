@@ -1,8 +1,14 @@
 #' Acciones que Karel puede realizar
 #'
-#' \code{avanzar()}, \code{girar_izquierda()}, \code{juntar_coso()} y \code{poner_coso()} son las cuatro actividades básicas que Karel sabe realizar. Si se habilitan los superpoderes de Karel con \code{cargar_super_karel()}, entonces también puede \code{girar_derecha()} y \code{darse_vuelta()}.
+#' \code{avanzar()}, \code{girar_izquierda()}, \code{juntar_coso()} y
+#' \code{poner_coso()} son las cuatro actividades básicas que Karel sabe
+#' realizar. Si se habilitan los superpoderes de Karel con
+#' \code{cargar_super_karel()}, entonces también puede \code{girar_derecha()} y
+#' \code{darse_vuelta()}.
 #'
-#' @return Estas funciones no devuelven nada, pero realizan cambios en el mundo de Karel que se ven cuando se ejecutan todas las acciones con \code{ejecutar_acciones()}.
+#' @return Estas funciones no devuelven nada, pero realizan cambios en el mundo
+#'   de Karel que se ven cuando se ejecutan todas las acciones con
+#'   \code{ejecutar_acciones()}.
 #'
 #' @examples
 #' generar_mundo("world_101")
@@ -12,7 +18,8 @@
 #' poner_coso()
 #' ejecutar_acciones()
 #'
-#' @seealso \code{\link{cargar_super_karel}} \code{\link{generar_mundo}} \code{\link{ejecutar_acciones}}
+#' @seealso \code{\link{cargar_super_karel}} \code{\link{generar_mundo}}
+#'   \code{\link{ejecutar_acciones}}
 #'
 #' @name acciones
 NULL

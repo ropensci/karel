@@ -273,3 +273,7 @@ world_109 <- list(
 #                   world_108,
 #                   world_109,
 #                   internal = TRUE, overwrite = TRUE)
+
+# for (i in 1:9) {
+#   assign(paste0("mundo_10", i), get(paste0("world_10", i)))
+# }

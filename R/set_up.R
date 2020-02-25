@@ -7,12 +7,12 @@ pkg_env <- new.env(parent = emptyenv())
 
 #' Generar el mundo de Karel
 #'
-#' Esta función toma la definición de un mundo para Karel (tamaño, paredes,
-#' "cosos" e incluso la ubicación y dirección de Karel) y lo muestra en un
-#' gráfico. Además, prepara todo para que Karel pueda realizar sus acciones, de
-#' modo que debe ser evaluada antes de que Karel empiece a cumplir sus
-#' objetivos. En especial, si en algún momento hemos cometido un error, debemos
-#' comenzar de nuevo corriendo esta función.
+#' Esta función toma un "mundo" (es decir, una lista con información acerca de
+#' su tamaño, paredes, "cosos" presentes y la ubicación y dirección de Karel),
+#' lo grafica y prepara todo para que Karel pueda realizar sus acciones. Siempre
+#' debe ser evaluada antes de que Karel empiece a cumplir sus
+#' objetivos, en especial, si en algún momento hemos cometido un error, debemos
+#' comenzar de nuevo corriendo primero esta función.
 #'
 #' Luego de correr \code{generar_mundo()}, se ejecutan las acciones de Karel y
 #' se pueden visualizar con la función \code{ejecutar_acciones()}.
@@ -245,7 +245,7 @@ create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL, mome
 #'
 #' Esta función produce la animación que muestra todas las acciones realizadas por Karel desde que su mundo fue generado con \code{generar_mundo}.
 #'
-#' @return Produce la animación con \code{gganimate}
+#' @return Produce una animación con \code{gganimate}.
 #'
 #' @examples
 #' generar_mundo("world_101")

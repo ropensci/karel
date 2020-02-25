@@ -2,7 +2,7 @@
 #'
 #' Luego de correr \code{cargar_super_karel()}, Karel también puede girar a la derecha y darse vuelta, a través de las acciones \code{girar_derecha()} y \code{darse_vuelta()}. Si no se cargan los superpoderes, estas dos funciones no están disponibles.
 #'
-#' @return No devuelve ningún valor, pero adjuntan al Global Environment las funciones girar_derecha() y darse_vuelta()
+#' @return No devuelve ningún valor, pero adjuntan al Global Environment las funciones \code{girar_derecha()} y \code{darse_vuelta()}.
 #'
 #' @examples
 #' generar_mundo("world_101")
