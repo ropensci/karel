@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create Karel's world — generate_world • karel</title>
+<title>Function reference • karel</title>
 
 
 <!-- jquery -->
@@ -35,13 +35,7 @@
 
 
 
-<meta property="og:title" content="Create Karel's world — generate_world" />
-<meta property="og:description" content="This function takes a &quot;world&quot; (i.e. a list with data about its size, walls,
-beepers and Karel's position and direction), plots it and prepares everything
-so that Karel can start performing actions in it. It must be run always
-before Karel starts working on her goals, especially if we have made a
-mistake, we must start all over again by first running this function." />
-<meta name="twitter:card" content="summary" />
+<meta property="og:title" content="Function reference" />
 
 
 
@@ -60,7 +54,7 @@ mistake, we must start all over again by first running this function." />
   </head>
 
   <body>
-    <div class="container template-reference-topic">
+    <div class="container template-reference-index">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -82,13 +76,13 @@ mistake, we must start all over again by first running this function." />
         <li>
   <a href="../index.html">
     <span class="fa fa-home"></span>
-     
+
   </a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Español
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
@@ -103,7 +97,7 @@ mistake, we must start all over again by first running this function." />
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     English
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
@@ -123,96 +117,125 @@ mistake, we must start all over again by first running this function." />
         <li>
   <a href="https://twitter.com/mrqtsp">
     <span class="fa fa-twitter"></span>
-     
+
   </a>
 </li>
 <li>
   <a href="https://github.com/mpru/karel">
     <span class="fa fa-github"></span>
-     
+
   </a>
 </li>
       </ul>
-      
+
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-      
+
 
       </header>
 
 <div class="row">
-  <div class="col-md-9 contents">
+  <div class="contents col-md-9">
     <div class="page-header">
-    <h1>Create Karel's world</h1>
-    
-    <div class="hidden name"><code>generate_world.Rd</code></div>
+      <h1>Referencias</h1>
     </div>
 
-    <div class="ref-description">
-    <p>This function takes a "world" (i.e. a list with data about its size, walls,
-beepers and Karel's position and direction), plots it and prepares everything
-so that Karel can start performing actions in it. It must be run always
-before Karel starts working on her goals, especially if we have made a
-mistake, we must start all over again by first running this function.</p>
-    </div>
+    <table class="ref-index">
 
-    <pre class="usage"><span class='fu'>generate_world</span>(<span class='no'>world</span>)</pre>
+    <colgroup>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>world</th>
-      <td><p>Character vector of length 1 with the name of one of the
-provided worlds in the package or a list provided by the user with all the
-components that a world needs (see more below in details).</p></td>
-    </tr>
+      <col class="alias" />
+      <col class="title" />
+    </colgroup>
+
+    <tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-generar-un-mundo-y-ejecutar-acciones" class="hasAnchor"><a href="#section-generar-un-mundo-y-ejecutar-acciones" class="anchor"></a>Generar un mundo y ejecutar acciones</h2>
+          <p class="section-desc"><p>Todo programa debe comenzar y terminar con estas funciones.</p></p>
+        </th>
+      </tr>
+      <tr>
+
+        <td>
+          <p><code><a href="generar_mundo.html">generar_mundo()</a></code> </p>
+        </td>
+        <td><p>Generar el mundo de Karel</p></td>
+      </tr><tr>
+
+        <td>
+          <p><code><a href="ejecutar_acciones.html">ejecutar_acciones()</a></code> </p>
+        </td>
+        <td><p>Ejecutar acciones</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-acciones-que-karel-puede-realizar" class="hasAnchor"><a href="#section-acciones-que-karel-puede-realizar" class="anchor"></a>Acciones que Karel puede realizar</h2>
+          <p class="section-desc"><p>Funciones que implementan las cuatro actividades básicas que Karel sabe realizar (avanzar, girar a la izquierda, poner y juntar “cosos”). Si se habilitan los superpoderes de Karel, también puede girar a la derecha y darse vuelta.</p></p>
+        </th>
+      </tr>
+      <tr>
+
+        <td>
+          <p><code><a href="acciones.html">avanzar()</a></code> <code><a href="acciones.html">girar_izquierda()</a></code> <code><a href="acciones.html">poner_coso()</a></code> <code><a href="acciones.html">juntar_coso()</a></code> <code><a href="acciones.html">girar_derecha()</a></code> <code><a href="acciones.html">darse_vuelta()</a></code> </p>
+        </td>
+        <td><p>Acciones que Karel puede realizar</p></td>
+      </tr><tr>
+
+        <td>
+          <p><code><a href="cargar_super_karel.html">cargar_super_karel()</a></code> </p>
+        </td>
+        <td><p>Habilitar los superpoderes de Karel</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-condiciones-que-karel-puede-verificar" class="hasAnchor"><a href="#section-condiciones-que-karel-puede-verificar" class="anchor"></a>Condiciones que Karel puede verificar</h2>
+          <p class="section-desc"><p>Este conjunto de funciones devuelven un valor lógico TRUE o FALSE según la evaluación que Karel puede hacer de su mundo.</p></p>
+        </th>
+      </tr>
+      <tr>
+
+        <td>
+          <p><code><a href="condiciones.html">frente_abierto()</a></code> <code><a href="condiciones.html">frente_cerrado()</a></code> <code><a href="condiciones.html">izquierda_abierto()</a></code> <code><a href="condiciones.html">izquierda_cerrado()</a></code> <code><a href="condiciones.html">derecha_abierto()</a></code> <code><a href="condiciones.html">derecha_cerrado()</a></code> <code><a href="condiciones.html">hay_cosos()</a></code> <code><a href="condiciones.html">no_hay_cosos()</a></code> <code><a href="condiciones.html">karel_tiene_cosos()</a></code> <code><a href="condiciones.html">karel_no_tiene_cosos()</a></code> <code><a href="condiciones.html">mira_al_este()</a></code> <code><a href="condiciones.html">mira_al_norte()</a></code> <code><a href="condiciones.html">mira_al_oeste()</a></code> <code><a href="condiciones.html">mira_al_sur()</a></code> </p>
+        </td>
+        <td><p>Condiciones que Karel puede verificar</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-funciones-internas" class="hasAnchor"><a href="#section-funciones-internas" class="anchor"></a>Funciones internas</h2>
+          <p class="section-desc"><p>Selección de funciones internas que podrían ser útiles para un uso algo más avanzado del paquete.</p></p>
+        </th>
+      </tr>
+      <tr>
+
+        <td>
+          <p><code><a href="get_pkg_env.html">get_pkg_env()</a></code> </p>
+        </td>
+        <td><p>Get Karel's environment</p></td>
+      </tr><tr>
+
+        <td>
+          <p><code><a href="plot_static_world.html">plot_static_world()</a></code> </p>
+        </td>
+        <td><p>Plot the world at a given time</p></td>
+      </tr>
+    </tbody>
     </table>
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Plots the initial state of Karel's world and prepares everything to
-  start recording her actions.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>After running <code>generate_mundo()</code>, we can run Karel's actions and finally
-visualize it all with the function <code><a href='run_actions.html'>run_actions()</a></code>.</p>
-<p>Argument <code>world</code> can be create by the user. In this case, it
-  must be a list with the following components:</p>
-<p></p><ol>
-<li><p><code>nx</code>: TODO</p></li>
-<li><p><code>ny</code>:</p></li>
-<li><p><code>hor_walls</code>:</p></li>
-<li><p><code>ver_walls</code>:</p></li>
-<li><p><code>karel_x</code>:</p></li>
-<li><p><code>karel_y</code>:</p></li>
-<li><p><code>karel_dir</code>:</p></li>
-<li><p><code>beepers_x</code>:</p></li>
-<li><p><code>beepers_y</code>:</p></li>
-<li><p><code>beepers_n</code>:</p></li>
-<li><p><code>beepers_bag</code>:</p></li>
-</ol>
-
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='actions.html'>actions</a></code> <code><a href='run_actions.html'>run_actions</a></code></p></div>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>generate_world</span>(<span class='st'>"world_101"</span>)</div><div class='img'><img src='generate_world-1.png' alt='' width='700' height='433' /></div><div class='input'>
-</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
 
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contenido</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#section-generar-un-mundo-y-ejecutar-acciones">Generar un mundo y ejecutar acciones</a></li>
+      <li><a href="#section-acciones-que-karel-puede-realizar">Acciones que Karel puede realizar</a></li>
+      <li><a href="#section-condiciones-que-karel-puede-verificar">Condiciones que Karel puede verificar</a></li>
+      <li><a href="#section-funciones-internas">Funciones internas</a></li>
+    </ul>
   </div>
 </div>
 
@@ -229,7 +252,7 @@ visualize it all with the function <code><a href='run_actions.html'>run_actions(
       </footer>
    </div>
 
-  
+
 
 
   </body>
