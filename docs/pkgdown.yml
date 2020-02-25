@@ -1,5 +1,6 @@
 pandoc: '2.5'
 pkgdown: 1.4.1
 pkgdown_sha: ~
-articles: []
+articles:
+  karel_learns_R: karel_learns_R.html
 
