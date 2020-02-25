@@ -27,7 +27,7 @@ library(karel)
 <!-- badges: start -->
 <!-- badges: end -->
 
-ESTA VA A SER LA VERSION EN INGLES
+ESTA VA A SER LA VERSION EN ESPAÑOL.
 
 ## Instalación
 
