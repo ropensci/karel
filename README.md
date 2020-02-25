@@ -9,6 +9,13 @@
 
 <!-- badges: start -->
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/karel)](https://CRAN.R-project.org/package=karel)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Downloads](https://cranlogs.r-pkg.org/badges/karel?color=blue)](https://cran.rstudio.com/package=karel)
+[![Codecov test
+coverage](https://codecov.io/gh/r-lib/karel/branch/master/graphs/badge.svg)](https://codecov.io/gh/r-lib/karel?branch=master)
 <!-- badges: end -->
 
 The goal of karel is to …
