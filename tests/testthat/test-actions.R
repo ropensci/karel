@@ -14,5 +14,6 @@ test_that("Karel's actions perform as expected", {
   avanzar()
   poner_coso()
   expect_equal(karel_env$beepers_any, 1)
+  ejecutar_acciones()
 })
 
