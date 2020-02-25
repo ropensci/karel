@@ -5,7 +5,8 @@ Authors@R:
     person(given = "Marcos",
            family = "Prunello",
            role = c("aut", "cre"),
-           email = "marcosprunello@gmail.com")
+           email = "marcosprunello@gmail.com",
+           comment = c(ORCID = "0000-0002-9611-527X"))
 Description: This package implements an interactive way to teach programming 
 	basics and R to students without previous knowledge on the area. By providing
 	instructions to Karel The Robot to perform certain tasks, students can
