@@ -286,7 +286,7 @@ check_user_world <- function(world) {
     # All >= 1?
     if (any(world$beepers_x < 1, world$beepers_y < 1, world$beepers_n < 1)) stop(msg)
     # Coordinates ok?
-    if (world$beepers_x > world$nx | world$beepers_y > world$ny) stop(msg)
+    if (any(world$beepers_x > world$nx | world$beepers_y > world$ny)) stop(msg)
   }
 
   # Check ver_walls and hor_walls
