@@ -28,6 +28,9 @@ knitr::opts_chunk$set(
 
 The goal of karel is to ...
 
+
+Página web: [https://mpru.github.io/karel/](https://mpru.github.io/karel/)
+
 ## Instalación
 
 <!-- 
