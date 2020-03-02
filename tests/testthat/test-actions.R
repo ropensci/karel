@@ -1,4 +1,3 @@
-context("Actions")
 library(karel)
 
 test_that("Karel's actions perform as expected", {

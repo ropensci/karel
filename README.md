@@ -39,11 +39,12 @@ devtools::install_github("mpru/karel")
 
 ## Ejemplo
 
-Mientras construyo las viñetas completas, podés ir viendo un mini
-ejemplo:
+Mientras construyo esta página, podés ir viendo un mini ejemplo. En las
+viñetas hay algo más, podés visitarlas.
 
 ``` r
 library(karel)
+cargar_super_karel()
 
 # Crear un mundo para Karel
 generar_mundo("world_106")
@@ -79,3 +80,23 @@ ejecutar_acciones()
 ```
 
 <img src="man/figures/README-example-1.gif" width="60%" style="display: block; margin: auto;" />
+
+``` r
+# Laberinto
+generar_mundo("world_108")
+```
+
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="60%" style="display: block; margin: auto;" />
+
+``` r
+while (no_hay_cosos()) {
+  girar_derecha()
+  while (frente_cerrado()) {
+    girar_izquierda()
+  }
+  avanzar()
+}
+ejecutar_acciones()
+```
+
+<img src="man/figures/README-unnamed-chunk-2-1.gif" width="60%" style="display: block; margin: auto;" />

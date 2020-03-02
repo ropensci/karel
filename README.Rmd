@@ -44,12 +44,14 @@ Se puede instalar la versión en desarrollo del paquete `karel` desde [GitHub](h
 # install.packages("devtools")
 devtools::install_github("mpru/karel")
 ```
+
 ## Ejemplo
 
-Mientras construyo las viñetas completas, podés ir viendo un mini ejemplo: 
+Mientras construyo esta página, podés ir viendo un mini ejemplo. En las viñetas hay algo más, podés visitarlas.
 
 ```{r example}
 library(karel)
+cargar_super_karel()
 
 # Crear un mundo para Karel
 generar_mundo("world_106")
@@ -78,3 +80,18 @@ if (derecha_abierto()) {
 }
 ejecutar_acciones()
 ```
+
+
+```{r}
+# Laberinto
+generar_mundo("world_108")
+while (no_hay_cosos()) {
+  girar_derecha()
+  while (frente_cerrado()) {
+    girar_izquierda()
+  }
+  avanzar()
+}
+ejecutar_acciones()
+```
+

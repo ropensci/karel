@@ -1,4 +1,3 @@
-context("Set up")
 library(karel)
 
 test_that("Checking provided nx and ny.", {

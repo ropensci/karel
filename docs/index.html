@@ -134,11 +134,12 @@ install.packages("karel")
 <div id="ejemplo" class="section level2">
 <h2 class="hasAnchor">
 <a href="#ejemplo" class="anchor"></a>Ejemplo</h2>
-<p>Mientras construyo las viñetas completas, podés ir viendo un mini ejemplo:</p>
+<p>Mientras construyo esta página, podés ir viendo un mini ejemplo. En las viñetas hay algo más, podés visitarlas.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(karel)</a>
-<a class="sourceLine" id="cb2-2" title="2"></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="co"># Crear un mundo para Karel</span></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="kw"><a href="reference/generar_mundo.html">generar_mundo</a></span>(<span class="st">"world_106"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw"><a href="reference/cargar_super_karel.html">cargar_super_karel</a></span>()</a>
+<a class="sourceLine" id="cb2-3" title="3"></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="co"># Crear un mundo para Karel</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="kw"><a href="reference/generar_mundo.html">generar_mundo</a></span>(<span class="st">"world_106"</span>)</a></code></pre></div>
 <p><img src="reference/figures/README-example-1.png" width="60%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="co"># Crear mi propia función</span></a>
@@ -165,6 +166,18 @@ install.packages("karel")
 <a class="sourceLine" id="cb3-23" title="23">}</a>
 <a class="sourceLine" id="cb3-24" title="24"><span class="kw"><a href="reference/ejecutar_acciones.html">ejecutar_acciones</a></span>()</a></code></pre></div>
 <p><img src="reference/figures/README-example-1.gif" width="60%" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># Laberinto</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw"><a href="reference/generar_mundo.html">generar_mundo</a></span>(<span class="st">"world_108"</span>)</a></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-2-1.png" width="60%" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="cf">while</span> (<span class="kw"><a href="reference/condiciones.html">no_hay_cosos</a></span>()) {</a>
+<a class="sourceLine" id="cb5-2" title="2">  <span class="kw"><a href="reference/acciones.html">girar_derecha</a></span>()</a>
+<a class="sourceLine" id="cb5-3" title="3">  <span class="cf">while</span> (<span class="kw"><a href="reference/condiciones.html">frente_cerrado</a></span>()) {</a>
+<a class="sourceLine" id="cb5-4" title="4">    <span class="kw"><a href="reference/acciones.html">girar_izquierda</a></span>()</a>
+<a class="sourceLine" id="cb5-5" title="5">  }</a>
+<a class="sourceLine" id="cb5-6" title="6">  <span class="kw"><a href="reference/acciones.html">avanzar</a></span>()</a>
+<a class="sourceLine" id="cb5-7" title="7">}</a>
+<a class="sourceLine" id="cb5-8" title="8"><span class="kw"><a href="reference/ejecutar_acciones.html">ejecutar_acciones</a></span>()</a></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-2-1.gif" width="60%" style="display: block; margin: auto;"></p>
 </div>
 </div>
 

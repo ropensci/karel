@@ -1,4 +1,3 @@
-context("English wrapers")
 library(karel)
 
 test_that("Checking conditions work fine in English.", {

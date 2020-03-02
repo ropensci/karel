@@ -35,7 +35,6 @@ global_env_set_hack <- function(key, val, pos) {
 }
 
 #' @rdname acciones
-#' @export
 girar_derecha <- function() {
   # Update moment and direction
   pkg_env$moment <- pkg_env$moment + 1
@@ -51,7 +50,6 @@ girar_derecha <- function() {
 }
 
 #' @rdname acciones
-#' @export
 darse_vuelta <- function() {
   # Update moment and direction
   pkg_env$moment <- pkg_env$moment + 1

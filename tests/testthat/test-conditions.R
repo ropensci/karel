@@ -1,4 +1,3 @@
-context("Conditions")
 library(karel)
 
 test_that("Checking conditions work fine.", {
