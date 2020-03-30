@@ -7,12 +7,14 @@ Authors@R:
            role = c("aut", "cre"),
            email = "marcosprunello@gmail.com",
            comment = c(ORCID = "0000-0002-9611-527X"))
-Description: This package implements an interactive way to teach programming 
-	basics and R to students without previous knowledge on the area. By providing
-	instructions to Karel The Robot to perform certain tasks, students can
-	make their first steps in the world of programming in a fun environment.
-	This idea of Karel The Robot was first introduced by Richard E. Pattis at
-	Stanford University and later adapted by many authors.
+Description: This is the R implementation of Karel the robot, a programming 
+  language created by Dr. R. E. Pattis at Stanford University in 1981. Karel 
+  useful to teach an introductory concepts about general programming, such as 
+  algorithmic decomposition, conditional statements, lopps, in an interactive 
+  and fun way, writing programs to make Karel achieve certaing tasks in the 
+  world she lives in. Originally based on Pascal, Karel was implemented in many 
+  languages through these decades, including Java C++, Ruby and Python. This is 
+  the first package implementing Karin in R.
 Depends: R (>= 3.6.0)
 Imports:
     purrr,
@@ -20,7 +22,8 @@ Imports:
     tidyr,
     ggplot2,
     magrittr,
-    gganimate
+    gganimate,
+    gifski
 License: GPL-2 | file LICENSE
 Encoding: UTF-8
 LazyData: true
