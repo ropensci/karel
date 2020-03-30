@@ -285,8 +285,9 @@ ejecutar_acciones <- function(repetir = TRUE) {
 
   fps <- dplyr::case_when(
     nframes < 40 ~ 2,
-    nframes >= 40 & nframes < 100 ~ 3,
-    nframes >= 100 ~ 4)
+    nframes >= 40 & nframes < 70 ~ 3,
+    nframes >= 70 & nframes < 100 ~ 4,
+    nframes >= 100 ~ 5)
 
   suppressWarnings(
     gganimate::animate(p, nframes = nframes, fps = fps,
