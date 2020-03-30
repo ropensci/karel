@@ -136,8 +136,12 @@ pick_beeper <- function() juntar_coso()
 #' @seealso \code{\link{actions}} \code{\link{generate_world}}
 #'   \code{\link{run_actions}}
 #' @export
-load_super_karel <- function() cargar_super_karel()
-
+load_super_karel <- function() {
+  # This hack solves the note
+  global_env_set_hack("turn_right", turn_right, 1L)
+  global_env_set_hack("turn_around", turn_around, 1L)
+}
+#
 #' @rdname actions
 #' @export
 turn_right <- function() girar_derecha()
