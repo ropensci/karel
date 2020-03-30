@@ -1,10 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-**NOTE: Work in progress**
-
-**NOTA: En
-construcción**
+|||||| **Work in progress** |||||| **En construcción**
+||||||
 
 # La robot Karel enseña R <img src="man/figures/karel_hexsticker.png" align="right" alt="" width="160" />
 
@@ -16,8 +14,6 @@ status](https://www.r-pkg.org/badges/version/karel)](https://CRAN.R-project.org/
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Downloads](https://cranlogs.r-pkg.org/badges/karel?color=blue)](https://cran.rstudio.com/package=karel)
 <!-- badges: end -->
-
-The goal of karel is to …
 
 Página web: <https://mpru.github.io/karel/>
 
@@ -41,8 +37,7 @@ devtools::install_github("mpru/karel")
 
 ## Ejemplo
 
-Mientras construyo esta página, podés ir viendo un mini ejemplo. En las
-viñetas hay algo más, podés visitarlas.
+Mientras construyo esta página, podés ir viendo algunos ejemplitos:
 
 ``` r
 library(karel)
