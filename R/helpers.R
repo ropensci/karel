@@ -109,7 +109,8 @@ plot_base_world <- function() {
       panel.grid.major = element_blank(),
       panel.grid.minor = element_blank(),
       axis.ticks = element_blank(),
-      axis.text = element_text(face = "bold")
+      axis.text = element_text(face = "bold"),
+      panel.border = element_rect(color = "black", size = 2, fill = NA)
     )
 
   # Add walls if there are any

@@ -51,7 +51,7 @@ pkg_env <- new.env(parent = emptyenv())
 #'
 #' @importFrom ggplot2 ggplot geom_segment geom_point aes scale_x_continuous
 #'   scale_y_continuous theme element_blank element_text geom_tile geom_text
-#'   geom_rect coord_fixed
+#'   geom_rect coord_fixed element_rect
 #' @importFrom dplyr tibble add_row slice mutate bind_rows n
 #' @importFrom magrittr %>%
 #'
