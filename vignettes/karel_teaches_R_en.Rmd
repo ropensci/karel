@@ -18,6 +18,4 @@ knitr::opts_chunk$set(
 library(karel)
 ```
 
-**NOTE: Work in progress.**
-
-**NOTA: En construcción**
+|||||| **Work in progress** |||||| **En construcción** ||||||
