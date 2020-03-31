@@ -190,16 +190,38 @@ world_105 <- list(
   beepers_bag = Inf
 )
 
-world_106 <- list(
+world_106a <- list(
   nx = 7,
-  ny = 4,
+  ny = 3,
   hor_walls = dplyr::tibble(
-    x = c(0, 3),
+    x = c(0, 4, 6),
     y = 1,
-    lgth = c(1, 2)
+    lgth = c(2, 1, 1)
   ),
   ver_walls = dplyr::tibble(
-    x = c(1, 2, 3, 5, 6),
+    x = c(2, 3, 4, 5, 6),
+    y = 0,
+    lgth = 1
+  ),
+  karel_x = 1,
+  karel_y = 2,
+  karel_dir = 1,
+  beepers_x = 3,
+  beepers_y = 1,
+  beepers_n = 1,
+  beepers_bag = Inf
+)
+
+world_106b <- list(
+  nx = 7,
+  ny = 3,
+  hor_walls = dplyr::tibble(
+    x = c(0, 4),
+    y = 1,
+    lgth = c(2, 1)
+  ),
+  ver_walls = dplyr::tibble(
+    x = c(2, 3, 4, 5, 6),
     y = 0,
     lgth = 1
   ),
@@ -261,6 +283,7 @@ world_109 <- list(
   beepers_n = 4,
   beepers_bag = Inf
 )
+
 problema_1_1 <- list(
   nx = 7,
   ny = 5,
@@ -402,7 +425,8 @@ usethis::use_data(world_101,
                   world_103,
                   world_104,
                   world_105,
-                  world_106,
+                  world_106a,
+                  world_106b,
                   world_107,
                   world_108,
                   world_109,
