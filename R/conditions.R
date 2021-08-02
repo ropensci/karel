@@ -18,7 +18,7 @@
 #'   mirando.
 #'
 #' @examples
-#' generar_mundo("world_101")
+#' generar_mundo("mundo001")
 #' frente_abierto()
 #' frente_cerrado()
 #' izquierda_abierto()

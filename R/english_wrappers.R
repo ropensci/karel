@@ -21,7 +21,7 @@
 #' @export
 #'
 #' @examples
-#' generate_world("world_101")
+#' generate_world("mundo001")
 #'
 #' @seealso \code{\link{actions}} \code{\link{run_actions}}
 #'
@@ -61,7 +61,7 @@ generate_world <- function(world) generar_mundo(world)
 #' @return Produces an animation with \code{gganimate}.
 #'
 #' @examples
-#' generate_world("world_101")
+#' generate_world("mundo001")
 #' move()
 #' pick_beeper()
 #' turn_left()
@@ -85,7 +85,7 @@ run_actions <- function(loop = TRUE) ejecutar_acciones(repetir = loop)
 #'   \code{run_actions()}.
 #'
 #' @examples
-#' generate_world("world_101")
+#' generate_world("mundo001")
 #' move()
 #' pick_beeper()
 #' turn_left()
@@ -127,7 +127,7 @@ pick_beeper <- function() juntar_coso()
 #'   functions \code{turn_right()} and \code{turn_around()}.
 #'
 #' @examples
-#' generate_world("world_101")
+#' generate_world("mundo001")
 #' load_super_karel()
 #' turn_around()
 #' turn_right()
@@ -159,7 +159,7 @@ turn_around <- function() darse_vuelta()
 #' @details The functions \code{front_is_clear()}, \code{front_is_blocked()}, \code{left_is_clear()}, \code{left_is_blocked()}, \code{right_is_clear()} y \code{right_is_blocked()} test if there is a wall in front of Karel, to her left or to her right, respectively. The functions \code{beepers_present()} y \code{no_beepers_present()} test if there are or there are not \code{beepers} at Karel's current position. The functions \code{karel_has_beepers()} y \code{karel_has_no_beepers()} test if Karel has or hasn't got  \code{beepers} in her bag (not visible in the plot). The functions \code{facing_east()}, \code{facing_west()}, \code{facing_north()} y \code{facing_south()} test the direction to which Karel is facing right now.
 #'
 #' @examples
-#' generate_world("world_101")
+#' generate_world("mundo001")
 #' front_is_clear()
 #' front_is_blocked()
 #' left_is_clear()

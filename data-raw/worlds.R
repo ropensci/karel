@@ -1,48 +1,5 @@
-world_001 <- list(
-  nx = 6,
-  ny = 4,
-  hor_walls = dplyr::tibble(
-    x = c(3, 3),
-    y = c(1, 2),
-    lgth = c(3, 3)
-  ),
-  ver_walls = dplyr::tibble(x = 3,
-                            y = 0,
-                            lgth = 1),
-  karel_x = 1,
-  karel_y = 1,
-  karel_dir = 1,
-  beepers_x = c(3, 4),
-  beepers_y = c(1, 1),
-  beepers_n = 4:5,
-  beepers_bag = Inf
-)
 
-# No beepers in the beginning
-world_002 <- list(
-  nx = 6,
-  ny = 4,
-  hor_walls = dplyr::tibble(
-    x = 3,
-    y = 1,
-    lgth = 3
-  ),
-  ver_walls = dplyr::tibble(
-    x = 3,
-    y = 0,
-    lgth = 1
-  ),
-  karel_x = 1,
-  karel_y = 1,
-  karel_dir = 1,
-  beepers_x = NULL,
-  beepers_y = NULL,
-  beepers_n = NULL,
-  beepers_bag = Inf
-)
-
-# Beepers in one place in the beginning
-world_003 <- list(
+mundo001 <- list(
   nx = 6,
   ny = 4,
   hor_walls = dplyr::tibble(
@@ -64,52 +21,7 @@ world_003 <- list(
   beepers_bag = Inf
 )
 
-# Two  Beepers in one places in the beggining
-world_004 <- list(
-  nx = 6,
-  ny = 4,
-  hor_walls = dplyr::tibble(
-    x = 3,
-    y = 1,
-    lgth = 3
-  ),
-  ver_walls = dplyr::tibble(
-    x = 3,
-    y = 0,
-    lgth = 1
-  ),
-  karel_x = 1,
-  karel_y = 1,
-  karel_dir = 1,
-  beepers_x = 2,
-  beepers_y = 1,
-  beepers_n = 2,
-  beepers_bag = Inf
-)
-
-world_101 <- list(
-  nx = 6,
-  ny = 4,
-  hor_walls = dplyr::tibble(
-    x = 3,
-    y = 1,
-    lgth = 3
-  ),
-  ver_walls = dplyr::tibble(
-    x = 3,
-    y = 0,
-    lgth = 1
-  ),
-  karel_x = 1,
-  karel_y = 1,
-  karel_dir = 1,
-  beepers_x = 2,
-  beepers_y = 1,
-  beepers_n = 1,
-  beepers_bag = Inf
-)
-
-world_102 <- list(
+mundo002 <- list(
   nx = 6,
   ny = 4,
   hor_walls = dplyr::tibble(
@@ -132,7 +44,7 @@ world_102 <- list(
 )
 
 
-world_103 <- list(
+mundo003 <- list(
   nx = 11,
   ny = 3,
   hor_walls = dplyr::tibble(
@@ -154,7 +66,7 @@ world_103 <- list(
   beepers_bag = Inf
 )
 
-world_104 <- list(
+mundo004 <- list(
   nx = 11,
   ny = 3,
   hor_walls = dplyr::tibble(
@@ -176,7 +88,7 @@ world_104 <- list(
   beepers_bag = Inf
 )
 
-world_105 <- list(
+mundo005 <- list(
   nx = 10,
   ny = 10,
   hor_walls = NULL,
@@ -190,7 +102,7 @@ world_105 <- list(
   beepers_bag = Inf
 )
 
-world_106a <- list(
+mundo006 <- list(
   nx = 7,
   ny = 3,
   hor_walls = dplyr::tibble(
@@ -212,7 +124,7 @@ world_106a <- list(
   beepers_bag = Inf
 )
 
-world_106b <- list(
+mundo007 <- list(
   nx = 7,
   ny = 3,
   hor_walls = dplyr::tibble(
@@ -234,7 +146,7 @@ world_106b <- list(
   beepers_bag = Inf
 )
 
-world_107 <- list(
+mundo008 <- list(
   nx = 9,
   ny = 7,
   hor_walls = NULL,
@@ -248,7 +160,7 @@ world_107 <- list(
   beepers_bag = 0
 )
 
-world_108 <- list(
+mundo009 <- list(
   nx = 6,
   ny = 6,
   hor_walls = dplyr::tibble(
@@ -270,7 +182,7 @@ world_108 <- list(
   beepers_bag = Inf
 )
 
-world_109 <- list(
+mundo010 <- list(
   nx = 5,
   ny = 3,
   hor_walls = NULL,
@@ -284,7 +196,7 @@ world_109 <- list(
   beepers_bag = Inf
 )
 
-problema_1_1 <- list(
+mundo011 <- list(
   nx = 7,
   ny = 5,
   hor_walls = dplyr::tibble(
@@ -306,7 +218,7 @@ problema_1_1 <- list(
   beepers_bag = Inf
 )
 
-problema_1_3a <- list(
+mundo012 <- list(
   nx = 6,
   ny = 3,
   hor_walls = NULL,
@@ -320,7 +232,7 @@ problema_1_3a <- list(
   beepers_bag = Inf
 )
 
-problema_1_3b <- list(
+mundo013 <- list(
   nx = 1,
   ny = 1,
   hor_walls = NULL,
@@ -334,7 +246,7 @@ problema_1_3b <- list(
   beepers_bag = Inf
 )
 
-problema_1_3c <- list(
+mundo014 <- list(
   nx = 20,
   ny = 1,
   hor_walls = NULL,
@@ -348,7 +260,7 @@ problema_1_3c <- list(
   beepers_bag = Inf
 )
 
-problema_1_4a <- list(
+mundo015 <- list(
   nx = 9,
   ny = 10,
   hor_walls = NULL,
@@ -366,7 +278,7 @@ problema_1_4a <- list(
   beepers_bag = Inf
 )
 
-problema_1_4b <- list(
+mundo016 <- list(
   nx = 9,
   ny = 6,
   hor_walls = NULL,
@@ -392,7 +304,7 @@ pos <-
   )
 pos <- dplyr::distinct(pos)
 
-problema_1_5a <- list(
+mundo017 <- list(
   nx = 9,
   ny = 9,
   hor_walls = NULL,
@@ -406,7 +318,7 @@ problema_1_5a <- list(
   beepers_bag = Inf
 )
 
-problema_1_5b <- list(
+mundo018 <- list(
   nx = 6,
   ny = 4,
   hor_walls = NULL,
@@ -420,24 +332,248 @@ problema_1_5b <- list(
   beepers_bag = Inf
 )
 
-usethis::use_data(world_101,
-                  world_102,
-                  world_103,
-                  world_104,
-                  world_105,
-                  world_106a,
-                  world_106b,
-                  world_107,
-                  world_108,
-                  world_109,
-                  problema_1_1,
-                  problema_1_3a,
-                  problema_1_3b,
-                  problema_1_3c,
-                  problema_1_4a,
-                  problema_1_4b,
-                  problema_1_5a,
-                  problema_1_5b,
+
+mundo019 <- list(
+  nx = 7,
+  ny = 7,
+  hor_walls = data.frame(
+    x = rep(1:5, each = 2),
+    y = c(3, 4, 2, 5, 1, 6, 2, 5, 3, 4),
+    lgth = rep(1, 10)
+  ),
+  ver_walls = data.frame(
+    x = c(1, rep(2:5, each = 2), 6),
+    y = c(3, 2, 4, 1, 5, 1, 5, 2, 4, 3),
+    lgth = rep(1, 10)
+  ),
+  karel_x = 2,
+  karel_y = 4,
+  karel_dir = 1,
+  beepers_x = NULL,
+  beepers_y = NULL,
+  beepers_n = NULL,
+  beepers_bag = Inf
+)
+
+
+mundo020 <- list(
+  nx = 11,
+  ny = 11,
+  hor_walls = data.frame(
+    x = rep(1:9, each = 2),
+    y = c(5, 6, 4, 7, 3, 8, 2, 9, 1, 10, 9, 2, 8, 3, 7, 4, 6, 5),
+    lgth = rep(1, 18)
+  ),
+  ver_walls = data.frame(
+    x = c(1, rep(2:9, each = 2), 10),
+    y = c(5, 4, 6, 3, 7, 2, 8, 1, 9, 1, 9, 2, 8, 3, 7, 4, 6, 5),
+    lgth = rep(1, 18)
+  ),
+  karel_x = 2,
+  karel_y = 6,
+  karel_dir = 1,
+  beepers_x = NULL,
+  beepers_y = NULL,
+  beepers_n = NULL,
+  beepers_bag = Inf
+)
+
+
+
+mundo021 <- list(
+  nx = 5,
+  ny = 5,
+  hor_walls = NULL,
+  ver_walls = NULL,
+  karel_x = 2,
+  karel_y = 3,
+  karel_dir = 1,
+  beepers_x = 3,
+  beepers_y = 3,
+  beepers_n = 8,
+  beepers_bag = Inf
+)
+
+
+
+mundo022 <- list(
+  nx = 13,
+  ny = 8,
+  hor_walls = data.frame(
+    x = 0:12,
+    y = c(5:7, 6, 5:7, 6, 5:7, 6, 5),
+    lgth = rep(1, 13)
+  ),
+  ver_walls = data.frame(
+    x = 1:12,
+    y = c(5, 6, 6, 5, 5, 6, 6, 5, 5, 6, 6, 5),
+    lgth = rep(1, 12)
+  ),
+  karel_x = 1,
+  karel_y = 1,
+  karel_dir = 1,
+  beepers_x = c(1, 1, 5, 5, 5, 9, 9, 13, 13, 13),
+  beepers_y = c(4, 5, 1, 2, 4, 3, 5, 1, 3, 5),
+  beepers_n = rep(1, 10),
+  beepers_bag = Inf
+)
+
+
+mundo023 <- list(
+  nx = 13,
+  ny = 9,
+  hor_walls = data.frame(
+    x = 0:12,
+    y = c(4, 5, 6, 5, 3, 7, 8, 7, 5, 6, 7, 6, 1),
+    lgth = rep(1, 13)
+  ),
+  ver_walls = data.frame(
+    x = 1:12,
+    y = c(4, 5, 5, 3, 3, 7, 7, 5, 5, 6, 6, 1),
+    lgth = c(1, 1, 1, 2, 4, 1, 1, 2, 1, 1, 1, 5)
+  ),
+  karel_x = 1,
+  karel_y = 1,
+  karel_dir = 1,
+  beepers_x = c(1, 1, 5, 9, 9),
+  beepers_y = c(1, 4, 3, 2, 4),
+  beepers_n = rep(1, 5),
+  beepers_bag = Inf
+)
+
+mundo024 <- list(
+  nx = 1,
+  ny = 10,
+  hor_walls = data.frame(
+    x = 0,
+    y = 8,
+    lgth = 1
+  ),
+  ver_walls =NULL,
+  karel_x = 1,
+  karel_y = 1,
+  karel_dir = 1,
+  beepers_x = c(1, 1),
+  beepers_y = c(2, 3),
+  beepers_n = c(1, 1),
+  beepers_bag = Inf
+)
+
+mundo025 <- list(
+  nx = 6,
+  ny = 4,
+  hor_walls = dplyr::tibble(
+    x = c(3, 3),
+    y = c(1, 2),
+    lgth = c(3, 3)
+  ),
+  ver_walls = dplyr::tibble(x = 3,
+                            y = 0,
+                            lgth = 1),
+  karel_x = 1,
+  karel_y = 1,
+  karel_dir = 1,
+  beepers_x = c(3, 4),
+  beepers_y = c(1, 1),
+  beepers_n = 4:5,
+  beepers_bag = Inf
+)
+
+
+mundo026 <- list(
+  nx = 6,
+  ny = 4,
+  hor_walls = dplyr::tibble(
+    x = 3,
+    y = 1,
+    lgth = 3
+  ),
+  ver_walls = dplyr::tibble(
+    x = 3,
+    y = 0,
+    lgth = 1
+  ),
+  karel_x = 1,
+  karel_y = 1,
+  karel_dir = 1,
+  beepers_x = NULL,
+  beepers_y = NULL,
+  beepers_n = NULL,
+  beepers_bag = Inf
+)
+
+mundo027 <- list(
+  nx = 6,
+  ny = 4,
+  hor_walls = dplyr::tibble(
+    x = 3,
+    y = 1,
+    lgth = 3
+  ),
+  ver_walls = dplyr::tibble(
+    x = 3,
+    y = 0,
+    lgth = 1
+  ),
+  karel_x = 1,
+  karel_y = 1,
+  karel_dir = 1,
+  beepers_x = 2,
+  beepers_y = 1,
+  beepers_n = 1,
+  beepers_bag = Inf
+)
+
+mundo028 <- list(
+  nx = 6,
+  ny = 4,
+  hor_walls = dplyr::tibble(
+    x = 3,
+    y = 1,
+    lgth = 3
+  ),
+  ver_walls = dplyr::tibble(
+    x = 3,
+    y = 0,
+    lgth = 1
+  ),
+  karel_x = 1,
+  karel_y = 1,
+  karel_dir = 1,
+  beepers_x = 2,
+  beepers_y = 1,
+  beepers_n = 2,
+  beepers_bag = Inf
+)
+
+
+usethis::use_data(mundo001,
+                  mundo002,
+                  mundo003,
+                  mundo004,
+                  mundo005,
+                  mundo007,
+                  mundo008,
+                  mundo009,
+                  mundo010,
+                  mundo011,
+                  mundo012,
+                  mundo013,
+                  mundo014,
+                  mundo015,
+                  mundo016,
+                  mundo017,
+                  mundo018,
+                  mundo019,
+                  mundo020,
+                  mundo021,
+                  mundo022,
+                  mundo023,
+                  mundo024,
+                  mundo025,
+                  mundo026,
+                  mundo027,
+                  mundo028,
                   internal = TRUE, overwrite = TRUE)
 
 # for (i in 1:9) {

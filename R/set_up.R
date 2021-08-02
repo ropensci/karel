@@ -27,7 +27,7 @@ pkg_env <- new.env(parent = emptyenv())
 #' @export
 #'
 #' @examples
-#' generar_mundo("world_101")
+#' generar_mundo("mundo001")
 #'
 #' @seealso \code{\link{acciones}} \code{\link{ejecutar_acciones}}
 #'
@@ -252,7 +252,7 @@ create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL, mome
 #' @return Produce una animación con \code{gganimate}.
 #'
 #' @examples
-#' generar_mundo("world_101")
+#' generar_mundo("mundo001")
 #' avanzar()
 #' juntar_coso()
 #' girar_izquierda()

@@ -1,6 +1,6 @@
 Package: karel
 Title: Karel The Robot Learns R
-Version: 0.0.0.9000
+Version: 0.0.1.9000
 Authors@R: 
     person(given = "Marcos",
            family = "Prunello",
@@ -8,13 +8,13 @@ Authors@R:
            email = "marcosprunello@gmail.com",
            comment = c(ORCID = "0000-0002-9611-527X"))
 Description: This is the R implementation of Karel the robot, a programming 
-  language created by Dr. R. E. Pattis at Stanford University in 1981. Karel 
-  useful to teach an introductory concepts about general programming, such as 
-  algorithmic decomposition, conditional statements, lopps, in an interactive 
-  and fun way, writing programs to make Karel achieve certaing tasks in the 
-  world she lives in. Originally based on Pascal, Karel was implemented in many 
-  languages through these decades, including Java C++, Ruby and Python. This is 
-  the first package implementing Karin in R.
+  language created by Dr. R. E. Pattis at Stanford University in 1981. Karel is 
+  an useful tool to teach introductory concepts about general programming, such 
+  as algorithmic decomposition, conditional statements, loops, etc., in an 
+  interactive and fun way, by writing programs to make Karel the robot achieve 
+  certaing tasks in the world she lives in. Originally based on Pascal, Karel 
+  was implemented in many languages through these decades, including Java C++, 
+  Ruby and Python. This is the first package implementing Karel in R.
 Depends: R (>= 3.6.0)
 Imports:
     purrr,
@@ -30,9 +30,11 @@ LazyData: true
 Language:
   en,
   es
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
 Suggests: 
     testthat,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: https://mpru.github.io/karel
+BugReports: https://github.com/mpru/karel/issues

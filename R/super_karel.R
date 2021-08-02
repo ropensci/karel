@@ -5,7 +5,7 @@
 #' @return No devuelve ningún valor, pero adjuntan al Global Environment las funciones \code{girar_derecha()} y \code{darse_vuelta()}.
 #'
 #' @examples
-#' generar_mundo("world_101")
+#' generar_mundo("mundo001")
 #' cargar_super_karel()
 #' darse_vuelta()
 #' girar_derecha()
