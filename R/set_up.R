@@ -105,6 +105,9 @@ generar_mundo <- function(mundo) {
 	pkg_env$beepers_all <- pkg_env$beepers_now
 	pkg_env$beepers_bag <- world$beepers_bag
 
+	# Set variable to track if there was an error
+	pkg_env$error <- FALSE
+
 	# Plot the world
 	plot_base_world()
 	plot_static_world(1)
@@ -263,6 +266,9 @@ create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL, mome
 #'
 #' @export
 ejecutar_acciones <- function(repetir = TRUE) {
+
+  # Proceed if there was no mistake
+  if (pkg_env$error) stop("You made a mistake before and can't ask Karel to do more things. Generate the world again and start all over.\n Tuviste un error y ahora no puedes pedirle algo nuevo a Karel. Generar otra vez el mundo y volver a comenzar.")
 
   if (pkg_env$moment == 1) stop("\nPerform at least one action.\nRealizar al menos una accion.")
 

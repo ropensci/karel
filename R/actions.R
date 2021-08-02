@@ -28,6 +28,8 @@ NULL
 #' @rdname acciones
 #' @export
 avanzar <- function() {
+  # Proceed if there was no mistake
+  if (pkg_env$error) stop("You made a mistake before and can't ask Karel to do more things. Generate the world again and start all over.\n Tuviste un error y ahora no puedes pedirle algo nuevo a Karel. Generar otra vez el mundo y volver a comenzar.")
   pkg_env$moment <- pkg_env$moment + 1
   switch(pkg_env$dir_now,
 
@@ -35,6 +37,7 @@ avanzar <- function() {
          if (pkg_env$open_moves[pkg_env$x_now, pkg_env$y_now, 1]) {
            pkg_env$x_now <- pkg_env$x_now + 1
          } else {
+           pkg_env$error <- TRUE
            stop("Can't move east, there's a wall. Generate again the world and start all over.\nNo puede avanzar hacia el este, hay una pared. Generar otra vez el mundo y volver a comenzar.")
          },
 
@@ -42,6 +45,7 @@ avanzar <- function() {
          if (pkg_env$open_moves[pkg_env$x_now, pkg_env$y_now, 2]) {
            pkg_env$y_now <- pkg_env$y_now + 1
          } else {
+           pkg_env$error <- TRUE
            stop("Can't move north, there's a wall. Generate again the world and start all over.\nNo puede avanzar hacia el norte, hay una pared. Generar otra vez el mundo y volver a comenzar.")
          },
 
@@ -49,6 +53,7 @@ avanzar <- function() {
          if (pkg_env$open_moves[pkg_env$x_now, pkg_env$y_now, 3]) {
            pkg_env$x_now <- pkg_env$x_now - 1
          } else {
+           pkg_env$error <- TRUE
            stop("Can't move west, there's a wall. Generate again the world and start all over.\nNo puede avanzar hacia el oeste, hay una pared. Generar otra vez el mundo y volver a comenzar.")
          },
 
@@ -56,6 +61,7 @@ avanzar <- function() {
          if (pkg_env$open_moves[pkg_env$x_now, pkg_env$y_now, 4]) {
            pkg_env$y_now <- pkg_env$y_now - 1
          } else {
+           pkg_env$error <- TRUE
            stop("Can't move south, there's a wall. Generate again the world and start all over.\nNo puede avanzar hacia el sur, hay una pared. Generar otra vez el mundo y volver a comenzar.")
          }
   )
@@ -71,6 +77,8 @@ avanzar <- function() {
 #' @rdname acciones
 #' @export
 girar_izquierda <- function() {
+  # Proceed if there was no mistake
+  if (pkg_env$error) stop("You made a mistake before and can't ask Karel to do more things. Generate the world again and start all over.\n Tuviste un error y ahora no puedes pedirle algo nuevo a Karel. Generar otra vez el mundo y volver a comenzar.")
   # Update moment and direction
   pkg_env$moment <- pkg_env$moment + 1
   pkg_env$dir_now <- switch(pkg_env$dir_now, 2, 3, 4, 1)
@@ -88,8 +96,12 @@ girar_izquierda <- function() {
 #' @export
 poner_coso <- function() {
 
+  # Proceed if there was no mistake
+  if (pkg_env$error) stop("You made a mistake before and can't ask Karel to do more things. Generate the world again and start all over.\n Tuviste un error y ahora no puedes pedirle algo nuevo a Karel. Generar otra vez el mundo y volver a comenzar.")
+
   if (pkg_env$beepers_bag == 0) {
-    stop("Can't put a beeper sincer there aren't any left in Karel's bag. Generate again the world and start all over.\nNo puede colocar un coso ya que no le queda ninguno en la mochila. Generar otra vez el mundo y volver a comenzar.")
+    pkg_env$error <- TRUE
+    stop("Can't put a beeper since there aren't any left in Karel's bag. Generate again the world and start all over.\nNo puede colocar un coso ya que no le queda ninguno en la mochila. Generar otra vez el mundo y volver a comenzar.")
   } else {
 
     # Update bag
@@ -138,6 +150,9 @@ poner_coso <- function() {
 #' @export
 juntar_coso <- function() {
 
+  # Proceed if there was no mistake
+  if (pkg_env$error) stop("You made a mistake before and can't ask Karel to do more things. Generate the world again and start all over.\n Tuviste un error y ahora no puedes pedirle algo nuevo a Karel. Generar otra vez el mundo y volver a comenzar.")
+
   # We can only remove if there are no beepers there, otherwise it's an error
   if (hay_cosos()) {
 
@@ -176,6 +191,7 @@ juntar_coso <- function() {
       mutate(moment = moment + 1) %>%
       bind_rows(pkg_env$karel, .)
   } else {
+    pkg_env$error <- TRUE
     stop("There are no beepers here to remove. Generate again the world and start all over.\nNo hay cosos para quitar. Generar otra vez el mundo y volver a comenzar.")
   }
 }

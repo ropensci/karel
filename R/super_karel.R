@@ -36,6 +36,10 @@ global_env_set_hack <- function(key, val, pos) {
 
 #' @rdname acciones
 girar_derecha <- function() {
+
+  # Proceed if there was no mistake
+  if (pkg_env$error) stop("You made a mistake before and can't ask Karel to do more things. Generate the world again and start all over.\n Tuviste un error y ahora no puedes pedirle algo nuevo a Karel. Generar otra vez el mundo y volver a comenzar.")
+
   # Update moment and direction
   pkg_env$moment <- pkg_env$moment + 1
   pkg_env$dir_now <- switch(pkg_env$dir_now, 4, 1, 2, 3)
@@ -51,6 +55,10 @@ girar_derecha <- function() {
 
 #' @rdname acciones
 darse_vuelta <- function() {
+
+  # Proceed if there was no mistake
+  if (pkg_env$error) stop("You made a mistake before and can't ask Karel to do more things. Generate the world again and start all over.\n Tuviste un error y ahora no puedes pedirle algo nuevo a Karel. Generar otra vez el mundo y volver a comenzar.")
+
   # Update moment and direction
   pkg_env$moment <- pkg_env$moment + 1
   pkg_env$dir_now <- switch(pkg_env$dir_now, 3, 4, 1, 2)
