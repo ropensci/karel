@@ -46,7 +46,7 @@ El argumento \code{mundo} puede consistir de un mundo creado (es
   }
 }
 \examples{
-generar_mundo("world_101")
+generar_mundo("mundo001")
 
 }
 \seealso{

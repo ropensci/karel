@@ -44,7 +44,7 @@ Argument \code{world} can be create by the user. In this case, it
   }
 }
 \examples{
-generate_world("world_101")
+generate_world("mundo001")
 
 }
 \seealso{

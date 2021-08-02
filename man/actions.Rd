@@ -34,7 +34,7 @@ superpowers with \code{load_super_karel()}, then she can also
 \code{turn_right()} y \code{turn_around()}.
 }
 \examples{
-generate_world("world_101")
+generate_world("mundo001")
 move()
 pick_beeper()
 turn_left()

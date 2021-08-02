@@ -35,7 +35,7 @@ realizar. Si se habilitan los superpoderes de Karel con
 \code{darse_vuelta()}.
 }
 \examples{
-generar_mundo("world_101")
+generar_mundo("mundo001")
 avanzar()
 juntar_coso()
 girar_izquierda()

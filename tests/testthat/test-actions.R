@@ -1,7 +1,7 @@
 library(karel)
 
 test_that("Karel's actions perform as expected", {
-  generar_mundo("world_101")
+  generar_mundo("mundo001")
   karel_env <- get_pkg_env()
   avanzar()
   expect_equal(karel_env$x_now, 2)

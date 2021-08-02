@@ -18,7 +18,7 @@ Esta función produce la animación que muestra todas las acciones realizadas
 por Karel desde que su mundo fue generado con \code{generar_mundo}.
 }
 \examples{
-generar_mundo("world_101")
+generar_mundo("mundo001")
 avanzar()
 juntar_coso()
 girar_izquierda()

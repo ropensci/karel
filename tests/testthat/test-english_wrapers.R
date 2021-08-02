@@ -1,7 +1,7 @@
 library(karel)
 
 test_that("Checking conditions work fine in English.", {
-  generate_world("world_101")
+  generate_world("mundo001")
   expect_true(front_is_clear())
   expect_false(front_is_blocked())
   expect_true(left_is_clear())
@@ -19,7 +19,7 @@ test_that("Checking conditions work fine in English.", {
 })
 
 test_that("Karel's actions and superpowers perform as expected in English", {
-  generate_world("world_101")
+  generate_world("mundo001")
   karel_env <- get_pkg_env()
   move()
   expect_equal(karel_env$x_now, 2)

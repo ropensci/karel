@@ -1,7 +1,7 @@
 library(karel)
 
 test_that("Checking conditions work fine.", {
-  generar_mundo("world_101")
+  generar_mundo("mundo001")
   expect_true(frente_abierto())
   expect_false(frente_cerrado())
   expect_true(izquierda_abierto())

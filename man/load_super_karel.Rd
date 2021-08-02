@@ -17,7 +17,7 @@ superpowers aren't loaded, then these functions won't be available and Karel
 can't use them.
 }
 \examples{
-generate_world("world_101")
+generate_world("mundo001")
 load_super_karel()
 turn_around()
 turn_right()
