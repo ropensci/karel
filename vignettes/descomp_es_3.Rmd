@@ -10,7 +10,7 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>", out.width = "60%", fig.align = "center"
 )
 ```
 
@@ -85,7 +85,7 @@ avanzar()
 ejecutar_acciones()
 ```
 
-```{r, out.width='80%', echo=FALSE, fig.align="center"}
+```{r, echo=FALSE, fig.align="center"}
 if (knitr::is_html_output()) knitr::include_graphics('18.gif')
 ```
 
@@ -104,7 +104,7 @@ cargar_super_karel()
 
 Veamos otro ejemplo sobre la utilidad de la descomposición algorítmica. Como ocurre en muchos lugares, en el mundo de Karel a veces las calles necesitan reparación. Imaginemos que Karel está caminando por la calle como se ve en la figura de la izquierda y se encuentra con un agujero. Su tarea es rellenarlo con un *coso* y avanzar hasta el otro extremo, como se ve en la figura de la derecha.
 
-```{r, out.width='100%', echo=FALSE, fig.align="center"}
+```{r, out.width='800%', echo=FALSE, fig.align="center"}
 knitr::include_graphics('19.png')
 ```
 
@@ -170,7 +170,7 @@ llenar_agujero()
 ejecutar_acciones()
 ```
 
-```{r, out.width='80%', echo=FALSE, fig.align="center"}
+```{r,  echo=FALSE, fig.align="center"}
 if (knitr::is_html_output()) knitr::include_graphics('20.gif')
 ```
 

@@ -7,16 +7,24 @@ navbar:
   left:
     - icon: fa-home
       href: index.html
-    - text: "Español"
+    - text: "Tutoriales en Español"
       menu:
-        - text: "Viñetas"
-          href: articles/karel_teaches_R_es.html
-        - text: "Funciones"
+        - text: "1 - Intro"
+          href: articles/intro_es_1.html
+        - text: "2 - Conociendo a Karel"
+          href: articles/karel_es_2.html
+        - text: "3 - Descomposición algorítmica"
+          href: articles/descomp_es_3.html
+        - text: "4 - Estructuras de control"
+          href: articles/control_es_4.html
+        - text: "5 - Ejemplos"
+          href: articles/ejemplos_es_5.html
+        - text: "Manual de Funciones"
           href: reference/index-es.html
-    - text: "English"
+    - text: "Tutorials in English"
       menu:
-        - text: "Vignettes"
-          href: articles/karel_teaches_R_en.html
+        - text: "Examples"
+          href: articles/examples_en.html
         - text: "Functions"
           href: reference/index-en.html
     - text: "News"

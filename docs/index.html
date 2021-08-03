@@ -6,26 +6,26 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Karel The Robot Learns R • karel</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Karel The Robot Learns R">
 <meta property="og:description" content="This is the R implementation of Karel the robot, a programming 
-  language created by Dr. R. E. Pattis at Stanford University in 1981. Karel 
-  useful to teach an introductory concepts about general programming, such as 
-  algorithmic decomposition, conditional statements, lopps, in an interactive 
-  and fun way, writing programs to make Karel achieve certaing tasks in the 
-  world she lives in. Originally based on Pascal, Karel was implemented in many 
-  languages through these decades, including Java C++, Ruby and Python. This is 
-  the first package implementing Karin in R.">
-<meta name="twitter:card" content="summary">
+  language created by Dr. R. E. Pattis at Stanford University in 1981. Karel is 
+  an useful tool to teach introductory concepts about general programming, such 
+  as algorithmic decomposition, conditional statements, loops, etc., in an 
+  interactive and fun way, by writing programs to make Karel the robot achieve 
+  certaing tasks in the world she lives in. Originally based on Pascal, Karel 
+  was implemented in many languages through these decades, including Java C++, 
+  Ruby and Python. This is the first package implementing Karel in R.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">karel</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9000</span>
       </span>
     </div>
 
@@ -46,34 +46,46 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="index.html">
-    <span class="fa fa-home"></span>
+    <span class="fas fa-home"></span>
      
   </a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Español
+    Tutoriales en Español
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/karel_teaches_R_es.html">Viñetas</a>
+      <a href="articles/intro_es_1.html">1 - Intro</a>
     </li>
     <li>
-      <a href="reference/index-es.html">Funciones</a>
+      <a href="articles/karel_es_2.html">2 - Conociendo a Karel</a>
+    </li>
+    <li>
+      <a href="articles/descomp_es_3.html">3 - Descomposición algorítmica</a>
+    </li>
+    <li>
+      <a href="articles/control_es_4.html">4 - Estructuras de control</a>
+    </li>
+    <li>
+      <a href="articles/ejemplos_es_5.html">5 - Ejemplos</a>
+    </li>
+    <li>
+      <a href="reference/index-es.html">Manual de Funciones</a>
     </li>
   </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    English
+    Tutorials in English
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/karel_teaches_R_en.html">Vignettes</a>
+      <a href="articles/examples_en.html">Examples</a>
     </li>
     <li>
       <a href="reference/index-en.html">Functions</a>
@@ -87,13 +99,13 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://twitter.com/mrqtsp">
-    <span class="fa fa-twitter"></span>
+    <span class="fas fa-twitter"></span>
      
   </a>
 </li>
 <li>
   <a href="https://github.com/mpru/karel">
-    <span class="fa fa-github"></span>
+    <span class="fas fa-github"></span>
      
   </a>
 </li>
@@ -109,18 +121,28 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-
-<p>|||||| <strong>Work in progress</strong> |||||| <strong>En construcción</strong> ||||||</p>
-<div id="la-robot-karel-enseña-r-" class="section level1">
+<div id="la-robot-karel-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#la-robot-karel-ense%C3%B1a-r-" class="anchor"></a>La robot Karel enseña R <img src="reference/figures/karel_hexsticker.png" align="right" alt="" width="160">
+<a href="#la-robot-karel-" class="anchor"></a>La robot Karel <img src="reference/figures/karel_hexsticker.png" align="right" alt="" width="160">
 </h1></div>
 <!-- badges: start -->
 
-<p>Página web: <a href="https://mpru.github.io/karel/" class="uri">https://mpru.github.io/karel/</a></p>
-<div id="instalación" class="section level2">
+<p>Web: <a href="https://mpru.github.io/karel/" class="uri">https://mpru.github.io/karel/</a></p>
+<div id="quién-es-karel--who-is-karel" class="section level2">
 <h2 class="hasAnchor">
-<a href="#instalaci%C3%B3n" class="anchor"></a>Instalación</h2>
+<a href="#qui%C3%A9n-es-karel--who-is-karel" class="anchor"></a>¿Quién es Karel? / Who is Karel?</h2>
+<p><code>karel</code> un nuevo paquete de R creado con el propósito de brindar un entorno que posibilite la enseñanza de principios de la programación en una forma dinámica e interactiva, para estudiantes sin experiencia previa que estén cursando el nivel secundario o los primeros años de su formación de grado. <em>Karel</em> es una robot que vive y camina por ciertos <em>mundos</em>, en los cuales puede realizar determinadas acciones si se lo pedimos, mientras aprendemos a programar en R.</p>
+<p>La robot Karel acompaña en la enseñanza de conceptos fundamentales de la programación, por ejemplo, el de procesador (Karel), ambiente (su mundo), objetos (llamados <em>cosos</em>) y acciones (las actividades que puede realizar). Además, como se puede observar en los ejemplos de los tutoriales presentes en esta página, junto con Karel es posible instruir sobre el concepto de la descomposición algorítmica: en numerosas oportunidades la robot debe cumplir objetivos cuya resolución requiere descomponer el problema en partes más pequeñas, para cada una de las cuales los estudiantes deben programar una función en R. También facilita la ejemplificación del uso de estructuras de control de código secuenciales, condicionales (<code>if () {} else {}</code>) e iterativas (<code>for () {}</code>, <code>while () {}</code>).</p>
+<p>El primer paso para programar con Karel es <em>generar un mundo</em> en el cual ella pueda andar, a través de la instrucción <code><a href="reference/generar_mundo.html">generar_mundo()</a></code>, aclarando entre los paréntesis el nombre del mundo que queremos usar. El paquete trae incorporados unos cuantos pero los usuarios pueden optar por crear otros nuevos.</p>
+<p>Todos los mundos de Karel son rectangulares, compuestos por calles que los recorren horizontalmente (filas) y avenidas verticales (columnas). Karel siempre se encuentra en la intersección entre una calle y una avenida (celda), mirando hacia una de las cuatro direcciones posibles: este, norte, oeste o sur. Los bordes negros representan paredes que Karel no puede atravesar, solo puede rodearlas. Además, en algunas celdas hay uno o varios <em>cosos</em>. Karel puede recorrer el mundo poniendo y juntando <em>cosos</em> por ahí; si los junta los guarda en su mochila y lleva un registro de cuántos tiene. Finalmente, Karel solo puede realizar estas actividades: <code><a href="reference/acciones.html">avanzar()</a></code>, <code><a href="reference/acciones.html">girar_izquierda()</a></code>, <code><a href="reference/acciones.html">juntar_coso()</a></code> y <code><a href="reference/acciones.html">poner_coso()</a></code>. Claro, agrupando ingeniosamente estas acciones básicas se pueden crear otras nuevas, por ejemplo, crear una función <code><a href="reference/acciones.html">girar_derecha()</a></code> que produzca tal efecto, haciendo girar a Karel tres veces a la izquierda. Por otro lado, Karel es capaz de evaluar ciertas características de su entorno a través de funciones que arrojan un valor lógico <code>TRUE</code> o <code>FALSE</code>, por ejemplo: <code><a href="reference/condiciones.html">frente_abierto()</a></code>, <code><a href="reference/condiciones.html">hay_cosos()</a></code> o <code><a href="reference/condiciones.html">mira_al_sur()</a></code>, de manera que podemos condicionar las acciones que Karel realiza a la verificación de ciertos aspectos sobre su posición y su mundo. Una vez que se ejecuta el código con todas las acciones que Karel debe realizar, se debe correr la función <code><a href="reference/ejecutar_acciones.html">ejecutar_acciones()</a></code> y se puede ver el resultado en una animación creada con los paquetes <code>ggplot</code> y <code>gganimate</code>.</p>
+<p>Con el objetivo de sortear algunas de las barreras idiomáticas que pueden hacer más desafiante poder dar los primeros pasos en el aprendizaje de programación, el paquete <code>karel</code> se diseñó de forma completamente bilingüe: todas las funciones tienen una versión en español y en inglés (por ejemplo,<code><a href="reference/acciones.html">girar_izquierda()</a></code> y <code><a href="reference/actions.html">turn_left()</a></code>), así como también las páginas del manual de ayuda y algunas del sitio web están escritos en ambos idiomas.</p>
+<p>La idea para la implementación de este paquete se basa en <em>Karel the Robot</em>, un lenguaje de programación creado con fines educativos por el Dr. R. E. Pattis de la Universidad de Stanford (California, EEUU), quien también escribió el libro <em>Karel the Robot: A Gentle Introduction to the Art of Programming</em>, en 1981. Su nombre es un homenaje a Karel Capek, el escritor sueco que inventó la palabra robot en su obra de ciencia ficción <em>R.U.R. (Rossum’s Universal Robots)</em>. Su sintaxis se basaba en Pascal, pero a lo largo de las décadas esta estrategia de enseñanza fue implementada en distintos lenguajes como Java, C++, Ruby y Python. El paquete aquí presentado es la primera implementación de Karel para R. Algunos de los ejemplos incluidos en las viñetas son adaptaciones de aquellos publicados por Eric Roberts en su material <em>Karel the robot learns Java</em> (2005).</p>
+<hr>
+<p>This is the R implementation of Karel the robot, a programming language created by Dr. R. E. Pattis at Stanford University in 1981. Karel is an useful tool to teach introductory concepts about general programming, such as algorithmic decomposition, conditional statements, loops, etc., in an interactive and fun way, by writing programs to make Karel the robot achieve certaing tasks in the world she lives in. Originally based on Pascal, Karel was implemented in many languages through these decades, including Java C++, Ruby and Python. This is the first package implementing Karel in R.</p>
+</div>
+<div id="instalación--installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#instalaci%C3%B3n--installation" class="anchor"></a>Instalación / Installation</h2>
 <!-- 
 You can install the released version of karel from [CRAN](https://CRAN.R-project.org) with:
 
@@ -129,65 +151,69 @@ install.packages("karel")
 ```
 -->
 <p>Se puede instalar la versión en desarrollo del paquete <code>karel</code> desde <a href="https://github.com/mpru/karel">GitHub</a> con:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb1-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"mpru/karel"</span>)</a></code></pre></div>
+<hr>
+<p>You can install the development version from <a href="https://github.com/mpru/karel">GitHub</a> with:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"mpru/karel"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="ejemplo" class="section level2">
+<div id="ejemplos--examples" class="section level2">
 <h2 class="hasAnchor">
-<a href="#ejemplo" class="anchor"></a>Ejemplo</h2>
-<p>Mientras construyo esta página, podés ir viendo algunos ejemplitos:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(karel)</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="kw"><a href="reference/cargar_super_karel.html">cargar_super_karel</a></span>()</a>
-<a class="sourceLine" id="cb2-3" title="3"></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="co"># Crear un mundo para Karel</span></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="kw"><a href="reference/generar_mundo.html">generar_mundo</a></span>(<span class="st">"world_106"</span>)</a></code></pre></div>
-<p><img src="reference/figures/README-example-1.png" width="60%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="co"># Crear mi propia función</span></a>
-<a class="sourceLine" id="cb3-3" title="3">llenar_agujero &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
-<a class="sourceLine" id="cb3-4" title="4">  <span class="kw"><a href="reference/acciones.html">girar_derecha</a></span>()</a>
-<a class="sourceLine" id="cb3-5" title="5">  <span class="kw"><a href="reference/acciones.html">avanzar</a></span>()</a>
-<a class="sourceLine" id="cb3-6" title="6">  <span class="cf">if</span> (<span class="kw"><a href="reference/condiciones.html">no_hay_cosos</a></span>()) {</a>
-<a class="sourceLine" id="cb3-7" title="7">    <span class="kw"><a href="reference/acciones.html">poner_coso</a></span>()</a>
-<a class="sourceLine" id="cb3-8" title="8">  }</a>
-<a class="sourceLine" id="cb3-9" title="9">  <span class="kw"><a href="reference/acciones.html">darse_vuelta</a></span>()</a>
-<a class="sourceLine" id="cb3-10" title="10">  <span class="kw"><a href="reference/acciones.html">avanzar</a></span>()</a>
-<a class="sourceLine" id="cb3-11" title="11">  <span class="kw"><a href="reference/acciones.html">girar_derecha</a></span>()</a>
-<a class="sourceLine" id="cb3-12" title="12">}</a>
-<a class="sourceLine" id="cb3-13" title="13"></a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="co"># Usarla para que Karel pueda llenar todos los agujeros</span></a>
-<a class="sourceLine" id="cb3-15" title="15"><span class="cf">while</span> (<span class="kw"><a href="reference/condiciones.html">frente_abierto</a></span>()) {</a>
-<a class="sourceLine" id="cb3-16" title="16">  <span class="cf">if</span> (<span class="kw"><a href="reference/condiciones.html">derecha_abierto</a></span>()) {</a>
-<a class="sourceLine" id="cb3-17" title="17">    <span class="kw">llenar_agujero</span>()</a>
-<a class="sourceLine" id="cb3-18" title="18">  }</a>
-<a class="sourceLine" id="cb3-19" title="19">  <span class="kw"><a href="reference/acciones.html">avanzar</a></span>()</a>
-<a class="sourceLine" id="cb3-20" title="20">}</a>
-<a class="sourceLine" id="cb3-21" title="21"><span class="cf">if</span> (<span class="kw"><a href="reference/condiciones.html">derecha_abierto</a></span>()) {</a>
-<a class="sourceLine" id="cb3-22" title="22">  <span class="kw">llenar_agujero</span>()</a>
-<a class="sourceLine" id="cb3-23" title="23">}</a>
-<a class="sourceLine" id="cb3-24" title="24"><span class="kw"><a href="reference/ejecutar_acciones.html">ejecutar_acciones</a></span>()</a></code></pre></div>
-<p><img src="reference/figures/README-example-1.gif" width="60%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># Laberinto</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="kw"><a href="reference/generar_mundo.html">generar_mundo</a></span>(<span class="st">"world_108"</span>)</a></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-2-1.png" width="60%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="cf">while</span> (<span class="kw"><a href="reference/condiciones.html">no_hay_cosos</a></span>()) {</a>
-<a class="sourceLine" id="cb5-2" title="2">  <span class="kw"><a href="reference/acciones.html">girar_derecha</a></span>()</a>
-<a class="sourceLine" id="cb5-3" title="3">  <span class="cf">while</span> (<span class="kw"><a href="reference/condiciones.html">frente_cerrado</a></span>()) {</a>
-<a class="sourceLine" id="cb5-4" title="4">    <span class="kw"><a href="reference/acciones.html">girar_izquierda</a></span>()</a>
-<a class="sourceLine" id="cb5-5" title="5">  }</a>
-<a class="sourceLine" id="cb5-6" title="6">  <span class="kw"><a href="reference/acciones.html">avanzar</a></span>()</a>
-<a class="sourceLine" id="cb5-7" title="7">}</a>
-<a class="sourceLine" id="cb5-8" title="8"><span class="kw"><a href="reference/ejecutar_acciones.html">ejecutar_acciones</a></span>()</a></code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-2-1.gif" width="60%" style="display: block; margin: auto;"></p>
-</div>
-</div>
+<a href="#ejemplos--examples" class="anchor"></a>Ejemplos / Examples</h2>
+<p>¿Podés escribir un programa para que Karel coloque <em>cosos</em> en los vértices del <em>rombo</em> en en el cual está encerrada?</p>
+<p><img src="reference/figures/problema1.png" width="60%" style="display: block; margin: auto;"></p>
+<p>¿Algo así, tal vez?</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Cargar el paquete y los superpoderes de Karel</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel">karel</a></span><span class="op">)</span>
+<span class="fu"><a href="reference/cargar_super_karel.html">cargar_super_karel</a></span><span class="op">(</span><span class="op">)</span>
 
+<span class="co"># Crear funciones auxiliares</span>
+<span class="va">recorrer_diagonal</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+    <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+        <span class="fu"><a href="reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+        <span class="fu"><a href="reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+        <span class="fu"><a href="reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+        <span class="fu"><a href="reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span>
+    <span class="op">}</span>
+<span class="op">}</span>
+
+<span class="co"># Implementar el problema</span>
+<span class="fu"><a href="reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo019"</span><span class="op">)</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu">recorrer_diagonal</span><span class="op">(</span><span class="op">)</span>
+    <span class="fu"><a href="reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
+    <span class="fu"><a href="reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p><img src="reference/figures/33.gif" width="50%" style="display: block; margin: auto;"></p>
+<p>Ahora Karel está en un laberinto. ¿Podemos hacerla llegar hasta el final?</p>
+<p><img src="reference/figures/29.png" width="50%" style="display: block; margin: auto;"></p>
+<p>Sí, con este código:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo009"</span><span class="op">)</span>
+<span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="reference/condiciones.html">no_hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="reference/condiciones.html">frente_cerrado</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="op">}</span>
+  <span class="fu"><a href="reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p><img src="reference/figures/30.gif" width="50%" style="display: block; margin: auto;"></p>
+<p>Podés ver más detalles sobre estos ejemplos y otros en la sección de tutoriales.</p>
+</div>
+</div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
+<li>Browse source code at <br><a href="https://github.com/mpru/karel/">https://​github.com/​mpru/​karel/​</a>
+</li>
+<li>Report a bug at <br><a href="https://github.com/mpru/karel/issues">https://​github.com/​mpru/​karel/​issues</a>
+</li>
 <li>Mira el código/Browse source code at <br><a href="https://github.com/mpru/karel">https://​github.com/​mpru/​karel</a>
 </li>
 <li>Reporta un problema/Report a bug at <br><a href="https://github.com/mpru/karel/issues">https://​github.com/​mpru/​karel/​issues</a>
@@ -205,7 +231,7 @@ install.packages("karel")
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Marcos Prunello <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-9611-527X" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
+<li>Marcos Prunello <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-9611-527X" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 </ul>
 </div>
 
@@ -226,7 +252,7 @@ install.packages("karel")
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -10,7 +10,7 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>", out.width = "60%", fig.align = "center"
 )
 ```
 
@@ -98,7 +98,7 @@ Dentro del primer bloque de llaves se escriben las acciones que se realizan si s
 
 Imaginemos que queremos crear un algoritmo para revertir el estado de una celda, es decir, que Karel ponga un *coso* si no hay o lo quite si es que hay:
 
-```{r, out.width='80%', echo=FALSE, fig.align="center", eval=TRUE}
+```{r,  echo=FALSE, fig.align="center", eval=TRUE}
 knitr::include_graphics('51.png')
 ```
 
@@ -126,7 +126,7 @@ if (hay_cosos()) {
 ejecutar_acciones()
 ```
 
-```{r, out.width='80%', echo=FALSE, fig.align="center"}
+```{r,  echo=FALSE, fig.align="center"}
 if (knitr::is_html_output()) knitr::include_graphics('52.gif')
 ```
 
@@ -178,7 +178,7 @@ Las estructuras de control iterativas son útiles cuando la solución de un prob
 
 Se aplican cuando se conoce de antemano el número exacto de veces que se debe repetir una secuencia de acciones. Por ejemplo, consideremos el siguiente problema donde hay agujeros distribuidos equiespaciadamente en las avenidas pares.
 
-```{r, out.width='100%', echo=FALSE, fig.align="center"}
+```{r, out.width='80%', echo=FALSE, fig.align="center"}
 knitr::include_graphics('21.png')
 ```
 
@@ -230,7 +230,7 @@ for (<variable> in <valor1>:<valor2>) {
 }
 ```
 
-```{r, out.width='100%', echo=FALSE, fig.align="center"}
+```{r, echo=FALSE, fig.align="center"}
 if (knitr::is_html_output()) knitr::include_graphics('22.gif')
 ```
 
@@ -252,7 +252,7 @@ Observaciones:
 
 Por ejemplo, sería interesante escribir un programa para llenar agujeros como el anterior, pero que sirva de manera general para otras situaciones donde puede haber cualquier cantidad de agujeros en la calle, como estas:
 
-```{r, out.width='100%', echo=FALSE, fig.align="center"}
+```{r, out.width='80%', echo=FALSE, fig.align="center"}
 knitr::include_graphics('23.png')
 ```
 

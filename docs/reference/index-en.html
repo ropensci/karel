@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -53,7 +57,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-index">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -67,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">karel</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1.9000</span>
       </span>
     </div>
 
@@ -75,34 +79,46 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home"></span>
-
+    <span class="fas fa-home"></span>
+     
   </a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Español
-
+    Tutoriales en Español
+     
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/karel_teaches_R_es.html">Viñetas</a>
+      <a href="../articles/intro_es_1.html">1 - Intro</a>
     </li>
     <li>
-      <a href="../reference/index-es.html">Funciones</a>
+      <a href="../articles/karel_es_2.html">2 - Conociendo a Karel</a>
+    </li>
+    <li>
+      <a href="../articles/descomp_es_3.html">3 - Descomposición algorítmica</a>
+    </li>
+    <li>
+      <a href="../articles/control_es_4.html">4 - Estructuras de control</a>
+    </li>
+    <li>
+      <a href="../articles/ejemplos_es_5.html">5 - Ejemplos</a>
+    </li>
+    <li>
+      <a href="../reference/index-es.html">Manual de Funciones</a>
     </li>
   </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    English
-
+    Tutorials in English
+     
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/karel_teaches_R_en.html">Vignettes</a>
+      <a href="../articles/examples_en.html">Examples</a>
     </li>
     <li>
       <a href="../reference/index-en.html">Functions</a>
@@ -116,23 +132,23 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://twitter.com/mrqtsp">
-    <span class="fa fa-twitter"></span>
-
+    <span class="fas fa-twitter"></span>
+     
   </a>
 </li>
 <li>
   <a href="https://github.com/mpru/karel">
-    <span class="fa fa-github"></span>
-
+    <span class="fas fa-github"></span>
+     
   </a>
 </li>
       </ul>
-
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-
+      
 
       </header>
 
@@ -145,7 +161,7 @@
     <table class="ref-index">
 
     <colgroup>
-
+      
       <col class="alias" />
       <col class="title" />
     </colgroup>
@@ -157,14 +173,19 @@
           <p class="section-desc"><p>Every program must start and end with calls to these functions.</p></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
-
+        
         <td>
           <p><code><a href="generate_world.html">generate_world()</a></code> </p>
         </td>
         <td><p>Create Karel's world</p></td>
       </tr><tr>
-
+        
         <td>
           <p><code><a href="run_actions.html">run_actions()</a></code> </p>
         </td>
@@ -177,14 +198,19 @@
           <p class="section-desc"><p>These functions implement the four basic actions that Karel can perform (move, turn left, put and pick beepers). If Karel’s superpowers are turned on, she can also turn right and turn around.</p></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
-
+        
         <td>
           <p><code><a href="actions.html">move()</a></code> <code><a href="actions.html">turn_left()</a></code> <code><a href="actions.html">put_beeper()</a></code> <code><a href="actions.html">pick_beeper()</a></code> <code><a href="actions.html">turn_right()</a></code> <code><a href="actions.html">turn_around()</a></code> </p>
         </td>
         <td><p>Available actions for Karel</p></td>
       </tr><tr>
-
+        
         <td>
           <p><code><a href="load_super_karel.html">load_super_karel()</a></code> </p>
         </td>
@@ -197,8 +223,13 @@
           <p class="section-desc"><p>These group of functions return a logical value TRUE or FALSE according to Karel’s evaluation of her world.</p></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
-
+        
         <td>
           <p><code><a href="conditions.html">front_is_clear()</a></code> <code><a href="conditions.html">front_is_blocked()</a></code> <code><a href="conditions.html">left_is_clear()</a></code> <code><a href="conditions.html">left_is_blocked()</a></code> <code><a href="conditions.html">right_is_clear()</a></code> <code><a href="conditions.html">right_is_blocked()</a></code> <code><a href="conditions.html">beepers_present()</a></code> <code><a href="conditions.html">no_beepers_present()</a></code> <code><a href="conditions.html">karel_has_beepers()</a></code> <code><a href="conditions.html">karel_has_no_beepers()</a></code> <code><a href="conditions.html">facing_east()</a></code> <code><a href="conditions.html">facing_west()</a></code> <code><a href="conditions.html">facing_north()</a></code> <code><a href="conditions.html">facing_south()</a></code> </p>
         </td>
@@ -211,14 +242,19 @@
           <p class="section-desc"><p>Selected internal functions that could be useful to use the package in a more advanced way.</p></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
-
+        
         <td>
           <p><code><a href="get_pkg_env.html">get_pkg_env()</a></code> </p>
         </td>
         <td><p>Get Karel's environment</p></td>
       </tr><tr>
-
+        
         <td>
           <p><code><a href="plot_static_world.html">plot_static_world()</a></code> </p>
         </td>
@@ -228,14 +264,10 @@
     </table>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-generate-a-world-and-run-actions">Generate a world and run actions</a></li>
-      <li><a href="#section-available-actions-for-karel">Available actions for Karel</a></li>
-      <li><a href="#section-conditions-that-karel-can-test">Conditions that Karel can test</a></li>
-      <li><a href="#section-internal-functions">Internal functions</a></li>
-    </ul>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -246,13 +278,13 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
    </div>
 
-
+  
 
 
   </body>

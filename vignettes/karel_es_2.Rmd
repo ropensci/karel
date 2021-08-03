@@ -10,7 +10,8 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  out.width='60%'
 )
 ```
 
@@ -26,7 +27,7 @@ Antes que nada tenemos que generar un **mundo** para que Karel pueda andar por a
 generar_mundo("mundo001")
 ```
 
-```{r, out.width='80%', echo=FALSE, fig.align="center"}
+```{r, echo=FALSE, fig.align="center"}
 knitr::include_graphics('13.png')
 ```
 
@@ -76,7 +77,7 @@ avanzar()
 ejecutar_acciones()
 ```
 
-```{r, out.width='80%', echo=FALSE, fig.align="center"}
+```{r, echo=FALSE, fig.align="center"}
 if (knitr::is_html_output()) knitr::include_graphics('14.gif')
 ```
 
@@ -88,7 +89,7 @@ knitr::include_graphics('15.png')
 
 Los primeros tres comandos que necesitamos en el programa son los mismos de antes, pero luego Karel tiene que girar a su izquierda para poder bordear la pared y avanzar un lugar, quedando de cara al norte:
 
-```{r, out.width='100%', echo=FALSE, fig.align="center"}
+```{r, echo=FALSE, fig.align="center"}
 knitr::include_graphics('16.png')
 ```
 
@@ -111,7 +112,7 @@ avanzar()
 ejecutar_acciones()
 ```
 
-```{r, out.width='80%', echo=FALSE, fig.align="center"}
+```{r,  echo=FALSE, fig.align="center"}
 if (knitr::is_html_output()) knitr::include_graphics('18.gif')
 ```
 

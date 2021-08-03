@@ -1,7 +1,12 @@
-pandoc: '2.5'
-pkgdown: 1.4.1
+pandoc: 2.11.4
+pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
-  karel_teaches_R_en: karel_teaches_R_en.html
-  karel_teaches_R_es: karel_teaches_R_es.html
+  control_es_4: control_es_4.html
+  descomp_es_3: descomp_es_3.html
+  ejemplos_es_5: ejemplos_es_5.html
+  examples_en: examples_en.html
+  intro_es_1: intro_es_1.html
+  karel_es_2: karel_es_2.html
+last_built: 2021-08-03T19:30Z
 
