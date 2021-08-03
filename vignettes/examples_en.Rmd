@@ -1,0 +1,19 @@
+---
+title: "Examples"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{karel_teaches_R_en}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+|||||| **Work in progress** ||||||
+
+**You are welcome to visit the examples presented in the Spanish vignettes**

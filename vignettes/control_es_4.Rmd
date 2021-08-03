@@ -55,7 +55,7 @@ Karel nos va a ayudar a ejemplificar esto. La siguiente tabla muestra las evalua
 |     mira_al_oeste()    |      ...Karel está mirando al oeste       |
 |      mira_al_sur()     |         ...Karel está mirando al sur        |
 
-Podemos usar una estructura condicional para modificar la función `llenar_agujero()` que creamos anteriormente para que Karel coloque un *coso* sólo si no había ya uno presente en el agujero^[Algunos ejemplos presentados en este tutorial fueron adaptados de *Karel the robot learns Java* (Eric Roberts, 2005)]:
+Podemos usar una estructura condicional para modificar la función `llenar_agujero()` que creamos anteriormente para que Karel coloque un *coso* sólo si no había ya uno presente en el agujero:
 
 ```{r, eval=FALSE}
 # ------------ Definición de funciones auxiliares-----------
@@ -96,7 +96,13 @@ if (condición) {
 
 Dentro del primer bloque de llaves se escriben las acciones que se realizan si se cumple la condición, mientras que en el segundo, luego de la expresión `else`, se incluyen las que se realizan si no se verifica la misma.
 
-Imaginemos que queremos crear un algoritmo para revertir el estado de una celda, es decir, que Karel ponga un *coso* si no hay o lo quite si es que hay. Para esto podemos usar una estructura condicional doble:
+Imaginemos que queremos crear un algoritmo para revertir el estado de una celda, es decir, que Karel ponga un *coso* si no hay o lo quite si es que hay:
+
+```{r, out.width='80%', echo=FALSE, fig.align="center", eval=TRUE}
+knitr::include_graphics('51.png')
+```
+
+Para esto podemos usar una estructura condicional doble:
 
 ```{r, eval=FALSE}
 generar_mundo("mundo001")
@@ -121,7 +127,7 @@ ejecutar_acciones()
 ```
 
 ```{r, out.width='80%', echo=FALSE, fig.align="center"}
-if (knitr::is_html_output()) knitr::include_graphics('20.gif')
+if (knitr::is_html_output()) knitr::include_graphics('52.gif')
 ```
 
 Dado que repetimos 3 veces, exactamente de la misma forma, el proceso de controlar si hay o no un *coso* para decidir quitarlo o poner uno, otra vez podemos recurrir al principio de la descomposición algorítmica y definir una función que se encargue de ellos, se forma que la acción de *invertir* el estado de una celda se haga de manera más sencilla. Nuestro archivo de código quedaría así:
@@ -273,3 +279,5 @@ while (no_hay_cosos()) {
 }
 ejecutar_acciones()
 ```
+
+*Algunos ejemplos presentados en este tutorial fueron adaptados de Karel the robot learns Java (Eric Roberts, 2005).*

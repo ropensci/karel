@@ -65,7 +65,7 @@ Algunas observaciones importantes sobre las funciones que ejecutan las acciones 
 
 Por sobre todas las cosas, hay que recordar que estas funciones no andan por sí solas. Siempre tienen que estar precedidas por la ejecución de la función `generar_mundo("mundo001")`, luego corremos todas las acciones de Karel que queramos, pero para poder ver su efecto, tenemos que terminar corriendo la función `ejecutar_acciones()`.
 
-Veamos un primer ejemplo. Vamos a pedirle a Karel que avance, junte el *coso* y vuelva a avanzar^[Algunos ejemplos presentados en este tutorial fueron adaptados de *Karel the robot learns Java* (Eric Roberts, 2005)]:
+Veamos un primer ejemplo. Vamos a pedirle a Karel que avance, junte el *coso* y vuelva a avanzar:
 
 ```{r, eval=FALSE}
 # Este programa hace que Karel avance un espacio, junte un coso y vuelva a avanzar
@@ -115,3 +115,4 @@ ejecutar_acciones()
 if (knitr::is_html_output()) knitr::include_graphics('18.gif')
 ```
 
+*Algunos ejemplos presentados en este tutorial fueron adaptados de Karel the robot learns Java (Eric Roberts, 2005).*

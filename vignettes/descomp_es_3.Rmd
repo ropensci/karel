@@ -29,7 +29,7 @@ y el lenguaje de programación escogidos. Qué se entiende por cada uno de ellos
 
 A lo largo de este tutorial y mientras usemos R, a los subalgoritmos los llamaremos **funciones** y por ahora las utilizaremos con el objetivo de ayudar en la modularidad del programa.
 
-## Girar a la derecha^[Algunos ejemplos presentados en este tutorial fueron adaptados de *Karel the robot learns Java* (Eric Roberts, 2005)]
+## Girar a la derecha
 
 Para empezar con algo sencillo, en el ejemplo visto en la sección anterior Karel necesitaba doblar a la derecha y lo logramos indicándole que gire tres veces a la izquierda. Esto es medio molesto, primero porque mentalmente nos imaginamos otra cosa cuando queremos que Karel gire a la derecha y segundo porque probablemente Karel tenga que girar a la derecha en muchos problemas y no vamos a querer repetir tantas veces `girar_izquierda()`.
 
@@ -207,3 +207,5 @@ generar_mundo("mundo002")
 llenar_agujero()
 ejecutar_acciones()
 ```
+
+*Algunos ejemplos presentados en este tutorial fueron adaptados de Karel the robot learns Java (Eric Roberts, 2005).*
