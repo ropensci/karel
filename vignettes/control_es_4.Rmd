@@ -1,0 +1,275 @@
+---
+title: "Estructuras de control de las instrucciones"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{control_es_4}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Como mencionamos anteriormente, un algoritmo está compuesto por una sucesión ordenada de comandos que se ejecutan uno detrás de otro. Sin embargo, con frecuencia es necesario recurrir a comandos especiales que alteran o controlan el orden en el que se ejecutan las acciones. Llamamos **estructuras de control del flujo de las acciones** al conjunto de reglas que permiten controlar el flujo de las acciones de un algoritmo o programa. Las mismas pueden clasificarse en **secuenciales**, **condicionales** e **iterativas**.
+
+## Estructuras de control secuenciales
+
+Las **estructuras secuenciales** están compuestas por un número definido de acciones que se ubican en un orden específico y se suceden una tras otra. Los ejemplos que hemos discutido anteriormente están conformados por este tipo de estructura.
+
+## Estructuras de control condicionales
+
+En algunas partes de un algoritmo puede ser útil detenerse a hacer una pregunta porque se llegó a una situación en la que puede haber una o más opciones disponibles para continuar. Dependiendo de la respuesta a la pregunta, que siempre deberá ser `VERDADERO` (`TRUE`) o `FALSO` (`FALSE`), el algoritmo seguirá ciertas acciones e ignorará otras. Estas preguntas y respuestas representan procesos de toma de decisión que conducen a diferentes caminos dentro del algoritmo, permitiéndonos que la solución para el problema en cuestión sea flexible y se adapte a distintas situaciones. Este tipo de estructuras de control de las acciones reciben el nombre de **condicionales** (o *estructuras de selección*) y pueden ser **simples**, **dobles** y **múltiples**.
+
+### Estructuras condicionales simples
+
+Postulan una evaluación lógica y, si su resultado es `TRUE`, se procede a ejecutar las acciones encerradas por esta estructura. se expresan en R con la siguiente sintaxis:
+
+```{r, eval=FALSE}
+if (condición) {
+	...código para ejecutar acciones...
+}
+```
+
+La palabra `if` indica el comando de evaluación lógica, `condición` indica la evaluación a realizar y entre llaves se detallas las instrucciones que se realizarán sólo si se cumple la condición, es decir, si la evaluación resulta en `TRUE`. Si la condición no se verifica, no se ejecuta ninguna acción y el programa sigue su estructura secuencial con el código que prosigue a la última llave.
+
+Karel nos va a ayudar a ejemplificar esto. La siguiente tabla muestra las evaluaciones lógicas que la robot puede realizar acerca de su mundo. Por ejemplo, si ejecutamos la función `frente_abierto()`, obtendremos el valor `TRUE` si efectivamente no hay una pared enfrente de Karel o el valor `FALSE` si hay una pared.
+
+|      Función en R      |            Devuelve VERDADERO (TRUE) si...          |
+|:----------------------:|:-------------------------------------------:|
+|    frente_abierto()    |    ...no hay una pared enfrente de Karel    |
+|    frente_cerrado()    |     ... hay una pared enfrente de Karel     |
+|   izquierda_abierto()  | ...no hay una pared a la izquierda de Karel |
+|   izquierda_cerrado()  |   ...hay una pared a la izquierda de Karel  |
+|    derecha_abierto()   |  ...no hay una pared a la derecha de Karel  |
+|    derecha_cerrado()   |     ...hay una pared a la derecha de Karel   |
+|       hay_cosos()      |    ...hay cosos donde se encuentra Karel    |
+|     no_hay_cosos()     |   ...no hay cosos donde se encuentra Karel  |
+|   karel_tiene_cosos()  |       ...Karel tiene cosos en su mochila     |
+| karel_no_tiene_cosos() |    ...Karel no tiene cosos en su mochila    |
+|     mira_al_este()     |        ...Karel está mirando al este        |
+|     mira_al_norte()    |      ...Karel está mirando al norte       |
+|     mira_al_oeste()    |      ...Karel está mirando al oeste       |
+|      mira_al_sur()     |         ...Karel está mirando al sur        |
+
+Podemos usar una estructura condicional para modificar la función `llenar_agujero()` que creamos anteriormente para que Karel coloque un *coso* sólo si no había ya uno presente en el agujero^[Algunos ejemplos presentados en este tutorial fueron adaptados de *Karel the robot learns Java* (Eric Roberts, 2005)]:
+
+```{r, eval=FALSE}
+# ------------ Definición de funciones auxiliares-----------
+
+llenar_agujero <- function() {
+  girar_derecha()
+  avanzar()
+  if (no_hay_cosos()) {
+    poner_coso()
+  }
+  darse_vuelta()
+  avanzar()
+  girar_derecha()
+}
+
+# ------------------- Programa principal -------------------
+
+generar_mundo("mundo002")
+avanzar()
+llenar_agujero()
+ejecutar_acciones()
+```
+
+Notar que si bien el uso de sangrías en el código es opcional, decidimos emplearlo para facilitar su lectura. Mantener la prolijidad en nuestros programas es esencial.
+
+
+### Estructuras condicionales dobles
+
+Este tipo de estructura añade una acción a ejecutarse en el caso de que la condición evaluada no se verifique (es decir, devuelve el valor `FALSE`). La sintaxis es:
+
+```{r, eval=FALSE}
+if (condición) {
+	...código para ejecutar acciones...
+} else {
+	...código para ejecutar acciones...
+}
+```
+
+Dentro del primer bloque de llaves se escriben las acciones que se realizan si se cumple la condición, mientras que en el segundo, luego de la expresión `else`, se incluyen las que se realizan si no se verifica la misma.
+
+Imaginemos que queremos crear un algoritmo para revertir el estado de una celda, es decir, que Karel ponga un *coso* si no hay o lo quite si es que hay. Para esto podemos usar una estructura condicional doble:
+
+```{r, eval=FALSE}
+generar_mundo("mundo001")
+if (hay_cosos()) {
+  juntar_coso()
+} else {
+  poner_coso()
+}
+avanzar()
+if (hay_cosos()) {
+  juntar_coso()
+} else {
+  poner_coso()
+}
+avanzar()
+if (hay_cosos()) {
+  juntar_coso()
+} else {
+  poner_coso()
+}
+ejecutar_acciones()
+```
+
+```{r, out.width='80%', echo=FALSE, fig.align="center"}
+if (knitr::is_html_output()) knitr::include_graphics('20.gif')
+```
+
+Dado que repetimos 3 veces, exactamente de la misma forma, el proceso de controlar si hay o no un *coso* para decidir quitarlo o poner uno, otra vez podemos recurrir al principio de la descomposición algorítmica y definir una función que se encargue de ellos, se forma que la acción de *invertir* el estado de una celda se haga de manera más sencilla. Nuestro archivo de código quedaría así:
+
+```{r, eval=FALSE}
+# ------------ Definición de funciones auxiliares-----------
+
+invertir <- function() {
+  if (hay_cosos()) {
+    juntar_coso()
+  } else {
+    poner_coso()
+  }
+}
+
+# ------------------- Programa principal -------------------
+
+generar_mundo("mundo001")
+invertir()
+avanzar()
+invertir()
+avanzar()
+invertir()
+ejecutar_acciones()
+```
+
+### Estructuras condicionales múltiples o anidadas
+
+Permiten combinar varias estructuras condicionales para establecer controles más complejos sobre el flujo de las acciones, representando una toma de decisión múltiple. Podemos ejemplificar la sintaxis de la siguiente forma:
+
+```{r, eval=FALSE}
+if (condición 1) {
+	...Primer conjunto de acciones...
+} else if (condición 2) {
+	...Segundo conjunto de acciones...
+} else {
+	...Tercer conjunto de acciones...
+}
+```
+
+En la estructura anterior, hay una primera evaluación lógica en la cual si el resultado es `VERDADERO`, se ejecuta el primer conjunto de acciones y nada más. En cambio, si su resultado es `FALSO`, se procede a realizar una segunda evaluación lógica, que da lugar a la ejecución del segundo o del tercer bloque de acciones, dependiendo de que su resultado sea `VERDADERO` o `FALSO`, respectivamente.
+
+## Estructuras de control iterativas
+
+Las estructuras de control iterativas son útiles cuando la solución de un problema requiere que se ejecute repetidamente un determinado conjunto de acciones. El número de veces que se debe repetir dicha secuencia de acciones puede ser fijo o variable dependiendo de algún dato en el algoritmo.
+
+### Estructuras de control iterativas con un número fijo de iteraciones
+
+Se aplican cuando se conoce de antemano el número exacto de veces que se debe repetir una secuencia de acciones. Por ejemplo, consideremos el siguiente problema donde hay agujeros distribuidos equiespaciadamente en las avenidas pares.
+
+```{r, out.width='100%', echo=FALSE, fig.align="center"}
+knitr::include_graphics('21.png')
+```
+
+Tenemos que escribir un programa para que Karel llene los 5 agujeros. Podríamos planear algo como:
+
+```{r, eval=FALSE, highlight=FALSE}
+# ------------------- Programa principal -------------------
+
+generar_mundo("mundo003")
+avanzar()
+llenar_agujero()
+avanzar()
+
+avanzar()
+llenar_agujero()
+avanzar()
+
+avanzar()
+llenar_agujero()
+avanzar()
+
+avanzar()
+llenar_agujero()
+avanzar()
+
+avanzar()
+llenar_agujero()
+avanzar()
+ejecutar_acciones()
+```
+
+Es evidente que no tiene sentido escribir exactamente lo mismo 5 veces. Por eso vamos a hacer uso de una estructura iterativa:
+
+```{r, eval=FALSE}
+generar_mundo("mundo003")
+for (i in 1:5) {
+  avanzar()
+  llenar_agujero()
+  avanzar()
+}
+ejecutar_acciones()
+```
+
+La letra `i` recibe el nombre de variable de iteración. Podríamos haber elegido otra letra u otra palabra en su lugar, pero emplear `i` es bastante común. En este ejemplo, su única función es guiar la serie de pasos. El bloque de instrucciones se repite tantas veces como `i` tarde en llegar a 5 partiendo desde 1. De manera general, la sintaxis para este tipo de estructuras es:
+
+```{r, eval=FALSE, highlight=FALSE}
+for (<variable> in <valor1>:<valor2>) {
+	...Acción/es...
+}
+```
+
+```{r, out.width='100%', echo=FALSE, fig.align="center"}
+if (knitr::is_html_output()) knitr::include_graphics('22.gif')
+```
+
+### Estructuras de control iterativas con un número indeterminado de iteraciones
+
+En otras circunstancias se puede necesitar repetir un bloque de acciones sin conocer con exactitud cuántas veces, si no que esto depende de algún otro aspecto del ALGORITMO. Las iteraciones pueden continuar **mientras que** se verifique alguna condición. En este tipo de estructuras, el conjunto de instrucciones se repite mientras que se siga evaluando como `VERDADERO` una condición declarada al inicio del bloque. Cuando la condición ya no se cumple, el proceso deja de ejecutarse. La sintaxis es:
+
+```{r, eval=FALSE}
+while (<condición>) {
+	...Acción/es a repetir...
+}
+```
+
+
+Observaciones:
+
+- La evaluación de la condición se lleva a cabo antes de cada iteración, incluyendo la primera. Si la condición es `FALSO` inicialmente, entonces las acciones en el cuerpo de la estructura no se ejecutan nunca.
+- La evaluación de la condición **sólo** se lleva a cabo al inicio de cada iteración. Si la condición se vuelve `FALSO` en algún punto durante la ejecución de un bloque, el programa no lo nota hasta que se termine de ejecutar el bloque y la condición sea evaluada antes de comenzar la próxima iteración.
+
+Por ejemplo, sería interesante escribir un programa para llenar agujeros como el anterior, pero que sirva de manera general para otras situaciones donde puede haber cualquier cantidad de agujeros en la calle, como estas:
+
+```{r, out.width='100%', echo=FALSE, fig.align="center"}
+knitr::include_graphics('23.png')
+```
+
+En vez de usar un `for` en el cual hay que especificar la cantidad de veces que el proceso debe repetirse, podemos usar un `while` para que Karel siga rellenando agujeros mientras que no haya una pared enfrente suyo, lo cual indicaría que llegó al final y debe detenerse.
+
+```{r, eval=FALSE}
+# ------------------- Programa principal -------------------
+generar_mundo("mundo003")
+while (frente_abierto()) {
+  avanzar()
+  llenar_agujero()
+  avanzar()
+}
+ejecutar_acciones()
+```
+
+Hay que tener mucho cuidado a la hora de escribir este tipo de estructura, para asegurarse de no producir un *loop infinito*, es decir, un proceso iterativo que nunca finaliza. Esto ocurriría, por ejemplo, si estando en el mundo anterior, le pedimos a Karel que gire mientras que no haya cosas donde está parada:
+
+```{r, eval=FALSE}
+# No correr esto! (o sí, para ver cómo no anda!)
+generar_mundo("mundo003")
+while (no_hay_cosos()) {
+	girar_izquierda()
+}
+ejecutar_acciones()
+```

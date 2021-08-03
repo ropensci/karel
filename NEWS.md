@@ -3,7 +3,7 @@
 * Improved description file.
 * Added new worlds.
 * Added mode to prevent running more actions without generating a new world if user made a mistake. 
-* Added vignettes.
+* Added new vignettes.
 
 # karel 0.0.0.9000
 
