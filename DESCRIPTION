@@ -1,10 +1,10 @@
 Package: karel
-Title: Karel The Robot Learns R
-Version: 0.0.1.9000
+Title: Learning programming with Karel the robot
+Version: 0.1.0
 Authors@R: 
     person(given = "Marcos",
            family = "Prunello",
-           role = c("aut", "cre"),
+           role = c("aut", "cre", "cph"),
            email = "marcosprunello@gmail.com",
            comment = c(ORCID = "0000-0002-9611-527X"))
 Description: This is the R implementation of Karel the robot, a programming 
@@ -13,8 +13,8 @@ Description: This is the R implementation of Karel the robot, a programming
   as algorithmic decomposition, conditional statements, loops, etc., in an 
   interactive and fun way, by writing programs to make Karel the robot achieve 
   certaing tasks in the world she lives in. Originally based on Pascal, Karel 
-  was implemented in many languages through these decades, including Java C++, 
-  Ruby and Python. This is the first package implementing Karel in R.
+  was implemented in many languages through these decades, including 'Java', 'C++', 
+  'Ruby' and 'Python'. This is the first package implementing Karel in R.
 Depends: R (>= 3.6.0)
 Imports:
     purrr,
@@ -36,5 +36,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
-URL: https://mpru.github.io/karel
-BugReports: https://github.com/mpru/karel/issues
+URL: https://mpru.github.io/karel/
+BugReports: https://github.com/mpru/karel/issues/

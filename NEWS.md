@@ -1,3 +1,7 @@
+# karel 1.0.0
+
+* Version of first submission to CRAN.
+
 # karel 0.0.1.9000
 
 * Improved description file.

@@ -5,11 +5,8 @@
 
 <!-- badges: start -->
 
-[![CRAN
-status](https://www.r-pkg.org/badges/version/karel)](https://CRAN.R-project.org/package=karel)
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Downloads](https://cranlogs.r-pkg.org/badges/karel?color=blue)](https://cran.rstudio.com/package=karel)
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 <!-- badges: end -->
 
 Web: <https://mpru.github.io/karel/>
