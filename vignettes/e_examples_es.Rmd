@@ -1,8 +1,11 @@
 ---
-title: "Ejemplos"
+title: "Varios problemas de ejemplo"
 output: rmarkdown::html_vignette
+description: >
+  Terminamos este tutorial con varios problemas para poner en práctica todo lo 
+  aprendido junto a Karel.
 vignette: >
-  %\VignetteIndexEntry{ejemplos_es_5}
+  %\VignetteIndexEntry{Varios problemas de ejemplo}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

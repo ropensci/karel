@@ -2,11 +2,11 @@ pandoc: 2.11.4
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
-  control_es_4: control_es_4.html
-  descomp_es_3: descomp_es_3.html
-  ejemplos_es_5: ejemplos_es_5.html
-  examples_en: examples_en.html
-  intro_es_1: intro_es_1.html
-  karel_es_2: karel_es_2.html
-last_built: 2021-08-05T12:36Z
+  a_intro_progrbasics_es: a_intro_progrbasics_es.html
+  b_meetingkarel_es: b_meetingkarel_es.html
+  c_decomposition_es: c_decomposition_es.html
+  d_controlstructures_es: d_controlstructures_es.html
+  e_examples_es: e_examples_es.html
+  f_examples_en: f_examples_en.html
+last_built: 2021-08-08T15:25Z
 

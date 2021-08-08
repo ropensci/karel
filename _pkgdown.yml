@@ -10,21 +10,21 @@ navbar:
     - text: "Tutoriales en Español"
       menu:
         - text: "1 - Intro"
-          href: articles/intro_es_1.html
+          href: articles/a_intro_progrbasics_es.html
         - text: "2 - Conociendo a Karel"
-          href: articles/karel_es_2.html
+          href: articles/b_meetingkarel_es.html
         - text: "3 - Descomposición algorítmica"
-          href: articles/descomp_es_3.html
+          href: articles/c_decomposition_es.html
         - text: "4 - Estructuras de control"
-          href: articles/control_es_4.html
+          href: articles/d_controlstructures_es.html
         - text: "5 - Ejemplos"
-          href: articles/ejemplos_es_5.html
+          href: articles/e_examples_es.html
         - text: "Manual de Funciones"
           href: reference/index-es.html
     - text: "Tutorials in English"
       menu:
         - text: "Examples"
-          href: articles/examples_en.html
+          href: articles/f_examples_en.html
         - text: "Functions"
           href: reference/index-en.html
     - text: "News"

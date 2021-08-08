@@ -7,9 +7,13 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/karel)](https://CRAN.R-project.org/package=karel)
 <!-- badges: end -->
 
 Web: <https://mpru.github.io/karel/>
+
+CRAN: <https://CRAN.R-project.org/package=karel>
 
 ## ¿Quién es Karel? / Who is Karel?
 
@@ -99,21 +103,17 @@ implementing Karel in R.
 
 ## Instalación / Installation
 
-<!-- 
-You can install the released version of karel from [CRAN](https://CRAN.R-project.org) with:
+Podés instalar `karel` desde
+[CRAN](https://CRAN.R-project.org/package=karel) / You can install
+`karel` from [CRAN](https://CRAN.R-project.org/package=karel):
 
 ``` r
 install.packages("karel")
 ```
--->
 
-Se puede instalar la versión en desarrollo del paquete `karel` desde
-[GitHub](https://github.com/mpru/karel) con:
-
-------------------------------------------------------------------------
-
-You can install the development version from
-[GitHub](https://github.com/mpru/karel) with:
+También podés instalar la versión en desarrollo desde
+[GitHub](https://github.com/mpru/karel) / You can also install the
+development version from [GitHub](https://github.com/mpru/karel):
 
 ``` r
 # install.packages("devtools")
