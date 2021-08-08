@@ -1,6 +1,5 @@
-# karel 0.1.0.9000
+# karel 0.1.1
 
-* This is the development version of karel.
 * Fixed typo in DESCRIPTION.
 * Updated vignettes names to indicate reading order and added descriptions.
 * Fixed NOTE found on dayly CRAN checks on fedora.
