@@ -135,7 +135,15 @@ R se divide en dos partes:
 
 - **Paquetes adicionales**. Un paquete es un conjunto de archivos que se descarga de forma opcional desde CRAN u otros repositorios y que sirven para hacer alguna tarea especial. Por ejemplo, para poder jugar con Karel deberemos instalar el paquete que contiene su implementación, llamado `karel`.
 
-Como dijimos antes, en la pestaña *Packages* del panel de abajo a la derecha tiene el listado de todos los paquetes que ya están instalados (muchos vienen con R Base). Allí también hay un botón para instalar nuevos desde CRAN, aunque otra opción es correr la instrucción `install.packages("nombredelpaquete")`. También es posible instalar paquetes publicados en otros repositorios. Por ejemplo, es muy común descargar paquetes en desarrollo o en experimentación que estén disponibles en la plataforma Github. Estos paquetes se instalan especificando el nombre de la cuenta de Github de quien lo haya publicado y el nombre del paquete. Dicho procedimiento es el que debemos seguir para instalar el paquete `karel`:
+Como dijimos antes, en la pestaña *Packages* del panel de abajo a la derecha tiene el listado de todos los paquetes que ya están instalados (muchos vienen con R Base). Allí también hay un botón para instalar nuevos desde CRAN, aunque otra opción es correr la instrucción `install.packages("nombredelpaquete")`: 
+
+```{r, eval=FALSE}
+# Instalar desde CRAN el paquete karel
+install.packages("karel")
+```
+
+
+También es posible instalar paquetes publicados en otros repositorios. Por ejemplo, es muy común descargar paquetes en desarrollo o en experimentación que estén disponibles en la plataforma Github. Estos paquetes se instalan especificando el nombre de la cuenta de Github de quien lo haya publicado y el nombre del paquete. Si queremos instalar la versión en desarrollo del paquete `karel` (no es necesario) deberíamos hacer:
 
 ```{r, eval=FALSE}
 # Instalar desde CRAN el paquete devtools

@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">karel</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -40,7 +40,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa-home"></span>
+    <span class="fa fa-home"></span>
      
   </a>
 </li>
@@ -93,13 +93,13 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://twitter.com/mrqtsp">
-    <span class="fas fa-twitter"></span>
+    <span class="fa fa-twitter"></span>
      
   </a>
 </li>
 <li>
   <a href="https://github.com/mpru/karel">
-    <span class="fas fa-github"></span>
+    <span class="fa fa-github"></span>
      
   </a>
 </li>
@@ -113,7 +113,7 @@
 
       
 
-      </header><script src="a_intro_progrbasics_es_files/header-attrs-2.8/header-attrs.js"></script><div class="row">
+      </header><script src="a_intro_progrbasics_es_files/header-attrs-2.10/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Introducción y nociones básicas sobre programación</h1>
@@ -260,12 +260,16 @@ Captura de pantalla de RStudio
 <li><p>La <strong>base</strong> (<em>R Base</em>), que se instala cuando descargamos el programa desde <a href="https://cran.r-project.org/">CRAN</a> (“Comprehensive R Archive Network”). Contiene, entre otras cosas, una serie de herramientas básicas y fundamentales de R.</p></li>
 <li><p><strong>Paquetes adicionales</strong>. Un paquete es un conjunto de archivos que se descarga de forma opcional desde CRAN u otros repositorios y que sirven para hacer alguna tarea especial. Por ejemplo, para poder jugar con Karel deberemos instalar el paquete que contiene su implementación, llamado <code>karel</code>.</p></li>
 </ul>
-<p>Como dijimos antes, en la pestaña <em>Packages</em> del panel de abajo a la derecha tiene el listado de todos los paquetes que ya están instalados (muchos vienen con R Base). Allí también hay un botón para instalar nuevos desde CRAN, aunque otra opción es correr la instrucción <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("nombredelpaquete")</a></code>. También es posible instalar paquetes publicados en otros repositorios. Por ejemplo, es muy común descargar paquetes en desarrollo o en experimentación que estén disponibles en la plataforma Github. Estos paquetes se instalan especificando el nombre de la cuenta de Github de quien lo haya publicado y el nombre del paquete. Dicho procedimiento es el que debemos seguir para instalar el paquete <code>karel</code>:</p>
+<p>Como dijimos antes, en la pestaña <em>Packages</em> del panel de abajo a la derecha tiene el listado de todos los paquetes que ya están instalados (muchos vienen con R Base). Allí también hay un botón para instalar nuevos desde CRAN, aunque otra opción es correr la instrucción <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("nombredelpaquete")</a></code>:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Instalar desde CRAN el paquete karel</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"karel"</span><span class="op">)</span></code></pre></div>
+<p>También es posible instalar paquetes publicados en otros repositorios. Por ejemplo, es muy común descargar paquetes en desarrollo o en experimentación que estén disponibles en la plataforma Github. Estos paquetes se instalan especificando el nombre de la cuenta de Github de quien lo haya publicado y el nombre del paquete. Si queremos instalar la versión en desarrollo del paquete <code>karel</code> (no es necesario) deberíamos hacer:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Instalar desde CRAN el paquete devtools</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span>
 <span class="co"># Instalar desde GitHub el paquete karel</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"mpru/karel"</span><span class="op">)</span></code></pre></div>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"mpru/karel"</span><span class="op">)</span></code></pre></div>
 <p>Un paquete se instala una sola vez, pero cada vez que lo queramos usar debemos <em>cargarlo</em> para que las herramientas que trae queden a nuestra disposición. Eso se hace con la instrucción <code><a href="https://rdrr.io/r/base/library.html">library("nombredelpaquete")</a></code>, por ejemplo, <code><a href="https://mpru.github.io/karel/">library("karel")</a></code>.</p>
 </div>
 </div>
@@ -281,7 +285,7 @@ Captura de pantalla de RStudio
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contenido</h2>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
     </nav>
 </div>
 
