@@ -2,7 +2,6 @@
 
 * Fixed typo in DESCRIPTION and vignettes.
 * Updated vignettes names to indicate reading order and added descriptions.
-* Fixed NOTE found on dayly CRAN checks on fedora.
 * Updated README with link to package website on CRAN and new badges.
 
 # karel 0.1.0
