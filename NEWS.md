@@ -1,3 +1,7 @@
+# karel 0.1.1.9000
+
+* This the current development version of karel.
+
 # karel 0.1.1
 
 * Fixed typo in DESCRIPTION and vignettes.
