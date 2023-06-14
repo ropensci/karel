@@ -20,6 +20,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -32,74 +34,56 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">karel</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.1.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../index.html">
-    <span class="fa fa-home"></span>
-     
-  </a>
+  <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Tutoriales en Español
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Articles
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-<li>
-      <a href="../articles/a_intro_progrbasics_es.html">1 - Intro</a>
+<li class="divider">
+    </li>
+<li class="dropdown-header">Tutoriales en español</li>
+    <li>
+      <a href="../articles/a_intro_progrbasics_es.html">Introducción y nociones básicas sobre programación</a>
     </li>
     <li>
-      <a href="../articles/b_meetingkarel_es.html">2 - Conociendo a Karel</a>
+      <a href="../articles/b_meetingkarel_es.html">Conociendo a Karel</a>
     </li>
     <li>
-      <a href="../articles/c_decomposition_es.html">3 - Descomposición algorítmica</a>
+      <a href="../articles/c_decomposition_es.html">Descomposición algorítmica</a>
     </li>
     <li>
-      <a href="../articles/d_controlstructures_es.html">4 - Estructuras de control</a>
+      <a href="../articles/d_controlstructures_es.html">Estructuras de control del código</a>
     </li>
     <li>
-      <a href="../articles/e_examples_es.html">5 - Ejemplos</a>
+      <a href="../articles/e_examples_es.html">Varios problemas de ejemplo</a>
     </li>
+    <li class="divider">
+    </li>
+<li class="dropdown-header">Tutorials in English</li>
     <li>
-      <a href="../reference/index-es.html">Manual de Funciones</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Tutorials in English
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li>
       <a href="../articles/f_examples_en.html">Examples</a>
     </li>
-    <li>
-      <a href="../reference/index-en.html">Functions</a>
-    </li>
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://twitter.com/mrqtsp">
-    <span class="fa fa-twitter"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="https://github.com/mpru/karel">
-    <span class="fa fa-github"></span>
+  <a href="https://github.com/mpru/karel/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -113,93 +97,170 @@
 
       
 
-      </header><script src="b_meetingkarel_es_files/header-attrs-2.10/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Conociendo a Karel</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/mpru/karel/blob/master/vignettes/b_meetingkarel_es.Rmd"><code>vignettes/b_meetingkarel_es.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/mpru/karel/blob/HEAD/vignettes/b_meetingkarel_es.Rmd" class="external-link"><code>vignettes/b_meetingkarel_es.Rmd</code></a></small>
       <div class="hidden name"><code>b_meetingkarel_es.Rmd</code></div>
 
     </div>
 
     
     
-<p>Si ya instalaste el paquete <code>karel</code>, estamos en condiciones de empezar a usarlo. Vamos a ejecutar la instrucción <code><a href="https://mpru.github.io/karel/">library(karel)</a></code> para poder usarlo:</p>
+<p>Si ya instalaste el paquete <code>karel</code>, estamos en
+condiciones de empezar a usarlo. Vamos a ejecutar la instrucción
+<code><a href="https://mpru.github.io/karel/" class="external-link">library(karel)</a></code> para poder usarlo:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span></code></pre></div>
-<p>Antes que nada tenemos que generar un <strong>mundo</strong> para que Karel pueda andar por ahí. Esto lo hacemos con la instrucción <code><a href="../reference/generar_mundo.html">generar_mundo()</a></code>, aclarando entre los paréntesis y con comillas el nombre del mundo que queremos usar. El paquete trae incorporados unos cuantos que iremos explorando, por ejemplo:</p>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/" class="external-link">karel</a></span><span class="op">)</span></span></code></pre></div>
+<p>Antes que nada tenemos que generar un <strong>mundo</strong> para que
+Karel pueda andar por ahí. Esto lo hacemos con la instrucción
+<code><a href="../reference/generar_mundo.html">generar_mundo()</a></code>, aclarando entre los paréntesis y con
+comillas el nombre del mundo que queremos usar. El paquete trae
+incorporados unos cuantos que iremos explorando, por ejemplo:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="13.png" width="60%" style="display: block; margin: auto;"></p>
-<p>Como se puede ver en la imagen, en el mundo de Karel hay algunos elementos:</p>
+<p>Como se puede ver en la imagen, en el mundo de Karel hay algunos
+elementos:</p>
 <ul>
-<li>Llamamos <strong>calle</strong> a cada fila del mundo rectangular, es decir, las calles corren horizontalmente.</li>
-<li>Las <strong>avenidas</strong> corren verticalmente (son las columnas). La intersección entre una calle y una avenida es llamada <strong>celda</strong> y se puede identificar por los números fuera del recuadro.</li>
-<li>Karel está siempre mirando hacia una de las cuatro direcciones posibles: <strong>este</strong>, <strong>norte</strong>, <strong>oeste</strong> o <strong>sur</strong>.</li>
-<li>Los bordes negros representan <strong>paredes</strong>, son barreras que Karel no puede atravezar, sólo puede rodearlas. Tampoco puede atravezar el rectangulo que delimita al mundo (¡no puede salir de él!).</li>
-<li>El cuadrado que se ve en la celda (2, 1) es un <strong>coso</strong>. Karel puede recorrer el mundo poniendo y juntando <strong>cosos</strong> por ahí. En una celda puede haber más de un <strong>coso</strong>, en cuyo caso veremos un número que indica la cantidad de <strong>cosos</strong> presentes.</li>
+<li>Llamamos <strong>calle</strong> a cada fila del mundo rectangular,
+es decir, las calles corren horizontalmente.</li>
+<li>Las <strong>avenidas</strong> corren verticalmente (son las
+columnas). La intersección entre una calle y una avenida es llamada
+<strong>celda</strong> y se puede identificar por los números fuera del
+recuadro.</li>
+<li>Karel está siempre mirando hacia una de las cuatro direcciones
+posibles: <strong>este</strong>, <strong>norte</strong>,
+<strong>oeste</strong> o <strong>sur</strong>.</li>
+<li>Los bordes negros representan <strong>paredes</strong>, son barreras
+que Karel no puede atravezar, sólo puede rodearlas. Tampoco puede
+atravezar el rectangulo que delimita al mundo (¡no puede salir de
+él!).</li>
+<li>El cuadrado que se ve en la celda (2, 1) es un
+<strong>coso</strong>. Karel puede recorrer el mundo poniendo y juntando
+<strong>cosos</strong> por ahí. En una celda puede haber más de un
+<strong>coso</strong>, en cuyo caso veremos un número que indica la
+cantidad de <strong>cosos</strong> presentes.</li>
 </ul>
 <p>Además, Karel puede realizar estas actividades:</p>
 <ul>
 <li>
-<code>AVANZAR</code>: se mueve un paso hacia la celda que tiene adelante, si no hay una pared que se lo impida.</li>
+<code>AVANZAR</code>: se mueve un paso hacia la celda que tiene
+adelante, si no hay una pared que se lo impida.</li>
 <li>
-<code>GIRAR A LA IZQUIERDA</code>: rota 90 grados hacia su izquierda (sentido contrarreloj).</li>
+<code>GIRAR A LA IZQUIERDA</code>: rota 90 grados hacia su izquierda
+(sentido contrarreloj).</li>
 <li>
-<code>JUNTAR COSO</code>: levanta el <em>coso</em> que hay en su celda y lo guarda en su <strong>mochila</strong>, que es invisible en el diagrama pero puede contener infinitos <em>cosos</em>. Debe haber al menos un <em>coso</em> en la celda para que Karel pueda realizar esta acción.</li>
+<code>JUNTAR COSO</code>: levanta el <em>coso</em> que hay en su
+celda y lo guarda en su <strong>mochila</strong>, que es invisible en el
+diagrama pero puede contener infinitos <em>cosos</em>. Debe haber al
+menos un <em>coso</em> en la celda para que Karel pueda realizar esta
+acción.</li>
 <li>
-<code>PONER COSO</code>: toma un <em>coso</em> de su mochila y lo coloca en la celda. Debe haber al menos un <em>coso</em> en la mochila de Karel para que pueda realizar esta acción.</li>
+<code>PONER COSO</code>: toma un <em>coso</em> de su mochila y lo
+coloca en la celda. Debe haber al menos un <em>coso</em> en la mochila
+de Karel para que pueda realizar esta acción.</li>
 </ul>
-<p>Las acciones escritas tal como están arriba son expresiones que podemos entender nosotros, pero para que puedan ser entendidas por Karel, tendremos que respetar las instrucciones con las cuales están implementadas en R:</p>
+<p>Las acciones escritas tal como están arriba son expresiones que
+podemos entender nosotros, pero para que puedan ser entendidas por
+Karel, tendremos que respetar las instrucciones con las cuales están
+implementadas en R:</p>
 <ul>
 <li><code><a href="../reference/acciones.html">avanzar()</a></code></li>
 <li><code><a href="../reference/acciones.html">girar_izquierda()</a></code></li>
 <li><code><a href="../reference/acciones.html">juntar_coso()</a></code></li>
 <li><code><a href="../reference/acciones.html">poner_coso()</a></code></li>
 </ul>
-<p>Los paréntesis indican que las instrucciones anteriores son <strong>funciones</strong> de R, es decir, que las acciones que Karel sabe realizar se ejecutan en R mediante el uso de <strong>funciones</strong>. Si bien más adelante estudiaremos funciones con mayor profundidad, por ahora podemos decir que una <strong>función</strong> es una sección de un programa que cumple con una tarea específica y que tiene un nombre determinado.</p>
-<p>Algunas funciones vienen incorporadas en el lenguaje de programación, por ejemplo, cuando calculamos un logaritmo en la consola de R durante nuestros primeros pasos: <code><a href="https://rdrr.io/r/base/Log.html">log(27)</a></code>. <code>log</code> es el nombre de una función que ya viene en R y toma logaritmo del número que está entre paréntesis. Otras funciones se agregan cuando cargamos un paquete, es el caso de las cuatro funciones que mencionamos recién, vienen en el paquete <code>karel</code>. Otras funciones son creadas o programadas por las personas, como haremos muy pronto.</p>
-<p>Algunas observaciones importantes sobre las funciones que ejecutan las acciones de Karel en R:</p>
+<p>Los paréntesis indican que las instrucciones anteriores son
+<strong>funciones</strong> de R, es decir, que las acciones que Karel
+sabe realizar se ejecutan en R mediante el uso de
+<strong>funciones</strong>. Si bien más adelante estudiaremos funciones
+con mayor profundidad, por ahora podemos decir que una
+<strong>función</strong> es una sección de un programa que cumple con
+una tarea específica y que tiene un nombre determinado.</p>
+<p>Algunas funciones vienen incorporadas en el lenguaje de programación,
+por ejemplo, cuando calculamos un logaritmo en la consola de R durante
+nuestros primeros pasos: <code>log(27)</code>. <code>log</code> es el
+nombre de una función que ya viene en R y toma logaritmo del número que
+está entre paréntesis. Otras funciones se agregan cuando cargamos un
+paquete, es el caso de las cuatro funciones que mencionamos recién,
+vienen en el paquete <code>karel</code>. Otras funciones son creadas o
+programadas por las personas, como haremos muy pronto.</p>
+<p>Algunas observaciones importantes sobre las funciones que ejecutan
+las acciones de Karel en R:</p>
 <ul>
-<li>Los paréntesis están vacíos porque R no necesita de información adicional para que estas funciones anden. Ya veremos más adelante que en otros casos no es así y deberemos agregar algunos elementos allí. De hecho, cuando creamos el mundo de Karel con <code><a href="../reference/generar_mundo.html">generar_mundo("mundo001")</a></code> ya usamos una función de R que necesita como dato adicional el nombre del mundo a dibujar.</li>
-<li>Estas funciones arrojarán un error en R cuando queremos usarlas sin que corresponda, por ejemplo, si ejecutamos <code><a href="../reference/acciones.html">avanzar()</a></code> cuando Karel tiene una pared por delante. Cada vez que cometamos un errror, debemos volver a empezar, incluso generando el mundo otra vez corriendo la instrucción <code><a href="../reference/generar_mundo.html">generar_mundo("mundo001")</a></code>.</li>
-<li>R distingue minúsculas de mayúsculas, por eso tenemos que respetar las instrucciones tal como aparecen acá.</li>
-<li>El nombre de una función, por ejemplo, <code>girar_izquierda</code>, nunca tiene espacios blancos en el medio (no podría llamarse <code>GIRAR A LA IZQUIERDA</code>, sí podría llamarse <code>girarizquierda</code>, pero por convención de estilo, las funciones del paquete <code>karel</code> tienen nombres con guión bajo de separador).</li>
+<li>Los paréntesis están vacíos porque R no necesita de información
+adicional para que estas funciones anden. Ya veremos más adelante que en
+otros casos no es así y deberemos agregar algunos elementos allí. De
+hecho, cuando creamos el mundo de Karel con
+<code>generar_mundo("mundo001")</code> ya usamos una función de R que
+necesita como dato adicional el nombre del mundo a dibujar.</li>
+<li>Estas funciones arrojarán un error en R cuando queremos usarlas sin
+que corresponda, por ejemplo, si ejecutamos <code><a href="../reference/acciones.html">avanzar()</a></code>
+cuando Karel tiene una pared por delante. Cada vez que cometamos un
+errror, debemos volver a empezar, incluso generando el mundo otra vez
+corriendo la instrucción <code>generar_mundo("mundo001")</code>.</li>
+<li>R distingue minúsculas de mayúsculas, por eso tenemos que respetar
+las instrucciones tal como aparecen acá.</li>
+<li>El nombre de una función, por ejemplo, <code>girar_izquierda</code>,
+nunca tiene espacios blancos en el medio (no podría llamarse
+<code>GIRAR A LA IZQUIERDA</code>, sí podría llamarse
+<code>girarizquierda</code>, pero por convención de estilo, las
+funciones del paquete <code>karel</code> tienen nombres con guión bajo
+de separador).</li>
 </ul>
-<p>Por sobre todas las cosas, hay que recordar que estas funciones no andan por sí solas. Siempre tienen que estar precedidas por la ejecución de la función <code><a href="../reference/generar_mundo.html">generar_mundo("mundo001")</a></code>, luego corremos todas las acciones de Karel que queramos, pero para poder ver su efecto, tenemos que terminar corriendo la función <code><a href="../reference/ejecutar_acciones.html">ejecutar_acciones()</a></code>.</p>
-<p>Veamos un primer ejemplo. Vamos a pedirle a Karel que avance, junte el <em>coso</em> y vuelva a avanzar:</p>
+<p>Por sobre todas las cosas, hay que recordar que estas funciones no
+andan por sí solas. Siempre tienen que estar precedidas por la ejecución
+de la función <code>generar_mundo("mundo001")</code>, luego corremos
+todas las acciones de Karel que queramos, pero para poder ver su efecto,
+tenemos que terminar corriendo la función
+<code><a href="../reference/ejecutar_acciones.html">ejecutar_acciones()</a></code>.</p>
+<p>Veamos un primer ejemplo. Vamos a pedirle a Karel que avance, junte
+el <em>coso</em> y vuelva a avanzar:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Este programa hace que Karel avance un espacio, junte un coso y vuelva a avanzar</span>
-<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Este programa hace que Karel avance un espacio, junte un coso y vuelva a avanzar</span></span>
+<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="14.gif" width="60%" style="display: block; margin: auto;"></p>
-<p>Un problema un poquito más interesante sería que luego de que Karel junte el <em>coso</em>, lo coloque en la Calle 2 y Avenida 5 y finalmente avance a la Calle 2 y Avenida 6:</p>
+<p>Un problema un poquito más interesante sería que luego de que Karel
+junte el <em>coso</em>, lo coloque en la Calle 2 y Avenida 5 y
+finalmente avance a la Calle 2 y Avenida 6:</p>
 <p><img src="15.png" width="100%" style="display: block; margin: auto;"></p>
-<p>Los primeros tres comandos que necesitamos en el programa son los mismos de antes, pero luego Karel tiene que girar a su izquierda para poder bordear la pared y avanzar un lugar, quedando de cara al norte:</p>
+<p>Los primeros tres comandos que necesitamos en el programa son los
+mismos de antes, pero luego Karel tiene que girar a su izquierda para
+poder bordear la pared y avanzar un lugar, quedando de cara al
+norte:</p>
 <p><img src="16.png" width="60%" style="display: block; margin: auto;"></p>
-<p>Ahora necesitamos que Karel gire a la derecha, para que quede mirando al este. Sin embargo, Karel sólo sabe girar a la izquierda, no existe ninguna función <code><a href="../reference/acciones.html">girar_derecha()</a></code>. ¿Puede girar a la derecha usando las acciones disponibles? Claro que sí, ya que se puede lograr el mismo efecto girando tres veces a la izquierda. Luego, sólo resta que avance, coloque el <em>coso</em> y vuelva a avanzar una vez:</p>
+<p>Ahora necesitamos que Karel gire a la derecha, para que quede mirando
+al este. Sin embargo, Karel sólo sabe girar a la izquierda, no existe
+ninguna función <code><a href="../reference/acciones.html">girar_derecha()</a></code>. ¿Puede girar a la derecha
+usando las acciones disponibles? Claro que sí, ya que se puede lograr el
+mismo efecto girando tres veces a la izquierda. Luego, sólo resta que
+avance, coloque el <em>coso</em> y vuelva a avanzar una vez:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="18.gif" width="60%" style="display: block; margin: auto;"></p>
-<p><em>Algunos ejemplos presentados en este tutorial fueron adaptados de Karel the robot learns Java (Eric Roberts, 2005).</em></p>
+<p><em>Algunos ejemplos presentados en este tutorial fueron adaptados de
+Karel the robot learns Java (Eric Roberts, 2005).</em></p>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -211,11 +272,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Marcos Prunello.</p>
+  <p></p>
+<p>Developed by Marcos Prunello.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
@@ -223,6 +286,8 @@
 
   
 
+
+  
 
   </body>
 </html>

@@ -2,42 +2,115 @@ template:
   params:
     bootswatch: united
 
-navbar:
-  title: "karel"
-  left:
-    - icon: fa-home
-      href: index.html
-    - text: "Tutoriales en Español"
-      menu:
-        - text: "1 - Intro"
-          href: articles/a_intro_progrbasics_es.html
-        - text: "2 - Conociendo a Karel"
-          href: articles/b_meetingkarel_es.html
-        - text: "3 - Descomposición algorítmica"
-          href: articles/c_decomposition_es.html
-        - text: "4 - Estructuras de control"
-          href: articles/d_controlstructures_es.html
-        - text: "5 - Ejemplos"
-          href: articles/e_examples_es.html
-        - text: "Manual de Funciones"
-          href: reference/index-es.html
-    - text: "Tutorials in English"
-      menu:
-        - text: "Examples"
-          href: articles/f_examples_en.html
-        - text: "Functions"
-          href: reference/index-en.html
-    - text: "News"
-      href: news/index.html
-  right:
-   - icon: fa-twitter
-     href: https://twitter.com/mrqtsp
-   - icon: fa-github
-     href: https://github.com/mpru/karel
+articles:
+- title: Tutoriales en español
+  navbar: Tutoriales en español
+  contents:
+  - a_intro_progrbasics_es
+  - b_meetingkarel_es
+  - c_decomposition_es
+  - d_controlstructures_es
+  - e_examples_es
+- title: Tutorials in English
+  navbar: Tutorials in English
+  contents:
+  - f_examples_en
+  - f_examples_en
+  - f_examples_en
+  - f_examples_en
+  - f_examples_en
 
-home:
-  links:
-  - text: "Mira el código/Browse source code"
-    href: https://github.com/mpru/karel
-  - text: "Reporta un problema/Report a bug"
-    href: https://github.com/mpru/karel/issues
+reference:
+- title: Referencias en español
+- subtitle: "Generar un mundo y ejecutar acciones"
+  desc: >
+    Todo programa debe comenzar y terminar con estas funciones.
+  contents:
+    - generar_mundo
+    - ejecutar_acciones
+- subtitle: "Acciones que Karel puede realizar"
+  desc: >
+    Funciones que implementan las cuatro actividades básicas que Karel sabe
+    realizar (avanzar, girar a la izquierda, poner y juntar "cosos"). Si se
+    habilitan los superpoderes de Karel, también puede girar a la derecha y
+    darse vuelta.
+  contents:
+    - avanzar
+    - girar_izquierda
+    - poner_coso
+    - juntar_coso
+    - cargar_super_karel
+    - girar_derecha
+    - darse_vuelta
+- subtitle: "Condiciones que Karel puede verificar"
+  desc: >
+    Este conjunto de funciones devuelven un valor lógico TRUE o FALSE
+    según la evaluación que Karel puede hacer de su mundo.
+  contents:
+    - frente_abierto
+    - frente_cerrado
+    - izquierda_abierto
+    - izquierda_cerrado
+    - derecha_abierto
+    - derecha_cerrado
+    - hay_cosos
+    - no_hay_cosos
+    - karel_tiene_cosos
+    - karel_no_tiene_cosos
+    - mira_al_este
+    - mira_al_norte
+    - mira_al_oeste
+    - mira_al_sur
+- subtitle: "Funciones internas"
+  desc: >
+    Selección de funciones internas que podrían ser útiles para un uso algo
+    más avanzado del paquete.
+  contents:
+    - get_pkg_env
+    - plot_static_world
+- title: Reference in English
+- subtitle: "Generate a world and run actions"
+  desc: >
+    Every program must start and end with calls to these functions.
+  contents:
+    - generate_world
+    - run_actions
+- subtitle: "Available actions for Karel"
+  desc: >
+    These functions implement the four basic actions that Karel can perform
+     (move, turn left, put and pick beepers). If Karel's superpowers are
+     turned on, she can also turn right and turn around.
+  contents:
+    - move
+    - turn_left
+    - put_beeper
+    - pick_beeper
+    - load_super_karel
+    - turn_right
+    - turn_around
+- subtitle: "Conditions that Karel can test"
+  desc: >
+    These group of functions return a logical value TRUE or FALSE according
+    to Karel's evaluation of her world.
+  contents:
+    - front_is_clear
+    - front_is_blocked
+    - left_is_clear
+    - left_is_blocked
+    - right_is_clear
+    - right_is_blocked
+    - beepers_present
+    - no_beepers_present
+    - karel_has_beepers
+    - karel_has_no_beepers
+    - facing_east
+    - facing_west
+    - facing_north
+    - facing_south
+- subtitle: "Internal functions"
+  desc: >
+    Selected internal functions that could be useful to use the package in a
+    more advanced way.
+  contents:
+    - get_pkg_env
+    - plot_static_world

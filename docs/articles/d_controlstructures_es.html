@@ -20,6 +20,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -32,74 +34,56 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">karel</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.1.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../index.html">
-    <span class="fa fa-home"></span>
-     
-  </a>
+  <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Tutoriales en Español
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Articles
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-<li>
-      <a href="../articles/a_intro_progrbasics_es.html">1 - Intro</a>
+<li class="divider">
+    </li>
+<li class="dropdown-header">Tutoriales en español</li>
+    <li>
+      <a href="../articles/a_intro_progrbasics_es.html">Introducción y nociones básicas sobre programación</a>
     </li>
     <li>
-      <a href="../articles/b_meetingkarel_es.html">2 - Conociendo a Karel</a>
+      <a href="../articles/b_meetingkarel_es.html">Conociendo a Karel</a>
     </li>
     <li>
-      <a href="../articles/c_decomposition_es.html">3 - Descomposición algorítmica</a>
+      <a href="../articles/c_decomposition_es.html">Descomposición algorítmica</a>
     </li>
     <li>
-      <a href="../articles/d_controlstructures_es.html">4 - Estructuras de control</a>
+      <a href="../articles/d_controlstructures_es.html">Estructuras de control del código</a>
     </li>
     <li>
-      <a href="../articles/e_examples_es.html">5 - Ejemplos</a>
+      <a href="../articles/e_examples_es.html">Varios problemas de ejemplo</a>
     </li>
+    <li class="divider">
+    </li>
+<li class="dropdown-header">Tutorials in English</li>
     <li>
-      <a href="../reference/index-es.html">Manual de Funciones</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Tutorials in English
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li>
       <a href="../articles/f_examples_en.html">Examples</a>
     </li>
-    <li>
-      <a href="../reference/index-en.html">Functions</a>
-    </li>
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://twitter.com/mrqtsp">
-    <span class="fa fa-twitter"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="https://github.com/mpru/karel">
-    <span class="fa fa-github"></span>
+  <a href="https://github.com/mpru/karel/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -113,39 +97,78 @@
 
       
 
-      </header><script src="d_controlstructures_es_files/header-attrs-2.10/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Estructuras de control del código</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/mpru/karel/blob/master/vignettes/d_controlstructures_es.Rmd"><code>vignettes/d_controlstructures_es.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/mpru/karel/blob/HEAD/vignettes/d_controlstructures_es.Rmd" class="external-link"><code>vignettes/d_controlstructures_es.Rmd</code></a></small>
       <div class="hidden name"><code>d_controlstructures_es.Rmd</code></div>
 
     </div>
 
     
     
-<p>Como mencionamos anteriormente, un algoritmo está compuesto por una sucesión ordenada de comandos que se ejecutan uno detrás de otro. Sin embargo, con frecuencia es necesario recurrir a comandos especiales que alteran o controlan el orden en el que se ejecutan las acciones. Llamamos <strong>estructuras de control del flujo de las acciones</strong> al conjunto de reglas que permiten controlar el flujo de las acciones de un algoritmo o programa. Las mismas pueden clasificarse en <strong>secuenciales</strong>, <strong>condicionales</strong> e <strong>iterativas</strong>.</p>
-<div id="estructuras-de-control-secuenciales" class="section level2">
-<h2 class="hasAnchor">
-<a href="#estructuras-de-control-secuenciales" class="anchor"></a>Estructuras de control secuenciales</h2>
-<p>Las <strong>estructuras secuenciales</strong> están compuestas por un número definido de acciones que se ubican en un orden específico y se suceden una tras otra. Los ejemplos que hemos discutido anteriormente están conformados por este tipo de estructura.</p>
+<p>Como mencionamos anteriormente, un algoritmo está compuesto por una
+sucesión ordenada de comandos que se ejecutan uno detrás de otro. Sin
+embargo, con frecuencia es necesario recurrir a comandos especiales que
+alteran o controlan el orden en el que se ejecutan las acciones.
+Llamamos <strong>estructuras de control del flujo de las
+acciones</strong> al conjunto de reglas que permiten controlar el flujo
+de las acciones de un algoritmo o programa. Las mismas pueden
+clasificarse en <strong>secuenciales</strong>,
+<strong>condicionales</strong> e <strong>iterativas</strong>.</p>
+<div class="section level2">
+<h2 id="estructuras-de-control-secuenciales">Estructuras de control secuenciales<a class="anchor" aria-label="anchor" href="#estructuras-de-control-secuenciales"></a>
+</h2>
+<p>Las <strong>estructuras secuenciales</strong> están compuestas por un
+número definido de acciones que se ubican en un orden específico y se
+suceden una tras otra. Los ejemplos que hemos discutido anteriormente
+están conformados por este tipo de estructura.</p>
 </div>
-<div id="estructuras-de-control-condicionales" class="section level2">
-<h2 class="hasAnchor">
-<a href="#estructuras-de-control-condicionales" class="anchor"></a>Estructuras de control condicionales</h2>
-<p>En algunas partes de un algoritmo puede ser útil detenerse a hacer una pregunta porque se llegó a una situación en la que puede haber una o más opciones disponibles para continuar. Dependiendo de la respuesta a la pregunta, que siempre deberá ser <code>VERDADERO</code> (<code>TRUE</code>) o <code>FALSO</code> (<code>FALSE</code>), el algoritmo seguirá ciertas acciones e ignorará otras. Estas preguntas y respuestas representan procesos de toma de decisión que conducen a diferentes caminos dentro del algoritmo, permitiéndonos que la solución para el problema en cuestión sea flexible y se adapte a distintas situaciones. Este tipo de estructuras de control de las acciones reciben el nombre de <strong>condicionales</strong> (o <em>estructuras de selección</em>) y pueden ser <strong>simples</strong>, <strong>dobles</strong> y <strong>múltiples</strong>.</p>
-<div id="estructuras-condicionales-simples" class="section level3">
-<h3 class="hasAnchor">
-<a href="#estructuras-condicionales-simples" class="anchor"></a>Estructuras condicionales simples</h3>
-<p>Postulan una evaluación lógica y, si su resultado es <code>TRUE</code>, se procede a ejecutar las acciones encerradas por esta estructura. se expresan en R con la siguiente sintaxis:</p>
+<div class="section level2">
+<h2 id="estructuras-de-control-condicionales">Estructuras de control condicionales<a class="anchor" aria-label="anchor" href="#estructuras-de-control-condicionales"></a>
+</h2>
+<p>En algunas partes de un algoritmo puede ser útil detenerse a hacer
+una pregunta porque se llegó a una situación en la que puede haber una o
+más opciones disponibles para continuar. Dependiendo de la respuesta a
+la pregunta, que siempre deberá ser <code>VERDADERO</code>
+(<code>TRUE</code>) o <code>FALSO</code> (<code>FALSE</code>), el
+algoritmo seguirá ciertas acciones e ignorará otras. Estas preguntas y
+respuestas representan procesos de toma de decisión que conducen a
+diferentes caminos dentro del algoritmo, permitiéndonos que la solución
+para el problema en cuestión sea flexible y se adapte a distintas
+situaciones. Este tipo de estructuras de control de las acciones reciben
+el nombre de <strong>condicionales</strong> (o <em>estructuras de
+selección</em>) y pueden ser <strong>simples</strong>,
+<strong>dobles</strong> y <strong>múltiples</strong>.</p>
+<div class="section level3">
+<h3 id="estructuras-condicionales-simples">Estructuras condicionales simples<a class="anchor" aria-label="anchor" href="#estructuras-condicionales-simples"></a>
+</h3>
+<p>Postulan una evaluación lógica y, si su resultado es
+<code>TRUE</code>, se procede a ejecutar las acciones encerradas por
+esta estructura. se expresan en R con la siguiente sintaxis:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condición) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    ...código para ejecutar acciones...</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>La palabra <code>if</code> indica el comando de evaluación lógica, <code>condición</code> indica la evaluación a realizar y entre llaves se detallas las instrucciones que se realizarán sólo si se cumple la condición, es decir, si la evaluación resulta en <code>TRUE</code>. Si la condición no se verifica, no se ejecuta ninguna acción y el programa sigue su estructura secuencial con el código que prosigue a la última llave.</p>
-<p>Karel nos va a ayudar a ejemplificar esto. La siguiente tabla muestra las evaluaciones lógicas que la robot puede realizar acerca de su mundo. Por ejemplo, si ejecutamos la función <code><a href="../reference/condiciones.html">frente_abierto()</a></code>, obtendremos el valor <code>TRUE</code> si efectivamente no hay una pared enfrente de Karel o el valor <code>FALSE</code> si hay una pared.</p>
+<p>La palabra <code>if</code> indica el comando de evaluación lógica,
+<code>condición</code> indica la evaluación a realizar y entre llaves se
+detallas las instrucciones que se realizarán sólo si se cumple la
+condición, es decir, si la evaluación resulta en <code>TRUE</code>. Si
+la condición no se verifica, no se ejecuta ninguna acción y el programa
+sigue su estructura secuencial con el código que prosigue a la última
+llave.</p>
+<p>Karel nos va a ayudar a ejemplificar esto. La siguiente tabla muestra
+las evaluaciones lógicas que la robot puede realizar acerca de su mundo.
+Por ejemplo, si ejecutamos la función <code><a href="../reference/condiciones.html">frente_abierto()</a></code>,
+obtendremos el valor <code>TRUE</code> si efectivamente no hay una pared
+enfrente de Karel o el valor <code>FALSE</code> si hay una pared.</p>
 <table class="table">
+<colgroup>
+<col width="34%">
+<col width="65%">
+</colgroup>
 <thead><tr class="header">
 <th align="center">Función en R</th>
 <th align="center">Devuelve VERDADERO (TRUE) si…</th>
@@ -209,89 +232,109 @@
 </tr>
 </tbody>
 </table>
-<p>Podemos usar una estructura condicional para modificar la función <code>llenar_agujero()</code> que creamos anteriormente para que Karel coloque un <em>coso</em> sólo si no había ya uno presente en el agujero:</p>
+<p>Podemos usar una estructura condicional para modificar la función
+<code>llenar_agujero()</code> que creamos anteriormente para que Karel
+coloque un <em>coso</em> sólo si no había ya uno presente en el
+agujero:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># ------------ Definición de funciones auxiliares-----------</span>
-
-<span class="va">llenar_agujero</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">no_hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="op">}</span>
-  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span>
-
-<span class="co"># ------------------- Programa principal -------------------</span>
-
-<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p>Notar que si bien el uso de sangrías en el código es opcional, decidimos emplearlo para facilitar su lectura. Mantener la prolijidad en nuestros programas es esencial.</p>
+<code class="sourceCode R"><span><span class="co"># ------------ Definición de funciones auxiliares-----------</span></span>
+<span></span>
+<span><span class="va">llenar_agujero</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">no_hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># ------------------- Programa principal -------------------</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>Notar que si bien el uso de sangrías en el código es opcional,
+decidimos emplearlo para facilitar su lectura. Mantener la prolijidad en
+nuestros programas es esencial.</p>
 </div>
-<div id="estructuras-condicionales-dobles" class="section level3">
-<h3 class="hasAnchor">
-<a href="#estructuras-condicionales-dobles" class="anchor"></a>Estructuras condicionales dobles</h3>
-<p>Este tipo de estructura añade una acción a ejecutarse en el caso de que la condición evaluada no se verifique (es decir, devuelve el valor <code>FALSE</code>). La sintaxis es:</p>
+<div class="section level3">
+<h3 id="estructuras-condicionales-dobles">Estructuras condicionales dobles<a class="anchor" aria-label="anchor" href="#estructuras-condicionales-dobles"></a>
+</h3>
+<p>Este tipo de estructura añade una acción a ejecutarse en el caso de
+que la condición evaluada no se verifique (es decir, devuelve el valor
+<code>FALSE</code>). La sintaxis es:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condición) {</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    ...código para ejecutar acciones...</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    ...código para ejecutar acciones...</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>Dentro del primer bloque de llaves se escriben las acciones que se realizan si se cumple la condición, mientras que en el segundo, luego de la expresión <code>else</code>, se incluyen las que se realizan si no se verifica la misma.</p>
-<p>Imaginemos que queremos crear un algoritmo para revertir el estado de una celda, es decir, que Karel ponga un <em>coso</em> si no hay o lo quite si es que hay:</p>
+<p>Dentro del primer bloque de llaves se escriben las acciones que se
+realizan si se cumple la condición, mientras que en el segundo, luego de
+la expresión <code>else</code>, se incluyen las que se realizan si no se
+verifica la misma.</p>
+<p>Imaginemos que queremos crear un algoritmo para revertir el estado de
+una celda, es decir, que Karel ponga un <em>coso</em> si no hay o lo
+quite si es que hay:</p>
 <p><img src="51.png" width="60%" style="display: block; margin: auto;"></p>
 <p>Para esto podemos usar una estructura condicional doble:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span>
-<span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="../reference/acciones.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
-  <span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span>
-<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="../reference/acciones.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
-  <span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span>
-<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="../reference/acciones.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
-  <span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span>
-<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="52.gif" width="60%" style="display: block; margin: auto;"></p>
-<p>Dado que repetimos 3 veces, exactamente de la misma forma, el proceso de controlar si hay o no un <em>coso</em> para decidir quitarlo o poner uno, otra vez podemos recurrir al principio de la descomposición algorítmica y definir una función que se encargue de ellos, se forma que la acción de <em>invertir</em> el estado de una celda se haga de manera más sencilla. Nuestro archivo de código quedaría así:</p>
+<p>Dado que repetimos 3 veces, exactamente de la misma forma, el proceso
+de controlar si hay o no un <em>coso</em> para decidir quitarlo o poner
+uno, otra vez podemos recurrir al principio de la descomposición
+algorítmica y definir una función que se encargue de ellos, se forma que
+la acción de <em>invertir</em> el estado de una celda se haga de manera
+más sencilla. Nuestro archivo de código quedaría así:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># ------------ Definición de funciones auxiliares-----------</span>
-
-<span class="va">invertir</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
-  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu"><a href="../reference/acciones.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
-    <span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="op">}</span>
-<span class="op">}</span>
-
-<span class="co"># ------------------- Programa principal -------------------</span>
-
-<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span>
-<span class="fu">invertir</span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu">invertir</span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu">invertir</span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># ------------ Definición de funciones auxiliares-----------</span></span>
+<span></span>
+<span><span class="va">invertir</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="../reference/acciones.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># ------------------- Programa principal -------------------</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span></span>
+<span><span class="fu">invertir</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">invertir</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">invertir</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="estructuras-condicionales-múltiples-o-anidadas" class="section level3">
-<h3 class="hasAnchor">
-<a href="#estructuras-condicionales-m%C3%BAltiples-o-anidadas" class="anchor"></a>Estructuras condicionales múltiples o anidadas</h3>
-<p>Permiten combinar varias estructuras condicionales para establecer controles más complejos sobre el flujo de las acciones, representando una toma de decisión múltiple. Podemos ejemplificar la sintaxis de la siguiente forma:</p>
+<div class="section level3">
+<h3 id="estructuras-condicionales-múltiples-o-anidadas">Estructuras condicionales múltiples o anidadas<a class="anchor" aria-label="anchor" href="#estructuras-condicionales-m%C3%BAltiples-o-anidadas"></a>
+</h3>
+<p>Permiten combinar varias estructuras condicionales para establecer
+controles más complejos sobre el flujo de las acciones, representando
+una toma de decisión múltiple. Podemos ejemplificar la sintaxis de la
+siguiente forma:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condición <span class="dv">1</span>) {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    ...Primer conjunto de acciones...</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (condición <span class="dv">2</span>) {</span>
@@ -299,90 +342,138 @@
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    ...Tercer conjunto de acciones...</span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>En la estructura anterior, hay una primera evaluación lógica en la cual si el resultado es <code>VERDADERO</code>, se ejecuta el primer conjunto de acciones y nada más. En cambio, si su resultado es <code>FALSO</code>, se procede a realizar una segunda evaluación lógica, que da lugar a la ejecución del segundo o del tercer bloque de acciones, dependiendo de que su resultado sea <code>VERDADERO</code> o <code>FALSO</code>, respectivamente.</p>
+<p>En la estructura anterior, hay una primera evaluación lógica en la
+cual si el resultado es <code>VERDADERO</code>, se ejecuta el primer
+conjunto de acciones y nada más. En cambio, si su resultado es
+<code>FALSO</code>, se procede a realizar una segunda evaluación lógica,
+que da lugar a la ejecución del segundo o del tercer bloque de acciones,
+dependiendo de que su resultado sea <code>VERDADERO</code> o
+<code>FALSO</code>, respectivamente.</p>
 </div>
 </div>
-<div id="estructuras-de-control-iterativas" class="section level2">
-<h2 class="hasAnchor">
-<a href="#estructuras-de-control-iterativas" class="anchor"></a>Estructuras de control iterativas</h2>
-<p>Las estructuras de control iterativas son útiles cuando la solución de un problema requiere que se ejecute repetidamente un determinado conjunto de acciones. El número de veces que se debe repetir dicha secuencia de acciones puede ser fijo o variable dependiendo de algún dato en el algoritmo.</p>
-<div id="estructuras-de-control-iterativas-con-un-número-fijo-de-iteraciones" class="section level3">
-<h3 class="hasAnchor">
-<a href="#estructuras-de-control-iterativas-con-un-n%C3%BAmero-fijo-de-iteraciones" class="anchor"></a>Estructuras de control iterativas con un número fijo de iteraciones</h3>
-<p>Se aplican cuando se conoce de antemano el número exacto de veces que se debe repetir una secuencia de acciones. Por ejemplo, consideremos el siguiente problema donde hay agujeros distribuidos equiespaciadamente en las avenidas pares.</p>
+<div class="section level2">
+<h2 id="estructuras-de-control-iterativas">Estructuras de control iterativas<a class="anchor" aria-label="anchor" href="#estructuras-de-control-iterativas"></a>
+</h2>
+<p>Las estructuras de control iterativas son útiles cuando la solución
+de un problema requiere que se ejecute repetidamente un determinado
+conjunto de acciones. El número de veces que se debe repetir dicha
+secuencia de acciones puede ser fijo o variable dependiendo de algún
+dato en el algoritmo.</p>
+<div class="section level3">
+<h3 id="estructuras-de-control-iterativas-con-un-número-fijo-de-iteraciones">Estructuras de control iterativas con un número fijo de
+iteraciones<a class="anchor" aria-label="anchor" href="#estructuras-de-control-iterativas-con-un-n%C3%BAmero-fijo-de-iteraciones"></a>
+</h3>
+<p>Se aplican cuando se conoce de antemano el número exacto de veces que
+se debe repetir una secuencia de acciones. Por ejemplo, consideremos el
+siguiente problema donde hay agujeros distribuidos equiespaciadamente en
+las avenidas pares.</p>
 <p><img src="21.png" width="80%" style="display: block; margin: auto;"></p>
-<p>Tenemos que escribir un programa para que Karel llene los 5 agujeros. Podríamos planear algo como:</p>
-<pre class="text"><code><a href="../reference/generar_mundo.html"># ------------------- Programa principal -------------------
-
-generar_mundo("mundo003")
-avanzar()
-llenar_agujero()
-avanzar()
-
-avanzar()
-llenar_agujero()
-avanzar()
-
-avanzar()
-llenar_agujero()
-avanzar()
-
-avanzar()
-llenar_agujero()
-avanzar()
-
-avanzar()
-llenar_agujero()
-avanzar()
-ejecutar_acciones()</a></code></pre>
-<p>Es evidente que no tiene sentido escribir exactamente lo mismo 5 veces. Por eso vamos a hacer uso de una estructura iterativa:</p>
+<p>Tenemos que escribir un programa para que Karel llene los 5 agujeros.
+Podríamos planear algo como:</p>
+<pre class="text"><code><span><span class="co"># ------------------- Programa principal -------------------</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre>
+<p>Es evidente que no tiene sentido escribir exactamente lo mismo 5
+veces. Por eso vamos a hacer uso de una estructura iterativa:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span>
-<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
-  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span>
-<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p>La letra <code>i</code> recibe el nombre de variable de iteración. Podríamos haber elegido otra letra u otra palabra en su lugar, pero emplear <code>i</code> es bastante común. En este ejemplo, su única función es guiar la serie de pasos. El bloque de instrucciones se repite tantas veces como <code>i</code> tarde en llegar a 5 partiendo desde 1. De manera general, la sintaxis para este tipo de estructuras es:</p>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span></span>
+<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>La letra <code>i</code> recibe el nombre de variable de iteración.
+Podríamos haber elegido otra letra u otra palabra en su lugar, pero
+emplear <code>i</code> es bastante común. En este ejemplo, su única
+función es guiar la serie de pasos. El bloque de instrucciones se repite
+tantas veces como <code>i</code> tarde en llegar a 5 partiendo desde 1.
+De manera general, la sintaxis para este tipo de estructuras es:</p>
 <pre class="text"><code>for (&lt;variable&gt; in &lt;valor1&gt;:&lt;valor2&gt;) {
     ...Acción/es...
 }</code></pre>
 <p><img src="22.gif" width="60%" style="display: block; margin: auto;"></p>
 </div>
-<div id="estructuras-de-control-iterativas-con-un-número-indeterminado-de-iteraciones" class="section level3">
-<h3 class="hasAnchor">
-<a href="#estructuras-de-control-iterativas-con-un-n%C3%BAmero-indeterminado-de-iteraciones" class="anchor"></a>Estructuras de control iterativas con un número indeterminado de iteraciones</h3>
-<p>En otras circunstancias se puede necesitar repetir un bloque de acciones sin conocer con exactitud cuántas veces, si no que esto depende de algún otro aspecto del ALGORITMO. Las iteraciones pueden continuar <strong>mientras que</strong> se verifique alguna condición. En este tipo de estructuras, el conjunto de instrucciones se repite mientras que se siga evaluando como <code>VERDADERO</code> una condición declarada al inicio del bloque. Cuando la condición ya no se cumple, el proceso deja de ejecutarse. La sintaxis es:</p>
+<div class="section level3">
+<h3 id="estructuras-de-control-iterativas-con-un-número-indeterminado-de-iteraciones">Estructuras de control iterativas con un número indeterminado de
+iteraciones<a class="anchor" aria-label="anchor" href="#estructuras-de-control-iterativas-con-un-n%C3%BAmero-indeterminado-de-iteraciones"></a>
+</h3>
+<p>En otras circunstancias se puede necesitar repetir un bloque de
+acciones sin conocer con exactitud cuántas veces, si no que esto depende
+de algún otro aspecto del ALGORITMO. Las iteraciones pueden continuar
+<strong>mientras que</strong> se verifique alguna condición. En este
+tipo de estructuras, el conjunto de instrucciones se repite mientras que
+se siga evaluando como <code>VERDADERO</code> una condición declarada al
+inicio del bloque. Cuando la condición ya no se cumple, el proceso deja
+de ejecutarse. La sintaxis es:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (<span class="sc">&lt;</span>condición<span class="sc">&gt;</span>) {</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    ...Acción<span class="sc">/</span>es a repetir...</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Observaciones:</p>
 <ul>
-<li>La evaluación de la condición se lleva a cabo antes de cada iteración, incluyendo la primera. Si la condición es <code>FALSO</code> inicialmente, entonces las acciones en el cuerpo de la estructura no se ejecutan nunca.</li>
-<li>La evaluación de la condición <strong>sólo</strong> se lleva a cabo al inicio de cada iteración. Si la condición se vuelve <code>FALSO</code> en algún punto durante la ejecución de un bloque, el programa no lo nota hasta que se termine de ejecutar el bloque y la condición sea evaluada antes de comenzar la próxima iteración.</li>
+<li>La evaluación de la condición se lleva a cabo antes de cada
+iteración, incluyendo la primera. Si la condición es <code>FALSO</code>
+inicialmente, entonces las acciones en el cuerpo de la estructura no se
+ejecutan nunca.</li>
+<li>La evaluación de la condición <strong>sólo</strong> se lleva a cabo
+al inicio de cada iteración. Si la condición se vuelve
+<code>FALSO</code> en algún punto durante la ejecución de un bloque, el
+programa no lo nota hasta que se termine de ejecutar el bloque y la
+condición sea evaluada antes de comenzar la próxima iteración.</li>
 </ul>
-<p>Por ejemplo, sería interesante escribir un programa para llenar agujeros como el anterior, pero que sirva de manera general para otras situaciones donde puede haber cualquier cantidad de agujeros en la calle, como estas:</p>
+<p>Por ejemplo, sería interesante escribir un programa para llenar
+agujeros como el anterior, pero que sirva de manera general para otras
+situaciones donde puede haber cualquier cantidad de agujeros en la
+calle, como estas:</p>
 <p><img src="23.png" width="80%" style="display: block; margin: auto;"></p>
-<p>En vez de usar un <code>for</code> en el cual hay que especificar la cantidad de veces que el proceso debe repetirse, podemos usar un <code>while</code> para que Karel siga rellenando agujeros mientras que no haya una pared enfrente suyo, lo cual indicaría que llegó al final y debe detenerse.</p>
+<p>En vez de usar un <code>for</code> en el cual hay que especificar la
+cantidad de veces que el proceso debe repetirse, podemos usar un
+<code>while</code> para que Karel siga rellenando agujeros mientras que
+no haya una pared enfrente suyo, lo cual indicaría que llegó al final y
+debe detenerse.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># ------------------- Programa principal -------------------</span>
-<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span>
-<span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
-  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span>
-<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p>Hay que tener mucho cuidado a la hora de escribir este tipo de estructura, para asegurarse de no producir un <em>loop infinito</em>, es decir, un proceso iterativo que nunca finaliza. Esto ocurriría, por ejemplo, si estando en el mundo anterior, le pedimos a Karel que gire mientras que no haya cosas donde está parada:</p>
+<code class="sourceCode R"><span><span class="co"># ------------------- Programa principal -------------------</span></span>
+<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span></span>
+<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>Hay que tener mucho cuidado a la hora de escribir este tipo de
+estructura, para asegurarse de no producir un <em>loop infinito</em>, es
+decir, un proceso iterativo que nunca finaliza. Esto ocurriría, por
+ejemplo, si estando en el mundo anterior, le pedimos a Karel que gire
+mientras que no haya cosas donde está parada:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># No correr esto! (o sí, para ver cómo no anda!)</span>
-<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span>
-<span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">no_hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span>
-<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p><em>Algunos ejemplos presentados en este tutorial fueron adaptados de Karel the robot learns Java (Eric Roberts, 2005).</em></p>
+<code class="sourceCode R"><span><span class="co"># No correr esto! (o sí, para ver cómo no anda!)</span></span>
+<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span></span>
+<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">no_hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><em>Algunos ejemplos presentados en este tutorial fueron adaptados de
+Karel the robot learns Java (Eric Roberts, 2005).</em></p>
 </div>
 </div>
   </div>
@@ -398,11 +489,13 @@ ejecutar_acciones()</a></code></pre>
 
 
       <footer><div class="copyright">
-  <p>Developed by Marcos Prunello.</p>
+  <p></p>
+<p>Developed by Marcos Prunello.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
@@ -410,6 +503,8 @@ ejecutar_acciones()</a></code></pre>
 
   
 
+
+  
 
   </body>
 </html>
