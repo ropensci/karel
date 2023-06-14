@@ -1,0 +1,136 @@
+---
+title: "Meeting Karel"
+output: rmarkdown::html_vignette
+description: >
+  Here we tell you how to interact with Karel the robot.
+vignette: >
+  %\VignetteIndexEntry{Meeting Karel}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  out.width='60%'
+)
+```
+
+If you have already installed the **`karel`** package, we are ready to start using it. We will execute the command **`library(karel)`** to be able to use it:
+
+```{r, eval=F}
+library(karel)
+```
+
+First of all, we need to create a **world** so that Karel can move around. We do this with the instruction **`generar_mundo()`**, specifying the name of the world we want to use inside the parentheses and with quotation marks. The package includes several worlds that we will explore, for example:
+
+```{r, eval=F}
+generar_mundo("mundo001")
+```
+
+```{r, echo=FALSE, fig.align="center"}
+knitr::include_graphics('13.png')
+```
+
+As you can see in the image, Karel's world has some elements:
+
+-   We call each row of the rectangular world a **street**, meaning that the streets run horizontally.
+
+-   The **avenues** run vertically (they are the columns). The intersection between a street and an avenue is called a **cell**, which can be identified by the numbers outside the box.
+
+-   Karel is always facing one of the four possible directions: **east**, **north**, **west**, or **south**.
+
+-   The black borders represent **walls**, which are barriers that Karel cannot pass through; it can only go around them. Karel also cannot leave the rectangle that delimits the world.
+
+-   The square in cell (2, 1) is an **item**. Karel can traverse the world by placing and picking up **items**. There can be more than one **item** in a cell, in which case we will see a number indicating the quantity of **items** present.
+
+Additionally, Karel can perform the following activities:
+
+-   **`MOVE FORWARD`**: Karel moves one step towards the cell in front of it, provided there is no wall blocking its path.
+
+-   **`TURN LEFT`**: Karel rotates 90 degrees to its left (counterclockwise).
+
+-   **`PICK A BEEPER`**: Karel picks up the *item* in its current cell and stores it in its **backpack**, which is invisible in the diagram but can hold an infinite number of *items*. There must be at least one *item* in the cell for Karel to perform this action.
+
+-   **`PUT A BEEPER`**: Karel takes an *item* from its backpack and places it in the cell. Karel must have at least one *item* in its backpack to perform this action.
+
+The actions written as mentioned above are expressions that we can understand, but for Karel to understand them, we have to respect the instructions in which they are implemented in R:
+
+-   **`move()`**
+
+-   **`turn_left()`**
+
+-   **`pick_beeper()`**
+
+-   **`put_beeper()`**
+
+The parentheses indicate that the above instructions are **functions** in R, meaning that the actions Karel can perform are executed in R using **functions**. While we will study functions in more depth later on, for now, we can say that a **function** is a section of a program that performs a specific task and has a specific name.
+
+Some functions are built into the programming language, for example, when we calculate a logarithm in the R console during our initial steps: **`log(27)`**. **`log`** is the name of a function that is already in R and takes the logarithm of the number inside the parentheses.
+
+Other functions are added when we load a package, as is the case with the four functions mentioned earlier; they come in the **`karel`** package. Other functions are created or programmed by people, as we will do very soon.
+
+Some important observations about the functions that execute Karel's actions in R:
+
+-   The parentheses are empty because R does not require additional information for these functions to work. We will see later that in other cases, additional elements may need to be added there. In fact, when we create Karel's world with **`generate_world("mundo001")`**, we are already using an R function that requires the additional data of the world's name to draw it.
+
+-   These functions will throw an error in R if we try to use them inappropriately, for example, if we execute **`move()`** when Karel has a wall in front of it. Every time we make a mistake, we have to start over, even by generating the world again with the command **`generate_world("mundo001")`**.
+
+-   R distinguishes between lowercase and uppercase letters, so we have to respect the instructions as they appear here.
+
+-   The name of a function, for example, **`turn_left`**, never has spaces in between (it cannot be called `TURN LEFT`, but it could be called **`turnleft`**). However, according to the naming convention in the **`karel`** package, function names have underscore separators.
+
+Above all, it is important to remember that these functions do not work on their own. They must always be preceded by the execution of the **`generate_world("mundo001")`** function. Then we can run all the Karel actions we want, but to see their effect, we have to finish by running the **`run_actions()`** function.
+
+Let's see a first example. We will ask Karel to move forward, pick up an *item*, and then move forward again:
+
+```{r, eval=FALSE}
+# This program makes Karel move one space forward, pick up an item, and then move forward again
+generate_world("mundo001")
+move()
+pick_beeper()
+move()
+run_actions()
+```
+
+```{r, echo=FALSE, fig.align="center"}
+if (knitr::is_html_output()) knitr::include_graphics('14.gif')
+```
+
+A slightly more interesting problem would be for Karel to pick up the *item*, place it in Street 2 and Avenue 5, and finally move to Street 2 and Avenue 6:
+
+```{r, out.width='100%', echo=FALSE, fig.align="center"}
+knitr::include_graphics('15.png')
+```
+
+A slightly more interesting problem would be for Karel to pick up the *item*, place it in Street 2 and Avenue 5, and finally move to Street 2 and Avenue 6:
+
+```{r, echo=FALSE, fig.align="center"}
+knitr::include_graphics('16.png')
+```
+
+Now we need Karel to turn right, so that it faces east. However, Karel only knows how to turn left; there is no **`girar_derecha()`** (turn right) function. Can Karel turn right using the available actions? Yes, it can, by turning left three times to achieve the same effect. Then, it only remains for Karel to move forward, place the *item*, and move forward again:
+
+```{r, eval=FALSE}
+generate_world("mundo001")
+move()
+pick_beeper()
+move()
+turn_left()
+move()
+turn_left()
+turn_left()
+turn_left()
+move()
+move()
+put_beeper()
+move()
+run_actions()
+```
+
+```{r,  echo=FALSE, fig.align="center"}
+if (knitr::is_html_output()) knitr::include_graphics('18.gif')
+```
+
+*Some examples presented in this tutorial were adapted from "Karel the Robot Learns Java" by Eric Roberts, published in 2005.*
