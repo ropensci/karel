@@ -1,11 +1,11 @@
 ---
-title: "Introducción y nociones básicas sobre programación"
+title: "1 - Introducción y nociones básicas"
 output: rmarkdown::html_vignette
 description: >
   Antes de comenzar a jugar con Karel, presentamos algunas ideas generales
   acerca de la programación y el uso de R y RStudio.
 vignette: >
-  %\VignetteIndexEntry{Introducción y nociones básicas sobre programación}
+  %\VignetteIndexEntry{1 - Introducción y nociones básicas}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

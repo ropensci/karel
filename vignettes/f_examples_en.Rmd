@@ -1,11 +1,11 @@
 ---
-title: "Examples"
+title: "5 - Examples"
 output: rmarkdown::html_vignette
 description: >
   We finish this tutorial with several problems to put in practice everything we
   have learned with Karel.
 vignette: >
-  %\VignetteIndexEntry{Examples}
+  %\VignetteIndexEntry{5 - Examples}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

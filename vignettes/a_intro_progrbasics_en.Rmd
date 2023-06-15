@@ -1,11 +1,11 @@
 ---
-title: "Introduction and programming basics"
+title: "1 - Introduction and programming basics"
 output: rmarkdown::html_vignette
 description: >
   Before we start playing with Karel, let's go over some general ideas 
   about programming and using R and RStudio.
 vignette: >
-  %\VignetteIndexEntry{Introduction and programming basics}
+  %\VignetteIndexEntry{1 - Introduction and programming basics}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

@@ -1,11 +1,11 @@
 ---
-title: "Estructuras de control del código"
+title: "4 - Estructuras de control del código"
 output: rmarkdown::html_vignette
 description: >
   Las estructuras de control le van a ayudar a Karel repetir algunas actividades
   y tomar decisiones según las características actuales de su mundo.
 vignette: >
-  %\VignetteIndexEntry{Estructuras de control del código}
+  %\VignetteIndexEntry{4 - Estructuras de control del código}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

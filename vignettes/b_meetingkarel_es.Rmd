@@ -1,11 +1,11 @@
 ---
-title: "Conociendo a Karel"
+title: "2 - Conociendo a Karel"
 output: rmarkdown::html_vignette
 description: >
   ¿Quién es Karel? ¿Cómo es su mundo? ¿Qué actividades puede hacer? Acá
   contamos cómo interactuar con la robot Karel.
 vignette: >
-  %\VignetteIndexEntry{Conociendo a Karel}
+  %\VignetteIndexEntry{2 - Conociendo a Karel}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

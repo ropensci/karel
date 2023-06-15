@@ -1,10 +1,10 @@
 ---
-title: "Meeting Karel"
+title: "2 - Meeting Karel"
 output: rmarkdown::html_vignette
 description: >
   Here we tell you how to interact with Karel the robot.
 vignette: >
-  %\VignetteIndexEntry{Meeting Karel}
+  %\VignetteIndexEntry{2 - Meeting Karel}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

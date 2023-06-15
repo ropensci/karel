@@ -1,12 +1,12 @@
 ---
-title: "Descomposición algorítmica"
+title: "3 - Descomposición algorítmica"
 output: rmarkdown::html_vignette
 description: >
   Una buena idea a la hora de solucionar un problema es descomponerlo en partes
   más sencillas. Para esto vamos a aprender a escribir funciones, para que Karel
   pueda completar sus tareas de forma más organizada.
 vignette: >
-  %\VignetteIndexEntry{Descomposición algorítmica}
+  %\VignetteIndexEntry{3 - Descomposición algorítmica}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
