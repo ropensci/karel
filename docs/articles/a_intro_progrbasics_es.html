@@ -40,9 +40,6 @@
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../reference/index.html">Reference</a>
-</li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
@@ -72,9 +69,18 @@
     </li>
 <li class="dropdown-header">Tutorials in English</li>
     <li>
+      <a href="../articles/a_intro_progrbasics_en.html">Introduction and programming basics</a>
+    </li>
+    <li>
+      <a href="../articles/b_meetingkarel_en.html">Meeting Karel</a>
+    </li>
+    <li>
       <a href="../articles/f_examples_en.html">Examples</a>
     </li>
   </ul>
+</li>
+<li>
+  <a href="../reference/index.html">Reference</a>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -82,8 +88,14 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/mpru/karel/" class="external-link">
-    <span class="fab fa-github fa-lg"></span>
+  <a href="https://twitter.com/mrqtsp" class="external-link">
+    <span class="fa fa-twitter"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/mpru/karel" class="external-link">
+    <span class="fa fa-github"></span>
      
   </a>
 </li>
@@ -478,7 +490,7 @@ necesario) deberíamos hacer:</p>
 <code class="sourceCode R"><span><span class="co"># Instalar desde CRAN el paquete devtools</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span>
 <span><span class="co"># Instalar desde GitHub el paquete karel</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"mpru/karel"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"mpru/karel"</span><span class="op">)</span></span></code></pre></div>
 <p>Un paquete se instala una sola vez, pero cada vez que lo queramos
 usar debemos <em>cargarlo</em> para que las herramientas que trae queden
 a nuestra disposición. Eso se hace con la instrucción

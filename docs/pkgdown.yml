@@ -2,11 +2,13 @@ pandoc: 2.19.2
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
+  a_intro_progrbasics_en: a_intro_progrbasics_en.html
   a_intro_progrbasics_es: a_intro_progrbasics_es.html
+  b_meetingkarel_en: b_meetingkarel_en.html
   b_meetingkarel_es: b_meetingkarel_es.html
   c_decomposition_es: c_decomposition_es.html
   d_controlstructures_es: d_controlstructures_es.html
   e_examples_es: e_examples_es.html
   f_examples_en: f_examples_en.html
-last_built: 2023-06-14T23:06Z
+last_built: 2023-06-14T23:58Z
 

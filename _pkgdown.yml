@@ -2,6 +2,19 @@ template:
   params:
     bootswatch: united
 
+navbar:
+  structure:
+    left:  [articles, reference, news]
+    right: [search, twitter, github]
+  components:
+    twitter:
+      icon: fa-twitter
+      href: https://twitter.com/mrqtsp
+      aria-label: Twitter
+    github:
+      icon: fa-github
+      href: https://github.com/mpru/karel
+
 articles:
 - title: Tutoriales en español
   navbar: Tutoriales en español
@@ -14,10 +27,8 @@ articles:
 - title: Tutorials in English
   navbar: Tutorials in English
   contents:
-  - f_examples_en
-  - f_examples_en
-  - f_examples_en
-  - f_examples_en
+  - a_intro_progrbasics_en
+  - b_meetingkarel_en
   - f_examples_en
 
 reference:
