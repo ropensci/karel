@@ -75,8 +75,6 @@ Although R will be our means of communication with the computer, we will use ano
 
 To install these programs, you should visit the official websites of [**R**](https://www.r-project.org/) and [**RStudio**](https://www.rstudio.com/), download the installers, and run them. You can find a complete installation guide in this [**link**](https://www.youtube.com/watch?v=D9Bp11iZssc).
 
-1.  **R** has a very active user community from various fields, with many blogs, portals, and in-person meetings to seek and receive help. [**↩**](https://chat.openai.com/#user-content-fnref-2)
-
 ### **Organization of RStudio**
 
 When you open RStudio, you will see four panels:
@@ -134,8 +132,6 @@ In every programming language, there is a special character that, when placed at
 # 5^2
 5^3
 ```
-
-### Diseño del sistema R
 
 ### **R System Design**
 

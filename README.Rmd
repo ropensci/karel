@@ -68,11 +68,11 @@ devtools::install_github("mpru/karel")
 Podés programar a Karel para que realice tareas como las siguientes / You can
 program Karel to perform tasks such as:
 
-```{r, echo=F}
+```{r, echo=F, out.width="50%"}
 knitr::include_graphics("man/figures/33.gif")
 ```
 
-```{r, echo=F}
+```{r, echo=F, out.width="50%"}
 knitr::include_graphics("man/figures/30.gif")
 ```
 

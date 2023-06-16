@@ -12,7 +12,8 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.align = "center"
 )
 ```
 
@@ -80,13 +81,13 @@ for (i in 1:4) {
 run_actions()
 ```
 
-```{r, echo=F}
+```{r, echo=F, out.width="50%"}
 if (knitr::is_html_output()) knitr::include_graphics("33.gif")
 ```
 
 Now Karel is in a maze. Can we make it reach the end?
 
-```{r, echo=F}
+```{r, echo=F, out.width="50%"}
 knitr::include_graphics("29.png")
 ```
 
@@ -104,7 +105,7 @@ while (no_beepers_present()) {
 run_actions()
 ```
 
-```{r, echo=F}
+```{r, echo=F, out.width="50%"}
 if (knitr::is_html_output()) knitr::include_graphics("30.gif")
 ```
 

@@ -285,7 +285,7 @@ volver_inicio()
 ejecutar_acciones()
 ```
 
-```{r, out.width='80%', echo=FALSE, fig.align="center"}
+```{r, out.width='40%', echo=FALSE, fig.align="center"}
 if (knitr::is_html_output()) knitr::include_graphics('28.gif')
 ```
 
@@ -316,7 +316,7 @@ ejecutar_acciones()
 ```
 
 
-```{r, echo=FALSE, fig.align="center"}
+```{r, echo=FALSE, fig.align="center", out.width="40%"}
 if (knitr::is_html_output()) knitr::include_graphics('30.gif')
 ```
 

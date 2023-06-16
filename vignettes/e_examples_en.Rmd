@@ -25,10 +25,6 @@ In this section, we will present other examples that will help us continue think
 
 In the previous section, we proposed the following program to solve the problem of filling the holes in the street:
 
-## Otra vez a reparar la calle
-
-En la sección anterior propusimos el siguiente programa para resolver el problema de llenar los agujeros de la calle:
-
 ```{r, eval=FALSE}
 # ------------ Definition of auxiliary functions -----------
 
@@ -90,7 +86,7 @@ run_actions()
 
 However, this program has a flaw because while it works in this situation\...
 
-```{r, out.width='80%', echo=FALSE, fig.align="center"}
+```{r, out.width='40%', echo=FALSE, fig.align="center"}
 knitr::include_graphics('24.png')
 ```
 
@@ -323,7 +319,7 @@ while (no_beepers_present()) {
 run_actions()
 ```
 
-```{r, echo=FALSE, fig.align="center"}
+```{r, echo=FALSE, fig.align="center", out.width="40%"}
 if (knitr::is_html_output()) knitr::include_graphics('30.gif')
 ```
 

@@ -34,7 +34,7 @@ In the world of programming, there are many terms to define different types of s
 
 Throughout this tutorial, and while using R, we will refer to subalgorithms as **functions**, and for now, we will use them to help with program modularity.
 
-## **Turning Right**
+## **Turning right**
 
 To start with something simple, in the example seen in the previous section, Karel needed to turn right, and we achieved that by telling it to turn left three times. This is a bit inconvenient, firstly because mentally we imagine something else when we want Karel to turn right, and secondly because Karel will probably need to turn right in many problems, and we won't want to repeat **`turn_left()`** so many times.
 
