@@ -43,7 +43,9 @@ articles:
   contents:
   - a_intro_progrbasics_en
   - b_meetingkarel_en
-  - f_examples_en
+  - c_decomposition_en
+  - d_controlstructures_en
+  - e_examples_en
 
 reference:
 - title: Referencias en español

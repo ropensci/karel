@@ -129,7 +129,7 @@ ejecutar_acciones()
 if (knitr::is_html_output()) knitr::include_graphics('26.gif')
 ```
 
-## Crear otras funciones que hagan de Kareal aún más poderosa
+## Crear otras funciones que hagan de Karel aún más poderosa
 
 Karel ya sabe girar, avanzar, poner y juntar *cosos*. Sin embargo, podemos imaginar que para desempeñarse en su mundo, seguramente hay algunas actividades que debe repetir a menudo. Por ejemplo, avanzar derechito hasta que se encuentre con una pared, juntar todos los *cosos* que se pueda encontrar a lo largo de una calle o avenida o vaciar su mochila poniendo *cosos* en un lugar hasta que ya no le quede ninguno. Vamos a crear funciones que se encarguen de estas tareas, de modo que Karel pueda implementarlas en cualquier momento.
 

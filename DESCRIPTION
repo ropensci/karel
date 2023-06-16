@@ -22,15 +22,14 @@ Imports:
     tidyr,
     ggplot2,
     magrittr,
-    gganimate,
-    gifski
+    gganimate
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
 Language:
   en,
   es
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 Suggests: 
     testthat,
     knitr,

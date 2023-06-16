@@ -36,5 +36,4 @@ test_that("Karel's actions and superpowers perform as expected in English", {
   expect_equal(karel_env$dir_now, 1)
   turn_around()
   expect_equal(karel_env$dir_now, 3)
-  run_actions()
 })
