@@ -1,0 +1,21 @@
+pandoc: 2.19.2
+pkgdown: 2.0.7
+pkgdown_sha: ~
+articles:
+  a_intro_progrbasics_en: a_intro_progrbasics_en.html
+  a_intro_progrbasics_es: a_intro_progrbasics_es.html
+  aa_get_started_en: aa_get_started_en.html
+  aa_get_started_es: aa_get_started_es.html
+  b_meetingkarel_en: b_meetingkarel_en.html
+  b_meetingkarel_es: b_meetingkarel_es.html
+  c_decomposition_en: c_decomposition_en.html
+  c_decomposition_es: c_decomposition_es.html
+  d_controlstructures_en: d_controlstructures_en.html
+  d_controlstructures_es: d_controlstructures_es.html
+  e_examples_en: e_examples_en.html
+  e_examples_es: e_examples_es.html
+last_built: 2023-06-17T23:30Z
+urls:
+  reference: https://mpru.github.io/karel/reference
+  article: https://mpru.github.io/karel/articles
+
