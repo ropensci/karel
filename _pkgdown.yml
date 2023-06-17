@@ -10,7 +10,7 @@ lang: es
 
 navbar:
   structure:
-    left:  [home, articles, reference, news]
+    left:  [home, getstarted, articles, reference, news]
     right: [twitter, github]
   components:
     home:
@@ -23,29 +23,35 @@ navbar:
     github:
       icon: fa-github
       href: https://github.com/mpru/karel
+    getstarted:
+      text: Getting started
+      menu:
+      - text: EN - Get started with Karel the robot
+        href: articles/aa_get_started_en.html
+      - text: ES - Primeros pasos con la robot Karel
+        href: articles/aa_get_started_es.html
 
 articles:
-- title: Get started
-  navbar: Get started
-  contents:
-  - aa_get_started_es
-  - aa_get_started_en
-- title: Tutoriales en español
-  navbar: Tutoriales en español
+- title: ES - Tutoriales en español
+  navbar: ES - Tutoriales en español
   contents:
   - a_intro_progrbasics_es
   - b_meetingkarel_es
   - c_decomposition_es
   - d_controlstructures_es
   - e_examples_es
-- title: Tutorials in English
-  navbar: Tutorials in English
+- title: EN - Tutorials in English
+  navbar: EN - Tutorials in English
   contents:
   - a_intro_progrbasics_en
   - b_meetingkarel_en
   - c_decomposition_en
   - d_controlstructures_en
   - e_examples_en
+- title: internal
+  contents:
+  - aa_get_started_es
+  - aa_get_started_en
 
 reference:
 - title: Referencias en español
