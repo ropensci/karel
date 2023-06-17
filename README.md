@@ -14,7 +14,7 @@ status](https://www.r-pkg.org/badges/version/karel)](https://CRAN.R-project.org/
 
 ## ¿Quién es Karel? / Who is Karel?
 
-ESTE PAQUETE IMPLEMENTA en R a *Karel the robot*, un lenguaje de
+Este paquete implementa en R a *Karel the robot*, un lenguaje de
 programación creado por el Dr. R. E. Pattis en la Universidad de
 Stanford en 1981. Karel es una herramienta útil para enseñar conceptos
 introductorios sobre programación, como descomposición algorítmica,
