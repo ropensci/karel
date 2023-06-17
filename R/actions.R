@@ -1,33 +1,13 @@
-#' Acciones que Karel puede realizar
-#'
-#' \code{avanzar()}, \code{girar_izquierda()}, \code{juntar_coso()} y
-#' \code{poner_coso()} son las cuatro actividades básicas que Karel sabe
-#' realizar. Si se habilitan los superpoderes de Karel con
-#' \code{cargar_super_karel()}, entonces también puede \code{girar_derecha()} y
-#' \code{darse_vuelta()}.
-#'
-#' @return Estas funciones no devuelven nada, pero realizan cambios en el mundo
-#'   de Karel que se ven cuando se ejecutan todas las acciones con
-#'   \code{ejecutar_acciones()}.
-#'
-#' @examples
-#' generar_mundo("mundo001")
-#' avanzar()
-#' juntar_coso()
-#' girar_izquierda()
-#' poner_coso()
-#' ejecutar_acciones()
-#'
-#' @seealso \code{\link{cargar_super_karel}} \code{\link{generar_mundo}}
-#'   \code{\link{ejecutar_acciones}}
-#'
-#' @name acciones
-NULL
-#> NULL
+# Global list for messages. Each of its elements is a list with all the messages
+# written in a differente language. There's a file for each language that adds
+# to this list. The files are called "message_texts_*.R".
+message_texts <- list()
 
-#' @rdname acciones
-#' @export
-avanzar <- function() {
+#' Implementation of the action of moving forward
+#'
+#' @keywords internal
+#'
+.move <- function(lang) {
   # Proceed if there was no mistake
   if (pkg_env$error) stop("You made a mistake before and can't ask Karel to do more things. Generate the world again and start all over.\n Tuviste un error y ahora no puedes pedirle algo nuevo a Karel. Generar otra vez el mundo y volver a comenzar.")
   pkg_env$moment <- pkg_env$moment + 1
@@ -38,7 +18,11 @@ avanzar <- function() {
            pkg_env$x_now <- pkg_env$x_now + 1
          } else {
            pkg_env$error <- TRUE
-           stop("Can't move east, there's a wall. Generate again the world and start all over.\nNo puede avanzar hacia el este, hay una pared. Generar otra vez el mundo y volver a comenzar.")
+           cli::cli_rule()
+           cli::cli_abort(call = NULL, message = c(
+             "x" = message_texts[[lang]]$cant_move_east,
+             ">" = message_texts[[lang]]$start_again)
+           )
          },
 
          # Current direction: north

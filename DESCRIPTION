@@ -22,7 +22,8 @@ Imports:
     tidyr,
     ggplot2,
     magrittr,
-    gganimate
+    gganimate,
+    cli
 License: GPL-2
 Encoding: UTF-8
 LazyData: true

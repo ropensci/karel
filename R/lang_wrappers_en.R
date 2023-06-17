@@ -1,4 +1,7 @@
-# This file contains functions named in English which are just wrappers to the original functions which are named in Spanish. Here I also include the documentation in English. Only external functions that can be used by users have this bilingual feature.
+# This file contains functions named in English which are just wrappers to the
+# internal functions which are agnostic of language. Here I also include the
+# documentation in English. Only external functions that can be used by users
+# are documented.
 
 #' Create Karel's world
 #'
@@ -101,7 +104,7 @@ NULL
 
 #' @rdname actions
 #' @export
-move <- function() avanzar()
+move <- function() .move(lang = "en")
 
 #' @rdname actions
 #' @export
