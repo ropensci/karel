@@ -1,17 +1,23 @@
+url: https://mpru.github.io/karel/
 template:
   bootstrap: 3
   bootswatch: united
   bslib:
-    primary: "#0054AD"
+    primary: '#0054AD'
     border-radius: 0.5rem
     btn-border-radius: 0.25rem
-
 lang: es
-
 navbar:
   structure:
-    left:  [home, getstarted, articles, reference, news]
-    right: [twitter, github]
+    left:
+    - home
+    - getstarted
+    - articles
+    - reference
+    - news
+    right:
+    - twitter
+    - github
   components:
     home:
       icon: fa-home
@@ -30,7 +36,6 @@ navbar:
         href: articles/aa_get_started_en.html
       - text: ES - Primeros pasos con la robot Karel
         href: articles/aa_get_started_es.html
-
 articles:
 - title: ES - Tutoriales en español
   navbar: ES - Tutoriales en español
@@ -52,98 +57,91 @@ articles:
   contents:
   - aa_get_started_es
   - aa_get_started_en
-
 reference:
 - title: Referencias en español
-- subtitle: "Generar un mundo y ejecutar acciones"
-  desc: >
+- subtitle: Generar un mundo y ejecutar acciones
+  desc: |
     Todo programa debe comenzar y terminar con estas funciones.
   contents:
-    - generar_mundo
-    - ejecutar_acciones
-- subtitle: "Acciones que Karel puede realizar"
-  desc: >
-    Funciones que implementan las cuatro actividades básicas que Karel sabe
-    realizar (avanzar, girar a la izquierda, poner y juntar "cosos"). Si se
-    habilitan los superpoderes de Karel, también puede girar a la derecha y
-    darse vuelta.
+  - generar_mundo
+  - ejecutar_acciones
+- subtitle: Acciones que Karel puede realizar
+  desc: |
+    Funciones que implementan las cuatro actividades básicas que Karel sabe realizar (avanzar, girar a la izquierda, poner y juntar "cosos"). Si se habilitan los superpoderes de Karel, también puede girar a la derecha y darse vuelta.
   contents:
-    - avanzar
-    - girar_izquierda
-    - poner_coso
-    - juntar_coso
-    - cargar_super_karel
-    - girar_derecha
-    - darse_vuelta
-- subtitle: "Condiciones que Karel puede verificar"
-  desc: >
-    Este conjunto de funciones devuelven un valor lógico TRUE o FALSE
-    según la evaluación que Karel puede hacer de su mundo.
+  - avanzar
+  - girar_izquierda
+  - poner_coso
+  - juntar_coso
+  - cargar_super_karel
+  - girar_derecha
+  - darse_vuelta
+- subtitle: Condiciones que Karel puede verificar
+  desc: |
+    Este conjunto de funciones devuelven un valor lógico TRUE o FALSE según la evaluación que Karel puede hacer de su mundo.
   contents:
-    - frente_abierto
-    - frente_cerrado
-    - izquierda_abierto
-    - izquierda_cerrado
-    - derecha_abierto
-    - derecha_cerrado
-    - hay_cosos
-    - no_hay_cosos
-    - karel_tiene_cosos
-    - karel_no_tiene_cosos
-    - mira_al_este
-    - mira_al_norte
-    - mira_al_oeste
-    - mira_al_sur
-- subtitle: "Funciones internas"
-  desc: >
-    Selección de funciones internas que podrían ser útiles para un uso algo
-    más avanzado del paquete.
+  - frente_abierto
+  - frente_cerrado
+  - izquierda_abierto
+  - izquierda_cerrado
+  - derecha_abierto
+  - derecha_cerrado
+  - hay_cosos
+  - no_hay_cosos
+  - karel_tiene_cosos
+  - karel_no_tiene_cosos
+  - mira_al_este
+  - mira_al_norte
+  - mira_al_oeste
+  - mira_al_sur
+- subtitle: Funciones internas
+  desc: |
+    Selección de funciones internas que podrían ser útiles para un uso algo más avanzado del paquete.
   contents:
-    - get_pkg_env
-    - plot_static_world
+  - get_pkg_env
+  - plot_static_world
 - title: Reference in English
-- subtitle: "Generate a world and run actions"
-  desc: >
+- subtitle: Generate a world and run actions
+  desc: |
     Every program must start and end with calls to these functions.
   contents:
-    - generate_world
-    - run_actions
-- subtitle: "Available actions for Karel"
-  desc: >
+  - generate_world
+  - run_actions
+- subtitle: Available actions for Karel
+  desc: |
     These functions implement the four basic actions that Karel can perform
      (move, turn left, put and pick beepers). If Karel's superpowers are
      turned on, she can also turn right and turn around.
   contents:
-    - move
-    - turn_left
-    - put_beeper
-    - pick_beeper
-    - load_super_karel
-    - turn_right
-    - turn_around
-- subtitle: "Conditions that Karel can test"
-  desc: >
-    These group of functions return a logical value TRUE or FALSE according
-    to Karel's evaluation of her world.
+  - move
+  - turn_left
+  - put_beeper
+  - pick_beeper
+  - load_super_karel
+  - turn_right
+  - turn_around
+- subtitle: Conditions that Karel can test
+  desc: |
+    These group of functions return a logical value TRUE or FALSE according to Karel's evaluation of her world.
   contents:
-    - front_is_clear
-    - front_is_blocked
-    - left_is_clear
-    - left_is_blocked
-    - right_is_clear
-    - right_is_blocked
-    - beepers_present
-    - no_beepers_present
-    - karel_has_beepers
-    - karel_has_no_beepers
-    - facing_east
-    - facing_west
-    - facing_north
-    - facing_south
-- subtitle: "Internal functions"
-  desc: >
-    Selected internal functions that could be useful to use the package in a
-    more advanced way.
+  - front_is_clear
+  - front_is_blocked
+  - left_is_clear
+  - left_is_blocked
+  - right_is_clear
+  - right_is_blocked
+  - beepers_present
+  - no_beepers_present
+  - karel_has_beepers
+  - karel_has_no_beepers
+  - facing_east
+  - facing_west
+  - facing_north
+  - facing_south
+- subtitle: Internal functions
+  desc: |
+    Selected internal functions that could be useful to use the package in a more advanced way.
   contents:
-    - get_pkg_env
-    - plot_static_world
+  - get_pkg_env
+  - plot_static_world
+
