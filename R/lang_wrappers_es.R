@@ -3,6 +3,8 @@
 # documentation in Spanish Only external functions that can be used by users
 # have their documentation translated.
 
+# ------------------------------------------------------------------------------
+
 #' Acciones que Karel puede realizar
 #'
 #' \code{avanzar()}, \code{girar_izquierda()}, \code{juntar_coso()} y
@@ -42,7 +44,110 @@ girar_izquierda <- function() .turn_left(lang = "es")
 #' @export
 poner_coso <- function() .put_beeper(lang = "es")
 
-
 #' @rdname actions
 #' @export
 juntar_coso <- function() .pick_beeper(lang = "es")
+
+# ------------------------------------------------------------------------------
+
+#' Condiciones que Karel puede verificar
+#'
+#' Este conjunto de funciones devuelven un valor lógico \code{TRUE} o
+#' \code{FALSE} según la evaluación que Karel puede hacer de su mundo.
+#'
+#' @return Valor lógico TRUE o FALSE.
+#'
+#' @details Las funciones \code{frente_abierto()}, \code{frente_cerrado()},
+#'   \code{izquierda_abierto()}, \code{izquierda_cerrado()},
+#'   \code{derecha_abierto()} y \code{derecha_cerrado()} analizan si hay paredes
+#'   al frente, a la izquierda o a la derecha de Karel. Las funciones
+#'   \code{hay_cosos()} y \code{no_hay_cosos()} analizan si hay \code{cosos} en
+#'   la posición actual de Karel. Las funciones \code{karel_tiene_cosos()} y
+#'   \code{karel_no_tiene_cosos()} analizan si Karel tiene \code{cosos} en su
+#'   mochila (no visibles en la representación gráfica). Las funciones
+#'   \code{mira_al_este()}, \code{mira_al_oeste()}, \code{mira_al_norte()} y
+#'   \code{mira_al_sur()} analizan la dirección hacia la cual Karel está
+#'   mirando.
+#'
+#' @examples
+#' generar_mundo("mundo001")
+#' frente_abierto()
+#' frente_cerrado()
+#' izquierda_abierto()
+#' izquierda_cerrado()
+#' derecha_abierto()
+#' derecha_cerrado()
+#' hay_cosos()
+#' no_hay_cosos()
+#' karel_tiene_cosos()
+#' karel_no_tiene_cosos()
+#' mira_al_este()
+#' mira_al_oeste()
+#' mira_al_norte()
+#' mira_al_sur()
+#'
+#' @seealso \code{\link{generar_mundo}}
+#'
+#' @name condiciones
+NULL
+#> NULL
+
+#' @rdname conditions
+#' @export
+frente_abierto <- function() .front_is_clear(lang = "es")
+
+#' @rdname conditions
+#' @export
+frente_cerrado <- function() .front_is_blocked(lang = "es")
+
+#' @rdname conditions
+#' @export
+izquierda_abierto <- function() .left_is_clear(lang = "es")
+
+#' @rdname conditions
+#' @export
+izquierda_cerrado <- function() .left_is_blocked(lang = "es")
+
+#' @rdname conditions
+#' @export
+derecha_abierto <- function() .right_is_clear(lang = "es")
+
+#' @rdname conditions
+#' @export
+derecha_cerrado <- function() .right_is_blocked(lang = "es")
+
+#' @rdname conditions
+#' @export
+hay_cosos <- function() .beepers_present(lang = "es")
+
+#' @rdname conditions
+#' @export
+no_hay_cosos <- function() .no_beepers_present(lang = "es")
+
+#' @rdname conditions
+#' @export
+karel_tiene_cosos <- function() .karel_has_beepers(lang = "es")
+
+#' @rdname conditions
+#' @export
+karel_no_tiene_cosos <- function() .karel_has_no_beepers(lang = "es")
+
+#' @rdname conditions
+#' @export
+mira_al_este <- function() .facing_east(lang = "es")
+
+#' @rdname conditions
+#' @export
+mira_al_oeste <- function() .facing_west(lang = "es")
+
+#' @rdname conditions
+#' @export
+mira_al_norte <- function() .facing_north(lang = "es")
+
+#' @rdname conditions
+#' @export
+mira_al_sur <- function() .facing_south(lang = "es")
+
+# ------------------------------------------------------------------------------
+
+

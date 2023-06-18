@@ -3,6 +3,144 @@
 # documentation in English. Only external functions that can be used by users
 # are documented.
 
+# ------------------------------------------------------------------------------
+
+#' Available actions for Karel
+#'
+#' \code{move()}, \code{turn_left()}, \code{pick_beeper()} y \code{put_beeper()}
+#' are the four basic activities that Karel can perform. If you turn on Karel's
+#' superpowers with \code{load_super_karel()}, then she can also
+#' \code{turn_right()} y \code{turn_around()}.
+#'
+#' @return These functions don't return anything, but make changes in Karel's
+#'   world that are visible when all the actions are run through
+#'   \code{run_actions()}.
+#'
+#' @examples
+#' generate_world("mundo001")
+#' move()
+#' pick_beeper()
+#' turn_left()
+#' put_beeper()
+#' run_actions()
+#'
+#' @seealso \code{\link{load_super_karel}} \code{\link{generate_world}}
+#'   \code{\link{run_actions}}
+#'
+#' @name actions
+NULL
+#> NULL
+
+#' @rdname actions
+#' @export
+move <- function() .move(lang = "en")
+
+#' @rdname actions
+#' @export
+turn_left <- function() .turn_left(lang = "en")
+
+#' @rdname actions
+#' @export
+put_beeper <- function() .put_beeper(lang = "en")
+
+#' @rdname actions
+#' @export
+pick_beeper <- function() .pick_beeper(lang = "en")
+
+# ------------------------------------------------------------------------------
+
+#' Conditions that Karel can test
+#'
+#' These group of functions return a logical value \code{TRUE} o \code{FALSE} according to Karel's evaluation of her world.
+#'
+#' @return Logical value TRUE or FALSE.
+#'
+#' @details The functions \code{front_is_clear()}, \code{front_is_blocked()}, \code{left_is_clear()}, \code{left_is_blocked()}, \code{right_is_clear()} y \code{right_is_blocked()} test if there is a wall in front of Karel, to her left or to her right, respectively. The functions \code{beepers_present()} y \code{no_beepers_present()} test if there are or there are not \code{beepers} at Karel's current position. The functions \code{karel_has_beepers()} y \code{karel_has_no_beepers()} test if Karel has or hasn't got  \code{beepers} in her bag (not visible in the plot). The functions \code{facing_east()}, \code{facing_west()}, \code{facing_north()} y \code{facing_south()} test the direction to which Karel is facing right now.
+#'
+#' @examples
+#' generate_world("mundo001")
+#' front_is_clear()
+#' front_is_blocked()
+#' left_is_clear()
+#' left_is_blocked()
+#' right_is_clear()
+#' right_is_blocked()
+#' beepers_present()
+#' no_beepers_present()
+#' karel_has_beepers()
+#' karel_has_no_beepers()
+#' facing_east()
+#' facing_west()
+#' facing_north()
+#' facing_south()
+#'
+#' @seealso \code{\link{generate_world}}
+#'
+#' @name conditions
+NULL
+#> NULL
+
+#' @rdname conditions
+#' @export
+front_is_clear <- function() .front_is_clear(lang = "en")
+
+#' @rdname conditions
+#' @export
+front_is_blocked <- function() .front_is_blocked(lang = "en")
+
+#' @rdname conditions
+#' @export
+left_is_clear <- function() .left_is_clear(lang = "en")
+
+#' @rdname conditions
+#' @export
+left_is_blocked <- function() .left_is_blocked(lang = "en")
+
+#' @rdname conditions
+#' @export
+right_is_clear <- function() .right_is_clear(lang = "en")
+
+#' @rdname conditions
+#' @export
+right_is_blocked <- function() .right_is_blocked(lang = "en")
+
+#' @rdname conditions
+#' @export
+beepers_present <- function() .beepers_present(lang = "en")
+
+#' @rdname conditions
+#' @export
+no_beepers_present <- function() .no_beepers_present(lang = "en")
+
+#' @rdname conditions
+#' @export
+karel_has_beepers <- function() .karel_has_beepers(lang = "en")
+
+#' @rdname conditions
+#' @export
+karel_has_no_beepers <- function() .karel_has_no_beepers(lang = "en")
+
+#' @rdname conditions
+#' @export
+facing_east <- function() .facing_east(lang = "en")
+
+#' @rdname conditions
+#' @export
+facing_west <- function() .facing_west(lang = "en")
+
+#' @rdname conditions
+#' @export
+facing_north <- function() .facing_north(lang = "en")
+
+#' @rdname conditions
+#' @export
+facing_south <- function() .facing_south(lang = "en")
+
+# ------------------------------------------------------------------------------
+
+
+
+
 #' Create Karel's world
 #'
 #' This function takes a "world" (i.e. a list with data about its size, walls,
@@ -76,48 +214,7 @@ generate_world <- function(world) generar_mundo(world)
 #' @export
 run_actions <- function(loop = TRUE) ejecutar_acciones(repetir = loop)
 
-#' Available actions for Karel
-#'
-#' \code{move()}, \code{turn_left()}, \code{pick_beeper()} y \code{put_beeper()}
-#' are the four basic activities that Karel can perform. If you turn on Karel's
-#' superpowers with \code{load_super_karel()}, then she can also
-#' \code{turn_right()} y \code{turn_around()}.
-#'
-#' @return These functions don't return anything, but make changes in Karel's
-#'   world that are visible when all the actions are run through
-#'   \code{run_actions()}.
-#'
-#' @examples
-#' generate_world("mundo001")
-#' move()
-#' pick_beeper()
-#' turn_left()
-#' put_beeper()
-#' run_actions()
-#'
-#' @seealso \code{\link{load_super_karel}} \code{\link{generate_world}}
-#'   \code{\link{run_actions}}
-#'
-#' @name actions
-NULL
-#> NULL
 
-#' @rdname actions
-#' @export
-move <- function() .move(lang = "en")
-
-#' @rdname actions
-#' @export
-turn_left <- function() .turn_left(lang = "en")
-
-#' @rdname actions
-#' @export
-put_beeper <- function() .put_beeper(lang = "en")
-
-
-#' @rdname actions
-#' @export
-pick_beeper <- function() .pick_beeper(lang = "en")
 
 #' Turn on Karel's superpowers
 #'
@@ -153,89 +250,4 @@ turn_right <- function() girar_derecha()
 #' @export
 turn_around <- function() darse_vuelta()
 
-#' Conditions that Karel can test
-#'
-#' These group of functions return a logical value \code{TRUE} o \code{FALSE} according to Karel's evaluation of her world.
-#'
-#' @return Logical value TRUE or FALSE.
-#'
-#' @details The functions \code{front_is_clear()}, \code{front_is_blocked()}, \code{left_is_clear()}, \code{left_is_blocked()}, \code{right_is_clear()} y \code{right_is_blocked()} test if there is a wall in front of Karel, to her left or to her right, respectively. The functions \code{beepers_present()} y \code{no_beepers_present()} test if there are or there are not \code{beepers} at Karel's current position. The functions \code{karel_has_beepers()} y \code{karel_has_no_beepers()} test if Karel has or hasn't got  \code{beepers} in her bag (not visible in the plot). The functions \code{facing_east()}, \code{facing_west()}, \code{facing_north()} y \code{facing_south()} test the direction to which Karel is facing right now.
-#'
-#' @examples
-#' generate_world("mundo001")
-#' front_is_clear()
-#' front_is_blocked()
-#' left_is_clear()
-#' left_is_blocked()
-#' right_is_clear()
-#' right_is_blocked()
-#' beepers_present()
-#' no_beepers_present()
-#' karel_has_beepers()
-#' karel_has_no_beepers()
-#' facing_east()
-#' facing_west()
-#' facing_north()
-#' facing_south()
-#'
-#' @seealso \code{\link{generate_world}}
-#'
-#' @name conditions
-NULL
-#> NULL
 
-#' @rdname conditions
-#' @export
-front_is_clear <- function() frente_abierto()
-
-#' @rdname conditions
-#' @export
-front_is_blocked <- function() frente_cerrado()
-
-#' @rdname conditions
-#' @export
-left_is_clear <- function() izquierda_abierto()
-
-#' @rdname conditions
-#' @export
-left_is_blocked <- function() izquierda_cerrado()
-
-#' @rdname conditions
-#' @export
-right_is_clear <- function() derecha_abierto()
-
-#' @rdname conditions
-#' @export
-right_is_blocked <- function() derecha_cerrado()
-
-#' @rdname conditions
-#' @export
-beepers_present <- function() hay_cosos()
-
-#' @rdname conditions
-#' @export
-no_beepers_present <- function() no_hay_cosos()
-
-#' @rdname conditions
-#' @export
-karel_has_beepers <- function() karel_tiene_cosos()
-
-#' @rdname conditions
-#' @export
-karel_has_no_beepers <- function() karel_no_tiene_cosos()
-
-#' @rdname conditions
-#' @export
-facing_east <- function() mira_al_este()
-
-#' @rdname conditions
-#' @export
-facing_west <- function() mira_al_oeste()
-
-#' @rdname conditions
-#' @export
-facing_north <- function() mira_al_norte()
-
-#' @rdname conditions
-#' @export
-facing_south <- function() mira_al_sur()
