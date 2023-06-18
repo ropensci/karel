@@ -108,16 +108,16 @@ move <- function() .move(lang = "en")
 
 #' @rdname actions
 #' @export
-turn_left <- function() girar_izquierda()
+turn_left <- function() .turn_left(lang = "en")
 
 #' @rdname actions
 #' @export
-put_beeper <- function() poner_coso()
+put_beeper <- function() .put_beeper(lang = "en")
 
 
 #' @rdname actions
 #' @export
-pick_beeper <- function() juntar_coso()
+pick_beeper <- function() .pick_beeper(lang = "en")
 
 #' Turn on Karel's superpowers
 #'

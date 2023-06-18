@@ -33,3 +33,16 @@ NULL
 #' @rdname acciones
 #' @export
 avanzar <- function() .move(lang = "es")
+
+#' @rdname acciones
+#' @export
+girar_izquierda <- function() .turn_left(lang = "es")
+
+#' @rdname actions
+#' @export
+poner_coso <- function() .put_beeper(lang = "es")
+
+
+#' @rdname actions
+#' @export
+juntar_coso <- function() .pick_beeper(lang = "es")

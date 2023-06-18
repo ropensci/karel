@@ -9,7 +9,13 @@ message_texts <- list()
 #'
 .move <- function(lang) {
   # Proceed if there was no mistake
-  if (pkg_env$error) stop("You made a mistake before and can't ask Karel to do more things. Generate the world again and start all over.\n Tuviste un error y ahora no puedes pedirle algo nuevo a Karel. Generar otra vez el mundo y volver a comenzar.")
+  if (pkg_env$error) {
+    cli::cli_rule()
+    cli::cli_abort(call = NULL, message = c(
+      "x" = message_texts[[lang]]$error_general,
+      ">" = message_texts[[lang]]$start_again)
+    )
+  }
   pkg_env$moment <- pkg_env$moment + 1
   switch(pkg_env$dir_now,
 
@@ -30,7 +36,11 @@ message_texts <- list()
            pkg_env$y_now <- pkg_env$y_now + 1
          } else {
            pkg_env$error <- TRUE
-           stop("Can't move north, there's a wall. Generate again the world and start all over.\nNo puede avanzar hacia el norte, hay una pared. Generar otra vez el mundo y volver a comenzar.")
+           cli::cli_rule()
+           cli::cli_abort(call = NULL, message = c(
+             "x" = message_texts[[lang]]$cant_move_north,
+             ">" = message_texts[[lang]]$start_again)
+           )
          },
 
          # Current direction: west
@@ -38,7 +48,11 @@ message_texts <- list()
            pkg_env$x_now <- pkg_env$x_now - 1
          } else {
            pkg_env$error <- TRUE
-           stop("Can't move west, there's a wall. Generate again the world and start all over.\nNo puede avanzar hacia el oeste, hay una pared. Generar otra vez el mundo y volver a comenzar.")
+           cli::cli_rule()
+           cli::cli_abort(call = NULL, message = c(
+             "x" = message_texts[[lang]]$cant_move_west,
+             ">" = message_texts[[lang]]$start_again)
+           )
          },
 
          # Current direction: south
@@ -46,7 +60,11 @@ message_texts <- list()
            pkg_env$y_now <- pkg_env$y_now - 1
          } else {
            pkg_env$error <- TRUE
-           stop("Can't move south, there's a wall. Generate again the world and start all over.\nNo puede avanzar hacia el sur, hay una pared. Generar otra vez el mundo y volver a comenzar.")
+           cli::cli_rule()
+           cli::cli_abort(call = NULL, message = c(
+             "x" = message_texts[[lang]]$cant_move_south,
+             ">" = message_texts[[lang]]$start_again)
+           )
          }
   )
   pkg_env$karel <- add_row(pkg_env$karel, x = pkg_env$x_now, y = pkg_env$y_now,
@@ -58,11 +76,19 @@ message_texts <- list()
   pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
 }
 
-#' @rdname acciones
-#' @export
-girar_izquierda <- function() {
+#' Implementation of the action of turning left
+#'
+#' @keywords internal
+#'
+.turn_left <- function(lang) {
   # Proceed if there was no mistake
-  if (pkg_env$error) stop("You made a mistake before and can't ask Karel to do more things. Generate the world again and start all over.\n Tuviste un error y ahora no puedes pedirle algo nuevo a Karel. Generar otra vez el mundo y volver a comenzar.")
+  if (pkg_env$error) {
+    cli::cli_rule()
+    cli::cli_abort(call = NULL, message = c(
+      "x" = message_texts[[lang]]$error_general,
+      ">" = message_texts[[lang]]$start_again)
+    )
+  }
   # Update moment and direction
   pkg_env$moment <- pkg_env$moment + 1
   pkg_env$dir_now <- switch(pkg_env$dir_now, 2, 3, 4, 1)
@@ -76,16 +102,28 @@ girar_izquierda <- function() {
   pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
 }
 
-#' @rdname acciones
-#' @export
-poner_coso <- function() {
+#' Implementation of the action of putting a beeper
+#'
+#' @keywords internal
+#'
+.put_beeper <- function(lang) {
 
   # Proceed if there was no mistake
-  if (pkg_env$error) stop("You made a mistake before and can't ask Karel to do more things. Generate the world again and start all over.\n Tuviste un error y ahora no puedes pedirle algo nuevo a Karel. Generar otra vez el mundo y volver a comenzar.")
+  if (pkg_env$error) {
+    cli::cli_rule()
+    cli::cli_abort(call = NULL, message = c(
+      "x" = message_texts[[lang]]$error_general,
+      ">" = message_texts[[lang]]$start_again)
+    )
+  }
 
   if (pkg_env$beepers_bag == 0) {
     pkg_env$error <- TRUE
-    stop("Can't put a beeper since there aren't any left in Karel's bag. Generate again the world and start all over.\nNo puede colocar un coso ya que no le queda ninguno en la mochila. Generar otra vez el mundo y volver a comenzar.")
+    cli::cli_rule()
+    cli::cli_abort(call = NULL, message = c(
+      "x" = message_texts[[lang]]$cant_put_beeper,
+      ">" = message_texts[[lang]]$start_again)
+    )
   } else {
 
     # Update bag
@@ -130,12 +168,20 @@ poner_coso <- function() {
   }
 }
 
-#' @rdname acciones
-#' @export
-juntar_coso <- function() {
+#' Implementation of the action of picking a beeper
+#'
+#' @keywords internal
+#'
+.pick_beeper <- function(lang) {
 
   # Proceed if there was no mistake
-  if (pkg_env$error) stop("You made a mistake before and can't ask Karel to do more things. Generate the world again and start all over.\n Tuviste un error y ahora no puedes pedirle algo nuevo a Karel. Generar otra vez el mundo y volver a comenzar.")
+  if (pkg_env$error) {
+    cli::cli_rule()
+    cli::cli_abort(call = NULL, message = c(
+      "x" = message_texts[[lang]]$error_general,
+      ">" = message_texts[[lang]]$start_again)
+    )
+  }
 
   # We can only remove if there are no beepers there, otherwise it's an error
   if (hay_cosos()) {
@@ -176,6 +222,10 @@ juntar_coso <- function() {
       bind_rows(pkg_env$karel, .)
   } else {
     pkg_env$error <- TRUE
-    stop("There are no beepers here to remove. Generate again the world and start all over.\nNo hay cosos para quitar. Generar otra vez el mundo y volver a comenzar.")
+    cli::cli_rule()
+    cli::cli_abort(call = NULL, message = c(
+      "x" = message_texts[[lang]]$error_general,
+      ">" = message_texts[[lang]]$start_again)
+    )
   }
 }
