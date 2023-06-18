@@ -6,5 +6,5 @@ message_texts[["es"]] <- list(
   cant_move_south = "Karel no puede avanzar hacia el sur, ya que hay una pared.",
   cant_move_north = "Karel no puede avanzar hacia el norte, ya que hay una pared.",
   cant_put_beeper = "Karel no puede colocar un coso ya que no le queda ninguno en la mochila.",
-  cant_pick_beeper = "Aquí no hay cosos para juntar."
+  cant_pick_beeper = "No hay cosos para juntar en este lugar."
   )

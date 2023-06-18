@@ -94,59 +94,59 @@ NULL
 
 #' @rdname conditions
 #' @export
-frente_abierto <- function() .front_is_clear(lang = "es")
+frente_abierto <- function() .front_is_clear()
 
 #' @rdname conditions
 #' @export
-frente_cerrado <- function() .front_is_blocked(lang = "es")
+frente_cerrado <- function() .front_is_blocked()
 
 #' @rdname conditions
 #' @export
-izquierda_abierto <- function() .left_is_clear(lang = "es")
+izquierda_abierto <- function() .left_is_clear()
 
 #' @rdname conditions
 #' @export
-izquierda_cerrado <- function() .left_is_blocked(lang = "es")
+izquierda_cerrado <- function() .left_is_blocked()
 
 #' @rdname conditions
 #' @export
-derecha_abierto <- function() .right_is_clear(lang = "es")
+derecha_abierto <- function() .right_is_clear()
 
 #' @rdname conditions
 #' @export
-derecha_cerrado <- function() .right_is_blocked(lang = "es")
+derecha_cerrado <- function() .right_is_blocked()
 
 #' @rdname conditions
 #' @export
-hay_cosos <- function() .beepers_present(lang = "es")
+hay_cosos <- function() .beepers_present()
 
 #' @rdname conditions
 #' @export
-no_hay_cosos <- function() .no_beepers_present(lang = "es")
+no_hay_cosos <- function() .no_beepers_present()
 
 #' @rdname conditions
 #' @export
-karel_tiene_cosos <- function() .karel_has_beepers(lang = "es")
+karel_tiene_cosos <- function() .karel_has_beepers()
 
 #' @rdname conditions
 #' @export
-karel_no_tiene_cosos <- function() .karel_has_no_beepers(lang = "es")
+karel_no_tiene_cosos <- function() .karel_has_no_beepers()
 
 #' @rdname conditions
 #' @export
-mira_al_este <- function() .facing_east(lang = "es")
+mira_al_este <- function() .facing_east()
 
 #' @rdname conditions
 #' @export
-mira_al_oeste <- function() .facing_west(lang = "es")
+mira_al_oeste <- function() .facing_west()
 
 #' @rdname conditions
 #' @export
-mira_al_norte <- function() .facing_north(lang = "es")
+mira_al_norte <- function() .facing_north()
 
 #' @rdname conditions
 #' @export
-mira_al_sur <- function() .facing_south(lang = "es")
+mira_al_sur <- function() .facing_south()
 
 # ------------------------------------------------------------------------------
 

@@ -82,59 +82,59 @@ NULL
 
 #' @rdname conditions
 #' @export
-front_is_clear <- function() .front_is_clear(lang = "en")
+front_is_clear <- function() .front_is_clear()
 
 #' @rdname conditions
 #' @export
-front_is_blocked <- function() .front_is_blocked(lang = "en")
+front_is_blocked <- function() .front_is_blocked()
 
 #' @rdname conditions
 #' @export
-left_is_clear <- function() .left_is_clear(lang = "en")
+left_is_clear <- function() .left_is_clear()
 
 #' @rdname conditions
 #' @export
-left_is_blocked <- function() .left_is_blocked(lang = "en")
+left_is_blocked <- function() .left_is_blocked()
 
 #' @rdname conditions
 #' @export
-right_is_clear <- function() .right_is_clear(lang = "en")
+right_is_clear <- function() .right_is_clear()
 
 #' @rdname conditions
 #' @export
-right_is_blocked <- function() .right_is_blocked(lang = "en")
+right_is_blocked <- function() .right_is_blocked()
 
 #' @rdname conditions
 #' @export
-beepers_present <- function() .beepers_present(lang = "en")
+beepers_present <- function() .beepers_present()
 
 #' @rdname conditions
 #' @export
-no_beepers_present <- function() .no_beepers_present(lang = "en")
+no_beepers_present <- function() .no_beepers_present()
 
 #' @rdname conditions
 #' @export
-karel_has_beepers <- function() .karel_has_beepers(lang = "en")
+karel_has_beepers <- function() .karel_has_beepers()
 
 #' @rdname conditions
 #' @export
-karel_has_no_beepers <- function() .karel_has_no_beepers(lang = "en")
+karel_has_no_beepers <- function() .karel_has_no_beepers()
 
 #' @rdname conditions
 #' @export
-facing_east <- function() .facing_east(lang = "en")
+facing_east <- function() .facing_east()
 
 #' @rdname conditions
 #' @export
-facing_west <- function() .facing_west(lang = "en")
+facing_west <- function() .facing_west()
 
 #' @rdname conditions
 #' @export
-facing_north <- function() .facing_north(lang = "en")
+facing_north <- function() .facing_north()
 
 #' @rdname conditions
 #' @export
-facing_south <- function() .facing_south(lang = "en")
+facing_south <- function() .facing_south()
 
 # ------------------------------------------------------------------------------
 
