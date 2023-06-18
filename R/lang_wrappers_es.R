@@ -226,4 +226,28 @@ mira_al_sur <- function() .facing_south()
 
 # ------------------------------------------------------------------------------
 
+#' Habilitar los superpoderes de Karel
+#'
+#' Luego de correr \code{cargar_super_karel()}, Karel también puede girar a la derecha y darse vuelta, a través de las acciones \code{girar_derecha()} y \code{darse_vuelta()}. Si no se cargan los superpoderes, estas dos funciones no están disponibles.
+#'
+#' @return No devuelve ningún valor, pero adjuntan al Global Environment las funciones \code{girar_derecha()} y \code{darse_vuelta()}.
+#'
+#' @examples
+#' generar_mundo("mundo001")
+#' cargar_super_karel()
+#' darse_vuelta()
+#' girar_derecha()
+#' ejecutar_acciones()
+#'
+#' @seealso \code{\link{acciones}} \code{\link{generar_mundo}} \code{\link{ejecutar_acciones}}
+#' @export
+#'
+cargar_super_karel <- function() .load_super_karel()
 
+#' @rdname acciones
+#' @export
+girar_derecha <- function() .turn_right(lang = "es")
+
+#' @rdname acciones
+#' @export
+darse_vuelta <- function() .turn_around(lang = "es")

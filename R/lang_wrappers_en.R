@@ -210,11 +210,6 @@ facing_south <- function() .facing_south()
 
 # ------------------------------------------------------------------------------
 
-
-
-
-
-
 #' Turn on Karel's superpowers
 #'
 #' After running \code{load_super_karel()}, Karel can also turn right and turn
@@ -235,18 +230,13 @@ facing_south <- function() .facing_south()
 #' @seealso \code{\link{actions}} \code{\link{generate_world}}
 #'   \code{\link{run_actions}}
 #' @export
-load_super_karel <- function() {
-  # This hack solves the note
-  global_env_set_hack("turn_right", turn_right, 1L)
-  global_env_set_hack("turn_around", turn_around, 1L)
-}
-#
-#' @rdname actions
-#' @export
-turn_right <- function() girar_derecha()
+#'
+load_super_karel <- function() .load_super_karel()
 
 #' @rdname actions
 #' @export
-turn_around <- function() darse_vuelta()
+turn_right <- function() .turn_right(lang = "en")
 
-
+#' @rdname actions
+#' @export
+turn_around <- function() .turn_around(lang = "en")

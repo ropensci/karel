@@ -1,19 +1,14 @@
-#' Habilitar los superpoderes de Karel
+#' Turn on Karel's superpowers
 #'
-#' Luego de correr \code{cargar_super_karel()}, Karel también puede girar a la derecha y darse vuelta, a través de las acciones \code{girar_derecha()} y \code{darse_vuelta()}. Si no se cargan los superpoderes, estas dos funciones no están disponibles.
+#' After running \code{.load_super_karel()}, Karel can also turn right and turn
+#' around with \code{.turn_right()} and \code{.turn_around()}. If these
+#' superpowers aren't loaded, then these functions won't be available and Karel
+#' can't use them. This is an internal function, and its called by language
+#' wrappers.
 #'
-#' @return No devuelve ningún valor, pero adjuntan al Global Environment las funciones \code{girar_derecha()} y \code{darse_vuelta()}.
+#' @keywords internal
 #'
-#' @examples
-#' generar_mundo("mundo001")
-#' cargar_super_karel()
-#' darse_vuelta()
-#' girar_derecha()
-#' ejecutar_acciones()
-#'
-#' @seealso \code{\link{acciones}} \code{\link{generar_mundo}} \code{\link{ejecutar_acciones}}
-#' @export
-cargar_super_karel <- function() {
+.load_super_karel <- function() {
   # These do what I want but they get me the note about making assignments to
   # the global environment
   # assign("girar_derecha", girar_derecha, envir = .GlobalEnv)
@@ -22,6 +17,8 @@ cargar_super_karel <- function() {
   # This hack solves the note
   global_env_set_hack("girar_derecha", girar_derecha, 1L)
   global_env_set_hack("darse_vuelta", darse_vuelta, 1L)
+  global_env_set_hack("turn_right", turn_right, 1L)
+  global_env_set_hack("turn_around", turn_around, 1L)
 }
 
 #' This function lets me add objects to another environment
@@ -34,11 +31,20 @@ global_env_set_hack <- function(key, val, pos) {
   assign(key, val, envir = as.environment(pos))
 }
 
-#' @rdname acciones
-girar_derecha <- function() {
+#' Implementation of the action of turning right
+#'
+#' @keywords internal
+#'
+.turn_right <- function(lang) {
 
   # Proceed if there was no mistake
-  if (pkg_env$error) stop("You made a mistake before and can't ask Karel to do more things. Generate the world again and start all over.\n Tuviste un error y ahora no puedes pedirle algo nuevo a Karel. Generar otra vez el mundo y volver a comenzar.")
+  if (pkg_env$error) {
+    cli::cli_rule()
+    cli::cli_abort(call = NULL, message = c(
+      "x" = message_texts[[lang]]$error_general,
+      ">" = message_texts[[lang]]$start_again)
+    )
+  }
 
   # Update moment and direction
   pkg_env$moment <- pkg_env$moment + 1
@@ -53,11 +59,20 @@ girar_derecha <- function() {
   pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
 }
 
-#' @rdname acciones
-darse_vuelta <- function() {
+#' Implementation of the action of turning around
+#'
+#' @keywords internal
+#'
+.turn_around <- function(lang) {
 
   # Proceed if there was no mistake
-  if (pkg_env$error) stop("You made a mistake before and can't ask Karel to do more things. Generate the world again and start all over.\n Tuviste un error y ahora no puedes pedirle algo nuevo a Karel. Generar otra vez el mundo y volver a comenzar.")
+  if (pkg_env$error) {
+    cli::cli_rule()
+    cli::cli_abort(call = NULL, message = c(
+      "x" = message_texts[[lang]]$error_general,
+      ">" = message_texts[[lang]]$start_again)
+    )
+  }
 
   # Update moment and direction
   pkg_env$moment <- pkg_env$moment + 1
