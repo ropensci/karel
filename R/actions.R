@@ -224,7 +224,7 @@ message_texts <- list()
     pkg_env$error <- TRUE
     cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
-      "x" = message_texts[[lang]]$error_general,
+      "x" = message_texts[[lang]]$cant_pick_beeper,
       ">" = message_texts[[lang]]$start_again)
     )
   }

@@ -7,5 +7,7 @@ message_texts[["en"]] <- list(
   cant_move_north = "Karel can't move north, because there's a wall",
   cant_put_beeper = "Karel can't put a beeper since there aren't any left its bag.",
   cant_pick_beeper = "There are no beepers here to pick.",
-  world_doesnt_exist = "Required world doesn't exist."
+  world_doesnt_exist = "Required world doesn't exist.",
+  do_sth_first_x = "Karel hasn't received any instruction yet.",
+  do_sth_first_arrow = "Perform at least one action first and then call run_actions()."
 )

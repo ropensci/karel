@@ -53,6 +53,34 @@ generar_mundo <- function(mundo) .generate_world(mundo, lang = "es")
 
 # ------------------------------------------------------------------------------
 
+#' Ejecutar acciones
+#'
+#' Esta función produce la animación que muestra todas las acciones realizadas
+#' por Karel desde que su mundo fue generado con \code{generar_mundo}.
+#'
+#' @param repetir Valor lógico TRUE o FALSE que indica si la animación debe
+#'   repetirse una y otra vez luego de finalizada (por defecto: TRUE).
+#'
+#' @return Produce una animación con \code{gganimate}.
+#'
+#' @examples
+#' generar_mundo("mundo001")
+#' avanzar()
+#' juntar_coso()
+#' girar_izquierda()
+#' poner_coso()
+#' ejecutar_acciones()
+#'
+#' @seealso \code{\link{generar_mundo}}
+#'
+#' @export
+#'
+ejecutar_acciones <- function(repetir = TRUE) {
+  .run_actions(loop = repetir, lang = "es")
+}
+
+# ------------------------------------------------------------------------------
+
 #' Acciones que Karel puede realizar
 #'
 #' \code{avanzar()}, \code{girar_izquierda()}, \code{juntar_coso()} y
