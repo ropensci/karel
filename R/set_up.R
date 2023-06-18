@@ -5,35 +5,28 @@ utils::globalVariables(c("x", "y", "lgth", "n", "xmin", "xmax", "ymin", "ymax",
 # Create environment
 pkg_env <- new.env(parent = emptyenv())
 
-#' Generar el mundo de Karel
+#' Create Karel's world
 #'
-#' Esta función toma un "mundo" (es decir, una lista con información acerca de
-#' su tamaño, paredes, "cosos" presentes y la ubicación y dirección de Karel),
-#' lo grafica y prepara todo para que Karel pueda realizar sus acciones. Siempre
-#' debe ser evaluada antes de que Karel empiece a cumplir sus
-#' objetivos, en especial, si en algún momento hemos cometido un error, debemos
-#' comenzar de nuevo corriendo primero esta función.
+#' This function takes a "world" (i.e. a list with data about its size, walls,
+#' beepers and Karel's position and direction), plots it and prepares everything
+#' so that Karel can start performing actions in it. It must be run always
+#' before Karel starts working on her goals, especially if we have made a
+#' mistake, we must start all over again by first running this function.
 #'
-#' Luego de correr \code{generar_mundo()}, se ejecutan las acciones de Karel y
-#' se pueden visualizar con la función \code{ejecutar_acciones()}.
+#' After running \code{.generate_world()}, we can run Karel's actions and
+#' finally visualize it all with the function \code{.run_actions()}. Thiese are
+#' all internal functions, users just call the corresponding external wrapper
+#' according to their language.
 #'
-#' @param mundo Un caracter de largo 1 indicando el nombre de uno de los mundos
-#'   que ya vienen en el paquete o un objeto de tipo lista con todos los
-#'   componentes que debe tener un mundo (ver más abajo en Detalles).
+#' @param world Character vector of length 1 with the name of one of the
+#'   provided worlds in the package or a list provided by the user with all the
+#'   components that a world needs (see more below in details).
 #'
-#' @return Dibuja el estado inicial del mundo de Karel y deja todo preparado
-#'   para comenzar a registrar sus acciones.
+#' @return Plots the initial state of Karel's world and prepares everything to
+#'   start recording her actions.
 #'
-#' @export
-#'
-#' @examples
-#' generar_mundo("mundo001")
-#'
-#' @seealso \code{\link{acciones}} \code{\link{ejecutar_acciones}}
-#'
-#' @details El argumento \code{mundo} puede consistir de un mundo creado (es
-#'   decir, inventado) por cualquiera. En este caso, \code{mundo} debe ser una
-#'   lista con los siguientes componentes:
+#' @details Argument \code{world} can be create by the user. In this case, it
+#'   must be a list with the following components:
 #'
 #'   \enumerate{
 #'     \item \code{nx}: TODO
@@ -51,29 +44,28 @@ pkg_env <- new.env(parent = emptyenv())
 #'
 #' @importFrom ggplot2 ggplot geom_segment geom_point aes scale_x_continuous
 #'   scale_y_continuous theme element_blank element_text geom_tile geom_text
-#'   geom_rect coord_fixed element_rect
+#'   geom_rect coord_fixed
 #' @importFrom dplyr tibble add_row slice mutate bind_rows n
 #' @importFrom magrittr %>%
 #'
-generar_mundo <- function(mundo) {
-
-  # I first programmed this argument with the word "world" but now I want the
-  # argument to be in spanish here
-  world <- mundo
+#' @keywords internal
+#'
+.generate_world <- function(world, lang) {
 
   if (is.character(world)) {
   	# Load this world from internal data
   	world <- try(get(world), silent = T)
   	if (inherits(world, "try-error")) {
-  	  stop("\nRequired world doesn't exist.\nEl mundo pedido no existe.")
+  	  cli::cli_rule()
+  	  cli::cli_abort(call = NULL,
+  	                 message = c("x" = message_texts[[lang]]$world_doesnt_exist)
+  	  )
   	}
 	} else {
 		# User has provided their own world as a list.
     check_user_world(world)
 	}
 
-	# Create environment
-	# pkg_env <- new.env(parent = emptyenv())
   # Clear the environment
   rm(list = ls(pkg_env), envir = pkg_env)
 

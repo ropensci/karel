@@ -5,6 +5,52 @@
 
 # ------------------------------------------------------------------------------
 
+#' Create Karel's world
+#'
+#' This function takes a "world" (i.e. a list with data about its size, walls,
+#' beepers and Karel's position and direction), plots it and prepares everything
+#' so that Karel can start performing actions in it. It must be run always
+#' before Karel starts working on her goals, especially if we have made a
+#' mistake, we must start all over again by first running this function.
+#'
+#' After running \code{generate_world()}, we can run Karel's actions and finally
+#' visualize it all with the function \code{run_actions()}.
+#'
+#' @param world Character vector of length 1 with the name of one of the
+#'   provided worlds in the package or a list provided by the user with all the
+#'   components that a world needs (see more below in details).
+#'
+#' @return Plots the initial state of Karel's world and prepares everything to
+#'   start recording her actions.
+#'
+#' @export
+#'
+#' @examples
+#' generate_world("mundo001")
+#'
+#' @seealso \code{\link{actions}} \code{\link{run_actions}}
+#'
+#' @details Argument \code{world} can be create by the user. In this case, it
+#'   must be a list with the following components:
+#'
+#'   \enumerate{
+#'     \item \code{nx}: TODO
+#'     \item \code{ny}:
+#'     \item \code{hor_walls}:
+#'     \item \code{ver_walls}:
+#'     \item \code{karel_x}:
+#'     \item \code{karel_y}:
+#'     \item \code{karel_dir}:
+#'     \item \code{beepers_x}:
+#'     \item \code{beepers_y}:
+#'     \item \code{beepers_n}:
+#'     \item \code{beepers_bag}:
+#'   }
+#'
+generate_world <- function(world) .generate_world(world, lang = "en")
+
+# ------------------------------------------------------------------------------
+
 #' Available actions for Karel
 #'
 #' \code{move()}, \code{turn_left()}, \code{pick_beeper()} y \code{put_beeper()}
@@ -141,55 +187,7 @@ facing_south <- function() .facing_south()
 
 
 
-#' Create Karel's world
-#'
-#' This function takes a "world" (i.e. a list with data about its size, walls,
-#' beepers and Karel's position and direction), plots it and prepares everything
-#' so that Karel can start performing actions in it. It must be run always
-#' before Karel starts working on her goals, especially if we have made a
-#' mistake, we must start all over again by first running this function.
-#'
-#' After running \code{generate_mundo()}, we can run Karel's actions and finally
-#' visualize it all with the function \code{run_actions()}.
-#'
-#' @param world Character vector of length 1 with the name of one of the
-#'   provided worlds in the package or a list provided by the user with all the
-#'   components that a world needs (see more below in details).
-#'
-#' @return Plots the initial state of Karel's world and prepares everything to
-#'   start recording her actions.
-#'
-#' @export
-#'
-#' @examples
-#' generate_world("mundo001")
-#'
-#' @seealso \code{\link{actions}} \code{\link{run_actions}}
-#'
-#' @details Argument \code{world} can be create by the user. In this case, it
-#'   must be a list with the following components:
-#'
-#'   \enumerate{
-#'     \item \code{nx}: TODO
-#'     \item \code{ny}:
-#'     \item \code{hor_walls}:
-#'     \item \code{ver_walls}:
-#'     \item \code{karel_x}:
-#'     \item \code{karel_y}:
-#'     \item \code{karel_dir}:
-#'     \item \code{beepers_x}:
-#'     \item \code{beepers_y}:
-#'     \item \code{beepers_n}:
-#'     \item \code{beepers_bag}:
-#'   }
-#'
-#' @importFrom ggplot2 ggplot geom_segment geom_point aes scale_x_continuous
-#'   scale_y_continuous theme element_blank element_text geom_tile geom_text
-#'   geom_rect coord_fixed
-#' @importFrom dplyr tibble add_row slice mutate bind_rows n
-#' @importFrom magrittr %>%
-#'
-generate_world <- function(world) generar_mundo(world)
+
 
 #' Run actions
 #'

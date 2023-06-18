@@ -5,6 +5,54 @@
 
 # ------------------------------------------------------------------------------
 
+#' Generar el mundo de Karel
+#'
+#' Esta función toma un "mundo" (es decir, una lista con información acerca de
+#' su tamaño, paredes, "cosos" presentes y la ubicación y dirección de Karel),
+#' lo grafica y prepara todo para que Karel pueda realizar sus acciones. Siempre
+#' debe ser evaluada antes de que Karel empiece a cumplir sus
+#' objetivos, en especial, si en algún momento hemos cometido un error, debemos
+#' comenzar de nuevo corriendo primero esta función.
+#'
+#' Luego de correr \code{generar_mundo()}, se ejecutan las acciones de Karel y
+#' se pueden visualizar con la función \code{ejecutar_acciones()}.
+#'
+#' @param mundo Un carácter de largo 1 indicando el nombre de uno de los mundos
+#'   que ya vienen en el paquete o un objeto de tipo lista con todos los
+#'   componentes que debe tener un mundo (ver más abajo en Detalles).
+#'
+#' @return Dibuja el estado inicial del mundo de Karel y deja todo preparado
+#'   para comenzar a registrar sus acciones.
+#'
+#' @export
+#'
+#' @examples
+#' generar_mundo("mundo001")
+#'
+#' @seealso \code{\link{acciones}} \code{\link{ejecutar_acciones}}
+#'
+#' @details El argumento \code{mundo} puede consistir de un mundo creado (es
+#'   decir, inventado) por cualquiera. En este caso, \code{mundo} debe ser una
+#'   lista con los siguientes componentes:
+#'
+#'   \enumerate{
+#'     \item \code{nx}: TODO
+#'     \item \code{ny}:
+#'     \item \code{hor_walls}:
+#'     \item \code{ver_walls}:
+#'     \item \code{karel_x}:
+#'     \item \code{karel_y}:
+#'     \item \code{karel_dir}:
+#'     \item \code{beepers_x}:
+#'     \item \code{beepers_y}:
+#'     \item \code{beepers_n}:
+#'     \item \code{beepers_bag}:
+#'   }
+#'
+generar_mundo <- function(mundo) .generate_world(mundo, lang = "es")
+
+# ------------------------------------------------------------------------------
+
 #' Acciones que Karel puede realizar
 #'
 #' \code{avanzar()}, \code{girar_izquierda()}, \code{juntar_coso()} y
