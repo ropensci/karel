@@ -23,20 +23,59 @@ thought to be used by students, but can be used with karel::get_pkg_env().
 
   The components of this environment are:
   \enumerate{
-    \item \code{nx}: TODO
-    \item \code{ny}:
-    \item \code{hor_walls}:
-    \item \code{ver_walls}:
-    \item \code{open_moves}:
-    \item \code{karel}:
-    \item \code{dir_now}:
-    \item \code{x_now}:
-    \item \code{y_now}:
-    \item \code{moment}:
-    \item \code{beepers_any}:
-    \item \code{beepers_bag}:
-    \item \code{beepers_now}:
-    \item \code{beepers_all}:
-    \item \code{base_plot}:
+    \item \code{nx}: size of Karel's world, number of cells in x-axis.
+    \item \code{ny}: size of Karel's world, number of cells in y-axis.
+    \item \code{hor_walls}: a data.frame with a row for each horizontal wall
+    in Karel's world and 3 columns: x (coordinate of the start of the wall in
+    the x axis), y (coordinate of the start of the wall in the y axis), lgth
+    (length of the wall, in number of cells it covers). If it is NULL, there
+    are no horizontal walls in the world.
+    \item \code{ver_walls}: a data.frame with a row for each vertical wall in
+    Karel's world and 3 columns: x (coordinate of the start of the wall in
+    the x axis), y (coordinate of the start of the wall in the y axis), lgth
+    (length of the wall, in number of cells it covers). If it takes the value
+    NULL, there are no vertical walls in the world.
+    \item \code{open_moves}: a nx x ny x 4 array of TRUE/FALSE values
+    indicating if Karel can move to each direction from a given position. For
+    example, if Karel is in the bottom left corner, which is cell [1, 1], it
+    can't go south or left, so we have both open_moves[1, 1, 3] and
+    open_moves[1, 1, 4] set to FALSE. Depending on the existing walls it
+    could move south or north, so open_moves[1, 1, 1] and open_moves[1, 1, 2]
+    could be TRUE or FALSE. Taking into account the size of the world and the
+    walls, this array is created by the internal function
+    \code{\link{generate_open_moves}}.
+    \item \code{karel}: a data.frame with a row for each moment, in which
+    each state of Karel is recorded throughout the execution of its actions.
+    It has 4 columns: karel_x (Karel's x-axis coordinate), karel_y (Karel's
+    y-axis coordinate), karel_dir (the direction Karel is facing, 1 east, 2
+    north, 3 west, or 4 south), and moment (integer value indicating each
+    moment).
+    \item \code{dir_now}: current Karel's facing direction.
+    \item \code{x_now}: x-axis coordinate of Karel's current position.
+    \item \code{y_now}: y-axis coordinate of Karel's current position.
+    \item \code{moment}: current moment (integer value).
+    \item \code{beepers_any}: total amount of beepers present in the world at
+    this moment.
+    \item \code{beepers_bag}: number of beepers that Karel has available in
+    its bag at the moment. Karel can put beepers if it has beepers in its
+    bag. It can take the value Inf.
+    \item \code{beepers_now}: a data.frame with as many rows as cells with
+    beepers in the world and 5 columns: \code{x} and \code{y} for the
+    coordinates of the cell, \code{cell} is the number of the cell counting
+    as cell number 1 the cell in the bottom left corner and going upwards by
+    row (meaning cell number 2 would be the cell in coordinates x=2 and y=1),
+    \code{n} the number of beepers in this cell and \code{moment} the moment
+    in which this state of the world corresponds to. It is created by the
+    internal function  \code{\link{create_beepers}}.
+    \item \code{beepers_all}: a data.frame with the same structure as
+    \code{beepers_now}. While \code{beepers_now} only has current state of
+    beepers, \code{beepers_all} acummulates all states for the animation,
+    binding the rows of \code{beepers_now} and \code{beepers_all} after each
+    action.
+    \item \code{base_plot}: the initial plot of the world, with its size and
+    all the walls if there are any. It doesn't show Karel or the beepers,
+    since those things can change with time. This is the base plot that is
+    used later to produce the animation. This plot is created by the internal
+    function \code{\link{plot_base_world}}.
   }
 }

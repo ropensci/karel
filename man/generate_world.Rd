@@ -30,17 +30,38 @@ Argument \code{world} can be create by the user. In this case, it
   must be a list with the following components:
 
   \enumerate{
-    \item \code{nx}: TODO
-    \item \code{ny}:
-    \item \code{hor_walls}:
-    \item \code{ver_walls}:
-    \item \code{karel_x}:
-    \item \code{karel_y}:
-    \item \code{karel_dir}:
-    \item \code{beepers_x}:
-    \item \code{beepers_y}:
-    \item \code{beepers_n}:
-    \item \code{beepers_bag}:
+    \item \code{nx}: size of Karel's world, number of cells in x-axis.
+    \item \code{ny}: size of Karel's world, number of cells in y-axis.
+    \item \code{hor_walls}: a data.frame with a row for each horizontal wall
+    in Karel's world and 3 columns: x (coordinate of the start of the wall in
+    the x axis), y (coordinate of the start of the wall in the y axis), lgth
+    (length of the wall, in number of cells it covers). If it is NULL, there
+    are no horizontal walls in the world.
+    \item \code{ver_walls}: a data.frame with a row for each vertical wall in
+    Karel's world and 3 columns: x (coordinate of the start of the wall in
+    the x axis), y (coordinate of the start of the wall in the y axis), lgth
+    (length of the wall, in number of cells it covers). If it takes the value
+    NULL, there are no vertical walls in the world.
+    \item \code{karel_x}: x-coordinate for Karel's initial position.
+    \item \code{karel_y}: y-coordinate for Karel's initial position.
+    \item \code{karel_dir}: Karel's starting direction: 1 (facing west), 2
+    (facing north), 3 (facing west), or 4 (facing south).
+    \item \code{beepers_x}: Numeric vector with the x-axis coordinates of the
+    cells where there are beepers initially. The length of the vectors
+    beepers_x, beepers_y and beepers_n must match. If you don't want beepers
+    in the world, supply the value NULL.
+    \item \code{beepers_y}: Numeric vector with the coordinates in the y-axis
+    of the cells where there are beepers initially. The length of the vectors
+    beepers_x, beepers_y and beepers_n must match. If you don't want beepers
+    in the world, supply the value NULL.
+    \item \code{beepers_n}: numeric vector with the number of beepers that
+    are initially in each of the positions determined by the values of
+    beepers_x and beepers_y. The length of the vectors beepers_x, beepers_y
+    and beepers_n must match. If you don't want beepers in the world, supply
+    the value NULL.
+    \item \code{beepers_bag}: number of beepers that Karel has available in
+    its bag at the beginning. Karel can put beepers if it has beepers in its
+    bag. It can take the value Inf.
   }
 }
 \examples{

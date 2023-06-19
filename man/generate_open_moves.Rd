@@ -10,7 +10,7 @@ generate_open_moves(nx, ny, hor_walls, ver_walls)
 \item{nx, }{ny size of the world}
 
 \item{hor_walls, }{ver_walls dataset of horizontal and vertical walls as
-described in the details for the function \code{\link{generar_mundo}}.}
+described in the details for the function \code{\link{.generate_world}}.}
 }
 \value{
 A 6nx x ny x 4 array of TRUE/FALSE values

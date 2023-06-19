@@ -19,9 +19,9 @@ Dibuja el estado inicial del mundo de Karel y deja todo preparado
 Esta función toma un "mundo" (es decir, una lista con información acerca de
 su tamaño, paredes, "cosos" presentes y la ubicación y dirección de Karel),
 lo grafica y prepara todo para que Karel pueda realizar sus acciones. Siempre
-debe ser evaluada antes de que Karel empiece a cumplir sus
-objetivos, en especial, si en algún momento hemos cometido un error, debemos
-comenzar de nuevo corriendo primero esta función.
+debe ser evaluada antes de que Karel empiece a cumplir sus objetivos, en
+especial, si en algún momento hemos cometido un error, debemos comenzar de
+nuevo corriendo primero esta función.
 }
 \details{
 Luego de correr \code{generar_mundo()}, se ejecutan las acciones de Karel y
@@ -32,17 +32,40 @@ El argumento \code{mundo} puede consistir de un mundo creado (es
   lista con los siguientes componentes:
 
   \enumerate{
-    \item \code{nx}: TODO
-    \item \code{ny}:
-    \item \code{hor_walls}:
-    \item \code{ver_walls}:
-    \item \code{karel_x}:
-    \item \code{karel_y}:
-    \item \code{karel_dir}:
-    \item \code{beepers_x}:
-    \item \code{beepers_y}:
-    \item \code{beepers_n}:
-    \item \code{beepers_bag}:
+    \item \code{nx}: tamaño del mundo de Karel, número de celdas en el eje x
+    \item \code{ny}: tamaño del mundo de Karel, número de celdas en el eje x
+    \item \code{hor_walls}: un data.frame con una fila por cada pared
+    horizontal que hay en el mundo de Karel y 3 columnas: x (coordenada del
+    inicio de la pared en el eje x), y (coordenada del inicio de la pared en
+    el eje y), lgth (longitud de la pared, en cantidad de celdas que abarca).
+    Si toma el valor NULL, no hay paredes horizontales en el mundo.
+    \item \code{ver_walls}: un data.frame con una fila por cada pared
+    vertical que hay en el mundo de Karel y 3 columnas: x (coordenada del
+    inicio de la pared en el eje x), y (coordenada del inicio de la pared en
+    el eje y), lgth (longitud de la pared, en cantidad de celdas que abarca).
+    Si toma el valor NULL, no hay paredes verticales en el mundo.
+    \item \code{karel_x}: coordenada en el eje x para la posición inicial de
+    Karel.
+    \item \code{karel_y}: coordenada en el eje y para la posición inicial de
+    Karel.
+    \item \code{karel_dir}: dirección inicial de Karel: 1 (mira al oeste), 2
+    (mira al norte), 3 (mira al oeste) o 4 (mira al sur).
+    \item \code{beepers_x}: vector numérico con las coordenadas en el eje x
+    de las celdas donde hay cosos inicialmente. El largo de los vectores
+    beepers_x, beepers_y y beepers_n debe coincidir. Si no se desea que haya
+    cosos en el mundo, proveer el valor NULL.
+    \item \code{beepers_y}: vector numérico con las coordenadas en el eje y
+    de las celdas donde hay cosos inicialmente. El largo de los vectores
+    beepers_x, beepers_y y beepers_n debe coincidir. Si no se desea que haya
+    cosos en el mundo, proveer el valor NULL.
+    \item \code{beepers_n}: vector numérico con la cantidad de cosos que hay
+    inicialmente en cada una de las posiciones determinadas por los valores
+    de beepers_x y beepers_y. El largo de los vectores beepers_x, beepers_y y
+    beepers_n debe coincidir. Si no se desea que haya cosos en el mundo,
+    proveer el valor NULL.
+    \item \code{beepers_bag}: número de cosos que Karel tienen a disposición
+    en su muchila al inicio. Karel puede poner cosos si es que tiene cosos en
+    su mochila. Puede tomar el valor Inf.
   }
 }
 \examples{
