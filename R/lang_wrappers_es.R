@@ -251,3 +251,61 @@ girar_derecha <- function() .turn_right(lang = "es")
 #' @rdname acciones
 #' @export
 darse_vuelta <- function() .turn_around(lang = "es")
+
+# ------------------------------------------------------------------------------
+
+#' Obtener el ambiente de Karel
+#'
+#' Esta función devuelve un ambiente (R environment) llamado pkg_env, que es
+#' creado por el paquete. Se puede usar para probar el funcionamiento del
+#' paquete. Es una función interna, no está pensada para ser usada por
+#' estudiantes, pero se puede usar con karel::conseguir_amb().
+#'
+#' @return Un ambiente de R con objetos que representan al mundo de Karel.
+#'
+#' @details \code{pkg_env} es un ambiente de R creado dentro del paquete para
+#'   guardar y compartir entre las funciones todos los objetos relacionados con
+#'   el mundo de Karel y su estado en cada momento. Dado que estas funciones que
+#'   usan los estudiantes deben ser simples y no usar argumentos (como, por
+#'   ejemplo, \code{avanzar()}) estas funciones modifican internamente a
+#'   \code{pkg_env} para implementar cada acción.
+#'
+#'   Los componentes de este ambiente son:
+#'   \enumerate{
+#'     \item \code{nx}: TODO
+#'     \item \code{ny}:
+#'     \item \code{hor_walls}:
+#'     \item \code{ver_walls}:
+#'     \item \code{open_moves}:
+#'     \item \code{karel}:
+#'     \item \code{dir_now}:
+#'     \item \code{x_now}:
+#'     \item \code{y_now}:
+#'     \item \code{moment}:
+#'     \item \code{beepers_any}:
+#'     \item \code{beepers_bag}:
+#'     \item \code{beepers_now}:
+#'     \item \code{beepers_all}:
+#'     \item \code{base_plot}:
+#'   }
+conseguir_amb <- function() .get_pkg_env()
+
+# ------------------------------------------------------------------------------
+
+#' Producir un gráfico del mundo de Karel en un momento dado
+#'
+#' Esta función grafica el mundo de Karel en el momento pedido. Inicialmente,
+#' momento toma el valor 1 y con cada acción que Karel realiza se incrementa en
+#' 1. El momento actual está guardado en \code{pkg_env$moment}. Esta función es
+#' útil para revisar el código y para obtener imágenes estáticas que pueden
+#' usarse al crear ejemplos y ejercicios en los materiales de estudio para los
+#' estudiantes. Es una función interna, no está pensada para ser usada por
+#' estudiantes, pero se puede usar con karel::graficar_mundo_estatico().
+#'
+#' @param momento El momento que se desea graficar.
+#'
+#' @return Imprime el gráfico.
+#'
+graficar_mundo_estatico <- function(momento) {
+  .plot_static_world(time = momento, lang = "es")
+}

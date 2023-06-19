@@ -4,7 +4,7 @@
 \alias{check_user_world}
 \title{Check user's own world}
 \usage{
-check_user_world(world)
+check_user_world(world, lang)
 }
 \arguments{
 \item{world}{The world provided by the user. It's a list. See details in
@@ -19,6 +19,6 @@ This function analyzes if a world provided by the user satisfies all
 requirements.
 }
 \details{
-This function is called by \code{\link{generar_mundo}}.
+This function is called by \code{\link{.generate_world}}.
 }
 \keyword{internal}

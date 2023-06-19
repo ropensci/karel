@@ -4,7 +4,7 @@
 \alias{check_walls}
 \title{Check the walls user's provided world}
 \usage{
-check_walls(dataset, name, nx, ny)
+check_walls(dataset, name, nx, ny, lang)
 }
 \arguments{
 \item{dataset}{Either hor_walls or ver_walls}
@@ -12,12 +12,15 @@ check_walls(dataset, name, nx, ny)
 \item{name}{Character string: "hor_walls" or "ver_walls"}
 
 \item{nx, }{ny Size of the world}
+
+\item{lang}{language code (such as "en" or "es") for printing messages}
 }
 \value{
 If a misespecification is found, this function produces a stop and
   provides a descriptive error message.
 }
 \description{
-This is a helper function to check ver_walls and hor_walls. It's called by check_user_world twice.
+This is a helper function to check ver_walls and hor_walls. It's called by
+check_user_world twice.
 }
 \keyword{internal}

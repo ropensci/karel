@@ -240,3 +240,56 @@ turn_right <- function() .turn_right(lang = "en")
 #' @rdname actions
 #' @export
 turn_around <- function() .turn_around(lang = "en")
+
+# ------------------------------------------------------------------------------
+
+#' Get Karel's environment
+#'
+#' This function returns the environment called pkg_env created by the package.
+#' It's useful for debugging and checking. It's an internal function, not
+#' thought to be used by students, but can be used with karel::get_pkg_env().
+#'
+#' @return An enviroment with objects that represent Karel's world.
+#'
+#' @details \code{pkg_env} is an environment created inside the package to store
+#'   and share between functions all the objects related to Karel's world and
+#'   its state. Since the functions that will be used by the students should be
+#'   simple and without arguments (for example, \code{move()}), these functions
+#'   modify internally \code{pkg_env}.
+#'
+#'   The components of this environment are:
+#'   \enumerate{
+#'     \item \code{nx}: TODO
+#'     \item \code{ny}:
+#'     \item \code{hor_walls}:
+#'     \item \code{ver_walls}:
+#'     \item \code{open_moves}:
+#'     \item \code{karel}:
+#'     \item \code{dir_now}:
+#'     \item \code{x_now}:
+#'     \item \code{y_now}:
+#'     \item \code{moment}:
+#'     \item \code{beepers_any}:
+#'     \item \code{beepers_bag}:
+#'     \item \code{beepers_now}:
+#'     \item \code{beepers_all}:
+#'     \item \code{base_plot}:
+#'   }
+get_pkg_env <- function() .get_pkg_env()
+
+# ------------------------------------------------------------------------------
+
+#' Plot the world at a given time
+#'
+#' This function plots Karel'w wort at the requested time. Initially, time is 1
+#' and with each action that Karel performs, time is incremented by one. Current
+#' time is stored in \code{pkg_env$moment}. This function is useful for
+#' debugging and to get static images to be used in the examples in the handouts
+#' for students. It's an internal function, not thought to be used by students,
+#' but can be used with karel::plot_static_world().
+#'
+#' @param time The requested time
+#'
+#' @return Prints the plot.
+#'
+plot_static_world <- function(time) .plot_static_world(time = time, lang = "en")

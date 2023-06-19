@@ -68,7 +68,7 @@ pkg_env <- new.env(parent = emptyenv())
   	}
 	} else {
 		# User has provided their own world as a list.
-    check_user_world(world)
+    check_user_world(world, lang)
 	}
 
   # Clear the environment

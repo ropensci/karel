@@ -9,5 +9,34 @@ message_texts[["es"]] <- list(
   cant_pick_beeper = "Aqu\u00ed no hay cosos para juntar.",
   world_doesnt_exist = "El mundo pedido no existe.",
   do_sth_first_x = "Karel no ha recibido ninguna instrucci\u00f3n a\u00fan",
-  do_sth_first_arrow = "Realiza al menos una acci\u00f3n primero y luego corre ejecutar_acciones()."
-  )
+  do_sth_first_arrow = "Realiza al menos una acci\u00f3n primero y luego corre ejecutar_acciones().",
+  time_less_than_one_x = "Ingresaste un valor de momento menor a 1.",
+  time_less_than_one_arrow = "El primer valor disponible de momento es 1.",
+  time_too_big_x = "Ingresaste un valor para momento demasiado grande.",
+  time_too_big_arrow = "El \u00faltimo momento disponible es",
+  check_user_world_general = "Estamos controlando que el mundo que ingresaste sea correcto.",
+  check_user_world_element_missing_x = "falta entre los elementos de tu mundo.",
+  check_user_world_try_again = "Por favor, controla el mundo que creaste e intenta otra vez.",
+  check_user_world_wrong_nx = "nx, el n\u00famero de avenidas, debe ser num\u00e9rico de largo 1.",
+  check_user_world_wrong_ny = "ny, el n\u00famero de calles, debe ser num\u00e9rico de largo 1.",
+  check_user_world_wrong_karel_x = "karel_x, la coordenada en el eje x para la posici\u00f3n inicial de Karel, debe ser num\u00e9rico de largo 1 y estar entre 1 y nx.",
+  check_user_world_wrong_karel_x = "karel_y, la coordenada en el eje y para la posici\u00f3n inicial de Karel, debe ser num\u00e9rico de largo 1 y estar entre 1 y ny.",
+  check_user_world_wrong_karel_dir = "karel_dir, la direcci\u00f3n inicial de Karel, debe ser num\u00e9rico de largo 1, puede ser 1, 2, 3 o 4.",
+  check_user_world_wrong_beepers_bag = "beepers_bag, el numero de cosos en la mochila de Karel, debe ser num\u00e9rico de largo 1 y mayor o igual a 0, incluyendo Inf.",
+  check_user_world_wrong_beepers_xyn = "beepers_x, beepers_y y beepers_n deben ser todos NULL o vectores num\u00e9ricos del mismo largo; beepers_x y beepers_y deben estar entre 1 y nx o ny, respectivamente; y beepers_n debe ser mayor o igual a 1.",
+  check_user_world_wrong_walls1 = "debe ser NULL o un data.frame.",
+  check_user_world_wrong_walls2 = "tiene 0 filas.",
+  check_user_world_wrong_walls3 = "La columna",
+  check_user_world_wrong_walls4 = "falta en el data.frame",
+  check_user_world_wrong_walls5 = "no puede tener ning\u00fan valor NA.",
+  check_user_world_wrong_walls6 = "debe tener todas columnas num\u00e9ricas.",
+  check_user_world_wrong_walls7 = "debe tener todos n\u00fameros enteros, al menos en el sentido matem\u00e1tico, no necesariamente de clase integer.",
+  check_user_world_wrong_walls8 = "debe tener en la columna x valores que est\u00e9n entre 0 y nx-1.",
+  check_user_world_wrong_walls9 = "debe tener en la columna y valores que est\u00e9n entre 0 y ny-1.",
+  check_user_world_wrong_walls10 = "debe tener en la columna lgth valores mayores o iguales que 1.",
+  check_user_world_wrong_walls11 = "Algunos largos en hor_walls exceden lo permitido por nx.",
+  check_user_world_wrong_walls12 = "Algunos largos en ver_walls exceden lo permitido por ny."
+)
+
+
+
