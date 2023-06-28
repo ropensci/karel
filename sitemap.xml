@@ -76,10 +76,43 @@
     <loc>https://mpru.github.io/karel/reference/conditions.html</loc>
   </url>
   <url>
+    <loc>https://mpru.github.io/karel/reference/conseguir_amb.html</loc>
+  </url>
+  <url>
     <loc>https://mpru.github.io/karel/reference/create_beepers.html</loc>
   </url>
   <url>
+    <loc>https://mpru.github.io/karel/reference/dot-generate_world.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/dot-get_pkg_env.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/dot-load_super_karel.html</loc>
+  </url>
+  <url>
     <loc>https://mpru.github.io/karel/reference/dot-move.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/dot-pick_beeper.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/dot-plot_static_world.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/dot-put_beeper.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/dot-run_actions.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/dot-turn_around.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/dot-turn_left.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/dot-turn_right.html</loc>
   </url>
   <url>
     <loc>https://mpru.github.io/karel/reference/draw_karel_df.html</loc>
@@ -104,6 +137,9 @@
   </url>
   <url>
     <loc>https://mpru.github.io/karel/reference/global_env_set_hack.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/graficar_mundo_estatico.html</loc>
   </url>
   <url>
     <loc>https://mpru.github.io/karel/reference/index.html</loc>
