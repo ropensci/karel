@@ -1,129 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://mpru.github.io/karel/404.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
+    <loc>https://mpru.github.io/karel/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>/articles/a_intro_progrbasics_en.html</loc>
+    <loc>https://mpru.github.io/karel/articles/a_intro_progrbasics_en.html</loc>
   </url>
   <url>
-    <loc>/articles/a_intro_progrbasics_es.html</loc>
+    <loc>https://mpru.github.io/karel/articles/a_intro_progrbasics_es.html</loc>
   </url>
   <url>
-    <loc>/articles/aa_get_started_en.html</loc>
+    <loc>https://mpru.github.io/karel/articles/aa_get_started_en.html</loc>
   </url>
   <url>
-    <loc>/articles/aa_get_started_es.html</loc>
+    <loc>https://mpru.github.io/karel/articles/aa_get_started_es.html</loc>
   </url>
   <url>
-    <loc>/articles/b_meetingkarel_en.html</loc>
+    <loc>https://mpru.github.io/karel/articles/b_meetingkarel_en.html</loc>
   </url>
   <url>
-    <loc>/articles/b_meetingkarel_es.html</loc>
+    <loc>https://mpru.github.io/karel/articles/b_meetingkarel_es.html</loc>
   </url>
   <url>
-    <loc>/articles/c_decomposition_en.html</loc>
+    <loc>https://mpru.github.io/karel/articles/c_decomposition_en.html</loc>
   </url>
   <url>
-    <loc>/articles/c_decomposition_es.html</loc>
+    <loc>https://mpru.github.io/karel/articles/c_decomposition_es.html</loc>
   </url>
   <url>
-    <loc>/articles/d_controlstructures_en.html</loc>
+    <loc>https://mpru.github.io/karel/articles/d_controlstructures_en.html</loc>
   </url>
   <url>
-    <loc>/articles/d_controlstructures_es.html</loc>
+    <loc>https://mpru.github.io/karel/articles/d_controlstructures_es.html</loc>
   </url>
   <url>
-    <loc>/articles/e_examples_en.html</loc>
+    <loc>https://mpru.github.io/karel/articles/e_examples_en.html</loc>
   </url>
   <url>
-    <loc>/articles/e_examples_es.html</loc>
+    <loc>https://mpru.github.io/karel/articles/e_examples_es.html</loc>
   </url>
   <url>
-    <loc>/articles/f_examples_en.html</loc>
+    <loc>https://mpru.github.io/karel/articles/f_examples_en.html</loc>
   </url>
   <url>
-    <loc>/articles/index.html</loc>
+    <loc>https://mpru.github.io/karel/articles/index.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://mpru.github.io/karel/authors.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://mpru.github.io/karel/index.html</loc>
   </url>
   <url>
-    <loc>/news/index.html</loc>
+    <loc>https://mpru.github.io/karel/news/index.html</loc>
   </url>
   <url>
-    <loc>/reference/acciones.html</loc>
+    <loc>https://mpru.github.io/karel/reference/acciones.html</loc>
   </url>
   <url>
-    <loc>/reference/actions.html</loc>
+    <loc>https://mpru.github.io/karel/reference/actions.html</loc>
   </url>
   <url>
-    <loc>/reference/cargar_super_karel.html</loc>
+    <loc>https://mpru.github.io/karel/reference/cargar_super_karel.html</loc>
   </url>
   <url>
-    <loc>/reference/check_user_world.html</loc>
+    <loc>https://mpru.github.io/karel/reference/check_user_world.html</loc>
   </url>
   <url>
-    <loc>/reference/check_walls.html</loc>
+    <loc>https://mpru.github.io/karel/reference/check_walls.html</loc>
   </url>
   <url>
-    <loc>/reference/condiciones.html</loc>
+    <loc>https://mpru.github.io/karel/reference/condiciones.html</loc>
   </url>
   <url>
-    <loc>/reference/conditions.html</loc>
+    <loc>https://mpru.github.io/karel/reference/conditions.html</loc>
   </url>
   <url>
-    <loc>/reference/create_beepers.html</loc>
+    <loc>https://mpru.github.io/karel/reference/conseguir_amb.html</loc>
   </url>
   <url>
-    <loc>/reference/draw_karel_df.html</loc>
+    <loc>https://mpru.github.io/karel/reference/create_beepers.html</loc>
   </url>
   <url>
-    <loc>/reference/ejecutar_acciones.html</loc>
+    <loc>https://mpru.github.io/karel/reference/dot-generate_world.html</loc>
   </url>
   <url>
-    <loc>/reference/generar_mundo.html</loc>
+    <loc>https://mpru.github.io/karel/reference/dot-get_pkg_env.html</loc>
   </url>
   <url>
-    <loc>/reference/generate_open_moves.html</loc>
+    <loc>https://mpru.github.io/karel/reference/dot-load_super_karel.html</loc>
   </url>
   <url>
-    <loc>/reference/generate_world.html</loc>
+    <loc>https://mpru.github.io/karel/reference/dot-move.html</loc>
   </url>
   <url>
-    <loc>/reference/get_beepers_df_row.html</loc>
+    <loc>https://mpru.github.io/karel/reference/dot-pick_beeper.html</loc>
   </url>
   <url>
-    <loc>/reference/get_pkg_env.html</loc>
+    <loc>https://mpru.github.io/karel/reference/dot-plot_static_world.html</loc>
   </url>
   <url>
-    <loc>/reference/global_env_set_hack.html</loc>
+    <loc>https://mpru.github.io/karel/reference/dot-put_beeper.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://mpru.github.io/karel/reference/dot-run_actions.html</loc>
   </url>
   <url>
-    <loc>/reference/load_super_karel.html</loc>
+    <loc>https://mpru.github.io/karel/reference/dot-turn_around.html</loc>
   </url>
   <url>
-    <loc>/reference/plot_base_world.html</loc>
+    <loc>https://mpru.github.io/karel/reference/dot-turn_left.html</loc>
   </url>
   <url>
-    <loc>/reference/plot_static_world.html</loc>
+    <loc>https://mpru.github.io/karel/reference/dot-turn_right.html</loc>
   </url>
   <url>
-    <loc>/reference/put_hor_walls.html</loc>
+    <loc>https://mpru.github.io/karel/reference/draw_karel_df.html</loc>
   </url>
   <url>
-    <loc>/reference/put_ver_walls.html</loc>
+    <loc>https://mpru.github.io/karel/reference/ejecutar_acciones.html</loc>
   </url>
   <url>
-    <loc>/reference/run_actions.html</loc>
+    <loc>https://mpru.github.io/karel/reference/generar_mundo.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/generate_open_moves.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/generate_world.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/get_beepers_df_row.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/get_pkg_env.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/global_env_set_hack.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/graficar_mundo_estatico.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/load_super_karel.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/plot_base_world.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/plot_static_world.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/put_hor_walls.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/put_ver_walls.html</loc>
+  </url>
+  <url>
+    <loc>https://mpru.github.io/karel/reference/run_actions.html</loc>
   </url>
 </urlset>

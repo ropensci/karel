@@ -1,6 +1,6 @@
 # This file contains functions named in Spanish which are just wrappers to the
-# internal functions which are agnostic of languate. Here I also include the
-# documentation in Spanish Only external functions that can be used by users
+# internal functions which are agnostic of language. Here I also include the
+# documentation in Spanish. Only external functions that can be used by users
 # have their documentation translated.
 
 # ------------------------------------------------------------------------------
@@ -191,59 +191,59 @@ juntar_coso <- function() .pick_beeper(lang = "es")
 NULL
 #> NULL
 
-#' @rdname conditions
+#' @rdname condiciones
 #' @export
 frente_abierto <- function() .front_is_clear()
 
-#' @rdname conditions
+#' @rdname condiciones
 #' @export
 frente_cerrado <- function() .front_is_blocked()
 
-#' @rdname conditions
+#' @rdname condiciones
 #' @export
 izquierda_abierto <- function() .left_is_clear()
 
-#' @rdname conditions
+#' @rdname condiciones
 #' @export
 izquierda_cerrado <- function() .left_is_blocked()
 
-#' @rdname conditions
+#' @rdname condiciones
 #' @export
 derecha_abierto <- function() .right_is_clear()
 
-#' @rdname conditions
+#' @rdname condiciones
 #' @export
 derecha_cerrado <- function() .right_is_blocked()
 
-#' @rdname conditions
+#' @rdname condiciones
 #' @export
 hay_cosos <- function() .beepers_present()
 
-#' @rdname conditions
+#' @rdname condiciones
 #' @export
 no_hay_cosos <- function() .no_beepers_present()
 
-#' @rdname conditions
+#' @rdname condiciones
 #' @export
 karel_tiene_cosos <- function() .karel_has_beepers()
 
-#' @rdname conditions
+#' @rdname condiciones
 #' @export
 karel_no_tiene_cosos <- function() .karel_has_no_beepers()
 
-#' @rdname conditions
+#' @rdname condiciones
 #' @export
 mira_al_este <- function() .facing_east()
 
-#' @rdname conditions
+#' @rdname condiciones
 #' @export
 mira_al_oeste <- function() .facing_west()
 
-#' @rdname conditions
+#' @rdname condiciones
 #' @export
 mira_al_norte <- function() .facing_north()
 
-#' @rdname conditions
+#' @rdname condiciones
 #' @export
 mira_al_sur <- function() .facing_south()
 

@@ -21,3 +21,4 @@ time is stored in \code{pkg_env$moment}. This function is useful for
 debuggint and to get static images to be used in the examples in the handouts
 for studentes.
 }
+\keyword{internal}

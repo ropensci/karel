@@ -94,6 +94,7 @@
 #'
 #' @return Prints the plot.
 #'
+#' @keywords internal
 .plot_static_world <- function(time, lang) {
 
   if (time < 1) {

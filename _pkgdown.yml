@@ -1,9 +1,8 @@
 url: https://mpru.github.io/karel/
 template:
-  bootstrap: 3
-  bootswatch: united
+  bootstrap: 5
+  bootswatch: flatly
   bslib:
-    primary: '#0054AD'
     border-radius: 0.5rem
     btn-border-radius: 0.25rem
 lang: es
@@ -98,8 +97,8 @@ reference:
   desc: |
     Selección de funciones internas que podrían ser útiles para un uso algo más avanzado del paquete.
   contents:
-  - get_pkg_env
-  - plot_static_world
+  - conseguir_amb
+  - graficar_mundo_estatico
 - title: Reference in English
 - subtitle: Generate a world and run actions
   desc: |

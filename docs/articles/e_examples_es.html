@@ -4,14 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Terminamos este tutorial con varios problemas para poner en práctica todo lo  aprendido junto a Karel.
+">
 <title>5 - Varios problemas de ejemplo • karel</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
-<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="5 - Varios problemas de ejemplo">
+<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="5 - Varios problemas de ejemplo">
 <meta property="og:description" content="Terminamos este tutorial con varios problemas para poner en práctica todo lo  aprendido junto a Karel.
 ">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -19,137 +20,97 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body data-spy="scroll" data-target="#toc">
+<body>
+    <a href="#main" class="visually-hidden-focusable">Ir al contenido</a>
     
 
-    <div class="container template-article">
-      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">karel</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.1.9000</span>
-      </span>
-    </div>
+    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
+    
+    <a class="navbar-brand me-2" href="../index.html">karel</a>
 
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1.9000</small>
+
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Cambiar la navegación">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse ms-3">
+      <ul class="navbar-nav me-auto">
+<li class="nav-item">
+  <a class="nav-link" href="../index.html">
     <span class="fa fa-home"></span>
      
   </a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Getting started
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li>
-      <a href="../articles/aa_get_started_en.html">EN - Get started with Karel the robot</a>
-    </li>
-    <li>
-      <a href="../articles/aa_get_started_es.html">ES - Primeros pasos con la robot Karel</a>
-    </li>
-  </ul>
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-getting-started">Getting started</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-getting-started">
+    <a class="dropdown-item" href="../articles/aa_get_started_en.html">EN - Get started with Karel the robot</a>
+    <a class="dropdown-item" href="../articles/aa_get_started_es.html">ES - Primeros pasos con la robot Karel</a>
+  </div>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Artículos
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li class="divider">
-    </li>
-<li class="dropdown-header">ES - Tutoriales en español</li>
-    <li>
-      <a href="../articles/a_intro_progrbasics_es.html">1 - Introducción y nociones básicas</a>
-    </li>
-    <li>
-      <a href="../articles/b_meetingkarel_es.html">2 - Conociendo a Karel</a>
-    </li>
-    <li>
-      <a href="../articles/c_decomposition_es.html">3 - Descomposición algorítmica</a>
-    </li>
-    <li>
-      <a href="../articles/d_controlstructures_es.html">4 - Estructuras de control del código</a>
-    </li>
-    <li>
-      <a href="../articles/e_examples_es.html">5 - Varios problemas de ejemplo</a>
-    </li>
-    <li class="divider">
-    </li>
-<li class="dropdown-header">EN - Tutorials in English</li>
-    <li>
-      <a href="../articles/a_intro_progrbasics_en.html">1 - Introduction and programming basics</a>
-    </li>
-    <li>
-      <a href="../articles/b_meetingkarel_en.html">2 - Meeting Karel</a>
-    </li>
-    <li>
-      <a href="../articles/c_decomposition_en.html">3 - Algorithmic decomposition</a>
-    </li>
-    <li>
-      <a href="../articles/d_controlstructures_en.html">4 - Control structures</a>
-    </li>
-    <li>
-      <a href="../articles/e_examples_en.html">5 - Examples</a>
-    </li>
-    <li class="divider">
-    </li>
-<li>
-      <a href="../articles/index.html">Más artículos...</a>
-    </li>
-  </ul>
+<li class="active nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-art-culos">Artículos</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-art-culos">
+    <h6 class="dropdown-header" data-toc-skip>ES - Tutoriales en español</h6>
+    <a class="dropdown-item" href="../articles/a_intro_progrbasics_es.html">1 - Introducción y nociones básicas</a>
+    <a class="dropdown-item" href="../articles/b_meetingkarel_es.html">2 - Conociendo a Karel</a>
+    <a class="dropdown-item" href="../articles/c_decomposition_es.html">3 - Descomposición algorítmica</a>
+    <a class="dropdown-item" href="../articles/d_controlstructures_es.html">4 - Estructuras de control del código</a>
+    <a class="dropdown-item" href="../articles/e_examples_es.html">5 - Varios problemas de ejemplo</a>
+    <div class="dropdown-divider"></div>
+    <h6 class="dropdown-header" data-toc-skip>EN - Tutorials in English</h6>
+    <a class="dropdown-item" href="../articles/a_intro_progrbasics_en.html">1 - Introduction and programming basics</a>
+    <a class="dropdown-item" href="../articles/b_meetingkarel_en.html">2 - Meeting Karel</a>
+    <a class="dropdown-item" href="../articles/c_decomposition_en.html">3 - Algorithmic decomposition</a>
+    <a class="dropdown-item" href="../articles/d_controlstructures_en.html">4 - Control structures</a>
+    <a class="dropdown-item" href="../articles/e_examples_en.html">5 - Examples</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="../articles/index.html">Más artículos...</a>
+  </div>
 </li>
-<li>
-  <a href="../reference/index.html">Índice</a>
+<li class="nav-item">
+  <a class="nav-link" href="../reference/index.html">Índice</a>
 </li>
-<li>
-  <a href="../news/index.html">Registro de cambios</a>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Registro de cambios</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-  <a href="https://twitter.com/mrqtsp" class="external-link">
+<form class="form-inline my-2 my-lg-0" role="search">
+        <input type="search" class="form-control me-sm-2" aria-label="Cambiar la navegación" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Buscar" autocomplete="off">
+</form>
+
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://twitter.com/mrqtsp" aria-label="Twitter">
     <span class="fa fa-twitter"></span>
      
   </a>
 </li>
-<li>
-  <a href="https://github.com/mpru/karel" class="external-link">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/mpru/karel">
     <span class="fa fa-github"></span>
      
   </a>
 </li>
       </ul>
 </div>
-<!--/.nav-collapse -->
+
+    
   </div>
-<!--/.container -->
-</div>
-<!--/.navbar -->
+</nav><div class="container template-article">
 
-      
 
-      </header><div class="row">
-  <div class="col-md-9 contents">
-    <div class="page-header toc-ignore">
-      <h1 data-toc-skip>5 - Varios problemas de ejemplo</h1>
+
+
+<div class="row">
+  <main id="main" class="col-md-9"><div class="page-header">
+      <img src="" class="logo" alt=""><h1>5 - Varios problemas de ejemplo</h1>
             
       
       <small class="dont-index">Código: <a href="https://github.com/mpru/karel/blob/HEAD/vignettes/e_examples_es.Rmd" class="external-link"><code>vignettes/e_examples_es.Rmd</code></a></small>
-      <div class="hidden name"><code>e_examples_es.Rmd</code></div>
-
+      <div class="d-none name"><code>e_examples_es.Rmd</code></div>
     </div>
 
     
@@ -166,29 +127,29 @@ Karel the robot learns Java (Eric Roberts, 2005).</em></p>
 <p>En la sección anterior propusimos el siguiente programa para resolver
 el problema de llenar los agujeros de la calle:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># ------------ Definición de funciones auxiliares-----------</span>
-
-<span class="co"># Función: llenar_agujero</span>
-<span class="va">llenar_agujero</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">no_hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="op">}</span>
-  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span>
-
-<span class="co"># ------------------- Programa principal -------------------</span>
-
-<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span>
-<span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
-  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span>
-<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># ------------ Definición de funciones auxiliares-----------</span></span>
+<span></span>
+<span><span class="co"># Función: llenar_agujero</span></span>
+<span><span class="va">llenar_agujero</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">no_hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># ------------------- Programa principal -------------------</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span></span>
+<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>Este programa sirve para mundos con calles de cualquier largo, sin
 embargo no serviría si los agujeros no estuviesen equiespaciados como
 asumimos inicialmente. Sería mejor tener un programa más general que
@@ -202,7 +163,7 @@ debe poner un <em>coso</em> en ellos.</li>
 </ul>
 <p>Un ejemplo de este tipo de mundo es este:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo006"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo006"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="24a.png" width="50%" style="display: block; margin: auto;"></p>
 <p>Para solucionar este problema, en vez de comenzar cada iteración con
 un avance, deberíamos primero chequear si donde Karel está parada hay un
@@ -210,31 +171,31 @@ agujero, si es así llenarlo en el caso de que no estuviese reparado y
 luego avanzar. Por lo tanto se debe modificar el bloque que se
 itera:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># ------------------- Programa principal -------------------</span>
-
-<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo106"</span><span class="op">)</span>
-<span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">derecha_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
-  <span class="op">}</span>
-    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span>
-<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># ------------------- Programa principal -------------------</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo106"</span><span class="op">)</span></span>
+<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">derecha_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>Sin embargo, este programa tiene una falla, porque si bien anda en
 esta situación…</p>
 <p><img src="24.png" width="80%" style="display: block; margin: auto;"></p>
 <p>…no funciona en esta:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># ------------------- Programa principal -------------------</span>
-
-<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo007"</span><span class="op">)</span>
-<span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">derecha_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
-  <span class="op">}</span>
-    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span>
-<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># ------------------- Programa principal -------------------</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo007"</span><span class="op">)</span></span>
+<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">derecha_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="25.png" width="80%" style="display: block; margin: auto;"></p>
 <p>Karel se detiene sin llenar el último agujero. De hecho, Karel ni
 siquiera desciende para ver si hay que llenarlo o no. El problema está
@@ -246,19 +207,19 @@ trabaja con estructuras iterativas, pero su solución es sencilla. Lo
 único que tenemos que hacer es agregar un chequeo adicional después de
 haber finalizado el <code>while</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># ------------------- Programa principal -------------------</span>
-
-<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo007"</span><span class="op">)</span>
-<span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">derecha_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
-  <span class="op">}</span>
-    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span>
-<span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">derecha_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span>
-<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># ------------------- Programa principal -------------------</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo007"</span><span class="op">)</span></span>
+<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">derecha_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">derecha_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="26.gif" width="60%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2">
@@ -276,48 +237,48 @@ tareas, de modo que Karel pueda implementarlas en cualquier momento.</p>
 <li><strong>Avanzar hasta encontrarse con una pared</strong></li>
 </ol>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Función: avanzar_hasta_pared()</span>
-<span class="co"># Descripción: permite que Karel avance hasta que encuentre una pared</span>
-<span class="co"># Condición inicial: ninguna</span>
-<span class="co"># Condición final: Karel queda enfrentada a una pared</span>
-<span class="va">avanzar_hasta_pared</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
-  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="op">}</span>
-<span class="op">}</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Función: avanzar_hasta_pared()</span></span>
+<span><span class="co"># Descripción: permite que Karel avance hasta que encuentre una pared</span></span>
+<span><span class="co"># Condición inicial: ninguna</span></span>
+<span><span class="co"># Condición final: Karel queda enfrentada a una pared</span></span>
+<span><span class="va">avanzar_hasta_pared</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">}</span></span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li><strong>Recolectar una línea de cosos</strong></li>
 </ol>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Función: recolectar_linea()</span>
-<span class="co"># Descripción: permite recolectar una línea consecutiva de cosos. La línea</span>
-<span class="co"># termina en la primera celda que no tiene cosos.</span>
-<span class="co"># Condición inicial: ninguna</span>
-<span class="co"># Condición final: Karel está en el final de la línea con la misma dirección que</span>
-<span class="co"># al inicio</span>
-<span class="va">recolectar_linea</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
-  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu"><a href="../reference/acciones.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span>
-    <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-      <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-    <span class="op">}</span>
-  <span class="op">}</span>
-<span class="op">}</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Función: recolectar_linea()</span></span>
+<span><span class="co"># Descripción: permite recolectar una línea consecutiva de cosos. La línea</span></span>
+<span><span class="co"># termina en la primera celda que no tiene cosos.</span></span>
+<span><span class="co"># Condición inicial: ninguna</span></span>
+<span><span class="co"># Condición final: Karel está en el final de la línea con la misma dirección que</span></span>
+<span><span class="co"># al inicio</span></span>
+<span><span class="va">recolectar_linea</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="../reference/actions.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">}</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">}</span></span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li><strong>Poner todos los cosos que tiene en la mochila en un
 lugar</strong></li>
 </ol>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Función: colocar_todo()</span>
-<span class="co"># Descripción: Karel coloca todos los cosos que tiene en su mochila en su</span>
-<span class="co"># posición actual</span>
-<span class="co"># Condición inicial: ninguna</span>
-<span class="co"># Condición final: ninguna</span>
-<span class="va">colocar_todo</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
-  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">karel_tiene_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="op">}</span>
-<span class="op">}</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Función: colocar_todo()</span></span>
+<span><span class="co"># Descripción: Karel coloca todos los cosos que tiene en su mochila en su</span></span>
+<span><span class="co"># posición actual</span></span>
+<span><span class="co"># Condición inicial: ninguna</span></span>
+<span><span class="co"># Condición final: ninguna</span></span>
+<span><span class="va">colocar_todo</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">karel_tiene_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">}</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="recoger-columnas-de-cosos">Recoger columnas de <em>cosos</em><a class="anchor" aria-label="anchor" href="#recoger-columnas-de-cosos"></a>
@@ -335,11 +296,11 @@ tres partes: recolectar todos los <em>cosos</em> y guardarlos en su
 mochila que inicialmente estará vacía, depositarlos en la esquina y
 volver a la posición inicial. Algo como esto:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo008"</span><span class="op">)</span>
-<span class="fu">recolectar_todo</span><span class="op">(</span><span class="op">)</span>
-<span class="fu">colocar_todo</span><span class="op">(</span><span class="op">)</span>
-<span class="fu">volver_inicio</span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo008"</span><span class="op">)</span></span>
+<span><span class="fu">recolectar_todo</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">colocar_todo</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">volver_inicio</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>Así como está, es muy sencillo entender qué es lo que hay que hacer.
 Además, hace uso de una función que ya tenemos definida de antes,
 <code>colocar_todo()</code>. Lo único que falta, que no es poco, es
@@ -350,13 +311,13 @@ en otros problemas menores.</p>
 que será necesario un <code>while</code>. Tenemos que recolectar columna
 por columna hasta que nos encontremos con la pared:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">recolectar_todo</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
-  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu">recolectar_una_columna</span><span class="op">(</span><span class="op">)</span>
-    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="op">}</span>
-  <span class="fu">recolectar_una_columna</span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">recolectar_todo</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu">recolectar_una_columna</span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="fu">recolectar_una_columna</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
 <p>Notar que después del <code>while</code> hemos repetido
 <code>recolectar_una_columna()</code>, por la razón expuesta en el
 ejemplo anterior. Además, le estamos diciendo que recolecte la columna
@@ -378,13 +339,13 @@ columna.</li>
 </ol>
 <p>Entonces, la función tiene que ser algo así:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">recolectar_una_columna</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="fu">recolectar_linea</span><span class="op">(</span><span class="op">)</span>
-  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="fu">avanzar_hasta_pared</span><span class="op">(</span><span class="op">)</span>
-  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">recolectar_una_columna</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu">recolectar_linea</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu">avanzar_hasta_pared</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
 <p>Aparecieron por ahí dos funciones que definimos en el ejercicio
 anterior, que como anticipamos son actividades bastante comunes que nos
 viene muy bien tenerlas ya programadas. El programa completo se muestra
@@ -392,50 +353,50 @@ a continuación. Recordar que en R necesitamos ejecutar primero las
 funciones que hemos inventado y luego el programa principal que las
 utiliza.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># ------------ Definición de otras funciones auxiliares-----------</span>
-
-<span class="co"># Función: recolectar_todo()</span>
-<span class="co"># Descripción: permite recolectar todos los cosos de cada columna moviéndose a</span>
-<span class="co"># lo largo de la primera calle.</span>
-<span class="co"># Condición inicial: Karel está mirando al este en la posición (1, 1)</span>
-<span class="co"># Condición final: Karel está mirando al este en la posición del extremo derecho</span>
-<span class="co"># de la primera fila</span>
-<span class="va">recolectar_todo</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
-  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu">recolectar_una_columna</span><span class="op">(</span><span class="op">)</span>
-    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="op">}</span>
-  <span class="fu">recolectar_una_columna</span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span>
-
-<span class="co"># Función: recolectar_una_columna()</span>
-<span class="co"># Descripción: permite recolectar todos los cosos en una única columna</span>
-<span class="co"># Condición inicial: Karel debe estar en la base de la columna mirando al este</span>
-<span class="co"># Condición final: Karel está en la misma posición y dirección que al inicio</span>
-<span class="va">recolectar_una_columna</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="fu">recolectar_linea</span><span class="op">(</span><span class="op">)</span>
-  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="fu">avanzar_hasta_pared</span><span class="op">(</span><span class="op">)</span>
-  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span>
-
-<span class="co"># Función: volver_inicio()</span>
-<span class="co"># Descripción: permite que Karel regrese a la posición (1, 1)</span>
-<span class="co"># Condición inicial: Karel mira al este en algún lugar de la primera fila</span>
-<span class="co"># Condición final: Karel está en la posición (1, 1) mirando al este</span>
-<span class="va">volver_inicio</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="fu">avanzar_hasta_pared</span><span class="op">(</span><span class="op">)</span>
-  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span>
-
-<span class="co"># ------------------- Programa principal -------------------</span>
-<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo008"</span><span class="op">)</span>
-<span class="fu">recolectar_todo</span><span class="op">(</span><span class="op">)</span>
-<span class="fu">colocar_todo</span><span class="op">(</span><span class="op">)</span>
-<span class="fu">volver_inicio</span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># ------------ Definición de otras funciones auxiliares-----------</span></span>
+<span></span>
+<span><span class="co"># Función: recolectar_todo()</span></span>
+<span><span class="co"># Descripción: permite recolectar todos los cosos de cada columna moviéndose a</span></span>
+<span><span class="co"># lo largo de la primera calle.</span></span>
+<span><span class="co"># Condición inicial: Karel está mirando al este en la posición (1, 1)</span></span>
+<span><span class="co"># Condición final: Karel está mirando al este en la posición del extremo derecho</span></span>
+<span><span class="co"># de la primera fila</span></span>
+<span><span class="va">recolectar_todo</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu">recolectar_una_columna</span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="fu">recolectar_una_columna</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># Función: recolectar_una_columna()</span></span>
+<span><span class="co"># Descripción: permite recolectar todos los cosos en una única columna</span></span>
+<span><span class="co"># Condición inicial: Karel debe estar en la base de la columna mirando al este</span></span>
+<span><span class="co"># Condición final: Karel está en la misma posición y dirección que al inicio</span></span>
+<span><span class="va">recolectar_una_columna</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu">recolectar_linea</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu">avanzar_hasta_pared</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># Función: volver_inicio()</span></span>
+<span><span class="co"># Descripción: permite que Karel regrese a la posición (1, 1)</span></span>
+<span><span class="co"># Condición inicial: Karel mira al este en algún lugar de la primera fila</span></span>
+<span><span class="co"># Condición final: Karel está en la posición (1, 1) mirando al este</span></span>
+<span><span class="va">volver_inicio</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu">avanzar_hasta_pared</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># ------------------- Programa principal -------------------</span></span>
+<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo008"</span><span class="op">)</span></span>
+<span><span class="fu">recolectar_todo</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">colocar_todo</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">volver_inicio</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="28.gif" width="40%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2">
@@ -459,17 +420,17 @@ problemas muy interesantes no son ni largos ni rebuscados. Miralo con
 atención hasta que estés convencido de entender la lógica de este
 algoritmo:</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># ------------------- Programa principal -------------------</span>
-
-<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo009"</span><span class="op">)</span>
-<span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">no_hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_cerrado</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="op">}</span>
-  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">}</span>
-<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># ------------------- Programa principal -------------------</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo009"</span><span class="op">)</span></span>
+<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">no_hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_cerrado</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="30.gif" width="40%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2">
@@ -600,12 +561,12 @@ ser cualquiera, habiendo siempre al menos uno.</li>
 </ul>
 <p>El programa principal debe ser:</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Programa principal</span>
-<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo021"</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu">duplicar_cosos</span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Programa principal</span></span>
+<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo021"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">duplicar_cosos</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>Es decir, deberán escribir una función, llamada
 <code>duplicar_cosos()</code> que se encargue de realizar esta tarea, el
 cual a su vez puede estar descompuesto en otros subalgoritmos. Utilizar
@@ -646,33 +607,26 @@ ellas.</li>
 <code>mundo024</code>.</p>
 </div>
 </div>
-  </div>
-
-  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-
-        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
-    </nav>
-</div>
-
+  </main><aside class="col-md-3"><nav id="toc"><h2>En esta página</h2>
+    </nav></aside>
 </div>
 
 
 
-      <footer><div class="copyright">
+    <footer><div class="pkgdown-footer-left">
   <p></p>
 <p>Desarrollado por Marcos Prunello.</p>
 </div>
 
-<div class="pkgdown">
+<div class="pkgdown-footer-right">
   <p></p>
 <p>Sitio creado con <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
-      </footer>
+    </footer>
 </div>
 
   
-
 
   
 
