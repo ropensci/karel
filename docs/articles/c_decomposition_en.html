@@ -24,7 +24,7 @@
     <a href="#main" class="visually-hidden-focusable">Ir al contenido</a>
     
 
-    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
+    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary"><div class="container">
     
     <a class="navbar-brand me-2" href="../index.html">karel</a>
 
@@ -179,11 +179,11 @@ this. Every time we realize that we are using a sequence of Karel
 commands to accomplish a specific task, such as turning right, it is
 time to define a new function that encompasses those commands:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">turn_right</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre></div>
+<code class="sourceCode R"><span class="va">turn_right</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span></code></pre></div>
 <p>In general, in R, a function is created following these steps:</p>
 <ol style="list-style-type: decimal">
 <li>Choose a name: <code>girar_derecha</code> (turn_right).</li>
@@ -202,31 +202,31 @@ simplified. It is important to note that for us to be able to use the
 defined and evaluated by R <strong>before</strong> we use it to solve
 our problem.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#  --------------- Load Karel package --------------------</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># ------------ Definition of auxiliary functions -----------</span></span>
-<span></span>
-<span><span class="va">turn_right</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># ---------------- Main programa ----------------------</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">pick_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="co">#  --------------- Load Karel package --------------------</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span>
+
+<span class="co"># ------------ Definition of auxiliary functions -----------</span>
+
+<span class="va">turn_right</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="co"># ---------------- Main programa ----------------------</span>
+
+<span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">pick_beeper</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="18.gif" width="60%" style="display: block; margin: auto;"></p>
 <p><strong>EXERCISE</strong>: Create a function called
 <strong><code><a href="../reference/actions.html">turn_around()</a></code></strong> that allows Karel to make a
@@ -248,8 +248,8 @@ use, we need to activate Karel’s superpowers with the following
 statement, which can be executed at any time (after
 <strong><code><a href="https://mpru.github.io/karel/">library(karel)</a></code></strong> would be a good place):</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/load_super_karel.html">load_super_karel</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span>
+<span class="fu"><a href="../reference/load_super_karel.html">load_super_karel</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="filling-the-hole">
@@ -265,36 +265,36 @@ figure.</p>
 <p>If we limit ourselves to Karel’s basic commands, the program to solve
 this is:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>However, if we use our own functions
 <strong><code><a href="../reference/actions.html">turn_right()</a></code></strong> and
 <strong><code><a href="../reference/actions.html">turn_around()</a></code></strong>, the program becomes shorter
 and clearer:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">turn_around</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">turn_around</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>Now, filling the hole can be seen as a specific task that can be
 thought of as a problem in itself, which can be solved separately from
 the main algorithm. We can define a new subalgorithm specifically for
@@ -302,28 +302,28 @@ this task, which can be reused in other situations. Following the idea
 of algorithmic decomposition, the problem we are analyzing can be
 decomposed as follows:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#  --------------- Load Karel package --------------------</span></span>
-<span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/load_super_karel.html">load_super_karel</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># makes turn_right() and turn_around() available</span></span>
-<span></span>
-<span><span class="co"># ------------ Definition of auxiliary functions -----------</span></span>
-<span></span>
-<span><span class="va">fill_hole</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">turn_around</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># ------------------- Main program --------------------</span></span>
-<span><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="co">#  --------------- Load Karel package --------------------</span>
+
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span>
+<span class="fu"><a href="../reference/load_super_karel.html">load_super_karel</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># makes turn_right() and turn_around() available</span>
+
+<span class="co"># ------------ Definition of auxiliary functions -----------</span>
+
+<span class="va">fill_hole</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">turn_around</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="co"># ------------------- Main program --------------------</span>
+<span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="20.gif" width="60%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2">
@@ -341,33 +341,33 @@ to state the name of the function and clarify under what initial
 condition it can be used and what final result it produces, for
 example:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#  --------------- Load Karel package --------------------</span></span>
-<span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/load_super_karel.html">load_super_karel</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># ------------ Definition of auxiliary functions -----------</span></span>
-<span></span>
-<span><span class="co"># Function: fill_hole</span></span>
-<span><span class="co"># Initial condition: Karel is on top of the hole (on the previous street),</span></span>
-<span><span class="co"># facing east</span></span>
-<span><span class="co"># Final condition: Karel is in the same position as at the beginning and has</span></span>
-<span><span class="co"># placed a beeper in the hole</span></span>
-<span><span class="va">fill_hole</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">turn_around</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># ------------------- Main program -------------------</span></span>
-<span><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="co">#  --------------- Load Karel package --------------------</span>
+
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span>
+<span class="fu"><a href="../reference/load_super_karel.html">load_super_karel</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="co"># ------------ Definition of auxiliary functions -----------</span>
+
+<span class="co"># Function: fill_hole</span>
+<span class="co"># Initial condition: Karel is on top of the hole (on the previous street),</span>
+<span class="co"># facing east</span>
+<span class="co"># Final condition: Karel is in the same position as at the beginning and has</span>
+<span class="co"># placed a beeper in the hole</span>
+<span class="va">fill_hole</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">turn_around</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="co"># ------------------- Main program -------------------</span>
+<span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><em>Algunos ejemplos presentados en este tutorial fueron adaptados de
 Karel the robot learns Java (Eric Roberts, 2005).</em></p>
 </div>

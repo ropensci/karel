@@ -24,7 +24,7 @@
     <a href="#main" class="visually-hidden-focusable">Ir al contenido</a>
     
 
-    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
+    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary"><div class="container">
     
     <a class="navbar-brand me-2" href="../index.html">karel</a>
 
@@ -243,25 +243,25 @@ wall.</p>
 that Karel only places an item if there wasn’t already one in the
 hole:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># ------------ Definition of auxiliary functions -----------</span></span>
-<span></span>
-<span><span class="va">fill_hole</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/conditions.html">no_beepers_present</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">turn_around</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># ------------------- Main program -------------------</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="co"># ------------ Definition of auxiliary functions -----------</span>
+
+<span class="va">fill_hole</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/conditions.html">no_beepers_present</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="op">}</span>
+  <span class="fu"><a href="../reference/actions.html">turn_around</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="co"># ------------------- Main program -------------------</span>
+
+<span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>Note that although the use of indentation in the code is optional, we
 decided to use it to improve readability. Maintaining clarity in our
 programs is essential.</p>
@@ -288,25 +288,25 @@ removes it if there is:</p>
 <p><img src="51.png" width="60%" style="display: block; margin: auto;"></p>
 <p>For this, we can use a double conditional structure:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span></span>
-<span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/conditions.html">beepers_present</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">pick_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/conditions.html">beepers_present</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">pick_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/conditions.html">beepers_present</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">pick_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span>
+<span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/conditions.html">beepers_present</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">pick_beeper</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/conditions.html">beepers_present</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">pick_beeper</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/conditions.html">beepers_present</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">pick_beeper</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="52.gif" width="60%" style="display: block; margin: auto;"></p>
 <p>Since we repeat the process of checking whether there is an item or
 not to decide whether to remove or place one three times exactly the
@@ -315,25 +315,25 @@ decomposition and define a function that takes care of this process,
 making the action of <em>reversing</em> the state of a cell simpler. Our
 code file would look like this:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># ------------ Definition of auxiliary functions -----------</span></span>
-<span></span>
-<span><span class="va">reverse_state</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/conditions.html">beepers_present</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/actions.html">pick_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># ------------------- Main program -------------------</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span></span>
-<span><span class="fu">reverse_state</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">reverse_state</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">reverse_state</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="co"># ------------ Definition of auxiliary functions -----------</span>
+
+<span class="va">reverse_state</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/conditions.html">beepers_present</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="../reference/actions.html">pick_beeper</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+    <span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="op">}</span>
+<span class="op">}</span>
+
+<span class="co"># ------------------- Main program -------------------</span>
+
+<span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span>
+<span class="fu">reverse_state</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">reverse_state</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">reverse_state</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="multiple-or-nested-conditional-structures">
@@ -380,39 +380,39 @@ distributed on even avenues.</p>
 <p><img src="21.png" width="80%" style="display: block; margin: auto;"></p>
 <p>We need to write a program for Karel to fill all 5 holes. We could
 plan something like this:</p>
-<pre class="text"><code><span><span class="co"># ------------------- Main program -------------------</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></span></code></pre>
+<pre class="text"><code><span class="co"># ------------------- Main program -------------------</span>
+
+<span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></code></pre>
 <p>It is clear that it doesn’t make sense to write the exact same code 5
 times. Therefore, we can use an iterative structure:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span></span>
-<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>The variable <strong><code>i</code></strong> is called the iteration
 variable. We could have chosen another letter or word instead, but using
 <strong><code>i</code></strong> is quite common. In this example, its
@@ -464,26 +464,26 @@ can use a <strong><code>while</code></strong> loop so that Karel keeps
 filling holes as long as there is no wall in front of it, indicating
 that it has reached the end and should stop.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># ------------------- Main program -------------------</span></span>
-<span><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span></span>
-<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/conditions.html">front_is_clear</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="co"># ------------------- Main program -------------------</span>
+<span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span>
+<span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/conditions.html">front_is_clear</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu">fill_hole</span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>Care must be taken when writing this type of structure to ensure that
 an infinite loop is not created, i.e., an iterative process that never
 ends. This would occur, for example, if, while being in the previous
 world, we ask Karel to turn while there are no things where it is
 standing:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Do not run this! (or do, to see how it doesn't work!)</span></span>
-<span><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span></span>
-<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/conditions.html">no_beepers_present</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="co"># Do not run this! (or do, to see how it doesn't work!)</span>
+<span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span>
+<span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/conditions.html">no_beepers_present</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><em>Some examples presented in this tutorial were adapted from “Karel
 the robot learns Java” (Eric Roberts, 2005).</em></p>
 </div>

@@ -24,7 +24,7 @@
     <a href="#main" class="visually-hidden-focusable">Ir al contenido</a>
     
 
-    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
+    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary"><div class="container">
     
     <a class="navbar-brand me-2" href="../index.html">karel</a>
 
@@ -242,25 +242,25 @@ enfrente de Karel o el valor <code>FALSE</code> si hay una pared.</p>
 coloque un <em>coso</em> sólo si no había ya uno presente en el
 agujero:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># ------------ Definición de funciones auxiliares-----------</span></span>
-<span></span>
-<span><span class="va">llenar_agujero</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">no_hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># ------------------- Programa principal -------------------</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="co"># ------------ Definición de funciones auxiliares-----------</span>
+
+<span class="va">llenar_agujero</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">no_hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="op">}</span>
+  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="co"># ------------------- Programa principal -------------------</span>
+
+<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>Notar que si bien el uso de sangrías en el código es opcional,
 decidimos emplearlo para facilitar su lectura. Mantener la prolijidad en
 nuestros programas es esencial.</p>
@@ -286,25 +286,25 @@ quite si es que hay:</p>
 <p><img src="51.png" width="60%" style="display: block; margin: auto;"></p>
 <p>Para esto podemos usar una estructura condicional doble:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span></span>
-<span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span>
+<span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="52.gif" width="60%" style="display: block; margin: auto;"></p>
 <p>Dado que repetimos 3 veces, exactamente de la misma forma, el proceso
 de controlar si hay o no un <em>coso</em> para decidir quitarlo o poner
@@ -313,25 +313,25 @@ algorítmica y definir una función que se encargue de ellos, se forma que
 la acción de <em>invertir</em> el estado de una celda se haga de manera
 más sencilla. Nuestro archivo de código quedaría así:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># ------------ Definición de funciones auxiliares-----------</span></span>
-<span></span>
-<span><span class="va">invertir</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/actions.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># ------------------- Programa principal -------------------</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span></span>
-<span><span class="fu">invertir</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">invertir</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">invertir</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="co"># ------------ Definición de funciones auxiliares-----------</span>
+
+<span class="va">invertir</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="../reference/actions.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+    <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="op">}</span>
+<span class="op">}</span>
+
+<span class="co"># ------------------- Programa principal -------------------</span>
+
+<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span>
+<span class="fu">invertir</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">invertir</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">invertir</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="estructuras-condicionales-múltiples-o-anidadas">Estructuras condicionales múltiples o anidadas<a class="anchor" aria-label="anchor" href="#estructuras-condicionales-m%C3%BAltiples-o-anidadas"></a>
@@ -375,39 +375,39 @@ las avenidas pares.</p>
 <p><img src="21.png" width="80%" style="display: block; margin: auto;"></p>
 <p>Tenemos que escribir un programa para que Karel llene los 5 agujeros.
 Podríamos planear algo como:</p>
-<pre class="text"><code><span><span class="co"># ------------------- Programa principal -------------------</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre>
+<pre class="text"><code><span class="co"># ------------------- Programa principal -------------------</span>
+
+<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre>
 <p>Es evidente que no tiene sentido escribir exactamente lo mismo 5
 veces. Por eso vamos a hacer uso de una estructura iterativa:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span></span>
-<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>La letra <code>i</code> recibe el nombre de variable de iteración.
 Podríamos haber elegido otra letra u otra palabra en su lugar, pero
 emplear <code>i</code> es bastante común. En este ejemplo, su única
@@ -457,26 +457,26 @@ cantidad de veces que el proceso debe repetirse, podemos usar un
 no haya una pared enfrente suyo, lo cual indicaría que llegó al final y
 debe detenerse.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># ------------------- Programa principal -------------------</span></span>
-<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span></span>
-<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="co"># ------------------- Programa principal -------------------</span>
+<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span>
+<span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>Hay que tener mucho cuidado a la hora de escribir este tipo de
 estructura, para asegurarse de no producir un <em>loop infinito</em>, es
 decir, un proceso iterativo que nunca finaliza. Esto ocurriría, por
 ejemplo, si estando en el mundo anterior, le pedimos a Karel que gire
 mientras que no haya cosas donde está parada:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># No correr esto! (o sí, para ver cómo no anda!)</span></span>
-<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span></span>
-<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">no_hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="co"># No correr esto! (o sí, para ver cómo no anda!)</span>
+<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span>
+<span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">no_hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><em>Algunos ejemplos presentados en este tutorial fueron adaptados de
 Karel the robot learns Java (Eric Roberts, 2005).</em></p>
 </div>

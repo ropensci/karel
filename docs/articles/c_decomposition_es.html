@@ -24,7 +24,7 @@
     <a href="#main" class="visually-hidden-focusable">Ir al contenido</a>
     
 
-    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
+    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary"><div class="container">
     
     <a class="navbar-brand me-2" href="../index.html">karel</a>
 
@@ -185,11 +185,11 @@ una secuencia de comandos de Karel con el objetivo de cumplir una tarea
 específica, como doblar a la derecha, entonces es momento de definir una
 nueva función que englobe esos comandos:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">girar_derecha</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre></div>
+<code class="sourceCode R"><span class="va">girar_derecha</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span></code></pre></div>
 <p>De manera general, en R una función se crea con estos pasos:</p>
 <ol style="list-style-type: decimal">
 <li>Elegir nombre: <code>girar_derecha</code>
@@ -210,31 +210,31 @@ podamos usar la función <code><a href="../reference/acciones.html">girar_izquie
 que ser definida y evaluada por R <strong>antes</strong> de que hagamos
 uso de la misma para resolver nuestro problema:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#  --------------- Cargar paquete Karel --------------------</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># ------------ Definición de funciones auxiliares-----------</span></span>
-<span></span>
-<span><span class="va">girar_derecha</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># ---------------- Programa principal ----------------------</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="co">#  --------------- Cargar paquete Karel --------------------</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span>
+
+<span class="co"># ------------ Definición de funciones auxiliares-----------</span>
+
+<span class="va">girar_derecha</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="co"># ---------------- Programa principal ----------------------</span>
+
+<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="18.gif" width="60%" style="display: block; margin: auto;"></p>
 <p><strong>EJERCICIO</strong>: crear una función llamada
 <code><a href="../reference/acciones.html">darse_vuelta()</a></code> que le permita a Karel realizar un giro de
@@ -254,8 +254,8 @@ usar, tenemos que activar estos superpoderes de Karel con la siguiente
 sentencia, que puede ser ejecutada en cualquier momento (luego de
 <code><a href="https://mpru.github.io/karel/">library(karel)</a></code> sería un buen lugar):</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cargar_super_karel.html">cargar_super_karel</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span>
+<span class="fu"><a href="../reference/cargar_super_karel.html">cargar_super_karel</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="llenar-el-agujero">Llenar el agujero<a class="anchor" aria-label="anchor" href="#llenar-el-agujero"></a>
@@ -270,35 +270,35 @@ otro extremo, como se ve en la figura de la derecha.</p>
 <p>Si nos limitamos a los comandos básicos de Karel, el programa que
 permite resolver esto es:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>Si en cambio usamos nuestras propias funciones
 <code><a href="../reference/acciones.html">girar_derecha()</a></code> y <code><a href="../reference/acciones.html">darse_vuelta()</a></code>, el programa
 queda más corto y claro:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>Ahora bien, el proceso de llenar el agujero es una tarea muy concreta
 que puede ser pensada como un problema en sí mismo, que se puede
 resolver por fuera del algoritmo principal. Podemos definir un nuevo
@@ -307,28 +307,28 @@ reutilizado en otras ocasiones. Siguiendo entonces la idea de la
 descomposición algorítmica, el problema que estamos analizando puede ser
 descompuesto de esta forma:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#  --------------- Cargar paquete Karel --------------------</span></span>
-<span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cargar_super_karel.html">cargar_super_karel</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># pone a disposición girar_derecha() y darse_vuelta()</span></span>
-<span></span>
-<span><span class="co"># ------------ Definición de funciones auxiliares-----------</span></span>
-<span></span>
-<span><span class="va">llenar_agujero</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># ------------------- Programa principal --------------------</span></span>
-<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="co">#  --------------- Cargar paquete Karel --------------------</span>
+
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span>
+<span class="fu"><a href="../reference/cargar_super_karel.html">cargar_super_karel</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># pone a disposición girar_derecha() y darse_vuelta()</span>
+
+<span class="co"># ------------ Definición de funciones auxiliares-----------</span>
+
+<span class="va">llenar_agujero</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="co"># ------------------- Programa principal --------------------</span>
+<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="20.gif" width="60%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2">
@@ -346,33 +346,33 @@ estamos desarrollando. Por ejemplo, puede ser bueno que enunciemos el
 nombre de la función y aclaremos bajo qué condición inicial se puede
 utilizar y qué resultado final arroja, por ejemplo:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">#  --------------- Cargar paquete Karel --------------------</span></span>
-<span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cargar_super_karel.html">cargar_super_karel</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># ------------ Definición de funciones auxiliares-----------</span></span>
-<span></span>
-<span><span class="co"># Función: llenar_agujero</span></span>
-<span><span class="co"># Condición inicial: Karel se encuentra sobre el agujero (en la calle anterior),</span></span>
-<span><span class="co"># mirando al este</span></span>
-<span><span class="co"># Condición final: Karel se encuentra en la misma posición que al inicio y ha</span></span>
-<span><span class="co"># colocado un coso en el agujero</span></span>
-<span><span class="va">llenar_agujero</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># ------------------- Programa principal -------------------</span></span>
-<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span class="co">#  --------------- Cargar paquete Karel --------------------</span>
+
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span>
+<span class="fu"><a href="../reference/cargar_super_karel.html">cargar_super_karel</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="co"># ------------ Definición de funciones auxiliares-----------</span>
+
+<span class="co"># Función: llenar_agujero</span>
+<span class="co"># Condición inicial: Karel se encuentra sobre el agujero (en la calle anterior),</span>
+<span class="co"># mirando al este</span>
+<span class="co"># Condición final: Karel se encuentra en la misma posición que al inicio y ha</span>
+<span class="co"># colocado un coso en el agujero</span>
+<span class="va">llenar_agujero</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="co"># ------------------- Programa principal -------------------</span>
+<span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo002"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><em>Algunos ejemplos presentados en este tutorial fueron adaptados de
 Karel the robot learns Java (Eric Roberts, 2005).</em></p>
 </div>
