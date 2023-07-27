@@ -126,7 +126,7 @@
     pkg_env$base_plot +
     geom_tile(data = beepers_moment,
               aes(x = x - 0.5, y = y - 0.5, width = 0.4, height = 0.4),
-              fill = "purple", color = "black", size = 0.5) +
+              fill = "purple", color = "black", linewidth = 0.5) +
     geom_text(data = beepers_moment, aes(x = x - 0.5, y = y - 0.5, label = n), color = "white") +
     geom_rect(data = karel_for_drawing,
               aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
@@ -174,13 +174,13 @@ plot_base_world <- function() {
     pkg_env$base_plot <-
       pkg_env$base_plot +
       geom_segment(data = pkg_env$ver_walls,
-                   aes(x = x, y = y, xend = x, yend = y + lgth), size = 2)
+                   aes(x = x, y = y, xend = x, yend = y + lgth), linewidth = 2)
   }
   if (!is.null(pkg_env$hor_walls)) {
     pkg_env$base_plot <-
       pkg_env$base_plot +
       geom_segment(data = pkg_env$hor_walls,
-                   aes(x = x, y = y, xend = x + lgth, yend = y), size = 2)
+                   aes(x = x, y = y, xend = x + lgth, yend = y), linewidth = 2)
   }
 }
 
@@ -575,13 +575,11 @@ check_walls <- function(dataset, name, nx, ny, lang) {
 
     # All integers?
     if (!all(apply(dataset, 2, function(x) x %% 1 == 0))) {
-      if (!all(apply(dataset, 2, is.numeric))) {
         cli::cli_abort(call = NULL, message = c(
           "!" = message_texts[[lang]]$check_user_world_general,
           "x" = paste(name, message_texts[[lang]]$check_user_world_wrong_walls7),
           ">" = message_texts[[lang]]$check_user_world_try_again)
         )
-      }
     }
 
     # Range of values

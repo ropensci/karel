@@ -32,9 +32,10 @@ Language:
   es
 RoxygenNote: 7.2.3
 Suggests: 
-    testthat,
+    testthat (>= 3.0.0),
     knitr,
     rmarkdown
 VignetteBuilder: knitr
 URL: https://mpru.github.io/karel/
 BugReports: https://github.com/mpru/karel/issues/
+Config/testthat/edition: 3
