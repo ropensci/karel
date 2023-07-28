@@ -9,6 +9,9 @@
 stable](https://img.shields.io/badge/lifecycle-stable-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/karel)](https://CRAN.R-project.org/package=karel)
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 <!-- badges: end -->
 
@@ -68,3 +71,8 @@ You can program Karel to perform tasks such as:
 Visitá los artículos para ver cómo lograrlo y solucionar muchos casos
 más / Visit the articles to learn how to do it and to solve other
 problems.
+
+## Cómo citar este paquete / How to cite this package
+
+    Prunello M (2023). karel: Learning programming with Karel the robot. 
+    R package version 0.1.1.9000, <https://mpru.github.io/karel/>.

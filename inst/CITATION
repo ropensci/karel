@@ -1,0 +1,13 @@
+citHeader("To cite karel in publications use:")
+
+citEntry(
+  entry    = "Article",
+  title    = "karel: Learning programming with Karel the robot",
+  author   = as.person("Marcos Prunello"),
+  year     = 2023,
+  volume   = ,
+  number   = ,
+  pages    = ,
+  url      = "https://mpru.github.io/karel/",
+  textVersion = paste("Prunello M (2023). karel: Learning programming with Karel the robot. R package version 0.1.1.9000, <https://mpru.github.io/karel/>.")
+)

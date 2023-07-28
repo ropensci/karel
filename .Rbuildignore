@@ -12,3 +12,4 @@ cran-comments.md
 LICENSE
 ^pkgdown$
 ^\.github$
+^codemeta\.json$
