@@ -68,7 +68,3 @@ You can program Karel to perform tasks such as:
 Visitá los artículos para ver cómo lograrlo y solucionar muchos casos
 más / Visit the articles to learn how to do it and to solve other
 problems.
-
-------------------------------------------------------------------------
-
-Web: <https://mpru.github.io/karel/>

@@ -2,9 +2,6 @@ url: https://mpru.github.io/karel/
 template:
   bootstrap: 5
   bootswatch: flatly
-  bslib:
-    border-radius: 0.5rem
-    btn-border-radius: 0.25rem
 lang: es
 navbar:
   structure:
@@ -39,6 +36,7 @@ articles:
 - title: ES - Tutoriales en español
   navbar: ES - Tutoriales en español
   contents:
+  - aa_get_started_es
   - a_intro_progrbasics_es
   - b_meetingkarel_es
   - c_decomposition_es
@@ -47,15 +45,12 @@ articles:
 - title: EN - Tutorials in English
   navbar: EN - Tutorials in English
   contents:
+  - aa_get_started_en
   - a_intro_progrbasics_en
   - b_meetingkarel_en
   - c_decomposition_en
   - d_controlstructures_en
   - e_examples_en
-- title: internal
-  contents:
-  - aa_get_started_es
-  - aa_get_started_en
 reference:
 - title: Referencias en español
 - subtitle: Generar un mundo y ejecutar acciones

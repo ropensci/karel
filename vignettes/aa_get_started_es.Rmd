@@ -2,7 +2,7 @@
 title: "Primeros pasos con la robot Karel"
 output: rmarkdown::html_vignette
 description: >
-  Who is Karel and what is this package for
+  Quién es Karel y para qué sirve este paquete
 vignette: >
   %\VignetteIndexEntry{Primeros pasos con la robot Karel}
   %\VignetteEngine{knitr::rmarkdown}
