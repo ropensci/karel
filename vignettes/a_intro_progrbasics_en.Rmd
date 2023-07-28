@@ -73,7 +73,7 @@ As mentioned earlier, we will put into practice programming concepts using **R**
 
 Although R will be our means of communication with the computer, we will use another program that provides some tools to facilitate our programming work. In other words, we will use an integrated development environment (IDE). An IDE is a program that makes coding easier by allowing us to manage multiple code files, visualize the working environment, use color highlighting for different parts of the code, employ autocomplete to write faster, explore help pages, implement debugging strategies, and even interactively execute instructions while viewing the results as we progress in analyzing or solving the problem. The most popularly used IDE for programming with R is RStudio, and it will be the program we'll be using all the time.
 
-To install these programs, you should visit the official websites of [**R**](https://www.r-project.org/) and [**RStudio**](https://www.rstudio.com/), download the installers, and run them. You can find a complete installation guide in this [**link**](https://www.youtube.com/watch?v=D9Bp11iZssc).
+To install these programs, you should visit the official websites of [**R**](https://www.r-project.org/) and [**RStudio**](https://posit.co/), download the installers, and run them. You can find a complete installation guide in this [**link**](https://www.youtube.com/watch?v=D9Bp11iZssc).
 
 ### **Organization of RStudio**
 
