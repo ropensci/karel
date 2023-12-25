@@ -108,13 +108,15 @@
     cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "x" = message_texts[[lang]]$time_too_big_x,
-      ">" = paste0(message_texts[[lang]]$time_too_big_arrow, " ", pkg_env$moment, "."))
+      ">" = paste0(message_texts[[lang]]$time_too_big_arrow, " ",
+                   pkg_env$moment, "."))
     )
   }
 
   # Filter to keep only this moment
   karel_for_drawing <- dplyr::filter(pkg_env$karel, moment == time)
-  karel_for_drawing <- draw_karel_df(karel_for_drawing$x, karel_for_drawing$y, karel_for_drawing$direction, time)
+  karel_for_drawing <- draw_karel_df(karel_for_drawing$x, karel_for_drawing$y,
+                                     karel_for_drawing$direction, time)
   beepers_moment <- dplyr::filter(pkg_env$beepers_all, moment == time)
   if (nrow(beepers_moment) == 0) {
     # This means that in this moment there were no beepers in the world
@@ -127,7 +129,8 @@
     geom_tile(data = beepers_moment,
               aes(x = x - 0.5, y = y - 0.5, width = 0.4, height = 0.4),
               fill = "purple", color = "black", linewidth = 0.5) +
-    geom_text(data = beepers_moment, aes(x = x - 0.5, y = y - 0.5, label = n), color = "white") +
+    geom_text(data = beepers_moment, aes(x = x - 0.5, y = y - 0.5, label = n),
+              color = "white") +
     geom_rect(data = karel_for_drawing,
               aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
               alpha = karel_for_drawing$alpha,
@@ -204,7 +207,8 @@ plot_base_world <- function() {
 draw_karel_df <- function(x, y, direction, moment) {
   switch(direction,
          # In the tibbles, this is the order of the coordinates:
-         # object = c("body", "left_foot", "right_foot", "left_eye", "right_eye", "mouth")
+         # object = c("body", "left_foot", "right_foot", "left_eye",
+         # "right_eye", "mouth")
          # Direction 1, going east
          tibble(
            xmin = x - c(.9, .2, .2, .75, .75, .45),
@@ -284,13 +288,15 @@ check_user_world <- function(world, lang) {
 
   # Are all the elements present?
   elements <- c("nx", "ny", "hor_walls", "ver_walls", "karel_x", "karel_y",
-                "karel_dir", "beepers_x", "beepers_y", "beepers_n", "beepers_bag")
+                "karel_dir", "beepers_x", "beepers_y", "beepers_n",
+                "beepers_bag")
   for (elem in elements) {
     if (!elem %in% names(world)) {
       cli::cli_rule()
       cli::cli_abort(call = NULL, message = c(
         "!" = message_texts[[lang]]$check_user_world_general,
-        "x" = paste(elem, message_texts[[lang]]$check_user_world_element_missing_x),
+        "x" = paste(elem,
+                    message_texts[[lang]]$check_user_world_element_missing_x),
         ">" = message_texts[[lang]]$check_user_world_try_again)
       )
     }
@@ -440,9 +446,11 @@ check_user_world <- function(world, lang) {
   }
 
   # Check "beepers_x", "beepers_y", "beepers_n"
-  if (any(is.null(world$beepers_x), is.null(world$beepers_y), is.null(world$beepers_n))) {
+  if (any(is.null(world$beepers_x), is.null(world$beepers_y),
+          is.null(world$beepers_n))) {
     # All NULL?
-    if (!all(is.null(world$beepers_x), is.null(world$beepers_y), is.null(world$beepers_n))) {
+    if (!all(is.null(world$beepers_x), is.null(world$beepers_y),
+             is.null(world$beepers_n))) {
       cli::cli_rule()
       cli::cli_abort(call = NULL, message = c(
         "!" = message_texts[[lang]]$check_user_world_general,
@@ -452,7 +460,8 @@ check_user_world <- function(world, lang) {
     }
   } else {
     # All numeric?
-    if (!all(is.numeric(world$beepers_x), is.numeric(world$beepers_y), is.numeric(world$beepers_n))) {
+    if (!all(is.numeric(world$beepers_x), is.numeric(world$beepers_y),
+             is.numeric(world$beepers_n))) {
       cli::cli_rule()
       cli::cli_abort(call = NULL, message = c(
         "!" = message_texts[[lang]]$check_user_world_general,
@@ -461,7 +470,8 @@ check_user_world <- function(world, lang) {
       )
     }
     # All same length?
-    if (!(length(world$beepers_x) == length(world$beepers_y) & length(world$beepers_x) == length(world$beepers_n))) {
+    if (!(length(world$beepers_x) == length(world$beepers_y) &
+          length(world$beepers_x) == length(world$beepers_n))) {
       cli::cli_rule()
       cli::cli_abort(call = NULL, message = c(
         "!" = message_texts[[lang]]$check_user_world_general,
@@ -470,7 +480,8 @@ check_user_world <- function(world, lang) {
       )
     }
     # All integer?
-    if (!all(world$beepers_x %% 1 == 0, world$beepers_y %% 1 == 0, world$beepers_n %% 1 == 0)) {
+    if (!all(world$beepers_x %% 1 == 0, world$beepers_y %% 1 == 0,
+             world$beepers_n %% 1 == 0)) {
       cli::cli_rule()
       cli::cli_abort(call = NULL, message = c(
         "!" = message_texts[[lang]]$check_user_world_general,
@@ -577,7 +588,8 @@ check_walls <- function(dataset, name, nx, ny, lang) {
     if (!all(apply(dataset, 2, function(x) x %% 1 == 0))) {
         cli::cli_abort(call = NULL, message = c(
           "!" = message_texts[[lang]]$check_user_world_general,
-          "x" = paste(name, message_texts[[lang]]$check_user_world_wrong_walls7),
+          "x" = paste(name,
+                      message_texts[[lang]]$check_user_world_wrong_walls7),
           ">" = message_texts[[lang]]$check_user_world_try_again)
         )
     }

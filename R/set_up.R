@@ -80,7 +80,7 @@ pkg_env <- new.env(parent = emptyenv())
 
   if (is.character(world)) {
   	# Load this world from internal data
-  	world <- try(get(world), silent = T)
+  	world <- try(get(world), silent = TRUE)
   	if (inherits(world, "try-error")) {
   	  cli::cli_rule()
   	  cli::cli_abort(call = NULL,
@@ -102,9 +102,10 @@ pkg_env <- new.env(parent = emptyenv())
   pkg_env$ver_walls <- world$ver_walls
 
   # Create Karel dataset
-  pkg_env$karel <- tibble(x = world$karel_x, y = world$karel_y, direction = world$karel_dir, moment = 1)
+  pkg_env$karel <- tibble(x = world$karel_x, y = world$karel_y,
+                          direction = world$karel_dir, moment = 1)
 
-	# Current Karel's position and direction (1: east, 2: north, 3: west, 4: south)
+	# Current Karel's position and direction (1: east, 2: north, 3: west, 4:south)
 	pkg_env$x_now <- world$karel_x
 	pkg_env$y_now <- world$karel_y
 	pkg_env$dir_now <- world$karel_dir
@@ -113,13 +114,18 @@ pkg_env <- new.env(parent = emptyenv())
 	pkg_env$moment <- 1
 
 	# Array of open moves
-	pkg_env$open_moves <- generate_open_moves(world$nx, world$ny, world$hor_walls, world$ver_walls)
+	pkg_env$open_moves <- generate_open_moves(world$nx, world$ny, world$hor_walls,
+	                                          world$ver_walls)
 
 	# Create beepers datasets
-	# beepers_now only has current state of beepers, beepers_all acummulates all states for animation
-	# beepers_any is the total number of beepers in the world (works even when beepers_n is NULL, sum is 0)
+	# beepers_now only has current state of beepers, beepers_all acummulates
+	# all states for animation
+	# beepers_any is the total number of beepers in the world (works even when
+	# beepers_n is NULL, sum is 0)
 	pkg_env$beepers_any <- sum(world$beepers_n)
-	pkg_env$beepers_now <- create_beepers(world$nx, world$beepers_x, world$beepers_y, world$beepers_n, moment = 1)
+	pkg_env$beepers_now <- create_beepers(world$nx, world$beepers_x,
+	                                      world$beepers_y, world$beepers_n,
+	                                      moment = 1)
 	pkg_env$beepers_all <- pkg_env$beepers_now
 	pkg_env$beepers_bag <- world$beepers_bag
 
@@ -173,7 +179,8 @@ pkg_env <- new.env(parent = emptyenv())
     geom_tile(data = pkg_env$beepers_all,
               aes(x = x - 0.5, y = y - 0.5, width = 0.4, height = 0.4),
               fill = "purple", color = "black", size = 0.5) +
-    geom_text(data = pkg_env$beepers_all, aes(x = x - 0.5, y = y - 0.5, label = n), color = "white") +
+    geom_text(data = pkg_env$beepers_all,
+              aes(x = x - 0.5, y = y - 0.5, label = n), color = "white") +
     geom_rect(data = karel_for_drawing,
               aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
               alpha = karel_for_drawing$alpha,
@@ -219,30 +226,34 @@ pkg_env <- new.env(parent = emptyenv())
 #' @keywords internal
 #'
 generate_open_moves <- function(nx, ny, hor_walls, ver_walls) {
-	open_moves <- array(T, dim = c(nx, ny, 4))
+	open_moves <- array(TRUE, dim = c(nx, ny, 4))
 
 	# Set world general boundaries (the rectangle contourn)
 	# For example, when the robot is in the bottom street, it can't go south
-	open_moves[1, , 3] <- F
-	open_moves[nx, , 1] <- F
-	open_moves[, 1, 4] <- F
-	open_moves[, ny, 2] <- F
+	open_moves[1, , 3] <- FALSE
+	open_moves[nx, , 1] <- FALSE
+	open_moves[, 1, 4] <- FALSE
+	open_moves[, ny, 2] <- FALSE
 
 	# Build horizontal walls
 	if (!is.null(hor_walls)) {
 	  closed_pos <- purrr::pmap_dfr(hor_walls, put_hor_walls)
-	  # Can't make it without for loop, but this is done only once, so I guess I'm fine
-	  for (i in 1:nrow(closed_pos)) {
-	    open_moves[closed_pos$pos_x[i], closed_pos$pos_y[i], closed_pos$side[i]] <- FALSE
+	  # Can't make it without for loop, but this is done only once,
+	  # so I guess I'm fine
+	  for (i in seq_len(nrow(closed_pos))) {
+	    open_moves[closed_pos$pos_x[i], closed_pos$pos_y[i],
+	               closed_pos$side[i]] <- FALSE
 	  }
 	}
 
 	# Build vertical walls
 	if (!is.null(ver_walls)) {
 	  closed_pos <- purrr::pmap_dfr(ver_walls, put_ver_walls)
-	  # Can't make it without for loop, but this is done only once, so I guess I'm fine
-	  for (i in 1:nrow(closed_pos)) {
-	    open_moves[closed_pos$pos_x[i], closed_pos$pos_y[i], closed_pos$side[i]] <- FALSE
+	  # Can't make it without for loop, but this is done only once,
+	  # so I guess I'm fine
+	  for (i in seq_len(nrow(closed_pos))) {
+	    open_moves[closed_pos$pos_x[i], closed_pos$pos_y[i],
+	               closed_pos$side[i]] <- FALSE
 	  }
 	}
 
@@ -266,7 +277,8 @@ generate_open_moves <- function(nx, ny, hor_walls, ver_walls) {
 #' @keywords internal
 #'
 put_hor_walls <- function(x, y, lgth) {
-	tidyr::expand_grid(pos_x = (x + 1):(x + lgth), tibble(pos_y = y:(y + 1), side = c(2, 4)))
+	tidyr::expand_grid(pos_x = (x + 1):(x + lgth), tibble(pos_y = y:(y + 1),
+	                                                      side = c(2, 4)))
 }
 
 #' Put vertical walls (streets)
@@ -286,7 +298,8 @@ put_hor_walls <- function(x, y, lgth) {
 #' @keywords internal
 #'
 put_ver_walls <- function(x, y, lgth) {
-	tidyr::expand_grid(pos_y = (y + 1):(y + lgth), tibble(pos_x = x:(x + 1), side = c(1, 3)))
+	tidyr::expand_grid(pos_y = (y + 1):(y + lgth), tibble(pos_x = x:(x + 1),
+	                                                      side = c(1, 3)))
 }
 
 #' Create dataset about beepers
@@ -312,7 +325,8 @@ put_ver_walls <- function(x, y, lgth) {
 #'
 #' @keywords internal
 #'
-create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL, moment = 1) {
+create_beepers <- function(nx = NULL, pos_x = NULL, pos_y = NULL, n = NULL,
+                           moment = 1) {
 	if (is.null(pos_x)) {
 		beepers <- tibble(x = NA, y = NA, cell = NA, n = NA, moment = moment)
 	} else {

@@ -97,7 +97,8 @@ message_texts <- list()
   pkg_env$karel <- add_row(pkg_env$karel, x = pkg_env$x_now, y = pkg_env$y_now,
                            direction = pkg_env$dir_now, moment = pkg_env$moment)
 
-  # Update beepers dataset, they remain the same but need to reflect this new moment
+  # Update beepers dataset, they remain the same but need to reflect this new
+  # moment
   pkg_env$beepers_now$moment <- pkg_env$beepers_now$moment + 1
   pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
 }
@@ -132,12 +133,15 @@ message_texts <- list()
     pkg_env$moment <- pkg_env$moment + 1
 
     if (pkg_env$beepers_any == 0) {
-      # There are no beepers in the world now, create again the beepers_now dataset
-      pkg_env$beepers_now <- tibble(x = pkg_env$x_now,
-                                    y = pkg_env$y_now,
-                                    cell = pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx,
-                                    n = 1,
-                                    moment = pkg_env$moment)
+      # There are no beepers in the world now, create again the beepers_now
+      # dataset
+      pkg_env$beepers_now <- tibble(
+        x = pkg_env$x_now,
+        y = pkg_env$y_now,
+        cell = pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx,
+        n = 1,
+        moment = pkg_env$moment
+      )
     } else {
       pkg_env$beepers_now$moment <- pkg_env$moment
       # There are beepers, but I have to see if there are already here or not
@@ -147,10 +151,12 @@ message_texts <- list()
         pkg_env$beepers_now$n[idx] <- pkg_env$beepers_now$n[idx] + 1
       } else {
         # If there arent any, add new row with one beeper to beepers dataset
-        pkg_env$beepers_now <- add_row(pkg_env$beepers_now,
-                                       x = pkg_env$x_now, y = pkg_env$y_now,
-                                       cell = pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx,
-                                       n = 1, moment = pkg_env$moment)
+        pkg_env$beepers_now <- add_row(
+          pkg_env$beepers_now,
+          x = pkg_env$x_now, y = pkg_env$y_now,
+          cell = pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx,
+          n = 1, moment = pkg_env$moment
+        )
       }
     }
     pkg_env$beepers_any <- pkg_env$beepers_any + 1
@@ -200,7 +206,8 @@ message_texts <- list()
     # Remove beeper
     pkg_env$beepers_now$n[idx] <- pkg_env$beepers_now$n[idx] - 1
 
-    # Remove row from beepers dataset it there are no beepers left, so the box disappears
+    # Remove row from beepers dataset it there are no beepers left, so the box
+    # disappears
     if (pkg_env$beepers_now$n[idx] == 0) {
       pkg_env$beepers_now <- dplyr::slice(pkg_env$beepers_now, -idx)
       if (nrow(pkg_env$beepers_now) == 0) {

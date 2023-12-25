@@ -54,7 +54,8 @@ global_env_set_hack <- function(key, val, pos) {
   pkg_env$karel <- add_row(pkg_env$karel, x = pkg_env$x_now, y = pkg_env$y_now,
                            direction = pkg_env$dir_now, moment = pkg_env$moment)
 
-  # Update beepers dataset, they remain the same but need to reflect this new moment
+  # Update beepers dataset, they remain the same but need to reflect this new
+  # moment
   pkg_env$beepers_now$moment <- pkg_env$beepers_now$moment + 1
   pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
 }
@@ -82,7 +83,8 @@ global_env_set_hack <- function(key, val, pos) {
   pkg_env$karel <- add_row(pkg_env$karel, x = pkg_env$x_now, y = pkg_env$y_now,
                            direction = pkg_env$dir_now, moment = pkg_env$moment)
 
-  # Update beepers dataset, they remain the same but need to reflect this new moment
+  # Update beepers dataset, they remain the same but need to reflect this new
+  # moment
   pkg_env$beepers_now$moment <- pkg_env$beepers_now$moment + 1
   pkg_env$beepers_all <- bind_rows(pkg_env$beepers_all, pkg_env$beepers_now)
 }

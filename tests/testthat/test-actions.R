@@ -74,7 +74,8 @@ test_that("Karel handles correctly putting and picking beepers", {
                      hor_walls = dplyr::tibble(x = 3, y = 1, lgth = 3),
                      ver_walls = dplyr::tibble(x = 3, y = 0, lgth = 1),
                      karel_x = 1, karel_y = 1, karel_dir = 1,
-                     beepers_x = 2, beepers_y = 1, beepers_n = 1, beepers_bag = 0)
+                     beepers_x = 2, beepers_y = 1, beepers_n = 1,
+                     beepers_bag = 0)
   generar_mundo(world_test)
   expect_error(put_beeper())
 })
