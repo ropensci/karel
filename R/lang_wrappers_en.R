@@ -346,6 +346,11 @@ turn_around <- function() .turn_around(lang = "en")
 #'     used later to produce the animation. This plot is created by the internal
 #'     function \code{\link{plot_base_world}}.
 #'   }
+#'
+#'   @examples
+#'   generate_world("mundo001")
+#'   pkg_env <- get_pkg_env()
+#'
 get_pkg_env <- function() .get_pkg_env()
 
 # ------------------------------------------------------------------------------
