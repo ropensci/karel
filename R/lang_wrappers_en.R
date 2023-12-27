@@ -349,7 +349,7 @@ turn_around <- function() .turn_around(lang = "en")
 #'
 #' @examples
 #' generate_world("mundo001")
-#' get_pkg_env()
+#' if (FALSE) karel::get_pkg_env()
 #'
 get_pkg_env <- function() .get_pkg_env()
 

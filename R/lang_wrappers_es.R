@@ -359,7 +359,7 @@ darse_vuelta <- function() .turn_around(lang = "es")
 #'
 #' @examples
 #' generar_mundo("mundo001")
-#' conseguir_amb()
+#' if (FALSE) karel::conseguir_amb()
 #'
 conseguir_amb <- function() .get_pkg_env()
 

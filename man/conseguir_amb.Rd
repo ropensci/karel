@@ -84,6 +84,6 @@ estudiantes, pero se puede usar con karel::conseguir_amb().
 }
 \examples{
 generar_mundo("mundo001")
-conseguir_amb()
+if (FALSE) karel::conseguir_amb()
 
 }
