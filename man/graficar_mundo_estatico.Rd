@@ -21,3 +21,7 @@ usarse al crear ejemplos y ejercicios en los materiales de estudio para los
 estudiantes. Es una función interna, no está pensada para ser usada por
 estudiantes, pero se puede usar con karel::graficar_mundo_estatico().
 }
+\examples{
+if (FALSE) graficar_mundo_estatico(1)
+
+}

@@ -7,10 +7,14 @@
 cargar_super_karel()
 }
 \value{
-No devuelve ningún valor, pero adjuntan al Global Environment las funciones \code{girar_derecha()} y \code{darse_vuelta()}.
+No devuelve ningún valor, pero adjuntan al Global Environment las
+  funciones \code{girar_derecha()} y \code{darse_vuelta()}.
 }
 \description{
-Luego de correr \code{cargar_super_karel()}, Karel también puede girar a la derecha y darse vuelta, a través de las acciones \code{girar_derecha()} y \code{darse_vuelta()}. Si no se cargan los superpoderes, estas dos funciones no están disponibles.
+Luego de correr \code{cargar_super_karel()}, Karel también puede girar a la
+derecha y darse vuelta, a través de las acciones \code{girar_derecha()} y
+\code{darse_vuelta()}. Si no se cargan los superpoderes, estas dos funciones
+no están disponibles.
 }
 \examples{
 generar_mundo("mundo001")
@@ -21,5 +25,6 @@ ejecutar_acciones()
 
 }
 \seealso{
-\code{\link{acciones}} \code{\link{generar_mundo}} \code{\link{ejecutar_acciones}}
+\code{\link{acciones}} \code{\link{generar_mundo}}
+  \code{\link{ejecutar_acciones}}
 }

@@ -82,3 +82,8 @@ estudiantes, pero se puede usar con karel::conseguir_amb().
     función interna \code{\link{plot_base_world}}.
   }
 }
+\examples{
+generar_mundo("mundo001")
+conseguir_amb()
+
+}

@@ -79,3 +79,8 @@ thought to be used by students, but can be used with karel::get_pkg_env().
     function \code{\link{plot_base_world}}.
   }
 }
+\examples{
+generate_world("mundo001")
+get_pkg_env()
+
+}

@@ -356,6 +356,11 @@ darse_vuelta <- function() .turn_around(lang = "es")
 #'     más tarde para producir la animación. Este gráfico es creado por la
 #'     función interna \code{\link{plot_base_world}}.
 #'   }
+#'
+#' @examples
+#' generar_mundo("mundo001")
+#' conseguir_amb()
+#'
 conseguir_amb <- function() .get_pkg_env()
 
 # ------------------------------------------------------------------------------
@@ -373,6 +378,9 @@ conseguir_amb <- function() .get_pkg_env()
 #' @param momento El momento que se desea graficar.
 #'
 #' @return Imprime el gráfico.
+#'
+#' @examples
+#' if (FALSE) graficar_mundo_estatico(1)
 #'
 graficar_mundo_estatico <- function(momento) {
   .plot_static_world(time = momento, lang = "es")

@@ -347,9 +347,9 @@ turn_around <- function() .turn_around(lang = "en")
 #'     function \code{\link{plot_base_world}}.
 #'   }
 #'
-#'   @examples
-#'   generate_world("mundo001")
-#'   pkg_env <- get_pkg_env()
+#' @examples
+#' generate_world("mundo001")
+#' get_pkg_env()
 #'
 get_pkg_env <- function() .get_pkg_env()
 
@@ -367,5 +367,8 @@ get_pkg_env <- function() .get_pkg_env()
 #' @param time The requested time
 #'
 #' @return Prints the plot.
+#'
+#' @examples
+#' if (FALSE) plot_static_world(1)
 #'
 plot_static_world <- function(time) .plot_static_world(time = time, lang = "en")

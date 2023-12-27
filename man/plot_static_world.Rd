@@ -20,3 +20,7 @@ debugging and to get static images to be used in the examples in the handouts
 for students. It's an internal function, not thought to be used by students,
 but can be used with karel::plot_static_world().
 }
+\examples{
+if (FALSE) plot_static_world(1)
+
+}
