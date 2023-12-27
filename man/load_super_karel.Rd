@@ -21,7 +21,7 @@ generate_world("mundo001")
 load_super_karel()
 turn_around()
 turn_right()
-run_actions()
+if (FALSE) run_actions()
 
 }
 \seealso{

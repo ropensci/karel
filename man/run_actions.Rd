@@ -23,7 +23,7 @@ move()
 pick_beeper()
 turn_left()
 put_beeper()
-run_actions()
+if (FALSE) run_actions()
 
 }
 \seealso{

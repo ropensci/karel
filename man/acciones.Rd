@@ -34,7 +34,7 @@ avanzar()
 juntar_coso()
 girar_izquierda()
 poner_coso()
-ejecutar_acciones()
+if (FALSE) ejecutar_acciones()
 
 }
 \seealso{

@@ -21,7 +21,7 @@ generar_mundo("mundo001")
 cargar_super_karel()
 darse_vuelta()
 girar_derecha()
-ejecutar_acciones()
+if (FALSE) ejecutar_acciones()
 
 }
 \seealso{
