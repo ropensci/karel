@@ -12,6 +12,8 @@ status](https://www.r-pkg.org/badges/version/karel)](https://CRAN.R-project.org/
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![pkgcheck](https://github.com/mpru/karel/workflows/pkgcheck/badge.svg)](https://github.com/mpru/karel/actions?query=workflow%3Apkgcheck)
+[![R-CMD-check](https://github.com/mpru/karel/workflows/R-CMD-check/badge.svg)](https://github.com/mpru/karel/actions)
 
 <!-- badges: end -->
 
