@@ -92,7 +92,7 @@ generar_mundo <- function(mundo) .generate_world(mundo, lang = "es")
 #' juntar_coso()
 #' girar_izquierda()
 #' poner_coso()
-#' ejecutar_acciones()
+#' if (FALSE) ejecutar_acciones()
 #'
 #' @seealso \code{\link{generar_mundo}}
 #'
@@ -122,7 +122,7 @@ ejecutar_acciones <- function(repetir = TRUE) {
 #' juntar_coso()
 #' girar_izquierda()
 #' poner_coso()
-#' ejecutar_acciones()
+#' if (FALSE) ejecutar_acciones()
 #'
 #' @seealso \code{\link{cargar_super_karel}} \code{\link{generar_mundo}}
 #'   \code{\link{ejecutar_acciones}}
@@ -264,7 +264,7 @@ mira_al_sur <- function() .facing_south()
 #' cargar_super_karel()
 #' darse_vuelta()
 #' girar_derecha()
-#' ejecutar_acciones()
+#' if (FALSE) ejecutar_acciones()
 #'
 #' @seealso \code{\link{acciones}} \code{\link{generar_mundo}}
 #'   \code{\link{ejecutar_acciones}}

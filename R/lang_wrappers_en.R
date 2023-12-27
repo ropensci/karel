@@ -88,7 +88,7 @@ generate_world <- function(world) .generate_world(world, lang = "en")
 #' pick_beeper()
 #' turn_left()
 #' put_beeper()
-#' run_actions()
+#' if (FALSE) run_actions()
 #'
 #' @seealso \code{\link{generate_world}}
 #'
@@ -115,7 +115,7 @@ run_actions <- function(loop = TRUE) .run_actions(loop = loop, lang = "en")
 #' pick_beeper()
 #' turn_left()
 #' put_beeper()
-#' run_actions()
+#' if (FALSE) run_actions()
 #'
 #' @seealso \code{\link{load_super_karel}} \code{\link{generate_world}}
 #'   \code{\link{run_actions}}
@@ -257,7 +257,7 @@ facing_south <- function() .facing_south()
 #' load_super_karel()
 #' turn_around()
 #' turn_right()
-#' run_actions()
+#' if (FALSE) run_actions()
 #'
 #' @seealso \code{\link{actions}} \code{\link{generate_world}}
 #'   \code{\link{run_actions}}
