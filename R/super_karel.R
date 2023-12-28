@@ -7,6 +7,7 @@
 #' wrappers.
 #'
 #' @keywords internal
+#' @noRd
 #'
 .load_super_karel <- function() {
   # These do what I want but they get me the note about making assignments to
@@ -27,6 +28,7 @@
 #' @param val the object
 #' @param pos the index for the environment
 #' @keywords internal
+#' @noRd
 global_env_set_hack <- function(key, val, pos) {
   assign(key, val, envir = as.environment(pos))
 }
@@ -34,6 +36,7 @@ global_env_set_hack <- function(key, val, pos) {
 #' Implementation of the action of turning right
 #'
 #' @keywords internal
+#' @noRd
 #'
 .turn_right <- function(lang) {
 
@@ -63,6 +66,7 @@ global_env_set_hack <- function(key, val, pos) {
 #' Implementation of the action of turning around
 #'
 #' @keywords internal
+#' @noRd
 #'
 .turn_around <- function(lang) {
 

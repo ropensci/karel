@@ -6,6 +6,7 @@ message_texts <- list()
 #' Implementation of the action of moving forward
 #'
 #' @keywords internal
+#' @noRd
 #'
 .move <- function(lang) {
   # Proceed if there was no mistake
@@ -79,6 +80,7 @@ message_texts <- list()
 #' Implementation of the action of turning left
 #'
 #' @keywords internal
+#' @noRd
 #'
 .turn_left <- function(lang) {
   # Proceed if there was no mistake
@@ -106,6 +108,7 @@ message_texts <- list()
 #' Implementation of the action of putting a beeper
 #'
 #' @keywords internal
+#' @noRd
 #'
 .put_beeper <- function(lang) {
 
@@ -177,6 +180,7 @@ message_texts <- list()
 #' Implementation of the action of picking a beeper
 #'
 #' @keywords internal
+#' @noRd
 #'
 .pick_beeper <- function(lang) {
 

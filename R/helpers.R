@@ -95,6 +95,7 @@
 #' @return Prints the plot.
 #'
 #' @keywords internal
+#'
 .plot_static_world <- function(time, lang) {
 
   if (time < 1) {
@@ -261,6 +262,7 @@ draw_karel_df <- function(x, y, direction, moment) {
 #'
 #' @return row number or numeric of length 0
 #' @keywords internal
+#'
 get_beepers_df_row <- function() {
   cell <- pkg_env$x_now + pkg_env$nx * pkg_env$y_now - pkg_env$nx
   cell_present <- which(pkg_env$beepers_now$cell == cell)
