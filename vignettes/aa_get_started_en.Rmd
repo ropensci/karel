@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 
 ## Who is Karel?
 
-`karel` is a new R package created with the purpose of providing an environment that enables the teaching of programming principles in a dynamic and interactive way, for students with no previous experience who are studying at the secondary level or in the early years of their undergraduate education. *Karel* is a robot that lives and walks in certain *worlds*, in which it can perform certain actions if we ask it to, while we learn to program in R.
+`karel` is an R package created with the purpose of providing an environment that enables the teaching of programming principles in a dynamic and interactive way, for students with no previous experience who are studying at the secondary level or in the early years of their undergraduate education. *Karel* is a robot that lives and walks in certain *worlds*, in which it can perform certain actions if we ask it to, while we learn to program in R.
 
 The robot Karel assists in the teaching of fundamental programming concepts, such as the processor (Karel), environment (its world), objects (called *beepers*), and actions (the activities it can perform). In addition, as can be seen in the examples of the tutorials presented on this page, along with Karel, it is possible to instruct on the concept of algorithmic decomposition: on numerous occasions, the robot must fulfill objectives whose resolution requires breaking down the problem into smaller parts, for each of which students must program a function in R. It also facilitates the exemplification of the use of sequential code control structures, conditionals (`if () {} else {}`), and iterative structures (`for () {}`, `while () {}`).
 
