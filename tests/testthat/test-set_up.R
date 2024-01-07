@@ -1,5 +1,3 @@
-library(karel)
-
 test_that("Checking provided nx and ny.", {
   # Create one world
   world_test <- list(nx = 6, ny = 4,

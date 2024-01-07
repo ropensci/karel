@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 
 ## ¿Quién es Karel?
 
-`karel` es paquete de R creado
+`karel` es un paquete de R creado
 con el propósito de brindar un entorno que posibilite la enseñanza de
 principios de la programación en una forma dinámica e interactiva, para
 estudiantes sin experiencia previa que estén cursando el nivel

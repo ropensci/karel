@@ -1,5 +1,3 @@
-library(karel)
-
 test_that("Super Karel's actions perform as expected", {
   generar_mundo("mundo001")
   karel_env <- get_pkg_env()

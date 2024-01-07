@@ -1,5 +1,3 @@
-library(karel)
-
 test_that("Checking conditions work fine, with Spanish functions", {
   generar_mundo("mundo001")
   expect_true(frente_abierto())
