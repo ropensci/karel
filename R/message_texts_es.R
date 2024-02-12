@@ -20,7 +20,7 @@ message_texts[["es"]] <- list(
   check_user_world_wrong_nx = "nx, el n\u00famero de avenidas, debe ser num\u00e9rico de largo 1.",
   check_user_world_wrong_ny = "ny, el n\u00famero de calles, debe ser num\u00e9rico de largo 1.",
   check_user_world_wrong_karel_x = "karel_x, la coordenada en el eje x para la posici\u00f3n inicial de Karel, debe ser num\u00e9rico de largo 1 y estar entre 1 y nx.",
-  check_user_world_wrong_karel_x = "karel_y, la coordenada en el eje y para la posici\u00f3n inicial de Karel, debe ser num\u00e9rico de largo 1 y estar entre 1 y ny.",
+  check_user_world_wrong_karel_y = "karel_y, la coordenada en el eje y para la posici\u00f3n inicial de Karel, debe ser num\u00e9rico de largo 1 y estar entre 1 y ny.",
   check_user_world_wrong_karel_dir = "karel_dir, la direcci\u00f3n inicial de Karel, debe ser num\u00e9rico de largo 1, puede ser 1, 2, 3 o 4.",
   check_user_world_wrong_beepers_bag = "beepers_bag, el numero de cosos en la mochila de Karel, debe ser num\u00e9rico de largo 1 y mayor o igual a 0, incluyendo Inf.",
   check_user_world_wrong_beepers_xyn = "beepers_x, beepers_y y beepers_n deben ser todos NULL o vectores num\u00e9ricos del mismo largo; beepers_x y beepers_y deben estar entre 1 y nx o ny, respectivamente; y beepers_n debe ser mayor o igual a 1.",

@@ -20,7 +20,7 @@ message_texts[["en"]] <- list(
   check_user_world_wrong_nx = "nx, the number of avenues, must be numeric of length 1.",
   check_user_world_wrong_ny = "ny, the number of streets, must be numeric of length 1.",
   check_user_world_wrong_karel_x = "\nkarel_x, the x-coordinate for Karel's initial position, must be numeric of length 1, and between 1 and nx.",
-  check_user_world_wrong_karel_x = "karel_y, the y-coordinate for Karel's initial position, must be numeric of length 1, and between 1 and ny.",
+  check_user_world_wrong_karel_y = "karel_y, the y-coordinate for Karel's initial position, must be numeric of length 1, and between 1 and ny.",
   check_user_world_wrong_karel_dir = "karel_dir, Karel's initial direction, must be numeric of length 1, either 1, 2, 3 or 4.",
   check_user_world_wrong_beepers_bag = "beepers_bag, the number of beepers in Karel's bag, must be numeric of length 1, greater or equal than zero, including Inf.",
   check_user_world_wrong_beepers_xyn = "beepers_x, beepers_y and beepers_n must be all NULL or numeric vectors of the same length; beepers_x and beepers_y must be between 1 and nx or ny, respectively; and beepers_n must be greater or equal than 1.",
