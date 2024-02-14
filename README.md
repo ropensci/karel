@@ -14,6 +14,8 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![pkgcheck](https://github.com/mpru/karel/workflows/pkgcheck/badge.svg)](https://github.com/mpru/karel/actions?query=workflow%3Apkgcheck)
 [![R-CMD-check](https://github.com/mpru/karel/workflows/R-CMD-check/badge.svg)](https://github.com/mpru/karel/actions)
+[![Status at rOpenSci Software Peer
+Review](https://badges.ropensci.org/620_status.svg)](https://github.com/ropensci/software-review/issues/620)
 
 <!-- badges: end -->
 
