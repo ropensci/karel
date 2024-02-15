@@ -1,6 +1,6 @@
 Package: karel
 Title: Learning programming with Karel the robot
-Version: 0.1.1.9000
+Version: 0.1.1.9001
 Authors@R: 
     person(given = "Marcos",
            family = "Prunello",
@@ -34,7 +34,8 @@ RoxygenNote: 7.2.3
 Suggests: 
     testthat (>= 3.0.0),
     knitr,
-    rmarkdown
+    rmarkdown,
+    vdiffr
 VignetteBuilder: knitr
 URL: https://mpru.github.io/karel/
 BugReports: https://github.com/mpru/karel/issues/

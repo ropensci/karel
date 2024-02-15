@@ -5,6 +5,8 @@ karel 0.1.1.9001 (2024-02-14)
 
 * Unit tests were rewritten to make them more specific so that it's easier to detect the problem when a test fails. Large tests with lots of expectations were replaced by more but smaller ones.
 
+* Unit tests based on the vdiffr package were added to test for interactivity with snapshots.
+
 ### MINOR FIXES
 
 * Fixed sentence in the *Getting started* vignettes.

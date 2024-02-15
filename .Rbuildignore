@@ -13,3 +13,5 @@ LICENSE
 ^pkgdown$
 ^\.github$
 ^codemeta\.json$
+tests/testthat/_snaps.*
+^tests/testthat/Rplots.pdf$
