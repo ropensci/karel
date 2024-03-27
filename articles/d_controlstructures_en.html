@@ -153,12 +153,12 @@ and can be <strong>simple</strong>, <strong>double</strong>, or
 <strong>Simple Conditional Structures</strong><a class="anchor" aria-label="anchor" href="#simple-conditional-structures"></a>
 </h3>
 <p>They involve a logical evaluation, and if the result is
-<strong><code>TRUE</code></strong>, the actions enclosed by this
-structure are executed. They are expressed in R with the following
-syntax:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condition) {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    ...code to execute actions...</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<strong><code>TRUE</code></strong>, the actions delimited between the
+braces that define the body of this structure are executed. They are
+expressed in R with the following syntax:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="cf">if</span> (condition) {</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>    ...code to execute actions...</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>}</span></code></pre></div>
 <p>The word <strong><code>if</code></strong> indicates the logical
 evaluation command, <strong><code>condition</code></strong> indicates
 the evaluation to be performed, and the instructions to be executed only
@@ -273,11 +273,11 @@ programs is essential.</p>
 <p>This type of conditional structure adds an action to be executed in
 case the evaluated condition is not met (i.e., it returns
 <strong><code>FALSE</code></strong>). The syntax is:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condition) {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    ...code to execute actions...</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    ...code to execute actions...</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="cf">if</span> (condition) {</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>    ...code to execute actions...</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    ...code to execute actions...</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>}</span></code></pre></div>
 <p>The first set of curly braces contains the actions to be performed if
 the condition is met, while the second set, following the
 <strong><code>else</code></strong> statement, includes the actions to be
@@ -343,13 +343,13 @@ code file would look like this:</p>
 establish more complex controls over the flow of actions, representing
 multiple decision-making points. We can illustrate the syntax as
 follows:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condition <span class="dv">1</span>) {</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    ...First set of actions...</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (condition <span class="dv">2</span>) {</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    ...Second set of actions...</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    ...Third set of actions...</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="cf">if</span> (condition <span class="dv">1</span>) {</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>    ...First set of actions...</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (condition <span class="dv">2</span>) {</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>    ...Second set of actions...</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>    ...Third set of actions...</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>}</span></code></pre></div>
 <p>In the above structure, there is an initial logical evaluation in
 which, if the result is <strong><code>TRUE</code></strong>, the first
 set of actions is executed exclusively. Otherwise, if the result is
@@ -413,14 +413,14 @@ times. Therefore, we can use an iterative structure:</p>
 <span>  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span><span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p>The variable <strong><code>i</code></strong> is called the iteration
-variable. We could have chosen another letter or word instead, but using
-<strong><code>i</code></strong> is quite common. In this example, its
-sole purpose is to guide the series of steps. The block of instructions
-is repeated as many times as it takes for
-<strong><code>i</code></strong> to reach 5 starting from 1. In general,
-the syntax for this type of structure is:</p>
-<pre class="text"><code>for (&lt;variable&gt; in &lt;value1&gt;:&lt;value2&gt;) {
+<p>The letter <code>i</code> is used to represent the number of
+repetitions. In this example, its sole purpose is to guide the series of
+steps. The block of instructions is repeated as many times as it takes
+for <code>i</code> to reach 5 starting from 1 (this is defined using the
+<code>1:5</code> expression). We could have chosen another letter or
+another word instead, but using <code>i</code> is quite common. In
+general, the syntax for this type of structure is:</p>
+<pre class="text"><code>for (i in &lt;initial_value&gt;:&lt;final_value&gt;) {
     ...Actions...
 }</code></pre>
 <p><img src="22.gif" width="60%" style="display: block; margin: auto;"></p>
@@ -438,9 +438,9 @@ structure, the set of instructions is repeated as long as a condition
 declared at the beginning of the block continues to evaluate as
 <strong><code>TRUE</code></strong>. When the condition is no longer met,
 the process stops. The syntax is:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (<span class="sc">&lt;</span>condition<span class="sc">&gt;</span>) {</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    ...Actions to repeat...</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="cf">while</span> (<span class="sc">&lt;</span>condition<span class="sc">&gt;</span>) {</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>    ...Actions to repeat...</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>}</span></code></pre></div>
 <p>Observations:</p>
 <ul>
 <li><p>The evaluation of the condition takes place before each

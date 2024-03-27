@@ -138,7 +138,7 @@ accomplished by following different paths, and the programmer is the one
 who must imagine what those paths are and choose one. Some paths may be
 better than others, but in any case, the computer will simply follow the
 instructions devised by the programmer.</p>
-<p>Unfortunately, computers don’t understand Spanish or any other human
+<p>Unfortunately, computers don’t understand English or any other human
 language. We have to give them instructions in a language they can
 understand. For that, we need to learn a <em>programming language</em>,
 which is simply an artificial language composed of a series of
@@ -146,19 +146,21 @@ expressions that the computer can interpret. Computers interpret our
 instructions very literally, so when programming, we need to be very
 specific. We must follow the rules of the programming language and be
 clear in the instructions provided.</p>
-<p>Now, why should we study programming if we are dedicated to
-Statistics? The activity of statistical professionals is entirely
-intertwined with the need to master computer tools that assist us in
-various stages of our work, from data collection and cleaning, to the
-application of different analysis methodologies, to the effective
-communication of results. That’s why in this tutorial, we will study the
-basic concepts of this discipline, fostering the exercise of abstract
-and logical thinking necessary to effectively communicate with the
-computer and make it perform the tasks we need. The programming language
-used in this tutorial is R, widely used in the field of data science.
-However, we must emphasize that <strong>this is not an R
-tutorial</strong>, meaning we will not focus on learning the tools that
-this language provides for data analysis.</p>
+<p>Now, why should we learn to program when we want to analyze data,
+generate statistics, graphs and conclusions? The activity of statistical
+professionals, data science professionals, or anyone who requires data
+analysis is enhanced with the use of computer tools and programming
+capabilities that assist us in the different stages of our work, from
+the collection and purification of data sets, through the application of
+different analysis methodologies, to the effective communication of the
+results. That’s why in this tutorial, we will study basic concepts of
+programming, fostering the exercise of abstract and logical thinking
+necessary to effectively communicate with the computer and make it
+perform the tasks we need. The programming language used in this
+tutorial is R, widely used in the field of data science. However, we
+must emphasize that <strong>this is not an R tutorial</strong>, meaning
+we will not focus on learning the tools that this language provides for
+data analysis.</p>
 <p>To incorporate some basic programming notions, we will make use of
 the help of <strong>Karel</strong>, a robot that lives and walks in
 rectangular <strong>worlds</strong>. We will ask Karel to perform
@@ -241,17 +243,21 @@ which, as mentioned before, is an artificial language designed to
 express computations that can be carried out by electronic devices; in
 other words, it is a means of communication between humans and
 machines.</p>
-<p>Each of the actions that make up the algorithm is encoded with one or
-more <em>instructions</em>, expressed in the chosen programming
-language, and the collection of all these instructions constitutes a
-<em>program</em>. The program is saved in a <em>file</em> with a name
-generally divided into two parts by a dot, for example:
-<strong><code>my_first_program.R</code></strong>. The first part is the
-<em>root</em> of the name, which can describe the content of the file.
-The second part indicates the use of the file, for example,
-<strong><code>.R</code></strong> indicates that it contains a program
-written in the R language. The general process of entering or modifying
-the content of a file is called <em>editing</em>.</p>
+<p>There are two types of errors: <strong>logical</strong> and
+<strong>syntactic</strong>. The latter have to do with when instructions
+or variable names are not written correctly and the program cannot
+“interpret” them. Logic errors are generated with instructions that the
+program can interpret, but that do things that we do not want.</p>
+<p>Each of the actions that make up the algorithm are encoded with one
+or several <em>instructions</em>, expressed in the chosen programming
+language, and the set of all of them constitutes a <em>program</em>. The
+program encoding is saved in a plain text file with an identifier
+usually divided into two parts by a dot, for example:
+<code>my_first_program.R</code>. The first part is the file name. The
+second part is indicative of the language that can interpret the
+instructions, for example, <code>.R</code> indicates that it contains a
+program written in the R language. The general process of writing or
+modifying the instructions in a file is called <em>editing</em>.</p>
 </div>
 </div>
 <div class="section level3">
@@ -279,14 +285,15 @@ was already in use before that.</p>
 <h3 id="processor-environment-and-actions">
 <strong>Processor, Environment, and Actions</strong><a class="anchor" aria-label="anchor" href="#processor-environment-and-actions"></a>
 </h3>
-<p>We have defined an algorithm as a list of instructions for solving a
-problem. In this context, the term <em>processor</em> refers to any
-agent capable of understanding the steps of an algorithm and carrying
-out the work indicated by it. To achieve this goal, the processor uses
-certain resources available to it. All the elements available to be used
-by the processor constitute its <em>environment</em>. Each of the
-instructions that make up the algorithm modifies the environment in some
-way and is called an <em>action</em>.</p>
+<p>We have defined an algorithm as a list of instructions to solve a
+problem. In this context, <em>processor</em> is understood as any agent
+capable of understanding the steps of an algorithm and executing the
+work indicated by it. To achieve the objective, the processor uses
+certain resources that it has at its disposal. All the elements
+available to be used by the programmer constitute the
+<em>environment</em> or <em>working environment</em>. Each of the
+instructions that make up the algorithm modify the environment in some
+way and are called <em>actions</em>.</p>
 </div>
 <div class="section level3">
 <h3 id="r-and-rstudio">
@@ -328,26 +335,26 @@ Captura de pantalla de RStudio
 <p>On the left:</p>
 <ul>
 <li><p>At the top is the <strong>file editor</strong>. This is where we
-will write and edit our programs, and then save them (similar to a
-simple <em>Notepad</em> or <em>Word</em> document). The first time you
+will write and edit our programs, and then save them. The first time you
 open RStudio after installation, this panel may not be present, but it
 appears if you go to
 <strong><code>File &gt; New File &gt; R Script</code></strong>, use the
 shortcut <strong><code>Ctrl + Shift + N</code></strong>, or click on the
 first icon in the toolbar. You can open multiple files at once.</p></li>
-<li><p>Below is the <strong>console</strong>. It is the window that
-communicates with R. Through the console, we send <em>instructions</em>
-to R for evaluation (also known as running or executing them), and the
-results are displayed there.</p></li>
+<li><p>Below is the <strong>console</strong>. The console is the
+interactive environment between R and the user. Through the console, we
+send <em>instructions</em> to R for evaluation (also known as running or
+executing them), and the results are displayed there.</p></li>
 </ul>
 </li>
 <li>
 <p>In the top-right corner, there is a panel with several tabs:</p>
 <ul>
-<li><p><strong>Environment</strong>: displays all the elements that make
-up the environment.</p></li>
-<li><p><strong>History</strong>: lists all the instructions that R has
-previously run.</p></li>
+<li><p><strong>Environment</strong> (<em>environment</em>): shows the
+elements created in the current work session, which make up the
+environment.</p></li>
+<li><p><strong>History</strong>: lists all the instructions that the
+user has executed.</p></li>
 <li><p><em>Other tabs that are not relevant for now</em>.</p></li>
 </ul>
 </li>
@@ -358,8 +365,8 @@ additional tabs:</p>
 <li><p><strong>Files</strong>: file explorer for your computer.</p></li>
 <li><p><strong>Plots</strong>: window where graphics appear if your code
 produces any.</p></li>
-<li><p><strong>Packages</strong>: list of installed “packages” (more on
-this later).</p></li>
+<li><p><strong>Packages</strong>: tool for installing, updating and
+loading R packages (later we will talk about “packages” again).</p></li>
 <li><p><strong>Help</strong>: help manual covering all the functions of
 R.</p></li>
 <li><p><strong>Viewer</strong>: space to view program outputs with
@@ -380,19 +387,19 @@ as division, multiplication, addition, subtraction, exponentiation,
 logarithms, square roots, and more:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">1</span> <span class="op">+</span> <span class="fl">2</span></span>
-<span><span class="co">#&gt; [1] 3</span></span>
+<span><span class="co">## [1] 3</span></span>
 <span><span class="fl">5</span> <span class="op">*</span> <span class="fl">3</span></span>
-<span><span class="co">#&gt; [1] 15</span></span>
+<span><span class="co">## [1] 15</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 7.389056</span></span>
+<span><span class="co">## [1] 7.389056</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">sqrt</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 10</span></span>
+<span><span class="co">## [1] 10</span></span>
 <span><span class="fl">1</span> <span class="op">/</span> <span class="fl">0</span></span>
-<span><span class="co">#&gt; [1] Inf</span></span>
+<span><span class="co">## [1] Inf</span></span>
 <span><span class="op">(</span><span class="fl">2</span> <span class="op">+</span> <span class="fl">3i</span><span class="op">)</span> <span class="op">*</span> <span class="op">(</span><span class="fl">3</span> <span class="op">+</span> <span class="fl">6i</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] -12+21i</span></span>
+<span><span class="co">## [1] -12+21i</span></span>
 <span><span class="fl">1i</span> <span class="op">^</span> <span class="fl">2</span></span>
-<span><span class="co">#&gt; [1] -1+0i</span></span></code></pre></div>
+<span><span class="co">## [1] -1+0i</span></span></code></pre></div>
 <p>While we can write our instructions in the console and press
 <strong><code>Enter</code></strong> to execute them, generally, we want
 to write and save them in a code file. That’s why we will write our
@@ -414,10 +421,10 @@ with <strong><code>#</code></strong>, R will ignore them and skip them.
 For example:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">5</span><span class="op">^</span><span class="fl">1</span></span>
-<span><span class="co">#&gt; [1] 5</span></span>
-<span><span class="co"># 5^2</span></span>
+<span><span class="co">## [1] 5</span></span>
+<span><span class="co"># 5^2   this is not evaluated</span></span>
 <span><span class="fl">5</span><span class="op">^</span><span class="fl">3</span></span>
-<span><span class="co">#&gt; [1] 125</span></span></code></pre></div>
+<span><span class="co">## [1] 125</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="r-system-design">

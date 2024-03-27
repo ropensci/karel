@@ -154,21 +154,23 @@ computadoras interpretan nuestras instrucciones de forma muy literal,
 por lo tanto a la hora de programar hay que ser muy específicos. Es
 necesario respetar las reglas del lenguaje de programación y ser claros
 en las indicaciones provistas.</p>
-<p>Ahora bien, ¿por qué debemos estudiar programación en si nos
-dedicamos a la Estadística? La actividad de los profesionales
-estadísticos está atravesada en su totalidad por la necesidad de manejar
-con soltura herramientas informáticas que nos asisten en las distintas
-etapas de nuestra labor, desde la recolección y depuración de conjuntos
-de datos, pasando por la aplicación de distintas metodologías de
-análisis, hasta la comunicación efectiva de los resultados. Por eso, en
-este tutorial estudiaremos los conceptos básicos de esta disciplina,
-fomentando la ejercitación del pensamiento abstracto y lógico necesario
-para poder entendernos hábilmente con la computadora y lograr que la
-misma realice las tareas que necesitamos. El lengua de programación en
-el que se basa este tutorial es R, ampliamente empleado en el ámbito de
-la ciencia de datos. Sin embargo, debemos resaltar que <strong>éste no
-es un tutorial sobre R</strong>, es decir, no nos dedicaremos a aprender
-las herramientas que este lenguaje brinda para el análisis de datos.</p>
+<p>Ahora bien, ¿por qué debemos aprender a programar cuando queremos
+analizar datos, generar estadísticas, gráficas y conclusiones? La
+actividad de los profesionales estadísticos, de ciencia de Datos, o
+cualquier persona que requiera hacer análisis de datos se potencia con
+el manejo de herramientas informáticas y capacidades de programación que
+nos asisten en las distintas etapas de nuestra labor, desde la
+recolección y depuración de conjuntos de datos, pasando por la
+aplicación de distintas metodologías de análisis, hasta la comunicación
+efectiva de los resultados. Por eso, en este tutorial estudiaremos
+conceptos básicos de programación, fomentando la ejercitación del
+pensamiento abstracto y lógico necesario para poder entendernos
+hábilmente con la computadora y lograr que la misma realice las tareas
+que necesitamos. El lenguaje de programación en el que se basa este
+tutorial es R, ampliamente empleado en el ámbito de la ciencia de datos.
+Sin embargo, debemos resaltar que <strong>éste no es un tutorial sobre
+R</strong>, es decir, no nos dedicaremos a aprender las herramientas que
+este lenguaje brinda para el análisis de datos.</p>
 <p>Para incorporar algunas nociones básicas de programación vamos a
 valernos de la ayuda de <strong>Karel</strong>, una robot que vive y
 camina por <strong>mundos</strong> rectangulares. Vamos a pedirle a
@@ -192,7 +194,7 @@ R. Nuestro paquete es la primera implementación, ¡ayudanos a mejorarlo
 avisándonos cualquier cosa que notes que necesite revisión!</p>
 <p>Pero antes de meternos de lleno a jugar con Karel, vamos a repasar
 algunos conceptos relativos a la Programación que viene bien tener
-presentea.</p>
+presente.</p>
 <div class="section level3">
 <h3 id="problemas-algoritmos-y-lenguajes-de-programación">Problemas, algoritmos y lenguajes de programación<a class="anchor" aria-label="anchor" href="#problemas-algoritmos-y-lenguajes-de-programaci%C3%B3n"></a>
 </h3>
@@ -263,14 +265,14 @@ entre el humano y la máquina.</p>
 <p>Cada una de las acciones que componen al algoritmo son codificadas
 con una o varias <em>instrucciones</em>, expresadas en el lenguaje de
 programación elegido, y el conjunto de todas ellas constituye un
-<em>programa</em>. El programa se guarda en un <em>archivo</em> con un
-nombre generalmente dividido en dos partes por un punto, por ejemplo:
-<code>mi_primer_programa.R</code>. La primera parte es la <em>raíz</em>
-del nombre con la cual podemos describir el contenido del archivo. La
-segunda parte es indicativa del uso del archivo, por ejemplo,
+<em>programa</em>. La codificación del programa se guarda en un archivo
+de texto plano con un identificador generalmente dividido en dos partes
+por un punto, por ejemplo: <code>mi_primer_programa.R</code>. La primera
+parte es el nombre del archivo. La segunda parte es indicativa del
+lenguaje que puede interpretar las instrucciones, por ejemplo,
 <code>.R</code> indica que contiene un programa escrito en el lenguaje
-R. El proceso general de ingresar o modificar el contenido de un archivo
-se denomina <em>edición</em>.</p>
+R. El proceso general de escribir o modificar las instrucciones en un
+archivo se denomina <em>edición</em>.</p>
 </div>
 </div>
 <div class="section level3">
@@ -286,6 +288,12 @@ identificarlos y corregirlos con mayor facilidad, pero probablemente
 nunca dejemos de cometerlos. Esto no es para amargarse, puesto que a
 través de la solución de los errores cometidos muchas veces se producen
 grandes aprendizajes.</p>
+<p>Hay dos tipos de errores: los <strong>lógicos</strong> y los
+<strong>sintácticos</strong>. Estos últimos tienen que ver cuándo las
+instrucciones, o nombres de variables no son correctamente escritos y el
+programa no puede “interpretarlos”. Los errores lógicos se generan con
+instrucciones que el programa puede interpretar, pero que realizan cosas
+que no queremos.</p>
 <p>A los errores en programación se los suele llamar <em>bugs</em>
 (insecto o bicho en inglés) y el proceso de la corrección de los mismos
 se conoce como <em>debugging</em> (depuración)<a class="footnote-ref" tabindex="0" data-bs-toggle="popover" data-bs-content="&lt;p&gt;Algunos usan el término bug para referirse
@@ -305,9 +313,10 @@ resolver un problema. En este contexto, se entiende por
 algoritmo y ejecutar el trabajo indicado por el mismo. Para cumplir con
 el objetivo, el procesador emplea ciertos recursos que tiene a
 disposición. Todos los elementos disponibles para ser utilizados por el
-procesador constituyen su <em>entorno</em> o <em>ambiente</em>. Cada una
-de las instrucciones que componen el algoritmo modifican el entorno de
-alguna manera y se denominan <em>acciones</em>.</p>
+programador constituyen el <em>entorno</em> o <em>ambiente</em> de
+trabajo. Cada una de las instrucciones que componen el algoritmo
+modifican el entorno de alguna manera y se denominan
+<em>acciones</em>.</p>
 </div>
 <div class="section level3">
 <h3 id="r-y-rstudio">R y RStudio<a class="anchor" aria-label="anchor" href="#r-y-rstudio"></a>
@@ -354,27 +363,27 @@ Captura de pantalla de RStudio
 <ul>
 <li>Arriba está el <strong>editor de archivos</strong>. Es el lugar
 donde escribiremos y editaremos nuestros programas, para luego
-guardarlos (una especie de <em>Bloc de Notas</em> o de un <em>Word</em>
-muy simple). La primera vez que se abre RStudio después de su
-instalación puede ser que este panel no esté presente, pero aparece si
-vamos a <code>File &gt; New File &gt; R Script</code>, con el atajo
+guardarlos. La primera vez que se abre RStudio después de su instalación
+puede ser que este panel no esté presente, pero aparece si vamos a
+<code>File &gt; New File &gt; R Script</code>, con el atajo
 <code>Ctrl + Shift + N</code> o haciendo clic en el primer ícono de la
 barra de herramientas. Podemos abrir varios archivos a la vez.</li>
-<li>Abajo está la <strong>consola</strong>. Es la ventana que se
-comunica con R. A través de ella se envían las <em>instrucciones</em> a
-R para que las evalúe (también decimos, que las ejecute o corra) y se
-visualizan los resultados.</li>
+<li>Abajo está la <strong>consola</strong>. La consola es el ambiente
+interactivo entre R y el usuario. A través de ella se envían las
+<em>instrucciones</em> a R para que las evalúe (también decimos, que las
+ejecute o corra) y se visualizan los resultados.</li>
 </ul>
 </li>
 <li>
 <p>Arriba a la derecha hay un panel con algunas pestañas:</p>
 <ul>
 <li>
-<strong>Environment</strong> (<em>ambiente</em>): muestra todos los
-elementos que componen al ambiente o entorno.</li>
+<strong>Environment</strong> (<em>ambiente</em>): muestra los
+elementos creados en la sesión de trabajo presente, que conforman al
+ambiente o entorno.</li>
 <li>
 <strong>History</strong> (<em>historial</em>): lista todas las
-instrucciones que R ha corrido anteriormente.</li>
+instrucciones que el usuario ha ejecutado.</li>
 <li>
 <em>Otras más que no nos interesan por ahora</em>.</li>
 </ul>
@@ -389,8 +398,9 @@ computadora.</li>
 <strong>Plots</strong>: ventana donde aparecen los gráficos si es
 que nuestro código produce alguno.</li>
 <li>
-<strong>Packages</strong>: listado de los “paquetes” que tenemos
-instalados (ver más adelante).</li>
+<strong>Packages</strong>: herramienta de instalación, actualización
+y carga de los paquetes de R (más adelante mencionaremos esto de los
+“paquetes” otra vez).</li>
 <li>
 <strong>Help</strong>: manual de ayuda sobre todas las funciones de
 R.</li>
@@ -412,19 +422,19 @@ multiplicar, sumar, restar, calcular potencias, logaritmos, raíces y
 mucho más:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">1</span> <span class="op">+</span> <span class="fl">2</span></span>
-<span><span class="co">#&gt; [1] 3</span></span>
+<span><span class="co">## [1] 3</span></span>
 <span><span class="fl">5</span> <span class="op">*</span> <span class="fl">3</span></span>
-<span><span class="co">#&gt; [1] 15</span></span>
+<span><span class="co">## [1] 15</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 7.389056</span></span>
+<span><span class="co">## [1] 7.389056</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">sqrt</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 10</span></span>
+<span><span class="co">## [1] 10</span></span>
 <span><span class="fl">1</span> <span class="op">/</span> <span class="fl">0</span></span>
-<span><span class="co">#&gt; [1] Inf</span></span>
+<span><span class="co">## [1] Inf</span></span>
 <span><span class="op">(</span><span class="fl">2</span> <span class="op">+</span> <span class="fl">3i</span><span class="op">)</span> <span class="op">*</span> <span class="op">(</span><span class="fl">3</span> <span class="op">+</span> <span class="fl">6i</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] -12+21i</span></span>
+<span><span class="co">## [1] -12+21i</span></span>
 <span><span class="fl">1i</span> <span class="op">^</span> <span class="fl">2</span></span>
-<span><span class="co">#&gt; [1] -1+0i</span></span></code></pre></div>
+<span><span class="co">## [1] -1+0i</span></span></code></pre></div>
 <p>Si bien podemos escribir nuestras instrucciones en la consola y dar
 <code>Enter</code> para que se ejecuten, en general queremos que queden
 escritas y guardadas en el archivo de código, por eso vamos a escribir
@@ -446,10 +456,10 @@ el programa. En R, este caracter especial es el símbolo numera
 <code>#</code>, R no hará nada con ellas, las salteará. Por ejemplo</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">5</span><span class="op">^</span><span class="fl">1</span></span>
-<span><span class="co">#&gt; [1] 5</span></span>
-<span><span class="co"># 5^2</span></span>
+<span><span class="co">## [1] 5</span></span>
+<span><span class="co"># 5^2    esto no se evalúa</span></span>
 <span><span class="fl">5</span><span class="op">^</span><span class="fl">3</span></span>
-<span><span class="co">#&gt; [1] 125</span></span></code></pre></div>
+<span><span class="co">## [1] 125</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="diseño-del-sistema-r">Diseño del sistema R<a class="anchor" aria-label="anchor" href="#dise%C3%B1o-del-sistema-r"></a>

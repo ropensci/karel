@@ -201,14 +201,14 @@ función.</li>
 va entre llaves es el conjunto de acciones que engloba la nueva función,
 una en cada renglón:</li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nombre <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  ... instrucciones de R ...</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>nombre <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  ... instrucciones de R ...</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>}</span></code></pre></div>
 <p>Con la ayuda de este subalgoritmo, podemos apreciar cómo se
 simplifica la escritura del código. Es importante notar que, para que
 podamos usar la función <code><a href="../reference/acciones.html">girar_izquierda()</a></code>, la misma tiene
-que ser definida y evaluada por R <strong>antes</strong> de que hagamos
-uso de la misma para resolver nuestro problema:</p>
+que ser definida por el usuario y evaluada por R <strong>antes</strong>
+de que queramos usarla para resolver nuestro problema:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#  --------------- Cargar paquete Karel --------------------</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span></span>

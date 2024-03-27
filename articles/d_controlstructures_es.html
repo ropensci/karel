@@ -152,11 +152,12 @@ selección</em>) y pueden ser <strong>simples</strong>,
 <h3 id="estructuras-condicionales-simples">Estructuras condicionales simples<a class="anchor" aria-label="anchor" href="#estructuras-condicionales-simples"></a>
 </h3>
 <p>Postulan una evaluación lógica y, si su resultado es
-<code>TRUE</code>, se procede a ejecutar las acciones encerradas por
-esta estructura. se expresan en R con la siguiente sintaxis:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condición) {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    ...código para ejecutar acciones...</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<code>TRUE</code>, se procede a ejecutar las acciones delimitadas entre
+las llaves que definen el cuerpo de esta estructura. se expresan en R
+con la siguiente sintaxis:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="cf">if</span> (condición) {</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>    ...código para ejecutar acciones...</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>}</span></code></pre></div>
 <p>La palabra <code>if</code> indica el comando de evaluación lógica,
 <code>condición</code> indica la evaluación a realizar y entre llaves se
 detallas las instrucciones que se realizarán sólo si se cumple la
@@ -262,7 +263,7 @@ agujero:</p>
 <span><span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>Notar que si bien el uso de sangrías en el código es opcional,
-decidimos emplearlo para facilitar su lectura. Mantener la prolijidad en
+decidimos emplearlo para facilitar su lectura. Mantener la claridad en
 nuestros programas es esencial.</p>
 </div>
 <div class="section level3">
@@ -271,11 +272,11 @@ nuestros programas es esencial.</p>
 <p>Este tipo de estructura añade una acción a ejecutarse en el caso de
 que la condición evaluada no se verifique (es decir, devuelve el valor
 <code>FALSE</code>). La sintaxis es:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condición) {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    ...código para ejecutar acciones...</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    ...código para ejecutar acciones...</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="cf">if</span> (condición) {</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>    ...código para ejecutar acciones...</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    ...código para ejecutar acciones...</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>}</span></code></pre></div>
 <p>Dentro del primer bloque de llaves se escriben las acciones que se
 realizan si se cumple la condición, mientras que en el segundo, luego de
 la expresión <code>else</code>, se incluyen las que se realizan si no se
@@ -340,13 +341,13 @@ más sencilla. Nuestro archivo de código quedaría así:</p>
 controles más complejos sobre el flujo de las acciones, representando
 una toma de decisión múltiple. Podemos ejemplificar la sintaxis de la
 siguiente forma:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condición <span class="dv">1</span>) {</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    ...Primer conjunto de acciones...</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (condición <span class="dv">2</span>) {</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    ...Segundo conjunto de acciones...</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    ...Tercer conjunto de acciones...</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="cf">if</span> (condición <span class="dv">1</span>) {</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>    ...Primer conjunto de acciones...</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (condición <span class="dv">2</span>) {</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>    ...Segundo conjunto de acciones...</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>    ...Tercer conjunto de acciones...</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>}</span></code></pre></div>
 <p>En la estructura anterior, hay una primera evaluación lógica en la
 cual si el resultado es <code>VERDADERO</code>, se ejecuta el primer
 conjunto de acciones y nada más. En cambio, si su resultado es
@@ -408,13 +409,15 @@ veces. Por eso vamos a hacer uso de una estructura iterativa:</p>
 <span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p>La letra <code>i</code> recibe el nombre de variable de iteración.
+<p>La letra <code>i</code> se usa para representar la cantidad de
+repeticiones. En este ejemplo, su única función es guiar la serie de
+pasos. El bloque de instrucciones se repite tantas veces como
+<code>i</code> tarde en llegar a 5 partiendo desde 1 (esto se define con
+un rango de valores en R usando la nomenclatura <code>1:5</code>).
 Podríamos haber elegido otra letra u otra palabra en su lugar, pero
-emplear <code>i</code> es bastante común. En este ejemplo, su única
-función es guiar la serie de pasos. El bloque de instrucciones se repite
-tantas veces como <code>i</code> tarde en llegar a 5 partiendo desde 1.
-De manera general, la sintaxis para este tipo de estructuras es:</p>
-<pre class="text"><code>for (&lt;variable&gt; in &lt;valor1&gt;:&lt;valor2&gt;) {
+emplear <code>i</code> es bastante común. De manera general, la sintaxis
+para este tipo de estructuras es:</p>
+<pre class="text"><code>for (i in &lt;valor_inicial&gt;:&lt;valor_final&gt;) {
     ...Acción/es...
 }</code></pre>
 <p><img src="22.gif" width="60%" style="display: block; margin: auto;"></p>
@@ -431,9 +434,9 @@ tipo de estructuras, el conjunto de instrucciones se repite mientras que
 se siga evaluando como <code>VERDADERO</code> una condición declarada al
 inicio del bloque. Cuando la condición ya no se cumple, el proceso deja
 de ejecutarse. La sintaxis es:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (<span class="sc">&lt;</span>condición<span class="sc">&gt;</span>) {</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    ...Acción<span class="sc">/</span>es a repetir...</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="cf">while</span> (<span class="sc">&lt;</span>condición<span class="sc">&gt;</span>) {</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>    ...Acción<span class="sc">/</span>es a repetir...</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>}</span></code></pre></div>
 <p>Observaciones:</p>
 <ul>
 <li>La evaluación de la condición se lleva a cabo antes de cada
