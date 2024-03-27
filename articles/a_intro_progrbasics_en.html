@@ -385,21 +385,24 @@ instructions there, and when we press
 some results. For example, we can perform mathematical calculations such
 as division, multiplication, addition, subtraction, exponentiation,
 logarithms, square roots, and more:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fl">1</span> <span class="op">+</span> <span class="fl">2</span></span>
-<span><span class="co">## [1] 3</span></span>
-<span><span class="fl">5</span> <span class="op">*</span> <span class="fl">3</span></span>
-<span><span class="co">## [1] 15</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span>
-<span><span class="co">## [1] 7.389056</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">sqrt</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
-<span><span class="co">## [1] 10</span></span>
-<span><span class="fl">1</span> <span class="op">/</span> <span class="fl">0</span></span>
-<span><span class="co">## [1] Inf</span></span>
-<span><span class="op">(</span><span class="fl">2</span> <span class="op">+</span> <span class="fl">3i</span><span class="op">)</span> <span class="op">*</span> <span class="op">(</span><span class="fl">3</span> <span class="op">+</span> <span class="fl">6i</span><span class="op">)</span></span>
-<span><span class="co">## [1] -12+21i</span></span>
-<span><span class="fl">1i</span> <span class="op">^</span> <span class="fl">2</span></span>
-<span><span class="co">## [1] -1+0i</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">3</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">5</span> <span class="sc">*</span> <span class="dv">3</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">15</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">exp</span>(<span class="dv">2</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">7.389056</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sqrt</span>(<span class="dv">100</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">10</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">0</span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="cn">Inf</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="sc">&gt;</span> (<span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span><span class="dt">i</span>) <span class="sc">*</span> (<span class="dv">3</span> <span class="sc">+</span> <span class="dv">6</span><span class="dt">i</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="dv">12</span><span class="sc">+</span><span class="dv">21</span><span class="dt">i</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">1</span><span class="dt">i</span> <span class="sc">^</span> <span class="dv">2</span></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="dv">1</span><span class="sc">+</span><span class="dv">0</span><span class="dt">i</span></span></code></pre></div>
+<p>In the block above the lines starting with <code>&gt;</code>
+represent code written by the user in the console. The result is shown
+below and in these cases they are lines that start with
+<code>[1]</code>, something that we can ignore for the moment.</p>
 <p>While we can write our instructions in the console and press
 <strong><code>Enter</code></strong> to execute them, generally, we want
 to write and save them in a code file. That’s why we will write our
@@ -419,12 +422,11 @@ this special character is the number symbol
 (<strong><code>#</code></strong>). If we <em>run</em> lines that begin
 with <strong><code>#</code></strong>, R will ignore them and skip them.
 For example:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fl">5</span><span class="op">^</span><span class="fl">1</span></span>
-<span><span class="co">## [1] 5</span></span>
-<span><span class="co"># 5^2   this is not evaluated</span></span>
-<span><span class="fl">5</span><span class="op">^</span><span class="fl">3</span></span>
-<span><span class="co">## [1] 125</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="dv">5</span><span class="sc">^</span><span class="dv">1</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">5</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># 5^2   this is not evaluated</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="er">&gt;</span> <span class="dv">5</span><span class="sc">^</span><span class="dv">3</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">125</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="r-system-design">
@@ -448,9 +450,8 @@ panel displays a list of all the packages that are already installed
 new packages from CRAN. Alternatively, you can run the command
 <strong><code>install.packages("packagename")</code></strong> to install
 a package:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Instalar desde CRAN el paquete karel</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"karel"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># Instalar desde CRAN el paquete karel</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">install.packages</span>(<span class="st">"karel"</span>)</span></code></pre></div>
 <p>It is also possible to install packages published in other
 repositories. For example, it is common to download packages under
 development or experimentation that are available on the GitHub
@@ -459,11 +460,10 @@ account name of the package author and the package name. If we want to
 install the development version of the
 <strong><code>karel</code></strong> package (not necessary), we would do
 the following:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Instalar desde CRAN el paquete devtools</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span>
-<span><span class="co"># Instalar desde GitHub el paquete karel</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"mpru/karel"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># Instalar desde CRAN el paquete devtools</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># Instalar desde GitHub el paquete karel</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="er">&gt;</span> devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mpru/karel"</span>)</span></code></pre></div>
 <p>A package is installed only once, but every time we want to use it,
 we need to <em>load</em> it so that its tools become available to us.
 This is done with the

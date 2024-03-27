@@ -126,30 +126,29 @@ Karel the robot learns Java (Eric Roberts, 2005).</em></p>
 </h2>
 <p>En la sección anterior propusimos el siguiente programa para resolver
 el problema de llenar los agujeros de la calle:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># ------------ Definición de funciones auxiliares-----------</span></span>
-<span></span>
-<span><span class="co"># Función: llenar_agujero</span></span>
-<span><span class="va">llenar_agujero</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">no_hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># ------------------- Programa principal -------------------</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo003"</span><span class="op">)</span></span>
-<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># ------------ Definición de funciones auxiliares-----------</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="er">&gt;</span> </span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Función: llenar_agujero</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="er">&gt;</span> llenar_agujero <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">girar_derecha</span>()</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">avanzar</span>()</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">if</span> (<span class="fu">no_hay_cosos</span>()) {</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="sc">+</span>     <span class="fu">poner_coso</span>()</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">darse_vuelta</span>()</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">avanzar</span>()</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">girar_derecha</span>()</span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># ------------------- Programa principal -------------------</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="er">&gt;</span> </span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">generar_mundo</span>(<span class="st">"mundo003"</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">while</span> (<span class="fu">frente_abierto</span>()) {</span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">avanzar</span>()</span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">llenar_agujero</span>()</span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">avanzar</span>()</span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ejecutar_acciones</span>()</span></code></pre></div>
 <p>Este programa sirve para mundos con calles de cualquier largo, sin
 embargo no serviría si los agujeros no estuviesen equiespaciados como
 asumimos inicialmente. Sería mejor tener un programa más general que
@@ -162,40 +161,37 @@ calle, sin restricciones en cuanto a la cantidad o su espaciado.</li>
 debe poner un <em>coso</em> en ellos.</li>
 </ul>
 <p>Un ejemplo de este tipo de mundo es este:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo006"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">generar_mundo</span>(<span class="st">"mundo006"</span>)</span></code></pre></div>
 <p><img src="24a.png" width="50%" style="display: block; margin: auto;"></p>
 <p>Para solucionar este problema, en vez de comenzar cada iteración con
 un avance, deberíamos primero chequear si donde Karel está parada hay un
 agujero, si es así llenarlo en el caso de que no estuviese reparado y
 luego avanzar. Por lo tanto se debe modificar el bloque que se
 itera:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># ------------------- Programa principal -------------------</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo106"</span><span class="op">)</span></span>
-<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">derecha_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
-<span>    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># ------------------- Programa principal -------------------</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="er">&gt;</span> </span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">generar_mundo</span>(<span class="st">"mundo106"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">while</span> (<span class="fu">frente_abierto</span>()) {</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">if</span> (<span class="fu">derecha_abierto</span>()) {</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="sc">+</span>       <span class="fu">llenar_agujero</span>()</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">avanzar</span>()</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ejecutar_acciones</span>()</span></code></pre></div>
 <p>Sin embargo, este programa tiene una falla, porque si bien anda en
 esta situación…</p>
 <p><img src="24.png" width="80%" style="display: block; margin: auto;"></p>
 <p>…no funciona en esta:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># ------------------- Programa principal -------------------</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo007"</span><span class="op">)</span></span>
-<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">derecha_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
-<span>    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># ------------------- Programa principal -------------------</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="er">&gt;</span> </span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">generar_mundo</span>(<span class="st">"mundo007"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">while</span> (<span class="fu">frente_abierto</span>()) {</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">if</span> (<span class="fu">derecha_abierto</span>()) {</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="sc">+</span>       <span class="fu">llenar_agujero</span>()</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">avanzar</span>()</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ejecutar_acciones</span>()</span></code></pre></div>
 <p><img src="25.png" width="80%" style="display: block; margin: auto;"></p>
 <p>Karel se detiene sin llenar el último agujero. De hecho, Karel ni
 siquiera desciende para ver si hay que llenarlo o no. El problema está
@@ -206,20 +202,19 @@ hace que el loop <code>while</code> se detenga antes de evaluar esa
 trabaja con estructuras iterativas, pero su solución es sencilla. Lo
 único que tenemos que hacer es agregar un chequeo adicional después de
 haber finalizado el <code>while</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># ------------------- Programa principal -------------------</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo007"</span><span class="op">)</span></span>
-<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">derecha_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
-<span>    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">derecha_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu">llenar_agujero</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># ------------------- Programa principal -------------------</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="er">&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">generar_mundo</span>(<span class="st">"mundo007"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">while</span> (<span class="fu">frente_abierto</span>()) {</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">if</span> (<span class="fu">derecha_abierto</span>()) {</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="sc">+</span>       <span class="fu">llenar_agujero</span>()</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">avanzar</span>()</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">if</span> (<span class="fu">derecha_abierto</span>()) {</span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">llenar_agujero</span>()</span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ejecutar_acciones</span>()</span></code></pre></div>
 <p><img src="26.gif" width="60%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2">
@@ -236,49 +231,46 @@ tareas, de modo que Karel pueda implementarlas en cualquier momento.</p>
 <ol style="list-style-type: decimal">
 <li><strong>Avanzar hasta encontrarse con una pared</strong></li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Función: avanzar_hasta_pared()</span></span>
-<span><span class="co"># Descripción: permite que Karel avance hasta que encuentre una pared</span></span>
-<span><span class="co"># Condición inicial: ninguna</span></span>
-<span><span class="co"># Condición final: Karel queda enfrentada a una pared</span></span>
-<span><span class="va">avanzar_hasta_pared</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
-<span><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># Función: avanzar_hasta_pared()</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Descripción: permite que Karel avance hasta que encuentre una pared</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Condición inicial: ninguna</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Condición final: Karel queda enfrentada a una pared</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="er">&gt;</span> avanzar_hasta_pared <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">while</span> (<span class="fu">frente_abierto</span>()) {</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="sc">+</span>     <span class="fu">avanzar</span>()</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="sc">+</span> }</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li><strong>Recolectar una línea de cosos</strong></li>
 </ol>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Función: recolectar_linea()</span></span>
-<span><span class="co"># Descripción: permite recolectar una línea consecutiva de cosos. La línea</span></span>
-<span><span class="co"># termina en la primera celda que no tiene cosos.</span></span>
-<span><span class="co"># Condición inicial: ninguna</span></span>
-<span><span class="co"># Condición final: Karel está en el final de la línea con la misma dirección que</span></span>
-<span><span class="co"># al inicio</span></span>
-<span><span class="va">recolectar_linea</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/actions.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>    <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>      <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>    <span class="op">}</span></span>
-<span>  <span class="op">}</span></span>
-<span><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># Función: recolectar_linea()</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Descripción: permite recolectar una línea consecutiva de cosos. La línea</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># termina en la primera celda que no tiene cosos.</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Condición inicial: ninguna</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Condición final: Karel está en el final de la línea con la misma dirección que</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># al inicio</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="er">&gt;</span> recolectar_linea <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">while</span> (<span class="fu">hay_cosos</span>()) {</span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="sc">+</span>     <span class="fu">juntar_coso</span>()</span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="sc">+</span>     <span class="cf">if</span> (<span class="fu">frente_abierto</span>()) {</span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="sc">+</span>       <span class="fu">avanzar</span>()</span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="sc">+</span>     }</span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="sc">+</span> }</span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li><strong>Poner todos los cosos que tiene en la mochila en un
 lugar</strong></li>
 </ol>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Función: colocar_todo()</span></span>
-<span><span class="co"># Descripción: Karel coloca todos los cosos que tiene en su mochila en su</span></span>
-<span><span class="co"># posición actual</span></span>
-<span><span class="co"># Condición inicial: ninguna</span></span>
-<span><span class="co"># Condición final: ninguna</span></span>
-<span><span class="va">colocar_todo</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">karel_tiene_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
-<span><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># Función: colocar_todo()</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Descripción: Karel coloca todos los cosos que tiene en su mochila en su</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># posición actual</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Condición inicial: ninguna</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Condición final: ninguna</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="er">&gt;</span> colocar_todo <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">while</span> (<span class="fu">karel_tiene_cosos</span>()) {</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="sc">+</span>     <span class="fu">poner_coso</span>()</span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="sc">+</span> }</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="recoger-columnas-de-cosos">Recoger columnas de <em>cosos</em><a class="anchor" aria-label="anchor" href="#recoger-columnas-de-cosos"></a>
@@ -295,12 +287,11 @@ podemos imaginarnos que el programa principal puede estar compuesto por
 tres partes: recolectar todos los <em>cosos</em> y guardarlos en su
 mochila que inicialmente estará vacía, depositarlos en la esquina y
 volver a la posición inicial. Algo como esto:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo008"</span><span class="op">)</span></span>
-<span><span class="fu">recolectar_todo</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">colocar_todo</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">volver_inicio</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">generar_mundo</span>(<span class="st">"mundo008"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">recolectar_todo</span>()</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">colocar_todo</span>()</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">volver_inicio</span>()</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ejecutar_acciones</span>()</span></code></pre></div>
 <p>Así como está, es muy sencillo entender qué es lo que hay que hacer.
 Además, hace uso de una función que ya tenemos definida de antes,
 <code>colocar_todo()</code>. Lo único que falta, que no es poco, es
@@ -310,14 +301,13 @@ en otros problemas menores.</p>
 <em>cosos</em>, sin saber cuántas pueden ser, esto nos hace pensar en
 que será necesario un <code>while</code>. Tenemos que recolectar columna
 por columna hasta que nos encontremos con la pared:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">recolectar_todo</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu">recolectar_una_columna</span><span class="op">(</span><span class="op">)</span></span>
-<span>    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
-<span>  <span class="fu">recolectar_una_columna</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="sc">&gt;</span> recolectar_todo <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">while</span> (<span class="fu">frente_abierto</span>()) {</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="sc">+</span>     <span class="fu">recolectar_una_columna</span>()</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="sc">+</span>     <span class="fu">avanzar</span>()</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">recolectar_una_columna</span>()</span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="sc">+</span> }</span></code></pre></div>
 <p>Notar que después del <code>while</code> hemos repetido
 <code>recolectar_una_columna()</code>, por la razón expuesta en el
 ejemplo anterior. Además, le estamos diciendo que recolecte la columna
@@ -338,65 +328,63 @@ problema?).</li>
 columna.</li>
 </ol>
 <p>Entonces, la función tiene que ser algo así:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">recolectar_una_columna</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu">recolectar_linea</span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu">avanzar_hasta_pared</span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="sc">&gt;</span> recolectar_una_columna <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">girar_izquierda</span>()</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">recolectar_linea</span>()</span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">darse_vuelta</span>()</span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">avanzar_hasta_pared</span>()</span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">girar_izquierda</span>()</span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="sc">+</span> }</span></code></pre></div>
 <p>Aparecieron por ahí dos funciones que definimos en el ejercicio
 anterior, que como anticipamos son actividades bastante comunes que nos
 viene muy bien tenerlas ya programadas. El programa completo se muestra
 a continuación. Recordar que en R necesitamos ejecutar primero las
 funciones que hemos inventado y luego el programa principal que las
 utiliza.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># ------------ Definición de otras funciones auxiliares-----------</span></span>
-<span></span>
-<span><span class="co"># Función: recolectar_todo()</span></span>
-<span><span class="co"># Descripción: permite recolectar todos los cosos de cada columna moviéndose a</span></span>
-<span><span class="co"># lo largo de la primera calle.</span></span>
-<span><span class="co"># Condición inicial: Karel está mirando al este en la posición (1, 1)</span></span>
-<span><span class="co"># Condición final: Karel está mirando al este en la posición del extremo derecho</span></span>
-<span><span class="co"># de la primera fila</span></span>
-<span><span class="va">recolectar_todo</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu">recolectar_una_columna</span><span class="op">(</span><span class="op">)</span></span>
-<span>    <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
-<span>  <span class="fu">recolectar_una_columna</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># Función: recolectar_una_columna()</span></span>
-<span><span class="co"># Descripción: permite recolectar todos los cosos en una única columna</span></span>
-<span><span class="co"># Condición inicial: Karel debe estar en la base de la columna mirando al este</span></span>
-<span><span class="co"># Condición final: Karel está en la misma posición y dirección que al inicio</span></span>
-<span><span class="va">recolectar_una_columna</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu">recolectar_linea</span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu">avanzar_hasta_pared</span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># Función: volver_inicio()</span></span>
-<span><span class="co"># Descripción: permite que Karel regrese a la posición (1, 1)</span></span>
-<span><span class="co"># Condición inicial: Karel mira al este en algún lugar de la primera fila</span></span>
-<span><span class="co"># Condición final: Karel está en la posición (1, 1) mirando al este</span></span>
-<span><span class="va">volver_inicio</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu">avanzar_hasta_pared</span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># ------------------- Programa principal -------------------</span></span>
-<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo008"</span><span class="op">)</span></span>
-<span><span class="fu">recolectar_todo</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">colocar_todo</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">volver_inicio</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># ------------ Definición de otras funciones auxiliares-----------</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="er">&gt;</span> </span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Función: recolectar_todo()</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Descripción: permite recolectar todos los cosos de cada columna moviéndose a</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># lo largo de la primera calle.</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Condición inicial: Karel está mirando al este en la posición (1, 1)</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Condición final: Karel está mirando al este en la posición del extremo derecho</span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># de la primera fila</span></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="er">&gt;</span> recolectar_todo <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">while</span> (<span class="fu">frente_abierto</span>()) {</span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="sc">+</span>     <span class="fu">recolectar_una_columna</span>()</span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a><span class="sc">+</span>     <span class="fu">avanzar</span>()</span>
+<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">recolectar_una_columna</span>()</span>
+<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb12-16"><a href="#cb12-16" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb12-17"><a href="#cb12-17" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Función: recolectar_una_columna()</span></span>
+<span id="cb12-18"><a href="#cb12-18" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Descripción: permite recolectar todos los cosos en una única columna</span></span>
+<span id="cb12-19"><a href="#cb12-19" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Condición inicial: Karel debe estar en la base de la columna mirando al este</span></span>
+<span id="cb12-20"><a href="#cb12-20" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Condición final: Karel está en la misma posición y dirección que al inicio</span></span>
+<span id="cb12-21"><a href="#cb12-21" tabindex="-1"></a><span class="er">&gt;</span> recolectar_una_columna <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb12-22"><a href="#cb12-22" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">girar_izquierda</span>()</span>
+<span id="cb12-23"><a href="#cb12-23" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">recolectar_linea</span>()</span>
+<span id="cb12-24"><a href="#cb12-24" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">darse_vuelta</span>()</span>
+<span id="cb12-25"><a href="#cb12-25" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">avanzar_hasta_pared</span>()</span>
+<span id="cb12-26"><a href="#cb12-26" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">girar_izquierda</span>()</span>
+<span id="cb12-27"><a href="#cb12-27" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb12-28"><a href="#cb12-28" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb12-29"><a href="#cb12-29" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Función: volver_inicio()</span></span>
+<span id="cb12-30"><a href="#cb12-30" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Descripción: permite que Karel regrese a la posición (1, 1)</span></span>
+<span id="cb12-31"><a href="#cb12-31" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Condición inicial: Karel mira al este en algún lugar de la primera fila</span></span>
+<span id="cb12-32"><a href="#cb12-32" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Condición final: Karel está en la posición (1, 1) mirando al este</span></span>
+<span id="cb12-33"><a href="#cb12-33" tabindex="-1"></a><span class="er">&gt;</span> volver_inicio <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb12-34"><a href="#cb12-34" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">darse_vuelta</span>()</span>
+<span id="cb12-35"><a href="#cb12-35" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">avanzar_hasta_pared</span>()</span>
+<span id="cb12-36"><a href="#cb12-36" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">darse_vuelta</span>()</span>
+<span id="cb12-37"><a href="#cb12-37" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb12-38"><a href="#cb12-38" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb12-39"><a href="#cb12-39" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># ------------------- Programa principal -------------------</span></span>
+<span id="cb12-40"><a href="#cb12-40" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">generar_mundo</span>(<span class="st">"mundo008"</span>)</span>
+<span id="cb12-41"><a href="#cb12-41" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">recolectar_todo</span>()</span>
+<span id="cb12-42"><a href="#cb12-42" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">colocar_todo</span>()</span>
+<span id="cb12-43"><a href="#cb12-43" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">volver_inicio</span>()</span>
+<span id="cb12-44"><a href="#cb12-44" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ejecutar_acciones</span>()</span></code></pre></div>
 <p><img src="28.gif" width="40%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2">
@@ -419,18 +407,17 @@ algoritmo de la mano derecha. Muchas veces, los programas que resuelven
 problemas muy interesantes no son ni largos ni rebuscados. Miralo con
 atención hasta que estés convencido de entender la lógica de este
 algoritmo:</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># ------------------- Programa principal -------------------</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo009"</span><span class="op">)</span></span>
-<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">no_hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_cerrado</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># ------------------- Programa principal -------------------</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="er">&gt;</span> </span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">generar_mundo</span>(<span class="st">"mundo009"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">while</span> (<span class="fu">no_hay_cosos</span>()) {</span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">girar_derecha</span>()</span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">while</span> (<span class="fu">frente_cerrado</span>()) {</span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="sc">+</span>     <span class="fu">girar_izquierda</span>()</span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">avanzar</span>()</span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ejecutar_acciones</span>()</span></code></pre></div>
 <p><img src="30.gif" width="40%" style="display: block; margin: auto;"></p>
 </div>
 <div class="section level2">
@@ -560,13 +547,12 @@ ser cualquiera, habiendo siempre al menos uno.</li>
 <li>Karel tiene infinitos <em>cosos</em> en su mochila.</li>
 </ul>
 <p>El programa principal debe ser:</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Programa principal</span></span>
-<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo021"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">duplicar_cosos</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># Programa principal</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">generar_mundo</span>(<span class="st">"mundo021"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">avanzar</span>()</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">duplicar_cosos</span>()</span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">avanzar</span>()</span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ejecutar_acciones</span>()</span></code></pre></div>
 <p>Es decir, deberán escribir una función, llamada
 <code>duplicar_cosos()</code> que se encargue de realizar esta tarea, el
 cual a su vez puede estar descompuesto en otros subalgoritmos. Utilizar

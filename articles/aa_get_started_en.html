@@ -206,43 +206,41 @@ Java</em> (2005).</p>
 vertices of the diamond it is enclosed in?</p>
 <p><img src="problema1.png" width="60%" style="display: block; margin: auto;"></p>
 <p>Maybe doint this?</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Load the package and Karel's superpowers</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/load_super_karel.html">load_super_karel</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Create new functions</span></span>
-<span><span class="va">walk_diagonal</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/conditions.html">front_is_clear</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>        <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>        <span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>        <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>        <span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>    <span class="op">}</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># Solve the problem</span></span>
-<span><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo019"</span><span class="op">)</span></span>
-<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu">walk_diagonal</span><span class="op">(</span><span class="op">)</span></span>
-<span>    <span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>    <span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># Load the package and Karel's superpowers</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">library</span>(karel)</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">load_super_karel</span>()</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Create new functions</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="er">&gt;</span> walk_diagonal <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">while</span> (<span class="fu">front_is_clear</span>()) {</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="sc">+</span>       <span class="fu">move</span>()</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="sc">+</span>       <span class="fu">turn_left</span>()</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="sc">+</span>       <span class="fu">move</span>()</span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="sc">+</span>       <span class="fu">turn_right</span>()</span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Solve the problem</span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">generate_world</span>(<span class="st">"mundo019"</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">walk_diagonal</span>()</span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">put_beeper</span>()</span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">turn_right</span>()</span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">run_actions</span>()</span></code></pre></div>
 <p><img src="33.gif" width="50%" style="display: block; margin: auto;"></p>
 <p>Now Karel is in a maze. Can we make it reach the end?</p>
 <p><img src="29.png" width="50%" style="display: block; margin: auto;"></p>
 <p>Yes, with this code:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo009"</span><span class="op">)</span></span>
-<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/conditions.html">no_beepers_present</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">turn_right</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/conditions.html">front_is_blocked</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">generate_world</span>(<span class="st">"mundo009"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">while</span> (<span class="fu">no_beepers_present</span>()) {</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">turn_right</span>()</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">while</span> (<span class="fu">front_is_blocked</span>()) {</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="sc">+</span>     <span class="fu">turn_left</span>()</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">move</span>()</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">run_actions</span>()</span></code></pre></div>
 <p><img src="30.gif" width="50%" style="display: block; margin: auto;"></p>
 <p>You can see more details about these examples and others in the
 tutorials section.</p>

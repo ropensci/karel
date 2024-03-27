@@ -208,44 +208,42 @@ Eric Roberts en su material <em>Karel the robot learns Java</em>
 los vértices del <em>rombo</em> en en el cual está encerrada?</p>
 <p><img src="problema1.png" width="60%" style="display: block; margin: auto;"></p>
 <p>¿Algo así, tal vez?</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Cargar el paquete y los superpoderes de Karel</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cargar_super_karel.html">cargar_super_karel</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Crear funciones auxiliares</span></span>
-<span><span class="va">recorrer_diagonal</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_abierto</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>        <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>        <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>        <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>        <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>    <span class="op">}</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># Implementar el problema</span></span>
-<span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo019"</span><span class="op">)</span></span>
-<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu">recorrer_diagonal</span><span class="op">(</span><span class="op">)</span></span>
-<span>    <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>    <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># Cargar el paquete y los superpoderes de Karel</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">library</span>(karel)</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">cargar_super_karel</span>()</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Crear funciones auxiliares</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="er">&gt;</span> recorrer_diagonal <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">while</span> (<span class="fu">frente_abierto</span>()) {</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="sc">+</span>       <span class="fu">avanzar</span>()</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="sc">+</span>       <span class="fu">girar_izquierda</span>()</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="sc">+</span>       <span class="fu">avanzar</span>()</span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="sc">+</span>       <span class="fu">girar_derecha</span>()</span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="er">&gt;</span> <span class="co"># Implementar el problema</span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">generar_mundo</span>(<span class="st">"mundo019"</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">recorrer_diagonal</span>()</span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">poner_coso</span>()</span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">girar_derecha</span>()</span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ejecutar_acciones</span>()</span></code></pre></div>
 <p><img src="33.gif" width="50%" style="display: block; margin: auto;"></p>
 <p>Ahora Karel está en un laberinto. ¿Podemos hacerla llegar hasta el
 final?</p>
 <p><img src="29.png" width="50%" style="display: block; margin: auto;"></p>
 <p>Sí, con este código:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo009"</span><span class="op">)</span></span>
-<span><span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">no_hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="kw">while</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">frente_cerrado</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/acciones.html">girar_izquierda</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
-<span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">generar_mundo</span>(<span class="st">"mundo009"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">while</span> (<span class="fu">no_hay_cosos</span>()) {</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">girar_derecha</span>()</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">while</span> (<span class="fu">frente_cerrado</span>()) {</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="sc">+</span>     <span class="fu">girar_izquierda</span>()</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">avanzar</span>()</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ejecutar_acciones</span>()</span></code></pre></div>
 <p><img src="30.gif" width="50%" style="display: block; margin: auto;"></p>
 <p>Podés ver más detalles sobre estos ejemplos y otros en la sección de
 tutoriales.</p>

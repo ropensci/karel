@@ -118,16 +118,14 @@
 <p>If you have already installed the <strong><code>karel</code></strong>
 package, we are ready to start using it. We will execute the command
 <strong><code><a href="https://mpru.github.io/karel/">library(karel)</a></code></strong> to be able to use it:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mpru.github.io/karel/">karel</a></span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">library</span>(karel)</span></code></pre></div>
 <p>First of all, we need to create a <strong>world</strong> so that
 Karel can move around. We do this with the instruction
 <strong><code><a href="../reference/generar_mundo.html">generar_mundo()</a></code></strong>, specifying the name of
 the world we want to use inside the parentheses and with quotation
 marks. The package includes several worlds that we will explore, for
 example:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">generar_mundo</span>(<span class="st">"mundo001"</span>)</span></code></pre></div>
 <p><img src="13.png" width="60%" style="display: block; margin: auto;"></p>
 <p>As you can see in the image, Karel’s world has some elements:</p>
 <ul>
@@ -224,13 +222,12 @@ have to finish by running the
 <strong><code><a href="../reference/run_actions.html">run_actions()</a></code></strong> function.</p>
 <p>Let’s see a first example. We will ask Karel to move forward, pick up
 an <em>item</em>, and then move forward again:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># This program makes Karel move one space forward, pick up an item, and then move forward again</span></span>
-<span><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">pick_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># This program makes Karel move one space forward, pick up an item, and then move forward again</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">generate_world</span>(<span class="st">"mundo001"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">move</span>()</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">pick_beeper</span>()</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">move</span>()</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">run_actions</span>()</span></code></pre></div>
 <p><img src="14.gif" width="60%" style="display: block; margin: auto;"></p>
 <p>A slightly more interesting problem would be for Karel to pick up the
 <em>item</em>, place it in Street 2 and Avenue 5, and finally move to
@@ -247,21 +244,20 @@ Karel turn right using the available actions? Yes, it can, by turning
 left three times to achieve the same effect. Then, it only remains for
 Karel to move forward, place the <em>item</em>, and move forward
 again:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/generate_world.html">generate_world</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">pick_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">turn_left</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">put_beeper</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/actions.html">move</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/run_actions.html">run_actions</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">generate_world</span>(<span class="st">"mundo001"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">move</span>()</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">pick_beeper</span>()</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">move</span>()</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">turn_left</span>()</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">move</span>()</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">turn_left</span>()</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">turn_left</span>()</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">turn_left</span>()</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">move</span>()</span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">move</span>()</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">put_beeper</span>()</span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">move</span>()</span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">run_actions</span>()</span></code></pre></div>
 <p><img src="18.gif" width="60%" style="display: block; margin: auto;"></p>
 <p><em>Some examples presented in this tutorial were adapted from “Karel
 the Robot Learns Java” by Eric Roberts, published in 2005.</em></p>
