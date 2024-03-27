@@ -11,10 +11,7 @@ vignette: >
 ---
 
 ```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+knitr::opts_chunk$set(collapse = TRUE)
 ```
 
 # Algunas ideas sobre Programación
@@ -29,13 +26,13 @@ La programación es un proceso creativo: en muchas ocasiones la tarea en cuesti�
 
 Desafortunadamente, las computadoras no entienden español ni otro idioma humano. Hay que pasarles las instrucciones en un lenguaje que sean capaces de entender. Para eso debemos aprender algún *lenguaje de programación*, que no es más que un lenguaje artificial compuesto por una serie de expresiones que la computadora puede interpretar. Las computadoras interpretan nuestras instrucciones de forma muy literal, por lo tanto a la hora de programar hay que ser muy específicos. Es necesario respetar las reglas del lenguaje de programación y ser claros en las indicaciones provistas.
 
-Ahora bien, ¿por qué debemos estudiar programación en si nos dedicamos a la Estadística? La actividad de los profesionales estadísticos está atravesada en su totalidad por la necesidad de manejar con soltura herramientas informáticas que nos asisten en las distintas etapas de nuestra labor, desde la recolección y depuración de conjuntos de datos, pasando por la aplicación de distintas metodologías de análisis, hasta la comunicación efectiva de los resultados. Por eso, en este tutorial estudiaremos los conceptos básicos de esta disciplina, fomentando la ejercitación del pensamiento abstracto y lógico necesario para poder entendernos hábilmente con la computadora y lograr que la misma realice las tareas que necesitamos. El lengua de programación en el que se basa este tutorial es R, ampliamente empleado en el ámbito de la ciencia de datos. Sin embargo, debemos resaltar que **éste no es un tutorial sobre R**, es decir, no nos dedicaremos a aprender las herramientas que este lenguaje brinda para el análisis de datos. 
+Ahora bien, ¿por qué debemos aprender a programar cuando queremos analizar datos, generar estadísticas, gráficas y conclusiones? La actividad de los profesionales estadísticos, de ciencia de Datos, o cualquier persona que requiera hacer análisis de datos se potencia con el manejo de herramientas informáticas y capacidades de programación que nos asisten en las distintas etapas de nuestra labor, desde la recolección y depuración de conjuntos de datos, pasando por la aplicación de distintas metodologías de análisis, hasta la comunicación efectiva de los resultados. Por eso, en este tutorial estudiaremos conceptos básicos de programación, fomentando la ejercitación del pensamiento abstracto y lógico necesario para poder entendernos hábilmente con la computadora y lograr que la misma realice las tareas que necesitamos. El lenguaje de programación en el que se basa este tutorial es R, ampliamente empleado en el ámbito de la ciencia de datos. Sin embargo, debemos resaltar que **éste no es un tutorial sobre R**, es decir, no nos dedicaremos a aprender las herramientas que este lenguaje brinda para el análisis de datos. 
 
 Para incorporar algunas nociones básicas de programación vamos a valernos de la ayuda de **Karel**, una robot que vive  y camina por **mundos** rectangulares. Vamos a pedirle a Karel que realice ciertas actividades y para esto tenemos que programar en R, de modo que Karel nos acompañará en los primeros pasos que demos con este lenguaje. 
 
 *Karel the Robot* es un lenguaje de programación creado con fines educativos por el Dr. R. E. Pattis de la Universidad de Stanford (California, EEUU), quien también escribió el libro *Karel the Robot: A Gentle Introduction to the Art of Programming* en 1981. Su nombre es un homenaje a Karel Capek, el escritor sueco que inventó la palabra *robot* en su obra de ciencia ficción *R.U.R. (Rossum's Universal Robots)*. Su sintaxis se basaba en Pascal, un lenguaje de programación muy importante en aquellos tiempos. A lo largo de las décadas, esta estrategia de enseñanza fue utilizada en muchos lugares alrededor del mundo, implementando Karel en distintos lenguajes como Java, C++, Ruby y Python. Muchos de los ejemplos presentados en esta guía fueron tomados de *Karel the robot learns Java* (Eric Roberts, 2005). Hasta donde sabemos, Karel no había sido desarrollado en R. Nuestro paquete es la primera implementación, ¡ayudanos a mejorarlo avisándonos cualquier cosa que notes que necesite revisión!
 
-Pero antes de meternos de lleno a jugar con Karel, vamos a repasar algunos conceptos relativos a la Programación que viene bien tener presentea.
+Pero antes de meternos de lleno a jugar con Karel, vamos a repasar algunos conceptos relativos a la Programación que viene bien tener presente.
 
 ## Problemas, algoritmos y lenguajes de programación
 
@@ -56,17 +53,20 @@ Frente a cada problema, el primer paso es idear un algoritmo para su solución y
 
 Un algoritmo presentado en pseudocódigo podría utilizar términos tomados del lenguaje español, una opción razonable para compartir esta estrategia entre personas que se comuniquen con este idioma. Claramente, si queremos presentarle nuestro algoritmo a alguien que sólo habla francés, el español ya no sería una buena elección y mucho menos si queremos presentarle el algoritmo a una computadora. Para que una computadora pueda entender nuestro algoritmo, debemos traducirlo en un *lenguaje de programación*, que, como dijimos antes, es un idioma artificial diseñado para expresar cómputos que puedan ser llevados a cabo por equipos electrónicos, es decir es un medio de comunicación entre el humano y la máquina.
 
-Cada una de las acciones que componen al algoritmo son codificadas con una o varias *instrucciones*, expresadas en el lenguaje de programación elegido, y el conjunto de todas ellas constituye un *programa*. El programa se guarda en un *archivo* con un nombre generalmente dividido en dos partes por un punto, por ejemplo: `mi_primer_programa.R`. La primera parte es la *raíz* del nombre con la cual podemos describir el contenido del archivo. La segunda parte es indicativa del uso del archivo, por ejemplo, `.R` indica que contiene un programa escrito en el lenguaje R. El proceso general de ingresar o modificar el contenido de un archivo se denomina *edición*. 
+Cada una de las acciones que componen al algoritmo son codificadas con una o varias *instrucciones*, expresadas en el lenguaje de programación elegido, y el conjunto de todas ellas constituye un *programa*. La codificación del programa se guarda en un archivo de texto plano con un identificador generalmente dividido en dos partes por un punto, por ejemplo: `mi_primer_programa.R`. La primera parte es el nombre del archivo. La segunda parte es indicativa del lenguaje que puede interpretar las instrucciones, por ejemplo, `.R ` indica que contiene un programa escrito en el lenguaje R. El proceso general de escribir o modificar las instrucciones en un archivo se denomina *edición*.
+
 
 ## Errores de programación
 
 Apenas iniciemos nuestro camino en el mundo de la programación nos daremos cuenta que tendremos siempre ciertos compañeros de viaje: los *errores*. Muchas veces nos pasará que queremos ejecutar nuestro código y el mismo no anda o no produce el resultado esperado. No importa cuán cuidadosos seamos, ni cuánta experiencia tengamos, los errores están siempre presentes. Con el tiempo y práctica, vamos a poder identificarlos y corregirlos con mayor facilidad, pero probablemente nunca dejemos de cometerlos. Esto no es para amargarse, puesto que a través de la solución de los errores cometidos muchas veces se producen grandes aprendizajes.
 
+Hay dos tipos de errores: los **lógicos** y los **sintácticos**. Estos últimos tienen que ver cuándo las instrucciones, o nombres de variables no son correctamente escritos y el programa no puede "interpretarlos". Los errores lógicos se generan con instrucciones que el programa puede interpretar, pero que realizan cosas que no queremos.
+
 A los errores en programación se los suele llamar *bugs* (insecto o bicho en inglés) y el proceso de la corrección de los mismos se conoce como *debugging* (depuración)^[Algunos usan el término bug para referirse exclusivamente a errores lógicos]. Se dice que esta terminología proviene de 1947, cuando una computadora en la Universidad de Harvard (la *Mark II*) dejó de funcionar y finalmente se descubrió que la causa del problema era la presencia de una polilla en un relé electromagnético de la máquina. Sin embargo, otros historiadores sostienen que el término ya se usaba desde antes.
 
 ## Procesador, ambiente y acciones
 
-Hemos definido a un algoritmo como una lista de instrucciones para resolver un problema. En este contexto, se entiende por *procesador* a todo agente capaz de comprender los pasos de un algoritmo y ejecutar el trabajo indicado por el mismo. Para cumplir con el objetivo, el procesador emplea ciertos recursos que tiene a disposición. Todos los elementos disponibles para ser utilizados por el procesador constituyen su *entorno* o *ambiente*. Cada una de las instrucciones que componen el algoritmo modifican el entorno de alguna manera y se denominan *acciones*.
+Hemos definido a un algoritmo como una lista de instrucciones para resolver un problema. En este contexto, se entiende por *procesador* a todo agente capaz de comprender los pasos de un algoritmo y ejecutar el trabajo indicado por el mismo. Para cumplir con el objetivo, el procesador emplea ciertos recursos que tiene a disposición. Todos los elementos disponibles para ser utilizados por el programador constituyen el *entorno* o *ambiente* de trabajo. Cada una de las instrucciones que componen el algoritmo modifican el entorno de alguna manera y se denominan *acciones*.
 
 ## R y RStudio
 
@@ -86,20 +86,20 @@ knitr::include_graphics('abrir_rstudio.png')
 
 - A la izquierda:
 	
-	- Arriba está el **editor de archivos**. Es el lugar donde escribiremos y editaremos nuestros programas, para luego guardarlos (una especie de *Bloc de Notas* o de un *Word* muy simple). La primera vez que se abre RStudio después de su instalación puede ser que este panel no esté presente, pero aparece si vamos a `File > New File > R Script`, con el atajo `Ctrl + Shift + N` o haciendo clic en el primer ícono de la barra de herramientas. Podemos abrir varios archivos a la vez.
-	- Abajo está la **consola**. Es la ventana que se comunica con R. A través de ella se envían las *instrucciones* a R para que las evalúe (también decimos, que las ejecute o corra) y se visualizan los resultados.
+	- Arriba está el **editor de archivos**. Es el lugar donde escribiremos y editaremos nuestros programas, para luego guardarlos. La primera vez que se abre RStudio después de su instalación puede ser que este panel no esté presente, pero aparece si vamos a `File > New File > R Script`, con el atajo `Ctrl + Shift + N` o haciendo clic en el primer ícono de la barra de herramientas. Podemos abrir varios archivos a la vez.
+	- Abajo está la **consola**. La consola es el ambiente interactivo entre R y el usuario. A través de ella se envían las *instrucciones* a R para que las evalúe (también decimos, que las ejecute o corra) y se visualizan los resultados.
 
 - Arriba a la derecha hay un panel con algunas pestañas:
 
-  - **Environment** (*ambiente*): muestra todos los elementos que componen al ambiente o entorno. 
-  - **History** (*historial*): lista todas las instrucciones que R ha corrido anteriormente.
+  - **Environment** (*ambiente*): muestra los elementos creados en la sesión de trabajo presente, que conforman al ambiente o entorno. 
+  - **History** (*historial*): lista todas las instrucciones que el usuario ha ejecutado.
   - *Otras más que no nos interesan por ahora*.
 
 - Abajo a la derecha hay otro panel con más pestañas:
 
 	- **Files**: explorador de archivos de la computadora.
 	- **Plots**: ventana donde aparecen los gráficos si es que nuestro código produce alguno.
-	- **Packages**: listado de los "paquetes" que tenemos instalados (ver más adelante).
+	- **Packages**: herramienta de instalación, actualización y carga de los paquetes de R (más adelante mencionaremos esto de los "paquetes" otra vez).
 	- **Help**: manual de ayuda sobre todas las funciones de R.
 	- **Viewer**: espacio para ver salidas de los programas con algún componente dinámico o interactivo.
 
@@ -123,7 +123,7 @@ En todo lenguaje de programación existe un caracter especial que, al ser coloca
 
 ```{r}
 5^1
-# 5^2
+# 5^2    esto no se evalúa
 5^3
 ```
 

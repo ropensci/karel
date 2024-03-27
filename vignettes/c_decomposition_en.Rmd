@@ -60,7 +60,7 @@ name <- function() {
 }
 ```
 
-Using this subalgorithm, we can see how the code writing is simplified. It is important to note that for us to be able to use the **`turn_left()`** function, it needs to be defined and evaluated by R **before** we use it to solve our problem.
+Using this subalgorithm, we can see how the code writing is simplified. It is important to note that for us to be able to use the **`turn_left()`** function, it has to be defined by the user and evaluated by R **before** we want to use it to solve our problem:
 
 ```{r, eval=FALSE}
 #  --------------- Load Karel package --------------------

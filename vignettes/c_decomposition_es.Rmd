@@ -59,7 +59,7 @@ nombre <- function() {
 }
 ```
 
-Con la ayuda de este subalgoritmo, podemos apreciar cómo se simplifica la escritura del código. Es importante notar que, para que podamos usar la función `girar_izquierda()`, la misma tiene que ser definida y evaluada por R **antes** de que hagamos uso de la misma para resolver nuestro problema:
+Con la ayuda de este subalgoritmo, podemos apreciar cómo se simplifica la escritura del código. Es importante notar que, para que podamos usar la función `girar_izquierda()`, la misma tiene que ser definida por el usuario y evaluada por R **antes** de que queramos usarla para resolver nuestro problema:
 
 ```{r, eval=FALSE}
 #  --------------- Cargar paquete Karel --------------------

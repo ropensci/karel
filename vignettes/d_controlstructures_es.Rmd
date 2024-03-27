@@ -29,7 +29,7 @@ En algunas partes de un algoritmo puede ser útil detenerse a hacer una pregunta
 
 ### Estructuras condicionales simples
 
-Postulan una evaluación lógica y, si su resultado es `TRUE`, se procede a ejecutar las acciones encerradas por esta estructura. se expresan en R con la siguiente sintaxis:
+Postulan una evaluación lógica y, si su resultado es `TRUE`, se procede a ejecutar las acciones delimitadas entre las llaves que definen el cuerpo de esta estructura. se expresan en R con la siguiente sintaxis:
 
 ```{r, eval=FALSE}
 if (condición) {
@@ -82,7 +82,7 @@ llenar_agujero()
 ejecutar_acciones()
 ```
 
-Notar que si bien el uso de sangrías en el código es opcional, decidimos emplearlo para facilitar su lectura. Mantener la prolijidad en nuestros programas es esencial.
+Notar que si bien el uso de sangrías en el código es opcional, decidimos emplearlo para facilitar su lectura. Mantener la claridad en nuestros programas es esencial.
 
 
 ### Estructuras condicionales dobles
@@ -225,10 +225,10 @@ for (i in 1:5) {
 ejecutar_acciones()
 ```
 
-La letra `i` recibe el nombre de variable de iteración. Podríamos haber elegido otra letra u otra palabra en su lugar, pero emplear `i` es bastante común. En este ejemplo, su única función es guiar la serie de pasos. El bloque de instrucciones se repite tantas veces como `i` tarde en llegar a 5 partiendo desde 1. De manera general, la sintaxis para este tipo de estructuras es:
+La letra `i` se usa para representar la cantidad de repeticiones. En este ejemplo, su única función es guiar la serie de pasos. El bloque de instrucciones se repite tantas veces como `i` tarde en llegar a 5 partiendo desde 1 (esto se define con un rango de valores en R usando la nomenclatura `1:5`). Podríamos haber elegido otra letra u otra palabra en su lugar, pero emplear `i` es bastante común. De manera general, la sintaxis para este tipo de estructuras es:
 
 ```{r, eval=FALSE, highlight=FALSE}
-for (<variable> in <valor1>:<valor2>) {
+for (i in <valor_inicial>:<valor_final>) {
 	...Acción/es...
 }
 ```

@@ -29,7 +29,7 @@ In certain parts of an algorithm, it may be useful to pause and ask a question b
 
 ### **Simple Conditional Structures**
 
-They involve a logical evaluation, and if the result is **`TRUE`**, the actions enclosed by this structure are executed. They are expressed in R with the following syntax:
+They involve a logical evaluation, and if the result is **`TRUE`**, the actions delimited between the braces that define the body of this structure are executed. They are expressed in R with the following syntax:
 
 ```{r, eval=FALSE}
 if (condition) {
@@ -224,10 +224,10 @@ for (i in 1:5) {
 run_actions()
 ```
 
-The variable **`i`** is called the iteration variable. We could have chosen another letter or word instead, but using **`i`** is quite common. In this example, its sole purpose is to guide the series of steps. The block of instructions is repeated as many times as it takes for **`i`** to reach 5 starting from 1. In general, the syntax for this type of structure is:
+The letter `i` is used to represent the number of repetitions. In this example, its sole purpose is to guide the series of steps. The block of instructions is repeated as many times as it takes for `i` to reach 5 starting from 1 (this is defined using the `1:5` expression). We could have chosen another letter or another word instead, but using `i` is quite common. In general, the syntax for this type of structure is:
 
 ```{r, eval=FALSE, highlight=FALSE}
-for (<variable> in <value1>:<value2>) {
+for (i in <initial_value>:<final_value>) {
 	...Actions...
 }
 ```

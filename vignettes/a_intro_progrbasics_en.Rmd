@@ -11,10 +11,7 @@ vignette: >
 ---
 
 ```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+knitr::opts_chunk$set(collapse = TRUE)
 ```
 
 # Some Ideas about Programming
@@ -25,9 +22,9 @@ All these devices with different types of computers have something in common: so
 
 Programming is a creative process: in many cases, a task can be accomplished by following different paths, and the programmer is the one who must imagine what those paths are and choose one. Some paths may be better than others, but in any case, the computer will simply follow the instructions devised by the programmer.
 
-Unfortunately, computers don't understand Spanish or any other human language. We have to give them instructions in a language they can understand. For that, we need to learn a *programming language*, which is simply an artificial language composed of a series of expressions that the computer can interpret. Computers interpret our instructions very literally, so when programming, we need to be very specific. We must follow the rules of the programming language and be clear in the instructions provided.
+Unfortunately, computers don't understand English or any other human language. We have to give them instructions in a language they can understand. For that, we need to learn a *programming language*, which is simply an artificial language composed of a series of expressions that the computer can interpret. Computers interpret our instructions very literally, so when programming, we need to be very specific. We must follow the rules of the programming language and be clear in the instructions provided.
 
-Now, why should we study programming if we are dedicated to Statistics? The activity of statistical professionals is entirely intertwined with the need to master computer tools that assist us in various stages of our work, from data collection and cleaning, to the application of different analysis methodologies, to the effective communication of results. That's why in this tutorial, we will study the basic concepts of this discipline, fostering the exercise of abstract and logical thinking necessary to effectively communicate with the computer and make it perform the tasks we need. The programming language used in this tutorial is R, widely used in the field of data science. However, we must emphasize that **this is not an R tutorial**, meaning we will not focus on learning the tools that this language provides for data analysis.
+Now, why should we learn to program when we want to analyze data, generate statistics, graphs and conclusions? The activity of statistical professionals, data science professionals, or anyone who requires data analysis is enhanced with the use of computer tools and programming capabilities that assist us in the different stages of our work, from the collection and purification of data sets, through the application of different analysis methodologies, to the effective communication of the results. That's why in this tutorial, we will study basic concepts of programming, fostering the exercise of abstract and logical thinking necessary to effectively communicate with the computer and make it perform the tasks we need. The programming language used in this tutorial is R, widely used in the field of data science. However, we must emphasize that **this is not an R tutorial**, meaning we will not focus on learning the tools that this language provides for data analysis.
 
 To incorporate some basic programming notions, we will make use of the help of **Karel**, a robot that lives and walks in rectangular **worlds**. We will ask Karel to perform certain activities, and for this, we have to program in R, so Karel will accompany us in the first steps we take with this language.
 
@@ -55,7 +52,9 @@ When faced with a problem, the first step is to devise an algorithm for its solu
 
 An algorithm presented in pseudocode could use terms taken from the Spanish language, which is a reasonable choice for sharing this strategy among people who communicate in this language. However, if we want to present our algorithm to someone who only speaks French, Spanish would no longer be a good choice, let alone if we want to present the algorithm to a computer. In order for a computer to understand our algorithm, we need to translate it into a *programming language*, which, as mentioned before, is an artificial language designed to express computations that can be carried out by electronic devices; in other words, it is a means of communication between humans and machines.
 
-Each of the actions that make up the algorithm is encoded with one or more *instructions*, expressed in the chosen programming language, and the collection of all these instructions constitutes a *program*. The program is saved in a *file* with a name generally divided into two parts by a dot, for example: **`my_first_program.R`**. The first part is the *root* of the name, which can describe the content of the file. The second part indicates the use of the file, for example, **`.R`** indicates that it contains a program written in the R language. The general process of entering or modifying the content of a file is called *editing*.
+There are two types of errors: **logical** and **syntactic**. The latter have to do with when instructions or variable names are not written correctly and the program cannot "interpret" them. Logic errors are generated with instructions that the program can interpret, but that do things that we do not want.
+
+Each of the actions that make up the algorithm are encoded with one or several *instructions*, expressed in the chosen programming language, and the set of all of them constitutes a *program*. The program encoding is saved in a plain text file with an identifier usually divided into two parts by a dot, for example: `my_first_program.R`. The first part is the file name. The second part is indicative of the language that can interpret the instructions, for example, `.R ` indicates that it contains a program written in the R language. The general process of writing or modifying the instructions in a file is called *editing*.
 
 ## **Programming Errors**
 
@@ -65,7 +64,7 @@ Programming errors are often called *bugs*, and the process of correcting them i
 
 ## **Processor, Environment, and Actions**
 
-We have defined an algorithm as a list of instructions for solving a problem. In this context, the term *processor* refers to any agent capable of understanding the steps of an algorithm and carrying out the work indicated by it. To achieve this goal, the processor uses certain resources available to it. All the elements available to be used by the processor constitute its *environment*. Each of the instructions that make up the algorithm modifies the environment in some way and is called an *action*.
+We have defined an algorithm as a list of instructions to solve a problem. In this context, *processor* is understood as any agent capable of understanding the steps of an algorithm and executing the work indicated by it. To achieve the objective, the processor uses certain resources that it has at its disposal. All the elements available to be used by the programmer constitute the *environment* or *working environment*. Each of the instructions that make up the algorithm modify the environment in some way and are called *actions*.
 
 ## **R and RStudio**
 
@@ -85,15 +84,15 @@ knitr::include_graphics('abrir_rstudio.png')
 
 -   On the left:
 
-    -   At the top is the **file editor**. This is where we will write and edit our programs, and then save them (similar to a simple *Notepad* or *Word* document). The first time you open RStudio after installation, this panel may not be present, but it appears if you go to **`File > New File > R Script`**, use the shortcut **`Ctrl + Shift + N`**, or click on the first icon in the toolbar. You can open multiple files at once.
+    -   At the top is the **file editor**. This is where we will write and edit our programs, and then save them. The first time you open RStudio after installation, this panel may not be present, but it appears if you go to **`File > New File > R Script`**, use the shortcut **`Ctrl + Shift + N`**, or click on the first icon in the toolbar. You can open multiple files at once.
 
-    -   Below is the **console**. It is the window that communicates with R. Through the console, we send *instructions* to R for evaluation (also known as running or executing them), and the results are displayed there.
+    -   Below is the **console**. The console is the interactive environment between R and the user. Through the console, we send *instructions* to R for evaluation (also known as running or executing them), and the results are displayed there.
 
 -   In the top-right corner, there is a panel with several tabs:
 
-    -   **Environment**: displays all the elements that make up the environment.
+    -   **Environment** (*environment*): shows the elements created in the current work session, which make up the environment.
 
-    -   **History**: lists all the instructions that R has previously run.
+    -   **History**: lists all the instructions that the user has executed.
 
     -   *Other tabs that are not relevant for now*.
 
@@ -103,7 +102,7 @@ knitr::include_graphics('abrir_rstudio.png')
 
     -   **Plots**: window where graphics appear if your code produces any.
 
-    -   **Packages**: list of installed "packages" (more on this later).
+    -   **Packages**: tool for installing, updating and loading R packages (later we will talk about "packages" again).
 
     -   **Help**: help manual covering all the functions of R.
 
@@ -129,7 +128,7 @@ In every programming language, there is a special character that, when placed at
 
 ```{r}
 5^1
-# 5^2
+# 5^2   this is not evaluated
 5^3
 ```
 
