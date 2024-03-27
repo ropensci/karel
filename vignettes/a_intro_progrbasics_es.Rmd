@@ -11,7 +11,7 @@ vignette: >
 ---
 
 ```{r, include = FALSE}
-knitr::opts_chunk$set(collapse = TRUE)
+knitr::opts_chunk$set(collapse = TRUE, comment = "", prompt = TRUE)
 ```
 
 # Algunas ideas sobre Programación
@@ -116,6 +116,8 @@ sqrt(100)
 (2 + 3i) * (3 + 6i)
 1i ^ 2
 ```
+
+En el cuadro anterior las líneas que comienzan con `>` representan código escrito por el usuario en la consola. El resultado se muestra debajo y en estos casos son líneas que empiezan con `[1]`, algo que por el momento podemos ignorar.
 
 Si bien podemos escribir nuestras instrucciones en la consola y dar `Enter` para que se ejecuten, en general queremos que queden escritas y guardadas en el archivo de código, por eso vamos a escribir nuestros programas en el panel de arriba a la izquierda. Una vez que escribimos una instrucción en el script, podemos *correrla* (es decir, enviarla a la consola para que se ejecute) haciendo clic en el ícono *Run* o con el atajo *Ctrl + Enter*. De esta forma, se *corre* la línea en la cual está el cursor o las líneas que hayamos seleccionado.
 

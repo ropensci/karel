@@ -11,10 +11,8 @@ vignette: >
 ---
 
 ```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>", out.width = "60%", fig.align = "center"
-)
+knitr::opts_chunk$set(collapse = TRUE, comment = "", out.width = "60%", 
+                      fig.align = "center")
 ```
 
 As mentioned earlier, an algorithm is composed of an ordered sequence of commands that are executed one after another. However, it is often necessary to use special commands that alter or control the order in which actions are executed. We refer to these rules as **control structures for the flow of actions**, which allow us to control the flow of actions in an algorithm or program. They can be classified as **sequential**, **conditional**, and **iterative** control structures.

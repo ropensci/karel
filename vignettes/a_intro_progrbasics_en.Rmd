@@ -11,7 +11,7 @@ vignette: >
 ---
 
 ```{r, include = FALSE}
-knitr::opts_chunk$set(collapse = TRUE)
+knitr::opts_chunk$set(collapse = TRUE, comment = "", prompt = TRUE)
 ```
 
 # Some Ideas about Programming
@@ -121,6 +121,8 @@ sqrt(100)
 (2 + 3i) * (3 + 6i)
 1i ^ 2
 ```
+
+In the block above the lines starting with `>` represent code written by the user in the console. The result is shown below and in these cases they are lines that start with `[1]`, something that we can ignore for the moment.
 
 While we can write our instructions in the console and press **`Enter`** to execute them, generally, we want to write and save them in a code file. That's why we will write our programs in the top-left panel. Once we write an instruction in the script, we can *run* it (i.e., send it to the console for execution) by clicking the *Run* button or using the shortcut *Ctrl + Enter*. This way, the line where the cursor is or the selected lines will be *run*.
 

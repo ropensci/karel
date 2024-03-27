@@ -12,10 +12,8 @@ vignette: >
 ---
 
 ```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>", out.width = "60%", fig.align = "center"
-)
+knitr::opts_chunk$set(collapse = TRUE, comment = "", out.width = "60%", 
+                      fig.align = "center")
 ```
 
 A fundamental principle in problem-solving is to try to break it down into smaller parts that may be easier to tackle. This concept also applies to programming. Our algorithms can be decomposed into **subalgorithms** that solve a smaller aspect of the problem. This process is known as **algorithmic decomposition** or **modular decomposition**. Each subalgorithm should be independent of the others and can be further decomposed into simpler parts in what is known as **successive refinement**. If a program is too long, it runs the risk of being difficult to understand as a whole, but it can always be divided into simpler and more manageable sections. A subalgorithm is written once and then used by all algorithms that need it.
