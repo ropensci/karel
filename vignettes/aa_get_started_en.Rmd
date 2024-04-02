@@ -54,7 +54,7 @@ Can you write a program for Karel to place *beepers* at the vertices of the diam
 knitr::include_graphics("problema1.png")
 ```
 
-Maybe doint this?
+Maybe like this?
 
 ```{r, eval = FALSE}
 # Load the package and Karel's superpowers

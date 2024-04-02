@@ -98,7 +98,7 @@ if (knitr::is_html_output()) knitr::include_graphics('18.gif')
 
 ## **Karel's superpowers**
 
-In the previous section, we created the **`turn_right()`** and **`turn_around()`** functions on our own to learn how to generate new subalgorithms. However, to streamline the creation of our programs and the visualization of Karel's actions, the R package provides enhanced versions of **`turn_right()`** and **`turn_arond()`**. To make them available for use, we need to activate Karel's superpowers with the following statement, which can be executed at any time (after **`library(karel)`** would be a good place):
+In the previous section, we created the **`turn_right()`** and **`turn_around()`** functions on our own to learn how to generate new subalgorithms. However, to streamline the creation of our programs and the visualization of Karel's actions, the R package provides enhanced versions of **`turn_right()`** and **`turn_around()`**. To make them available for use, we need to activate Karel's superpowers with the following statement, which can be executed at any time (after **`library(karel)`** would be a good place):
 
 ```{r, eval=FALSE}
 library(karel)
@@ -107,7 +107,7 @@ load_super_karel()
 
 ## **Filling the hole**
 
-Let's see another example of the usefulness of algorithmic decomposition. As it happens in many places, in Karel's world, streets sometimes need repair. Let's imagine Karel is walking down the street as shown in the left figure and encounters a hole. The task is to fill it with a *coso* and move to the other end, as shown in the right figure.
+Let's see another example of the usefulness of algorithmic decomposition. As it happens in many places, in Karel's world, streets sometimes need repair. Let's imagine Karel is walking down the street as shown in the left figure and encounters a hole. The task is to fill it with a beeper and move to the other end, as shown in the right figure.
 
 ```{r, out.width='800%', echo=FALSE, fig.align="center"}
 knitr::include_graphics('19.png')
@@ -213,4 +213,4 @@ move()
 run_actions()
 ```
 
-*Algunos ejemplos presentados en este tutorial fueron adaptados de Karel the robot learns Java (Eric Roberts, 2005).*
+*Some examples presented in this tutorial were adapted from "Karel the Robot Learns Java" by Eric Roberts, published in 2005.*

@@ -110,7 +110,7 @@ A slightly more interesting problem would be for Karel to pick up the *item*, pl
 knitr::include_graphics('16.png')
 ```
 
-Now we need Karel to turn right, so that it faces east. However, Karel only knows how to turn left; there is no **`girar_derecha()`** (turn right) function. Can Karel turn right using the available actions? Yes, it can, by turning left three times to achieve the same effect. Then, it only remains for Karel to move forward, place the *item*, and move forward again:
+Now we need Karel to turn right, so that it faces east. However, Karel only knows how to turn left; there is no **`turn_right()`** function. Can Karel turn right using the available actions? Yes, it can, by turning left three times to achieve the same effect. Then, it only remains for Karel to move forward, place the *item*, and move forward again:
 
 ```{r, eval=FALSE}
 generate_world("mundo001")
