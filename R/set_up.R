@@ -153,7 +153,7 @@ pkg_env <- new.env(parent = emptyenv())
 #'
 #' @keywords internal
 #'
-.run_actions <- function(loop = TRUE, lang) {
+.run_actions <- function(loop = FALSE, lang) {
 
   # Proceed if there was no mistake
   if (pkg_env$error) {

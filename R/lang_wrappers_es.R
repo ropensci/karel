@@ -82,7 +82,7 @@ generar_mundo <- function(mundo) .generate_world(mundo, lang = "es")
 #' por Karel desde que su mundo fue generado con \code{generar_mundo}.
 #'
 #' @param repetir Valor lógico TRUE o FALSE que indica si la animación debe
-#'   repetirse una y otra vez luego de finalizada (por defecto: TRUE).
+#'   repetirse una y otra vez luego de finalizada (por defecto: FALSE).
 #'
 #' @return Produce una animación con \code{gganimate}.
 #'
@@ -98,7 +98,7 @@ generar_mundo <- function(mundo) .generate_world(mundo, lang = "es")
 #'
 #' @export
 #'
-ejecutar_acciones <- function(repetir = TRUE) {
+ejecutar_acciones <- function(repetir = FALSE) {
   .run_actions(loop = repetir, lang = "es")
 }
 
