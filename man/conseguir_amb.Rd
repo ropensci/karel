@@ -13,7 +13,7 @@ Un ambiente de R con objetos que representan al mundo de Karel.
 Esta función devuelve un ambiente (R environment) llamado pkg_env, que es
 creado por el paquete. Se puede usar para probar el funcionamiento del
 paquete. Es una función interna, no está pensada para ser usada por
-estudiantes, pero se puede usar con karel::conseguir_amb().
+estudiantes, pero se puede usar con karel:::conseguir_amb().
 }
 \details{
 \code{pkg_env} es un ambiente de R creado dentro del paquete para
@@ -84,6 +84,6 @@ estudiantes, pero se puede usar con karel::conseguir_amb().
 }
 \examples{
 generar_mundo("mundo001")
-if (FALSE) karel::conseguir_amb()
+if (FALSE) karel:::conseguir_amb()
 
 }

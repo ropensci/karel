@@ -12,7 +12,7 @@ An enviroment with objects that represent Karel's world.
 \description{
 This function returns the environment called pkg_env created by the package.
 It's useful for debugging and checking. It's an internal function, not
-thought to be used by students, but can be used with karel::get_pkg_env().
+thought to be used by students, but can be used with karel:::get_pkg_env().
 }
 \details{
 \code{pkg_env} is an environment created inside the package to store
@@ -81,6 +81,6 @@ thought to be used by students, but can be used with karel::get_pkg_env().
 }
 \examples{
 generate_world("mundo001")
-if (FALSE) karel::get_pkg_env()
+if (FALSE) karel:::get_pkg_env()
 
 }

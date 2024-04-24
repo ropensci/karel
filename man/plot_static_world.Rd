@@ -18,9 +18,9 @@ and with each action that Karel performs, time is incremented by one. Current
 time is stored in \code{pkg_env$moment}. This function is useful for
 debugging and to get static images to be used in the examples in the handouts
 for students. It's an internal function, not thought to be used by students,
-but can be used with karel::plot_static_world().
+but can be used with karel:::plot_static_world().
 }
 \examples{
-if (FALSE) plot_static_world(1)
+if (FALSE) karel:::plot_static_world(1)
 
 }

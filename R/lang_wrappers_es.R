@@ -287,7 +287,7 @@ darse_vuelta <- function() .turn_around(lang = "es")
 #' Esta función devuelve un ambiente (R environment) llamado pkg_env, que es
 #' creado por el paquete. Se puede usar para probar el funcionamiento del
 #' paquete. Es una función interna, no está pensada para ser usada por
-#' estudiantes, pero se puede usar con karel::conseguir_amb().
+#' estudiantes, pero se puede usar con karel:::conseguir_amb().
 #'
 #' @return Un ambiente de R con objetos que representan al mundo de Karel.
 #'
@@ -359,7 +359,7 @@ darse_vuelta <- function() .turn_around(lang = "es")
 #'
 #' @examples
 #' generar_mundo("mundo001")
-#' if (FALSE) karel::conseguir_amb()
+#' if (FALSE) karel:::conseguir_amb()
 #'
 conseguir_amb <- function() .get_pkg_env()
 
@@ -373,14 +373,14 @@ conseguir_amb <- function() .get_pkg_env()
 #' útil para revisar el código y para obtener imágenes estáticas que pueden
 #' usarse al crear ejemplos y ejercicios en los materiales de estudio para los
 #' estudiantes. Es una función interna, no está pensada para ser usada por
-#' estudiantes, pero se puede usar con karel::graficar_mundo_estatico().
+#' estudiantes, pero se puede usar con karel:::graficar_mundo_estatico().
 #'
 #' @param momento El momento que se desea graficar.
 #'
 #' @return Imprime el gráfico.
 #'
 #' @examples
-#' if (FALSE) graficar_mundo_estatico(1)
+#' if (FALSE) karel:::graficar_mundo_estatico(1)
 #'
 graficar_mundo_estatico <- function(momento) {
   .plot_static_world(time = momento, lang = "es")

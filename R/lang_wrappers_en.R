@@ -279,7 +279,7 @@ turn_around <- function() .turn_around(lang = "en")
 #'
 #' This function returns the environment called pkg_env created by the package.
 #' It's useful for debugging and checking. It's an internal function, not
-#' thought to be used by students, but can be used with karel::get_pkg_env().
+#' thought to be used by students, but can be used with karel:::get_pkg_env().
 #'
 #' @return An enviroment with objects that represent Karel's world.
 #'
@@ -349,7 +349,7 @@ turn_around <- function() .turn_around(lang = "en")
 #'
 #' @examples
 #' generate_world("mundo001")
-#' if (FALSE) karel::get_pkg_env()
+#' if (FALSE) karel:::get_pkg_env()
 #'
 get_pkg_env <- function() .get_pkg_env()
 
@@ -362,13 +362,13 @@ get_pkg_env <- function() .get_pkg_env()
 #' time is stored in \code{pkg_env$moment}. This function is useful for
 #' debugging and to get static images to be used in the examples in the handouts
 #' for students. It's an internal function, not thought to be used by students,
-#' but can be used with karel::plot_static_world().
+#' but can be used with karel:::plot_static_world().
 #'
 #' @param time The requested time
 #'
 #' @return Prints the plot.
 #'
 #' @examples
-#' if (FALSE) plot_static_world(1)
+#' if (FALSE) karel:::plot_static_world(1)
 #'
 plot_static_world <- function(time) .plot_static_world(time = time, lang = "en")

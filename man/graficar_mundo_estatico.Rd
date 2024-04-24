@@ -19,9 +19,9 @@ momento toma el valor 1 y con cada acción que Karel realiza se incrementa en
 útil para revisar el código y para obtener imágenes estáticas que pueden
 usarse al crear ejemplos y ejercicios en los materiales de estudio para los
 estudiantes. Es una función interna, no está pensada para ser usada por
-estudiantes, pero se puede usar con karel::graficar_mundo_estatico().
+estudiantes, pero se puede usar con karel:::graficar_mundo_estatico().
 }
 \examples{
-if (FALSE) graficar_mundo_estatico(1)
+if (FALSE) karel:::graficar_mundo_estatico(1)
 
 }
