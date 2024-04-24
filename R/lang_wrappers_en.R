@@ -144,7 +144,7 @@ pick_beeper <- function() .pick_beeper(lang = "en")
 
 #' Conditions that Karel can test
 #'
-#' These group of functions return a logical value \code{TRUE} o \code{FALSE}
+#' These group of functions return a logical value \code{TRUE} or \code{FALSE}
 #' according to Karel's evaluation of her world.
 #'
 #' @return Logical value TRUE or FALSE.
@@ -153,12 +153,12 @@ pick_beeper <- function() .pick_beeper(lang = "en")
 #'   \code{left_is_clear()}, \code{left_is_blocked()}, \code{right_is_clear()} y
 #'   \code{right_is_blocked()} test if there is a wall in front of Karel, to her
 #'   left or to her right, respectively. The functions \code{beepers_present()}
-#'   y \code{no_beepers_present()} test if there are or there are not
+#'   and \code{no_beepers_present()} test whether there are any
 #'   \code{beepers} at Karel's current position. The functions
-#'   \code{karel_has_beepers()} y \code{karel_has_no_beepers()} test if Karel
-#'   has or hasn't got  \code{beepers} in her bag (not visible in the plot). The
+#'   \code{karel_has_beepers()} and \code{karel_has_no_beepers()} test if Karel
+#'   has any \code{beepers} in her bag (not visible in the plot). The
 #'   functions \code{facing_east()}, \code{facing_west()}, \code{facing_north()}
-#'   y \code{facing_south()} test the direction to which Karel is facing right
+#'   and \code{facing_south()} test the direction to which Karel is facing right
 #'   now.
 #'
 #' @examples
