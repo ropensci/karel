@@ -4,11 +4,11 @@
 \alias{ejecutar_acciones}
 \title{Ejecutar acciones}
 \usage{
-ejecutar_acciones(repetir = TRUE)
+ejecutar_acciones(repetir = FALSE)
 }
 \arguments{
 \item{repetir}{Valor lógico TRUE o FALSE que indica si la animación debe
-repetirse una y otra vez luego de finalizada (por defecto: TRUE).}
+repetirse una y otra vez luego de finalizada (por defecto: FALSE).}
 }
 \value{
 Produce una animación con \code{gganimate}.

@@ -4,7 +4,7 @@
 \alias{.run_actions}
 \title{Run actions}
 \usage{
-.run_actions(loop = TRUE, lang)
+.run_actions(loop = FALSE, lang)
 }
 \arguments{
 \item{loop}{A logical value TRUE or FALSE indicating if the animation should
