@@ -249,7 +249,7 @@ agujero:</p>
 <span>  <span class="fu"><a href="../reference/acciones.html">girar_derecha</a></span><span class="op">(</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
 <span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">no_hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
 <span>  <span class="op">}</span></span>
 <span>  <span class="fu"><a href="../reference/acciones.html">darse_vuelta</a></span><span class="op">(</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -289,21 +289,21 @@ quite si es que hay:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/generar_mundo.html">generar_mundo</a></span><span class="op">(</span><span class="st">"mundo001"</span><span class="op">)</span></span>
 <span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span><span class="fu"><a href="../reference/acciones.html">avanzar</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span><span class="fu"><a href="../reference/ejecutar_acciones.html">ejecutar_acciones</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="52.gif" width="60%" style="display: block; margin: auto;"></p>
@@ -318,9 +318,9 @@ más sencilla. Nuestro archivo de código quedaría así:</p>
 <span></span>
 <span><span class="va">invertir</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/condiciones.html">hay_cosos</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/actions.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="../reference/acciones.html">juntar_coso</a></span><span class="op">(</span><span class="op">)</span></span>
 <span>  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="../reference/actions.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="../reference/acciones.html">poner_coso</a></span><span class="op">(</span><span class="op">)</span></span>
 <span>  <span class="op">}</span></span>
 <span><span class="op">}</span></span>
 <span></span>
