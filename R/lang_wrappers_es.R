@@ -139,11 +139,11 @@ avanzar <- function() .move(lang = "es")
 #' @export
 girar_izquierda <- function() .turn_left(lang = "es")
 
-#' @rdname actions
+#' @rdname acciones
 #' @export
 poner_coso <- function() .put_beeper(lang = "es")
 
-#' @rdname actions
+#' @rdname acciones
 #' @export
 juntar_coso <- function() .pick_beeper(lang = "es")
 

@@ -4,6 +4,8 @@
 \alias{acciones}
 \alias{avanzar}
 \alias{girar_izquierda}
+\alias{poner_coso}
+\alias{juntar_coso}
 \alias{girar_derecha}
 \alias{darse_vuelta}
 \title{Acciones que Karel puede realizar}
@@ -11,6 +13,10 @@
 avanzar()
 
 girar_izquierda()
+
+poner_coso()
+
+juntar_coso()
 
 girar_derecha()
 
