@@ -82,7 +82,6 @@ pkg_env <- new.env(parent = emptyenv())
   	# Load this world from internal data
   	world <- try(get(world), silent = TRUE)
   	if (inherits(world, "try-error")) {
-  	  cli::cli_rule()
   	  cli::cli_abort(call = NULL,
   	                 message = c("x" = message_texts[[lang]]$world_doesnt_exist)
   	  )
@@ -157,7 +156,6 @@ pkg_env <- new.env(parent = emptyenv())
 
   # Proceed if there was no mistake
   if (pkg_env$error) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "x" = message_texts[[lang]]$error_general,
       ">" = message_texts[[lang]]$start_again)
@@ -165,7 +163,6 @@ pkg_env <- new.env(parent = emptyenv())
   }
 
   if (pkg_env$moment == 1) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "x" = message_texts[[lang]]$do_sth_first_x,
       ">" = message_texts[[lang]]$do_sth_first_arrow)

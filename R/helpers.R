@@ -99,14 +99,12 @@
 .plot_static_world <- function(time, lang) {
 
   if (time < 1) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "x" = message_texts[[lang]]$time_less_than_one_x,
       ">" = message_texts[[lang]]$time_less_than_one_arrow)
     )
   }
   if (time > pkg_env$moment) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "x" = message_texts[[lang]]$time_too_big_x,
       ">" = paste0(message_texts[[lang]]$time_too_big_arrow, " ",
@@ -294,7 +292,6 @@ check_user_world <- function(world, lang) {
                 "beepers_bag")
   for (elem in elements) {
     if (!elem %in% names(world)) {
-      cli::cli_rule()
       cli::cli_abort(call = NULL, message = c(
         "!" = message_texts[[lang]]$check_user_world_general,
         "x" = paste(elem,
@@ -309,7 +306,6 @@ check_user_world <- function(world, lang) {
   # if the length is greater than 1 and that gives a warning, so I first check
   # the length
   if (length(world$nx) != 1 | !is.numeric(world$nx)) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "!" = message_texts[[lang]]$check_user_world_general,
       "x" = message_texts[[lang]]$check_user_world_wrong_nx,
@@ -317,7 +313,6 @@ check_user_world <- function(world, lang) {
     )
   }
   if (world$nx %% 1 != 0) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "!" = message_texts[[lang]]$check_user_world_general,
       "x" = message_texts[[lang]]$check_user_world_wrong_nx,
@@ -327,7 +322,6 @@ check_user_world <- function(world, lang) {
 
   # Check ny
   if (length(world$ny) != 1 | !is.numeric(world$ny)) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "!" = message_texts[[lang]]$check_user_world_general,
       "x" = message_texts[[lang]]$check_user_world_wrong_ny,
@@ -335,7 +329,6 @@ check_user_world <- function(world, lang) {
     )
   }
   if (world$ny %% 1 != 0) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "!" = message_texts[[lang]]$check_user_world_general,
       "x" = message_texts[[lang]]$check_user_world_wrong_ny,
@@ -345,7 +338,6 @@ check_user_world <- function(world, lang) {
 
   # Check karel_x
   if (length(world$karel_x) != 1 | !is.numeric(world$karel_x)) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "!" = message_texts[[lang]]$check_user_world_general,
       "x" = message_texts[[lang]]$check_user_world_wrong_karel_x,
@@ -353,7 +345,6 @@ check_user_world <- function(world, lang) {
     )
   }
   if (world$karel_x %% 1 != 0) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "!" = message_texts[[lang]]$check_user_world_general,
       "x" = message_texts[[lang]]$check_user_world_wrong_karel_x,
@@ -361,7 +352,6 @@ check_user_world <- function(world, lang) {
     )
   }
   if (world$karel_x < 1 | world$karel_x > world$nx) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "!" = message_texts[[lang]]$check_user_world_general,
       "x" = message_texts[[lang]]$check_user_world_wrong_karel_x,
@@ -371,7 +361,6 @@ check_user_world <- function(world, lang) {
 
   # Check karel_y
   if (length(world$karel_y) != 1 | !is.numeric(world$karel_y)) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "!" = message_texts[[lang]]$check_user_world_general,
       "x" = message_texts[[lang]]$check_user_world_wrong_karel_y,
@@ -379,7 +368,6 @@ check_user_world <- function(world, lang) {
     )
   }
   if (world$karel_y %% 1 != 0) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "!" = message_texts[[lang]]$check_user_world_general,
       "x" = message_texts[[lang]]$check_user_world_wrong_karel_y,
@@ -387,7 +375,6 @@ check_user_world <- function(world, lang) {
     )
   }
   if (world$karel_y < 1 | world$karel_y > world$ny) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "!" = message_texts[[lang]]$check_user_world_general,
       "x" = message_texts[[lang]]$check_user_world_wrong_karel_y,
@@ -397,7 +384,6 @@ check_user_world <- function(world, lang) {
 
   # Check karel_dir
   if (length(world$karel_dir) != 1 | !is.numeric(world$karel_dir)) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "!" = message_texts[[lang]]$check_user_world_general,
       "x" = message_texts[[lang]]$check_user_world_wrong_karel_dir,
@@ -405,7 +391,6 @@ check_user_world <- function(world, lang) {
     )
   }
   if (world$karel_dir %% 1 != 0) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "!" = message_texts[[lang]]$check_user_world_general,
       "x" = message_texts[[lang]]$check_user_world_wrong_karel_dir,
@@ -413,7 +398,6 @@ check_user_world <- function(world, lang) {
     )
   }
   if (!world$karel_dir %in% 1:4) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "!" = message_texts[[lang]]$check_user_world_general,
       "x" = message_texts[[lang]]$check_user_world_wrong_karel_dir,
@@ -423,7 +407,6 @@ check_user_world <- function(world, lang) {
 
   # Check beepers_bag
   if (length(world$beepers_bag) != 1 | !is.numeric(world$beepers_bag)) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "!" = message_texts[[lang]]$check_user_world_general,
       "x" = message_texts[[lang]]$check_user_world_wrong_beepers_bag,
@@ -431,7 +414,6 @@ check_user_world <- function(world, lang) {
     )
   }
   if (!is.infinite(world$beepers_bag) & world$beepers_bag %% 1 != 0) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "!" = message_texts[[lang]]$check_user_world_general,
       "x" = message_texts[[lang]]$check_user_world_wrong_beepers_bag,
@@ -439,7 +421,6 @@ check_user_world <- function(world, lang) {
     )
   }
   if (world$beepers_bag < 0) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "!" = message_texts[[lang]]$check_user_world_general,
       "x" = message_texts[[lang]]$check_user_world_wrong_beepers_bag,
@@ -453,7 +434,6 @@ check_user_world <- function(world, lang) {
     # All NULL?
     if (!all(is.null(world$beepers_x), is.null(world$beepers_y),
              is.null(world$beepers_n))) {
-      cli::cli_rule()
       cli::cli_abort(call = NULL, message = c(
         "!" = message_texts[[lang]]$check_user_world_general,
         "x" = message_texts[[lang]]$check_user_world_wrong_beepers_xyn,
@@ -464,7 +444,6 @@ check_user_world <- function(world, lang) {
     # All numeric?
     if (!all(is.numeric(world$beepers_x), is.numeric(world$beepers_y),
              is.numeric(world$beepers_n))) {
-      cli::cli_rule()
       cli::cli_abort(call = NULL, message = c(
         "!" = message_texts[[lang]]$check_user_world_general,
         "x" = message_texts[[lang]]$check_user_world_wrong_beepers_xyn,
@@ -474,7 +453,6 @@ check_user_world <- function(world, lang) {
     # All same length?
     if (!(length(world$beepers_x) == length(world$beepers_y) &
           length(world$beepers_x) == length(world$beepers_n))) {
-      cli::cli_rule()
       cli::cli_abort(call = NULL, message = c(
         "!" = message_texts[[lang]]$check_user_world_general,
         "x" = message_texts[[lang]]$check_user_world_wrong_beepers_xyn,
@@ -484,7 +462,6 @@ check_user_world <- function(world, lang) {
     # All integer?
     if (!all(world$beepers_x %% 1 == 0, world$beepers_y %% 1 == 0,
              world$beepers_n %% 1 == 0)) {
-      cli::cli_rule()
       cli::cli_abort(call = NULL, message = c(
         "!" = message_texts[[lang]]$check_user_world_general,
         "x" = message_texts[[lang]]$check_user_world_wrong_beepers_xyn,
@@ -493,7 +470,6 @@ check_user_world <- function(world, lang) {
     }
     # All >= 1?
     if (any(world$beepers_x < 1, world$beepers_y < 1, world$beepers_n < 1)) {
-      cli::cli_rule()
       cli::cli_abort(call = NULL, message = c(
         "!" = message_texts[[lang]]$check_user_world_general,
         "x" = message_texts[[lang]]$check_user_world_wrong_beepers_xyn,
@@ -502,7 +478,6 @@ check_user_world <- function(world, lang) {
     }
     # Coordinates ok?
     if (any(world$beepers_x > world$nx | world$beepers_y > world$ny)) {
-      cli::cli_rule()
       cli::cli_abort(call = NULL, message = c(
         "!" = message_texts[[lang]]$check_user_world_general,
         "x" = message_texts[[lang]]$check_user_world_wrong_beepers_xyn,
@@ -533,7 +508,6 @@ check_user_world <- function(world, lang) {
 #'
 check_walls <- function(dataset, name, nx, ny, lang) {
   if (!is.null(dataset) & !is.data.frame(dataset)) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "!" = message_texts[[lang]]$check_user_world_general,
       "x" = paste(name, message_texts[[lang]]$check_user_world_wrong_walls1),
@@ -544,7 +518,6 @@ check_walls <- function(dataset, name, nx, ny, lang) {
 
     # Has rows?
     if (nrow(dataset) < 1) {
-      cli::cli_rule()
       cli::cli_abort(call = NULL, message = c(
         "!" = message_texts[[lang]]$check_user_world_general,
         "x" = paste(name, message_texts[[lang]]$check_user_world_wrong_walls2),
@@ -555,7 +528,6 @@ check_walls <- function(dataset, name, nx, ny, lang) {
     # Are all the columns present?
     for (elem in c("x", "y", "lgth")) {
       if (!elem %in% names(dataset)) {
-        cli::cli_rule()
         cli::cli_abort(call = NULL, message = c(
           "!" = message_texts[[lang]]$check_user_world_general,
           "x" = paste0(message_texts[[lang]]$check_user_world_wrong_walls3, " ",
@@ -569,7 +541,6 @@ check_walls <- function(dataset, name, nx, ny, lang) {
 
     # Any NA?
     if (any(is.na(dataset))) {
-      cli::cli_rule()
       cli::cli_abort(call = NULL, message = c(
         "!" = message_texts[[lang]]$check_user_world_general,
         "x" = paste(name, message_texts[[lang]]$check_user_world_wrong_walls5),

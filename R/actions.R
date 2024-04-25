@@ -11,7 +11,6 @@ message_texts <- list()
 .move <- function(lang) {
   # Proceed if there was no mistake
   if (pkg_env$error) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "x" = message_texts[[lang]]$error_general,
       ">" = message_texts[[lang]]$start_again)
@@ -25,7 +24,6 @@ message_texts <- list()
            pkg_env$x_now <- pkg_env$x_now + 1
          } else {
            pkg_env$error <- TRUE
-           cli::cli_rule()
            cli::cli_abort(call = NULL, message = c(
              "x" = message_texts[[lang]]$cant_move_east,
              ">" = message_texts[[lang]]$start_again)
@@ -37,7 +35,6 @@ message_texts <- list()
            pkg_env$y_now <- pkg_env$y_now + 1
          } else {
            pkg_env$error <- TRUE
-           cli::cli_rule()
            cli::cli_abort(call = NULL, message = c(
              "x" = message_texts[[lang]]$cant_move_north,
              ">" = message_texts[[lang]]$start_again)
@@ -49,7 +46,6 @@ message_texts <- list()
            pkg_env$x_now <- pkg_env$x_now - 1
          } else {
            pkg_env$error <- TRUE
-           cli::cli_rule()
            cli::cli_abort(call = NULL, message = c(
              "x" = message_texts[[lang]]$cant_move_west,
              ">" = message_texts[[lang]]$start_again)
@@ -61,7 +57,6 @@ message_texts <- list()
            pkg_env$y_now <- pkg_env$y_now - 1
          } else {
            pkg_env$error <- TRUE
-           cli::cli_rule()
            cli::cli_abort(call = NULL, message = c(
              "x" = message_texts[[lang]]$cant_move_south,
              ">" = message_texts[[lang]]$start_again)
@@ -85,7 +80,6 @@ message_texts <- list()
 .turn_left <- function(lang) {
   # Proceed if there was no mistake
   if (pkg_env$error) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "x" = message_texts[[lang]]$error_general,
       ">" = message_texts[[lang]]$start_again)
@@ -114,7 +108,6 @@ message_texts <- list()
 
   # Proceed if there was no mistake
   if (pkg_env$error) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "x" = message_texts[[lang]]$error_general,
       ">" = message_texts[[lang]]$start_again)
@@ -123,7 +116,6 @@ message_texts <- list()
 
   if (pkg_env$beepers_bag == 0) {
     pkg_env$error <- TRUE
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "x" = message_texts[[lang]]$cant_put_beeper,
       ">" = message_texts[[lang]]$start_again)
@@ -186,7 +178,6 @@ message_texts <- list()
 
   # Proceed if there was no mistake
   if (pkg_env$error) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "x" = message_texts[[lang]]$error_general,
       ">" = message_texts[[lang]]$start_again)
@@ -233,7 +224,6 @@ message_texts <- list()
       bind_rows(pkg_env$karel, .)
   } else {
     pkg_env$error <- TRUE
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "x" = message_texts[[lang]]$cant_pick_beeper,
       ">" = message_texts[[lang]]$start_again)

@@ -42,7 +42,6 @@ global_env_set_hack <- function(key, val, pos) {
 
   # Proceed if there was no mistake
   if (pkg_env$error) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "x" = message_texts[[lang]]$error_general,
       ">" = message_texts[[lang]]$start_again)
@@ -72,7 +71,6 @@ global_env_set_hack <- function(key, val, pos) {
 
   # Proceed if there was no mistake
   if (pkg_env$error) {
-    cli::cli_rule()
     cli::cli_abort(call = NULL, message = c(
       "x" = message_texts[[lang]]$error_general,
       ">" = message_texts[[lang]]$start_again)
