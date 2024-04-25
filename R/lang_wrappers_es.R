@@ -92,7 +92,7 @@ generar_mundo <- function(mundo) .generate_world(mundo, lang = "es")
 #' juntar_coso()
 #' girar_izquierda()
 #' poner_coso()
-#' if (FALSE) ejecutar_acciones()
+#' if (interactive()) ejecutar_acciones()
 #'
 #' @seealso \code{\link{generar_mundo}}
 #'
@@ -122,7 +122,7 @@ ejecutar_acciones <- function(repetir = FALSE) {
 #' juntar_coso()
 #' girar_izquierda()
 #' poner_coso()
-#' if (FALSE) ejecutar_acciones()
+#' if (interactive()) ejecutar_acciones()
 #'
 #' @seealso \code{\link{cargar_super_karel}} \code{\link{generar_mundo}}
 #'   \code{\link{ejecutar_acciones}}
@@ -264,7 +264,7 @@ mira_al_sur <- function() .facing_south()
 #' cargar_super_karel()
 #' darse_vuelta()
 #' girar_derecha()
-#' if (FALSE) ejecutar_acciones()
+#' if (interactive()) ejecutar_acciones()
 #'
 #' @seealso \code{\link{acciones}} \code{\link{generar_mundo}}
 #'   \code{\link{ejecutar_acciones}}
@@ -359,7 +359,7 @@ darse_vuelta <- function() .turn_around(lang = "es")
 #'
 #' @examples
 #' generar_mundo("mundo001")
-#' if (FALSE) karel:::conseguir_amb()
+#' if (interactive()) karel:::conseguir_amb()
 #'
 conseguir_amb <- function() .get_pkg_env()
 
@@ -380,7 +380,7 @@ conseguir_amb <- function() .get_pkg_env()
 #' @return Imprime el gráfico.
 #'
 #' @examples
-#' if (FALSE) karel:::graficar_mundo_estatico(1)
+#' if (interactive()) karel:::graficar_mundo_estatico(1)
 #'
 graficar_mundo_estatico <- function(momento) {
   .plot_static_world(time = momento, lang = "es")

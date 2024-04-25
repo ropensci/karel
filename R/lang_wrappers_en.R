@@ -88,7 +88,7 @@ generate_world <- function(world) .generate_world(world, lang = "en")
 #' pick_beeper()
 #' turn_left()
 #' put_beeper()
-#' if (FALSE) run_actions()
+#' if (interactive()) run_actions()
 #'
 #' @seealso \code{\link{generate_world}}
 #'
@@ -115,7 +115,7 @@ run_actions <- function(loop = FALSE) .run_actions(loop = loop, lang = "en")
 #' pick_beeper()
 #' turn_left()
 #' put_beeper()
-#' if (FALSE) run_actions()
+#' if (interactive()) run_actions()
 #'
 #' @seealso \code{\link{load_super_karel}} \code{\link{generate_world}}
 #'   \code{\link{run_actions}}
@@ -257,7 +257,7 @@ facing_south <- function() .facing_south()
 #' load_super_karel()
 #' turn_around()
 #' turn_right()
-#' if (FALSE) run_actions()
+#' if (interactive()) run_actions()
 #'
 #' @seealso \code{\link{actions}} \code{\link{generate_world}}
 #'   \code{\link{run_actions}}
@@ -349,7 +349,7 @@ turn_around <- function() .turn_around(lang = "en")
 #'
 #' @examples
 #' generate_world("mundo001")
-#' if (FALSE) karel:::get_pkg_env()
+#' if (interactive()) karel:::get_pkg_env()
 #'
 get_pkg_env <- function() .get_pkg_env()
 
@@ -369,6 +369,6 @@ get_pkg_env <- function() .get_pkg_env()
 #' @return Prints the plot.
 #'
 #' @examples
-#' if (FALSE) karel:::plot_static_world(1)
+#' if (interactive()) karel:::plot_static_world(1)
 #'
 plot_static_world <- function(time) .plot_static_world(time = time, lang = "en")

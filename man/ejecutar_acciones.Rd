@@ -23,7 +23,7 @@ avanzar()
 juntar_coso()
 girar_izquierda()
 poner_coso()
-if (FALSE) ejecutar_acciones()
+if (interactive()) ejecutar_acciones()
 
 }
 \seealso{

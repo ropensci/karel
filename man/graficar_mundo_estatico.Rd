@@ -22,6 +22,6 @@ estudiantes. Es una función interna, no está pensada para ser usada por
 estudiantes, pero se puede usar con karel:::graficar_mundo_estatico().
 }
 \examples{
-if (FALSE) karel:::graficar_mundo_estatico(1)
+if (interactive()) karel:::graficar_mundo_estatico(1)
 
 }

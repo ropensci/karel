@@ -81,6 +81,6 @@ thought to be used by students, but can be used with karel:::get_pkg_env().
 }
 \examples{
 generate_world("mundo001")
-if (FALSE) karel:::get_pkg_env()
+if (interactive()) karel:::get_pkg_env()
 
 }

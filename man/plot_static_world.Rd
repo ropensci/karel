@@ -21,6 +21,6 @@ for students. It's an internal function, not thought to be used by students,
 but can be used with karel:::plot_static_world().
 }
 \examples{
-if (FALSE) karel:::plot_static_world(1)
+if (interactive()) karel:::plot_static_world(1)
 
 }
