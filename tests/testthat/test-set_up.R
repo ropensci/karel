@@ -284,8 +284,8 @@ test_that("The function the pkg environment is correctly returned, with the
   world_test <- world_test_template
   generate_world(world_test)
   pkg_env <- get_pkg_env()
-  expect_equal(pkg_env$beepers_now, dplyr::tibble(x = NA, y = NA, cell = NA,
-                                                  n = NA, moment = 1))
+  expect_equal(pkg_env$beepers_now, dplyr::tibble(x = 2, y = 1, cell = 2,
+                                                  n = 1, moment = 1))
 
 })
 
