@@ -106,3 +106,13 @@ problems.
 
     Prunello M (2023). karel: Learning programming with Karel the robot. 
     R package version 0.1.1.9000, <https://ropensci.github.io/karel/>.
+
+## Código de conducta / Code of conduct
+
+Por favor notar que este paquete se ha publicado con un [Código de
+Conducta](https://ropensci.org/code-of-conduct/). Please note that this
+package is released with a [Contributor Code of
+Conduct](https://ropensci.org/code-of-conduct/). Please note that this
+package is released with a [Contributor Code of
+Conduct](https://ropensci.org/code-of-conduct/). By contributing to this
+project, you agree to abide by its terms.
