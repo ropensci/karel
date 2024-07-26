@@ -12,12 +12,12 @@ status](https://www.r-pkg.org/badges/version/karel)](https://CRAN.R-project.org/
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![pkgcheck](https://github.com/mpru/karel/workflows/pkgcheck/badge.svg)](https://github.com/mpru/karel/actions?query=workflow%3Apkgcheck)
-[![R-CMD-check](https://github.com/mpru/karel/workflows/R-CMD-check/badge.svg)](https://github.com/mpru/karel/actions)
+[![pkgcheck](https://github.com/ropensci/karel/workflows/pkgcheck/badge.svg)](https://github.com/ropensci/karel/actions?query=workflow%3Apkgcheck)
+[![R-CMD-check](https://github.com/ropensci/karel/workflows/R-CMD-check/badge.svg)](https://github.com/ropensci/karel/actions)
 [![Status at rOpenSci Software Peer
 Review](https://badges.ropensci.org/620_status.svg)](https://github.com/ropensci/software-review/issues/620)
 [![Codecov test
-coverage](https://codecov.io/gh/mpru/karel/branch/master/graph/badge.svg)](https://app.codecov.io/gh/mpru/karel?branch=master)
+coverage](https://codecov.io/gh/ropensci/karel/branch/master/graph/badge.svg)](https://app.codecov.io/gh/ropensci/karel?branch=master)
 <!-- badges: end -->
 
 ## ¿Quién es Karel? / Who is Karel?
@@ -81,12 +81,12 @@ install.packages("karel")
 ```
 
 También podés instalar la versión en desarrollo desde
-[GitHub](https://github.com/mpru/karel) / You can also install the
-development version from [GitHub](https://github.com/mpru/karel):
+[GitHub](https://github.com/ropensci/karel) / You can also install the
+development version from [GitHub](https://github.com/ropensci/karel):
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("mpru/karel")
+devtools::install_github("ropensci/karel")
 ```
 
 ## Ejemplos / Examples
@@ -105,4 +105,4 @@ problems.
 ## Cómo citar este paquete / How to cite this package
 
     Prunello M (2023). karel: Learning programming with Karel the robot. 
-    R package version 0.1.1.9000, <https://mpru.github.io/karel/>.
+    R package version 0.1.1.9000, <https://ropensci.github.io/karel/>.
