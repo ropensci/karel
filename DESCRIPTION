@@ -37,6 +37,6 @@ Suggests:
     rmarkdown,
     vdiffr
 VignetteBuilder: knitr
-URL: https://mpru.github.io/karel/
-BugReports: https://github.com/mpru/karel/issues/
+URL: https://ropensci.github.io/karel/
+BugReports: https://github.com/ropensci/karel/issues/
 Config/testthat/edition: 3

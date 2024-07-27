@@ -151,7 +151,7 @@ También es posible instalar paquetes publicados en otros repositorios. Por ejem
 # Instalar desde CRAN el paquete devtools
 install.packages("devtools")
 # Instalar desde GitHub el paquete karel
-devtools::install_github("mpru/karel")
+devtools::install_github("ropensci/karel")
 ```
 
 Un paquete se instala una sola vez, pero cada vez que lo queramos usar debemos *cargarlo* para que las herramientas que trae queden a nuestra disposición. Eso se hace con la instrucción `library("nombredelpaquete")`, por ejemplo, `library("karel")`.

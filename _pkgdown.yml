@@ -1,4 +1,4 @@
-url: https://mpru.github.io/karel/
+url: https://ropensci.github.io/karel/
 template:
   bootstrap: 5
   bootswatch: flatly
@@ -24,7 +24,7 @@ navbar:
       aria-label: Twitter
     github:
       icon: fa-github
-      href: https://github.com/mpru/karel
+      href: https://github.com/ropensci/karel
     getstarted:
       text: Getting started
       menu:
